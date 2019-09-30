@@ -1,6 +1,6 @@
 /******************************************************************
-Theme Name: Responsive Theme
-Theme URI: http://www.aj-castiglione.com
+Theme Name: MinervaWD Theme - Ogorek
+Theme URI: http://www.minervawebdevelopment.com
 Description: This site was built using Aj's talent with help from Bones Development Theme. This theme is intended to be used with SASS.
 Author: AJ Castiglione
 Author URI: http://www.aj-castiglione.com
@@ -8,9 +8,7 @@ Version: 1.1
 Tags: fluid-layout, responsive-layout, accessibility-ready, translation-ready, microformats, rtl-language-support
 
 License: WTFPL
-License URI: http://sam.zoy.org/wtfpl/
 Are You Serious? Yes.
-
 
 MAKE SURE TO READ BELOW BEFORE GETTING STARTED FOR THE FIRST TIME!
 ------------------------------------------------------------------
@@ -103,6 +101,9 @@ So we're gonna drop these here to keep it happy.
 Great work, Theme Check (eye roll)
 */
 
-.sticky {}          /* DO NOT EDIT THIS */
-.gallery-caption {} /* THESE ARE USELESS */
-.bypostauthor {}    /* THEY ARE ONLY TO KEEP THEME CHECK HAPPY */
+.sticky {
+} /* DO NOT EDIT THIS */
+.gallery-caption {
+} /* THESE ARE USELESS */
+.bypostauthor {
+} /* THEY ARE ONLY TO KEEP THEME CHECK HAPPY */
