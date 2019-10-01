@@ -11,6 +11,44 @@ LAYOUT & GRID STYLES
 }
 
 /*********************
+SIDEBARS & ASIDES
+*********************/
+
+.widget {
+  padding: 0 10px;
+  margin: 2.2em 0;
+  ul {
+    li {
+      margin-bottom: 0.75em;
+
+      /* deep nesting */
+      ul {
+        margin-top: 0.75em;
+        padding-left: 1em;
+      }
+    }
+  }
+}
+
+/****************************
+HeaderSection
+****************************/
+.top-header {
+  text-align: inherit;
+  .socials {
+    text-align: right;
+  }
+}
+
+.header-bottom {
+  text-align: inherit;
+
+  .header-right {
+    justify-content: flex-end;
+  }
+}
+
+/*********************
 NAVIGATION STYLES
 *********************/
 
@@ -25,7 +63,6 @@ NAVIGATION STYLES
     a {
       &:hover,
       &:focus {
-        color: darken($blue, 10%);
       }
     }
     &:first-child {
@@ -38,18 +75,16 @@ NAVIGATION STYLES
     ul.sub-menu,
     ul.children {
       margin-top: 0;
-      border: 1px solid #ccc;
-      border-top: 0;
+      border-top: 3px solid $secondary;
       position: absolute;
       visibility: hidden;
       z-index: 8999;
+      background-color: $white;
       li {
         a {
           padding-left: 10px;
           border-right: 0;
-          display: block;
           width: 180px;
-          border-bottom: 1px solid #ccc;
           &:hover,
           &:focus {
           }
@@ -99,36 +134,6 @@ NAVIGATION STYLES
 }
 
 /* end .nav */
-
-/*********************
-SIDEBARS & ASIDES
-*********************/
-
-.widget {
-  padding: 0 10px;
-  margin: 2.2em 0;
-  ul {
-    li {
-      margin-bottom: 0.75em;
-
-      /* deep nesting */
-      ul {
-        margin-top: 0.75em;
-        padding-left: 1em;
-      }
-    }
-  }
-}
-
-/****************************
-HeaderSection
-****************************/
-.top-header {
-  text-align: inherit;
-  .socials {
-    text-align: right;
-  }
-}
 
 /****************************
 Sidebar Section

@@ -41,6 +41,7 @@
 
 	<!--external stylesheets / fonts / etc...-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 	<?php // wordpress head functions 
@@ -65,7 +66,7 @@
 			<div id="inner-header" class="cf">
 
 				<div class="top-header">
-					<div class="grid">
+					<div class="grid-50">
 						<div class="info">
 							<a href="tel:+<?= trim(get_field('phone_number', 'options')); ?>">
 								<i class="fas fa-phone"></i> <?= trim(get_field('phone_number', 'options')); ?>
@@ -85,28 +86,30 @@
 					</div>
 				</div>
 
-				<div class="header-left col-xs-12 col-sm-6 col-lg-4">
-					<a href="<?php echo home_url(); ?>" rel="nofollow">
-						<img src="" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
-					</a>
-				</div>
+				<div class="header-bottom grid-50">
+					<div class="header-left">
+						<a href="<?= home_url(); ?>" rel="nofollow">
+							<img src="<?= get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
+						</a>
+					</div>
 
-				<div class="header-right col-xs-12 col-sm-6 col-lg-8">
-					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-						<?php wp_nav_menu(array(
-							'container' => false,                           // remove nav container
-							'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-							'menu' => __('The Main Menu', 'bonestheme'),  // nav name
-							'menu_class' => 'nav top-nav cf',               // adding custom nav class
-							'theme_location' => 'main-nav',                 // where it's located in the theme
-							'before' => '',                                 // before the menu
-							'after' => '',                                  // after the menu
-							'link_before' => '',                            // before each link
-							'link_after' => '',                             // after each link
-							'depth' => 0,                                   // limit the depth of the nav
-							'fallback_cb' => 'bones_main_nav_fallback'      // fallback function (if there is one)
-						)); ?>
-					</nav>
+					<div class="header-right">
+						<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+							<?php wp_nav_menu(array(
+								'container' => false,                           // remove nav container
+								'container_class' => 'menu cf',                 // class of container (should you choose to use it)
+								'menu' => __('The Main Menu', 'bonestheme'),  // nav name
+								'menu_class' => 'nav top-nav cf',               // adding custom nav class
+								'theme_location' => 'main-nav',                 // where it's located in the theme
+								'before' => '',                                 // before the menu
+								'after' => '',                                  // after the menu
+								'link_before' => '',                            // before each link
+								'link_after' => '',                             // after each link
+								'depth' => 0,                                   // limit the depth of the nav
+								'fallback_cb' => 'bones_main_nav_fallback'      // fallback function (if there is one)
+							)); ?>
+						</nav>
+					</div>
 				</div>
 
 			</div>

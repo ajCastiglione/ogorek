@@ -86,61 +86,6 @@ h5,
 }
 
 /*********************
-NAVIGATION STYLES
-*********************/
-
-.nav {
-  border-bottom: 0;
-  margin: 0;
-  li {
-    a {
-      display: block;
-      color: $blue;
-      text-decoration: none;
-      padding: 0.75em;
-      border-bottom: 2px solid transparent;
-      transition: all 0.3s ease-in-out;
-      &:hover,
-      &:focus {
-        border-bottom-color: $blue;
-      }
-    }
-    &:first-child {
-    }
-    &:last-child {
-    }
-    ul.sub-menu,
-    ul.children {
-      li {
-        a {
-          padding-left: 30px;
-          &:hover,
-          &:focus {
-          }
-          &:link {
-          }
-        }
-        &:first-child {
-        }
-        &:last-child {
-        }
-      }
-    }
-  }
-  /* end .menu li */
-  /* highlight current page */
-  li.current-menu-item,
-  li.current_page_item,
-  li.current_page_ancestor {
-    a {
-    }
-  }
-  /* end current highlighters */
-}
-
-/* end .nav */
-
-/*********************
 POSTS & CONTENT STYLES
 *********************/
 
@@ -295,7 +240,7 @@ html {
 }
 
 body {
-  font-family: $lato;
+  font-family: $font;
   line-height: 1.5;
   color: $black;
   background-color: $white;
@@ -357,6 +302,97 @@ HeaderSection
     }
   }
 }
+
+.header-bottom {
+  margin-top: 1rem;
+  text-align: center;
+  padding: 0 1rem;
+
+  .header-right {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #logo {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+.nav {
+  border-bottom: 0;
+  margin: 0;
+  li {
+    text-align: left;
+    a {
+      display: block;
+      color: $primary;
+      text-decoration: none;
+      padding: 0.5rem 0.75em;
+      font-size: 18px;
+      transition: color 0.3s ease-in-out;
+      &:hover,
+      &:focus {
+        background: none;
+        color: lighten($primary, 15%);
+      }
+    }
+    &.menu-item-110 {
+      > a {
+        background-color: $secondary;
+        color: $white;
+        border-radius: 30px;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          background-color: lighten($secondary, 10%);
+        }
+      }
+    }
+    &.menu-item-has-children {
+      > a {
+        transition: none;
+      }
+      > a > i {
+        padding-left: 8px;
+      }
+    }
+    ul.sub-menu,
+    ul.children {
+      li {
+        a {
+          padding-left: 30px;
+          &:hover,
+          &:focus {
+            background-color: rgba(87, 87, 87, 0.1);
+          }
+          &:link {
+          }
+        }
+        &:first-child {
+        }
+        &:last-child {
+        }
+      }
+    }
+  }
+  /* end .menu li */
+  /* highlight current page */
+  li.current-menu-item,
+  li.current_page_item,
+  li.current_page_ancestor {
+    a {
+    }
+  }
+  /* end current highlighters */
+}
+
+/* end .nav */
 
 /****************************
 Sidebar Section
