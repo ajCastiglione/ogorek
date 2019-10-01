@@ -3,7 +3,7 @@
 				<div id="inner-footer" class="wrap cf">
 
 					<div class="col-xs-12 col-sm-6">
-						<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+						<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
 					</div>
 
 					<div class="col-xs-12 col-sm-6">
@@ -14,12 +14,14 @@
 
 			</footer>
 
-		</div>
+			</div>
 
-		<?php // all js scripts are loaded in library/bones.php ?>
-		<?php wp_footer(); ?>
-        
+			<?php // all js scripts are loaded in library/bones.php 
+			?>
+			<?php wp_footer(); ?>
 
-	</body>
+			<!-- Slick slider -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+			</body>
 
-</html> <!-- end of site. what a ride! -->
+			</html> <!-- end of site. what a ride! -->

@@ -7,19 +7,21 @@
 <?php get_header(); ?>
 
 <!-- Banner Area -->
-<section class="banner-section" style="background-image:url(<?php $img = get_field('banner_image');
-																														if (!empty($img)) : echo $img['url'];
-																														else : echo get_template_directory_uri() . '/library/images/default-bg.jpg';
-																														endif;  ?>);">
-	<div class="banner-content-container wrap">
-		<h1 class="banner-title"><?php echo get_field('banner_title'); ?></h1>
-		<p class="banner-content"><?php echo get_field('banner_content'); ?></p>
-		<div class="banner-cta-box">
-			<a class="banner-cta" href="<?php echo get_field('banner_link'); ?>"><?php echo get_field('banner_cta'); ?></a>
-		</div>
+<section class="hero">
+	<div class="slider">
+		<?php if (have_rows('slider')) : while (have_rows('slider')) : the_row(); ?>
+				<div class="slide" style="background-image:url(<?= get_sub_field('image')['url']; ?>)">
+					<h2 class="slide-title"><?= get_sub_field('title'); ?></h2>
+					<div class="slide-content">
+						<?= get_sub_field('content'); ?>
+						<a href="<?= get_sub_field('button_link'); ?>" class="slide-link"><?= get_sub_field('button_text'); ?></a>
+					</div>
+				</div>
+		<?php endwhile;
+		endif; ?>
 	</div>
-</section>
 
+</section>
 <!-- end Banner Area -->
 
 
