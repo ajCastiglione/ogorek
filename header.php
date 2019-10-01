@@ -86,7 +86,7 @@
 					</div>
 				</div>
 
-				<div class="header-bottom grid-50">
+				<div class="header-bottom grid-3070">
 					<div class="header-left">
 						<a href="<?= home_url(); ?>" rel="nofollow">
 							<img src="<?= get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">

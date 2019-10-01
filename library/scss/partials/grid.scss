@@ -5,8 +5,15 @@
   grid-template-rows: auto;
 }
 
+.grid-3070 {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: auto;
+}
+
 @media (max-width: 768px) {
-  .grid-50 {
+  .grid-50,
+  .grid-3070 {
     grid-template-columns: 100%;
   }
 }
