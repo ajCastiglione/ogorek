@@ -62,15 +62,25 @@
 
 		<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
-			<div id="inner-header" class="wrap cf">
+			<div id="inner-header" class="cf">
 
 				<div class="top-header">
 					<div class="grid">
-						<div class="item">
-							<?= get_field('phone_number', 'options'); ?>
+						<div class="info">
+							<a href="tel:+<?= trim(get_field('phone_number', 'options')); ?>">
+								<i class="fas fa-phone"></i> <?= trim(get_field('phone_number', 'options')); ?>
+							</a>
+							<a href="mailto:<?= trim(get_field('email_address', 'options')); ?>">
+								<i class="fas fa-envelope"></i> <?= trim(get_field('email_address', 'options')); ?>
+							</a>
 						</div>
-						<div class="item">
-							<?= get_field('email_address', 'options'); ?>
+						<div class="socials">
+							<?php if (have_rows('social_media', 'options')) : while (have_rows('social_media', 'options')) : the_row(); ?>
+									<a href="<?= get_sub_field('social_url'); ?>" target="_blank" rel="noopener noreferrer" class="social-icon">
+										<?= get_sub_field('social_icon'); ?>
+									</a>
+							<?php endwhile;
+							endif; ?>
 						</div>
 					</div>
 				</div>
