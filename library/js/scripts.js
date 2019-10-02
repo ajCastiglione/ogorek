@@ -59,6 +59,18 @@ function hasSubMenu($) {
   item.append(arrow);
 }
 
+function initSlickHome($) {
+  $(".slider").slick({
+    autoplay: true,
+    autoplaySpeed: 7500,
+    pauseOnHover: true,
+    arrows: true,
+    dots: false,
+    nextArrow: '<i class="fas fa-chevron-right slick-next"></i>',
+    prevArrow: '<i class="fas fa-chevron-left slick-prev"></i>'
+  });
+}
+
 /*
  * Put all your regular jQuery in here.
  */
@@ -69,4 +81,7 @@ jQuery(document).ready(function($) {
    */
   loadGravatars();
   hasSubMenu($);
+  if ($("body").hasClass("home")) {
+    initSlickHome($);
+  }
 }); /* end of as page load scripts */

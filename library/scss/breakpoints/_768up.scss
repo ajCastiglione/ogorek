@@ -136,6 +136,44 @@ NAVIGATION STYLES
 /* end .nav */
 
 /****************************
+Home Page Section
+****************************/
+.home {
+  .hero {
+    .slide {
+      min-height: 500px;
+      .slide-title {
+        font-size: 45px;
+      }
+      .slide-text {
+        font-size: 18px;
+      }
+      .slide-link {
+        font-size: 18px;
+      }
+    }
+  }
+  .section-2 {
+    .content {
+      padding-right: 4rem;
+      h1 {
+        font-size: 45px;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+  .section-3 {
+    .item {
+      .cta {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+/****************************
 Sidebar Section
 ****************************/
 

@@ -8,3 +8,31 @@ LAYOUT & GRID STYLES
 .large-wrapper {
   width: 80%;
 }
+
+/****************************
+Home Page Section
+****************************/
+.home {
+  .hero {
+    .slide {
+      min-height: 600px;
+      .slide-title {
+        font-size: 65px;
+      }
+      .slide-text {
+        font-size: 20px;
+      }
+      .slide-link {
+        font-size: 20px;
+      }
+    }
+  }
+  .section-2 {
+    .content {
+      padding-right: 8rem;
+      h1 {
+        font-size: 55px;
+      }
+    }
+  }
+}
