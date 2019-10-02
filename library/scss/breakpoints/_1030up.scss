@@ -9,6 +9,22 @@ LAYOUT & GRID STYLES
   width: 80%;
 }
 
+/*********************
+Global Section
+*********************/
+
+h2.title,
+h2.aside-title {
+  font-size: 55px;
+}
+.content,
+.aside {
+  .text,
+  .aside-text {
+    font-size: 20px;
+  }
+}
+
 /****************************
 Home Page Section
 ****************************/
@@ -32,6 +48,16 @@ Home Page Section
       padding-right: 8rem;
       h1 {
         font-size: 55px;
+      }
+    }
+  }
+  .section-4 {
+    .content {
+      .title {
+        font-size: 55px;
+      }
+      .text {
+        font-size: 22px;
       }
     }
   }

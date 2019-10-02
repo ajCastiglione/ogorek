@@ -71,6 +71,16 @@ function initSlickHome($) {
   });
 }
 
+function showVideo($) {
+  let placeholder = $(".placeholder");
+  placeholder.on("click", e => {
+    placeholder.addClass("fadeOut");
+    setTimeout(() => {
+      placeholder.remove();
+    }, 700);
+  });
+}
+
 /*
  * Put all your regular jQuery in here.
  */
@@ -83,5 +93,6 @@ jQuery(document).ready(function($) {
   hasSubMenu($);
   if ($("body").hasClass("home")) {
     initSlickHome($);
+    showVideo($);
   }
 }); /* end of as page load scripts */

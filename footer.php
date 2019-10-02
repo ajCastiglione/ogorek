@@ -1,27 +1,45 @@
-			<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+<?php $title = get_field('footer_title', 'options');
+$addr = get_field('address', 'options');
+$phone = get_field('phone_number', 'options');
+$logos = get_field('footer_logos', 'options');
+$disclosures = get_field('disclosures', 'options'); ?>
+<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
-				<div id="inner-footer" class="wrap cf">
+	<div id="inner-footer" class="cf col-1">
 
-					<div class="col-xs-12 col-sm-6">
-						<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
-					</div>
-
-					<div class="col-xs-12 col-sm-6">
-						Built By: <a href="https://aj-castiglione.com">AJ Castiglione</a>
-					</div>
-
-				</div>
-
-			</footer>
-
+		<div class="content">
+			<h2 class="title"><?= $title; ?></h2>
+			<address class="address">
+				<?= $addr; ?>
+			</address>
+			<a href="tel:+<?= $phone; ?>" class="phone"><?= $phone; ?></a>
+			<div class="socials">
+				<?php if (have_rows('social_media', 'options')) : while (have_rows('social_media', 'options')) : the_row(); ?>
+						<a href="<?= get_sub_field('social_url'); ?>" target="_blank" rel="noopener noreferrer" class="social-icon">
+							<?= get_sub_field('social_icon'); ?>
+						</a>
+				<?php endwhile;
+				endif; ?>
 			</div>
+			<img src="<?= $logos['url']; ?>" alt="Logos" class="logos">
+			<div class="disclosures">
+				<?= $disclosures; ?>
+			</div>
+			<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All Rights Reserved.</p>
+		</div>
 
-			<?php // all js scripts are loaded in library/bones.php 
-			?>
-			<?php wp_footer(); ?>
+	</div>
 
-			<!-- Slick slider -->
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-			</body>
+</footer>
 
-			</html> <!-- end of site. what a ride! -->
+</div>
+
+<?php // all js scripts are loaded in library/bones.php 
+?>
+<?php wp_footer(); ?>
+
+<!-- Slick slider -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+</body>
+
+</html> <!-- end of site. what a ride! -->

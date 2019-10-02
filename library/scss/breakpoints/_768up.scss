@@ -11,6 +11,22 @@ LAYOUT & GRID STYLES
 }
 
 /*********************
+Global Section
+*********************/
+
+h2.title,
+h2.aside-title {
+  font-size: 45px;
+}
+.content,
+.aside {
+  .text,
+  .aside-text {
+    font-size: 18px;
+  }
+}
+
+/*********************
 SIDEBARS & ASIDES
 *********************/
 
@@ -169,6 +185,20 @@ Home Page Section
       .cta {
         font-size: 30px;
       }
+    }
+  }
+  .section-4 {
+    .content {
+      padding-right: 2rem;
+      .title {
+        font-size: 45px;
+      }
+      .text {
+        font-size: 18px;
+      }
+    }
+    .video {
+      min-height: 550px;
     }
   }
 }
