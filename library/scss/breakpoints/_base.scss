@@ -285,6 +285,78 @@ h2.aside-title {
     font-size: 16px;
   }
 }
+.aside-text {
+  ul li {
+    color: $secondary;
+    &:before {
+      content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+      color: $secondary;
+      display: inline-block; /* Needed to add space between the bullet and the text */
+      width: 1em;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  }
+  a {
+    color: $secondary;
+  }
+}
+
+.video {
+  position: relative;
+  min-height: 400px;
+  .yt-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &:hover {
+      cursor: pointer;
+      &:before {
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+    }
+    &:before {
+      transition: all 0.5s ease-in-out;
+      position: absolute;
+      content: "\f144";
+      font-family: "Font Awesome 5 Free";
+      z-index: 99;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      font-size: 6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $primary;
+    }
+  }
+  .fadeOut {
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
 
 /****************************
 HeaderSection
@@ -423,6 +495,7 @@ Home Page Section
       background-size: cover;
       background-position: top center;
       min-height: 400px;
+      max-height: 400px;
       position: relative;
       .slide-content {
         position: absolute;
@@ -699,12 +772,167 @@ Home Page Section
 }
 
 /****************************
+Service Pages Section
+****************************/
+.service {
+  .section-1 {
+    background-color: #f5f5f5;
+    padding: 2rem 0 4rem;
+    .content {
+      .title {
+        color: $primary;
+      }
+    }
+  }
+  .section-2 {
+    .grid_three {
+      padding: 3rem 0;
+      .first-third {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .mid-third {
+        margin: 1rem 0;
+        display: flex;
+        align-items: center;
+        img {
+          width: 100%;
+          margin: 0;
+        }
+      }
+      .last-third {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 1rem;
+      }
+      .item {
+        margin-bottom: 1rem;
+        .item-title {
+          color: $primary;
+          font-size: 23px;
+          i {
+            color: $black;
+            padding-right: 1rem;
+            font-size: 22px;
+          }
+        }
+        .text {
+          ul {
+            list-style-type: disc;
+            margin-left: 2rem;
+          }
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    @media (max-width: 990px) {
+      .grid-col-3 {
+        grid-template-columns: 100%;
+      }
+    }
+  }
+
+  .alternating {
+    margin-top: 2rem;
+    .alt-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      margin: 1rem 0;
+      .title {
+        color: $secondary;
+        margin: 0 0 1rem;
+      }
+      .content {
+        padding-right: 1rem;
+        padding-bottom: 1rem;
+        p {
+          margin: 0;
+        }
+      }
+      .aside {
+        width: 100%;
+        img {
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+      &:nth-child(even) {
+        background-color: #f5f5f5;
+        flex-direction: row-reverse;
+        .content {
+          padding-left: 1rem;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+/****************************
+Partials Section
+****************************/
+.hero {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 20px solid $secondary;
+  .title {
+    text-align: center;
+    color: $white;
+    margin: 0;
+    font-weight: bold;
+  }
+}
+
+.hero-large {
+  background-color: $primary;
+  border-bottom: 20px solid $secondary;
+
+  .img-container {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 100%;
+      max-width: 500px;
+    }
+  }
+  .title {
+    text-align: center;
+    color: $white;
+  }
+  .text {
+    color: $white;
+    font-size: 18px;
+    padding: 0 0 1rem 2rem;
+  }
+  @media (max-width: 1030px) {
+    .grid-col-3 {
+      grid-template-columns: 100%;
+    }
+  }
+}
+
+/****************************
 Footer Section
 ****************************/
 .footer {
   background-color: lighten($primary, 5%);
   padding: 1.5rem 1rem;
   text-align: center;
+  border-top: 30px solid $secondary;
   .content {
     color: $white;
     .address {

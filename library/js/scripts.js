@@ -59,16 +59,30 @@ function hasSubMenu($) {
   item.append(arrow);
 }
 
-function initSlickHome($) {
-  $(".slider").slick({
-    autoplay: true,
-    autoplaySpeed: 7500,
-    pauseOnHover: true,
-    arrows: true,
+function initSlider($) {
+  $(".owl-carousel").owlCarousel({
+    items: 1,
+    nav: true,
     dots: false,
-    nextArrow: '<i class="fas fa-chevron-right slick-next"></i>',
-    prevArrow: '<i class="fas fa-chevron-left slick-prev"></i>'
+    rewind: true,
+    autoplay: true,
+    autoplayTimeout: 7500,
+    autoplayHoverPause: true,
+    navText: [
+      '<i class="fas fa-chevron-left slick-prev"></i>',
+      '<i class="fas fa-chevron-right slick-next"></i>'
+    ]
   });
+}
+
+function addPlaceholder($) {
+  let iframe = $("iframe");
+  let placeholder = $(
+    '<div style="background-image:url(http://ogorek.local/wp-content/uploads/2018/11/7d1119db3034129b5863b4238d3cca58ea9e35d4-min.jpg)" class="placeholder"></div>'
+  );
+  iframe.addClass("yt-video");
+  iframe.wrap('<div class="video"></div>');
+  iframe.after(placeholder);
 }
 
 function showVideo($) {
@@ -89,10 +103,18 @@ jQuery(document).ready(function($) {
    * Let's fire off the gravatar function
    * You can remove this if you don't need it
    */
-  loadGravatars();
+  // loadGravatars();
+
   hasSubMenu($);
+
   if ($("body").hasClass("home")) {
-    initSlickHome($);
+    initSlider($);
+    showVideo($);
+    $(window).trigger("resize");
+  }
+
+  if ($("iframe").length > 0 && !$("body").hasClass("home")) {
+    addPlaceholder($);
     showVideo($);
   }
 }); /* end of as page load scripts */

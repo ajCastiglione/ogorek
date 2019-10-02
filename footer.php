@@ -38,8 +38,8 @@ $disclosures = get_field('disclosures', 'options'); ?>
 ?>
 <?php wp_footer(); ?>
 
-<!-- Slick slider -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<!-- Owl Carousel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 </body>
 
 </html> <!-- end of site. what a ride! -->

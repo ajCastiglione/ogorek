@@ -1,6 +1,6 @@
 <!-- Banner Area -->
 <section class="hero col-1">
-  <div class="slider">
+  <div class="owl-carousel owl-theme">
     <?php if (have_rows('slider')) : while (have_rows('slider')) : the_row(); ?>
         <div class="slide" style="background-image:url(<?= get_sub_field('image')['url']; ?>)">
           <div class="slide-content">

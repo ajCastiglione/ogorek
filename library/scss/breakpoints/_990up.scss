@@ -1,0 +1,21 @@
+/****************************
+Service Pages Section
+****************************/
+.service {
+  .section-2 {
+    .grid_three {
+      .first-third {
+        align-items: flex-start;
+      }
+      .mid-third {
+        margin: 0;
+      }
+      .last-third {
+        align-items: flex-end;
+      }
+      .item {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+}

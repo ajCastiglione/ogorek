@@ -62,3 +62,41 @@ Home Page Section
     }
   }
 }
+
+/****************************
+Service Pages Section
+****************************/
+.service {
+  .content {
+    .title {
+      font-size: 45px;
+    }
+  }
+  .section-2 {
+    .alternating {
+      .alt-container {
+        .content {
+          width: 65%;
+        }
+        .aside {
+          width: 35%;
+        }
+      }
+    }
+  }
+}
+
+/****************************
+Partials Section
+****************************/
+.hero {
+  .title {
+    font-size: 55px;
+  }
+}
+
+.hero-large {
+  .title {
+    font-size: 50px;
+  }
+}

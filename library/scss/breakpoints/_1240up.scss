@@ -8,3 +8,16 @@ LAYOUT & GRID STYLES
 .large-wrapper {
   width: 75%;
 }
+
+/****************************
+Service Pages Section
+****************************/
+.service {
+  .section-2 {
+    .grid_three {
+      .item {
+        max-width: 416px;
+      }
+    }
+  }
+}
