@@ -210,12 +210,15 @@ Service Pages Section
   .section-1 {
     .aside {
       padding-left: 3rem;
+      .aside-title {
+        font-size: 25px;
+      }
     }
   }
   .section-2 {
     .alternating {
       .alt-container {
-        padding: 2rem 5rem;
+        padding: 3rem 5rem;
         .content {
           width: 50%;
           padding-bottom: 0;

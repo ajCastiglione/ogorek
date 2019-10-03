@@ -274,6 +274,10 @@ body {
   }
 }
 
+article.hentry {
+  margin: 0;
+}
+
 h2.title,
 h2.aside-title {
   font-size: 35px;
@@ -750,6 +754,7 @@ Home Page Section
   .section-6 {
     border-top: 30px solid $secondary;
     padding-top: 1rem;
+    padding-bottom: 2rem;
     .content {
       .title {
         color: $primary;
@@ -781,6 +786,20 @@ Service Pages Section
     .content {
       .title {
         color: $primary;
+      }
+    }
+    .aside {
+      .aside-title {
+        color: $secondary;
+      }
+      .aside-text {
+        color: $black;
+        li {
+          color: $black;
+          &:before {
+            color: $black;
+          }
+        }
       }
     }
   }
@@ -843,7 +862,7 @@ Service Pages Section
     .alt-container {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
       padding: 2rem;
       margin: 1rem 0;
@@ -854,14 +873,13 @@ Service Pages Section
       .content {
         padding-right: 1rem;
         padding-bottom: 1rem;
-        p {
-          margin: 0;
-        }
       }
       .aside {
         width: 100%;
         img {
           width: 100%;
+          height: auto;
+          max-height: 400px;
           object-fit: contain;
         }
       }
@@ -871,6 +889,29 @@ Service Pages Section
         .content {
           padding-left: 1rem;
           padding-right: 0;
+        }
+      }
+      .page-id-520 & {
+        &:nth-child(odd) {
+          .title {
+            color: $primary;
+          }
+        }
+        &:nth-child(2) {
+          img {
+            background-color: $primary;
+          }
+        }
+        &:last-child {
+          border-top: 20px solid $secondary;
+        }
+      }
+      .page-id-564 & {
+        &:nth-child(even) {
+          flex-direction: row;
+        }
+        &:nth-child(odd) {
+          flex-direction: row-reverse;
         }
       }
     }
@@ -884,16 +925,22 @@ Partials Section
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 350px;
+  min-height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   border-bottom: 20px solid $secondary;
   .title {
     text-align: center;
     color: $white;
     margin: 0;
     font-weight: bold;
+  }
+  .text {
+    color: $white;
+    font-size: 18px;
+    margin-top: 1rem;
   }
 }
 

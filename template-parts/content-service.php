@@ -8,7 +8,7 @@ $layout = get_field('layout');
 
 <article class="service">
   <?= get_template_part('partials/hero'); ?>
-  <?php if (!empty($s1_title)) : ?>
+  <?php if (!empty($s1_title) || !empty($s1_content)) : ?>
     <section class="section-1">
       <div class="col-1 grid-50">
         <div class="content">
@@ -27,7 +27,9 @@ $layout = get_field('layout');
     </section>
   <?php endif; ?>
 
-  <section class="section-2">
-    <?php $layout === 'grid_three' ? get_template_part('partials/grid_three') : get_template_part('partials/alternating'); ?>
-  </section>
+  <?php if (get_field('layout') !== 'unused') : ?>
+    <section class="section-2">
+      <?php $layout === 'grid_three' ? get_template_part('partials/grid_three') : get_template_part('partials/alternating'); ?>
+    </section>
+  <?php endif; ?>
 </article>

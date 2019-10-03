@@ -95,6 +95,22 @@ function showVideo($) {
   });
 }
 
+function smoothScroll($) {
+  $('a[href*="#"]').on("click", function(e) {
+    e.preventDefault();
+    let target = $(this.hash);
+    console.log(target);
+
+    $("html, body").animate(
+      {
+        scrollTop: target.offset().top - 100
+      },
+      500,
+      "linear"
+    );
+  });
+}
+
 /*
  * Put all your regular jQuery in here.
  */
@@ -106,6 +122,7 @@ jQuery(document).ready(function($) {
   // loadGravatars();
 
   hasSubMenu($);
+  smoothScroll($);
 
   if ($("body").hasClass("home")) {
     initSlider($);
