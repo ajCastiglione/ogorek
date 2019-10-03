@@ -204,7 +204,7 @@ Home Page Section
 }
 
 /****************************
-Service Pages Section
+Internal Pages Section
 ****************************/
 .service {
   .section-1 {
@@ -217,6 +217,12 @@ Service Pages Section
   }
 }
 
+// contact page
+.contact {
+  .content {
+    padding-right: 3rem;
+  }
+}
 /****************************
 Singles Section
 ****************************/
@@ -259,6 +265,14 @@ Partials Section
   }
 }
 
+// This is Team.php - have a CPT with the name Team already
+.team-members {
+  .team-grid {
+    .member {
+      width: 50%;
+    }
+  }
+}
 /****************************
 Sidebar Section
 ****************************/

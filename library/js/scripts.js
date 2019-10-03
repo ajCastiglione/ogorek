@@ -136,7 +136,11 @@ jQuery(document).ready(function($) {
     $(window).trigger("resize");
   }
 
-  if ($("iframe").length > 0 && !$("body").hasClass("home")) {
+  if (
+    $("iframe").length > 0 &&
+    !$("body").hasClass("home") &&
+    !$("body").hasClass("page-id-286")
+  ) {
     addPlaceholder($);
     showVideo($);
   }

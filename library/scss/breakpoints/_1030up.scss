@@ -64,13 +64,21 @@ Home Page Section
 }
 
 /****************************
-Service Pages Section
+Internal Pages Section
 ****************************/
 .service {
   .content {
     .title {
       font-size: 45px;
     }
+  }
+}
+
+// contact page
+.contact {
+  .title,
+  .aside-title {
+    font-size: 45px;
   }
 }
 
@@ -109,6 +117,16 @@ Partials Section
     }
     .aside {
       width: 35%;
+    }
+  }
+}
+
+// This is Team.php - have a CPT with the name Team already
+.team-members {
+  .team-grid {
+    max-width: 1200px;
+    .member {
+      width: 33%;
     }
   }
 }

@@ -4,6 +4,7 @@
   <section class="section-1" id="core">
     <?= get_template_part('partials/alternating'); ?>
     <?= get_template_part('partials/values'); ?>
+    <?= get_template_part('partials/team'); ?>
   </section>
 
 </article>
