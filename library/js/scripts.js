@@ -97,17 +97,23 @@ function showVideo($) {
 
 function smoothScroll($) {
   $('a[href*="#"]').on("click", function(e) {
-    e.preventDefault();
-    let target = $(this.hash);
-    console.log(target);
+    if (
+      location.pathname.replace(/^\//, "") ==
+        this.pathname.replace(/^\//, "") &&
+      location.hostname == this.hostname
+    ) {
+      e.preventDefault();
+      let target = $(this.hash);
+      console.log(target);
 
-    $("html, body").animate(
-      {
-        scrollTop: target.offset().top - 100
-      },
-      500,
-      "linear"
-    );
+      $("html, body").animate(
+        {
+          scrollTop: target.offset().top - 100
+        },
+        500,
+        "linear"
+      );
+    }
   });
 }
 
@@ -123,10 +129,10 @@ jQuery(document).ready(function($) {
 
   hasSubMenu($);
   smoothScroll($);
+  showVideo($);
 
   if ($("body").hasClass("home")) {
     initSlider($);
-    showVideo($);
     $(window).trigger("resize");
   }
 

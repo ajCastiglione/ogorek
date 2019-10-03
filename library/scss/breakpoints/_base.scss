@@ -494,6 +494,7 @@ Home Page Section
 .home {
   .hero {
     margin-top: 1rem;
+    background-color: transparent;
     .slide {
       background-repeat: no-repeat;
       background-size: cover;
@@ -542,19 +543,28 @@ Home Page Section
         }
       }
     }
-    .slick-next {
+    .owl-next {
+      position: absolute;
       right: 10px;
-      &:before {
-        font-family: "Font Awesome 5 Free";
+      top: 50%;
+      i {
+        color: $white;
         font-size: 2rem;
       }
+      &:hover {
+        background: none;
+      }
     }
-    .slick-prev {
+    .owl-prev {
+      position: absolute;
+      top: 50%;
       left: 10px;
-      z-index: 1;
-      &:before {
-        font-family: "Font Awesome 5 Free";
+      i {
+        color: $white;
         font-size: 2rem;
+      }
+      &:hover {
+        background: none;
       }
     }
   }
@@ -856,64 +866,82 @@ Service Pages Section
       }
     }
   }
+}
 
-  .alternating {
-    margin-top: 2rem;
-    .alt-container {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 2rem;
-      margin: 1rem 0;
-      .title {
-        color: $secondary;
-        margin: 0 0 1rem;
+/****************************
+Singles Section
+****************************/
+.team {
+  margin: 2rem 0 4rem;
+
+  .title {
+    color: $primary;
+  }
+  .text {
+    color: #777777;
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+  .email {
+    color: $secondary;
+    font-size: 16px;
+  }
+  .socials {
+    margin-top: 1rem;
+    .social-icon {
+      background-color: $primary;
+      color: $white;
+      display: inline-block;
+      border-radius: 100%;
+      border: 2px solid $primary;
+      margin: 0 4px;
+      transition: all 0.3s ease-in-out;
+      i {
+        padding: 10px;
+        font-size: 20px;
       }
-      .content {
-        padding-right: 1rem;
-        padding-bottom: 1rem;
-      }
-      .aside {
-        width: 100%;
-        img {
-          width: 100%;
-          height: auto;
-          max-height: 400px;
-          object-fit: contain;
-        }
-      }
-      &:nth-child(even) {
-        background-color: #f5f5f5;
-        flex-direction: row-reverse;
-        .content {
-          padding-left: 1rem;
-          padding-right: 0;
-        }
-      }
-      .page-id-520 & {
-        &:nth-child(odd) {
-          .title {
-            color: $primary;
-          }
-        }
-        &:nth-child(2) {
-          img {
-            background-color: $primary;
-          }
-        }
-        &:last-child {
-          border-top: 20px solid $secondary;
+      &:hover {
+        background-color: transparent;
+        border-color: $primary;
+        i {
+          color: $secondary;
         }
       }
-      .page-id-564 & {
-        &:nth-child(even) {
-          flex-direction: row;
-        }
-        &:nth-child(odd) {
-          flex-direction: row-reverse;
-        }
+      &:first-child {
+        margin-left: 0;
       }
+    }
+  }
+  .aside {
+    margin-top: 1rem;
+    .portrait {
+      width: 100%;
+      max-width: 800px;
+      max-height: 600px;
+      object-fit: contain;
+    }
+  }
+  .return {
+    border: 2px solid $secondary;
+    background-color: $secondary;
+    color: $white;
+    display: inline-block;
+    margin-top: 3rem;
+    padding: 12px 2rem;
+    font-size: 18px;
+    text-transform: capitalize;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      transform: scale(0.95);
+      background-color: transparent;
+      color: $primary;
+    }
+  }
+  .video {
+    video {
+      width: 100%;
+      height: auto;
     }
   }
 }
@@ -922,6 +950,7 @@ Service Pages Section
 Partials Section
 ****************************/
 .hero {
+  background-color: $primary;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -941,6 +970,14 @@ Partials Section
     color: $white;
     font-size: 18px;
     margin-top: 1rem;
+  }
+  &.no-image {
+    min-height: 300px;
+  }
+  .single-team & {
+    .title {
+      font-weight: 300;
+    }
   }
 }
 
@@ -968,6 +1005,115 @@ Partials Section
   @media (max-width: 1030px) {
     .grid-col-3 {
       grid-template-columns: 100%;
+    }
+  }
+}
+
+.alternating {
+  margin-top: 2rem;
+  .alt-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem;
+    margin: 1rem 0;
+    .title {
+      color: $secondary;
+      margin: 0 0 1rem;
+    }
+    .content {
+      padding-right: 1rem;
+      padding-bottom: 1rem;
+    }
+    .aside {
+      width: 100%;
+      img {
+        width: 100%;
+        height: auto;
+        max-height: 486px;
+        object-fit: contain;
+        object-position: right;
+      }
+    }
+    &:nth-child(even) {
+      background-color: #f5f5f5;
+      flex-direction: row-reverse;
+      .content {
+        padding-left: 1rem;
+        padding-right: 0;
+      }
+      .aside {
+        img {
+          object-position: left;
+        }
+      }
+    }
+    .page-id-520 & {
+      &:nth-child(odd) {
+        .title {
+          color: $primary;
+        }
+      }
+      &:nth-child(2) {
+        img {
+          background-color: $primary;
+        }
+      }
+      &:last-child {
+        border-top: 20px solid $secondary;
+      }
+    }
+    .page-id-564 & {
+      &:nth-child(even) {
+        flex-direction: row;
+        .aside img {
+          object-position: right;
+        }
+      }
+      &:nth-child(odd) {
+        flex-direction: row-reverse;
+        .aside img {
+          object-position: left;
+        }
+      }
+    }
+  }
+}
+
+.values {
+  padding: 2rem 0;
+  border-bottom: 20px solid $secondary;
+  .grid-col-3 {
+    @media (max-width: 1240px) {
+      grid-template-columns: 50% 50%;
+    }
+    @media (max-width: 768px) {
+      grid-template-columns: 100%;
+    }
+  }
+
+  .title {
+    color: $secondary;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .value {
+    text-align: center;
+    padding: 1rem 2rem;
+    max-width: 600px;
+    margin: auto;
+    i {
+      font-size: 3rem;
+      color: #777777;
+    }
+    .value-title {
+      color: $primary;
+      font-size: 25px;
+    }
+    .text {
+      font-size: 17px;
+      color: #777777;
     }
   }
 }

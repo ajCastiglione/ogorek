@@ -72,17 +72,14 @@ Service Pages Section
       font-size: 45px;
     }
   }
-  .section-2 {
-    .alternating {
-      .alt-container {
-        .content {
-          width: 65%;
-        }
-        .aside {
-          width: 35%;
-        }
-      }
-    }
+}
+
+/****************************
+Singles Section
+****************************/
+.team {
+  .text {
+    font-size: 22px;
   }
 }
 
@@ -102,5 +99,16 @@ Partials Section
 .hero-large {
   .title {
     font-size: 50px;
+  }
+}
+
+.alternating {
+  .alt-container {
+    .content {
+      width: 65%;
+    }
+    .aside {
+      width: 35%;
+    }
   }
 }

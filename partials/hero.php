@@ -1,5 +1,5 @@
 <?php
-$hero = get_field('image');
+$hero = get_post_type() !== 'team' ? get_field('image') : null;
 $hero_title = get_field('title');
 $hero_content = get_field('hero_content');
 if (is_page(460)) {
@@ -9,8 +9,8 @@ if (is_page(460)) {
 }
 ?>
 <?php if (!is_page(460)) : ?>
-  <div class="hero" style="background-image:url(<?= $hero['url'] ?>)">
-    <h1 class="title"><?= $hero_title ?></h1>
+  <div class="hero <?php echo $hero ? '' : 'no-image' ?>" style="background-image:url(<?= $hero['url'] ?>)">
+    <h1 class="title"><?php echo $hero_title ? $hero_title : get_the_title(); ?></h1>
     <?php if (!empty($hero_content)) : ?>
       <div class="text">
         <?= $hero_content; ?>

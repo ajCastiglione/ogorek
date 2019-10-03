@@ -215,23 +215,45 @@ Service Pages Section
       }
     }
   }
-  .section-2 {
-    .alternating {
-      .alt-container {
-        padding: 3rem 5rem;
-        .content {
-          width: 50%;
-          padding-bottom: 0;
-        }
-        .aside {
-          width: 50%;
-          text-align: right;
-        }
-        &:nth-child(even) {
-          .aside {
-            text-align: left;
-          }
-        }
+}
+
+/****************************
+Singles Section
+****************************/
+.team {
+  .content {
+    padding-right: 1rem;
+  }
+  .title {
+    font-size: 45px;
+  }
+  .aside {
+    margin-top: 0;
+    padding-left: 2rem;
+  }
+}
+
+/****************************
+Partials Section
+****************************/
+.alternating {
+  .alt-container {
+    padding: 3rem 5rem;
+    .content {
+      width: 50%;
+      padding-bottom: 0;
+      padding-right: 3rem;
+    }
+    .aside {
+      width: 50%;
+      text-align: right;
+    }
+    &:nth-child(even) {
+      .content {
+        padding: 0 0 0 3rem;
+      }
+      .aside {
+        text-align: left;
       }
     }
   }
