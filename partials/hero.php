@@ -1,6 +1,6 @@
 <?php
 $hero = get_post_type() !== 'team' ? get_field('image') : null;
-$hero_title = get_field('title');
+$hero_title = !is_home() ? get_field('title') : get_field('title', get_option('page_for_posts'));
 $hero_content = get_field('hero_content');
 if (is_page(460)) {
   $hero_gallery = get_field('images');
