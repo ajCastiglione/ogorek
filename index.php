@@ -11,9 +11,33 @@
 
 			<!-- Header -->
 			<header class="blog-header">
-				<h1 class="title">Blog</h1>
+				<h1 class="title">Blogs</h1>
 				<?= get_search_form(); ?>
 			</header>
+
+			<!-- Categories -->
+			<div class="categories col-1">
+				<div class="category">
+					<a href="<?= site_url() . '/blog' ?>" class="link">
+						<i class="far fa-circle"></i>
+						<?= $cat->name ?>
+						<h3 class="cat-title">All</h3>
+					</a>
+				</div>
+				<?php
+				$cats = get_categories(array(
+					'parent' => 14
+				));
+				foreach ($cats as $cat) {
+					$icon = get_field('category_icon', $cat); ?>
+					<div class="category">
+						<a href="<?= site_url() . '/blog/' . $cat->slug ?>" class="link">
+							<?= $icon ?>
+							<h3 class="cat-title"><?= $cat->name ?></h3>
+						</a>
+					</div>
+				<?php } ?>
+			</div>
 
 			<!-- Content for blog page -->
 			<?= get_template_part('template-parts/content', 'posts'); ?>

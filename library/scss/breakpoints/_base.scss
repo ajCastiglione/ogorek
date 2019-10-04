@@ -1251,7 +1251,7 @@ Partials Section
 }
 
 .form-container {
-  max-width: 700px;
+  max-width: 600px;
   margin: auto;
   position: relative;
   padding: 0 1rem;
@@ -1397,6 +1397,36 @@ Blog Section
     text-align: center;
     color: $primary;
     font-size: 35px;
+  }
+}
+
+.blog {
+  .hero .title {
+    font-weight: 300;
+  }
+  .categories {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    .category {
+      width: 100%;
+      text-align: center;
+      padding: 1rem;
+      max-width: 280px;
+      a {
+        color: $secondary;
+      }
+      i {
+        color: #777777;
+        font-size: 45px;
+      }
+      .cat-title {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
   }
 }
 
