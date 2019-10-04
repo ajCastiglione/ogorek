@@ -23,3 +23,24 @@ POSTS & CONTENT STYLES
     clear: both;
   }
 } /* end .entry-content */
+
+/****************************
+Partials Section
+****************************/
+
+.form-container {
+  position: relative;
+  input {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  button {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    width: auto;
+    margin-top: 0;
+  }
+}
