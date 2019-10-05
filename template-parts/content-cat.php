@@ -1,5 +1,15 @@
+<?php
+$currentPage = get_query_var('paged');
+$args = array(
+  'category_name' => $post->post_name,
+  'paged' => $currentPage,
+  'posts_per_page' => 9
+);
+$query = new WP_Query($args);
+?>
+
 <div class="blog-posts grid-col-3">
-  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+  <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
       <article id="post-<?php the_ID(); ?>" <?php post_class('cf post-card'); ?> role="article">
 
         <header class="article-header">
@@ -50,3 +60,12 @@
 
   <?php endif; ?>
 </div>
+
+<nav class="pagination">
+  <?php
+  echo paginate_links(array(
+    'total' => $query->max_num_pages,
+    'type' => 'list'
+  ));
+  ?>
+</nav>

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id="content">
+<div id="content" class="blog">
 
 	<div id="inner-content" class="cf">
 
@@ -40,9 +40,8 @@
 			</div>
 
 			<!-- Content for blog page -->
-			<div class="blog-posts grid-col-3">
-				<?= get_template_part('template-parts/content', 'posts'); ?>
-			</div>
+
+			<?= is_home() ? get_template_part('template-parts/content', 'posts') : get_template_part('template-parts/content', 'cat'); ?>
 
 			<?php bones_page_navi(); ?>
 

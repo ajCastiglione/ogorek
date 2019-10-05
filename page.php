@@ -1,49 +1,60 @@
-<?php get_header(); ?>
+<?php
+if (wp_get_post_parent_id($post)) {
+	get_template_part('index');
+} else {
+	?>
 
-			<div id="content">
+	<?php get_header(); ?>
 
-				<div id="inner-content" class="wrap cf">
+	<div id="content">
 
-						<main id="main" class="col-xs-12 col-sm-8 col-lg-8 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+		<div id="inner-content" class="wrap cf">
 
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<main id="main" class="col-xs-12 col-sm-8 col-lg-8 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-								<header class="article-header">
+						<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-								    <h1 class="page-title"><?php
-									$msh_h1tag_data = get_option('msh_h1tag_data');
-									if ($msh_h1tag_data[$post->ID] != NULL){
-									echo $msh_h1tag_data[$post->ID];
-									}else{
-									the_title(); 
-									}
-									?></h1>
+							<header class="article-header">
 
-								</header> <?php // end article header ?>
+								<h1 class="page-title"><?php
+																							$msh_h1tag_data = get_option('msh_h1tag_data');
+																							if ($msh_h1tag_data[$post->ID] != NULL) {
+																								echo $msh_h1tag_data[$post->ID];
+																							} else {
+																								the_title();
+																							}
+																							?></h1>
 
-								<section class="entry-content cf" itemprop="articleBody">
-									<?php the_content(); ?>
-                                    
-								</section> <?php // end article section ?>
+							</header> <?php // end article header 
+															?>
 
-								<footer class="article-footer cf">
+							<section class="entry-content cf" itemprop="articleBody">
+								<?php the_content(); ?>
 
-								</footer>
+							</section> <?php // end article section 
+																?>
 
-								<?php comments_template(); ?>
+							<footer class="article-footer cf">
 
-							</article>
+							</footer>
 
-							<?php endwhile; endif; ?>
+							<?php comments_template(); ?>
 
-						</main>
+						</article>
 
-						<?php get_sidebar(); ?>
+				<?php endwhile;
+					endif; ?>
 
-				</div>
+			</main>
 
-			</div>
+			<?php get_sidebar(); ?>
 
-<?php get_footer(); ?>
+		</div>
+
+	</div>
+
+	<?php get_footer(); ?>
+
+<?php } ?>

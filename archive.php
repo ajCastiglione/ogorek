@@ -1,74 +1,56 @@
 <?php get_header(); ?>
 
-			<div id="content">
+<div id="content">
 
-				<div id="inner-content" class="wrap cf">
+	<div id="inner-content" class="cf">
 
-						<main id="main" class="m-all t-2of3 d-5of7 cf col-xs-12 col-sm-8 col-lg-8" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+		<main id="main" class="cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-							<?php
-							the_archive_title( '<h1 class="page-title">', '</h1>' );
-							the_archive_description( '<div class="taxonomy-description">', '</div>' );
-							?>
-							
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<!-- Hero -->
+			<?= get_template_part('partials/hero'); ?>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
+			<!-- Header -->
+			<header class="blog-header">
+				<h1 class="title">Blogs</h1>
+				<?= get_search_form(); ?>
+			</header>
 
-								<header class="entry-header article-header">
-
-									<h3 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-									<p class="byline entry-meta vcard">
-										<?php printf( __( 'Posted', 'bonestheme' ).' %1$s %2$s',
-                  							     /* the time the post was published */
-                  							     '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
-                       								/* the author of the post */
-                       								'<span class="by">'.__('by', 'bonestheme').'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
-                    							); ?>
-									</p>
-
-								</header>
-
-								<section class="entry-content cf">
-
-									<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
-
-									<?php the_excerpt(); ?>
-
-								</section>
-
-								<footer class="article-footer">
-
-								</footer>
-
-							</article>
-
-							<?php endwhile; ?>
-
-									<?php bones_page_navi(); ?>
-
-							<?php else : ?>
-
-									<article id="post-not-found" class="hentry cf">
-										<header class="article-header">
-											<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-										</header>
-										<section class="entry-content">
-											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the archive.php template.', 'bonestheme' ); ?></p>
-										</footer>
-									</article>
-
-							<?php endif; ?>
-
-						</main>
-
-					<?php get_sidebar(); ?>
-
+			<!-- Categories -->
+			<div class="categories col-1">
+				<div class="category">
+					<a href="<?= site_url() . '/blog' ?>" class="link">
+						<i class="far fa-circle"></i>
+						<?= $cat->name ?>
+						<h3 class="cat-title">All</h3>
+					</a>
 				</div>
-
+				<?php
+				$cats = get_categories(array(
+					'parent' => 14
+				));
+				foreach ($cats as $cat) {
+					$icon = get_field('category_icon', $cat); ?>
+					<div class="category">
+						<a href="<?= site_url() . '/blog/' . $cat->slug ?>" class="link">
+							<?= $icon ?>
+							<h3 class="cat-title"><?= $cat->name ?></h3>
+						</a>
+					</div>
+				<?php } ?>
 			</div>
+
+			<!-- Content for blog page -->
+			<div class="blog-posts grid-col-3">
+				<?= get_template_part('template-parts/content', 'posts'); ?>
+			</div>
+
+			<?php bones_page_navi(); ?>
+
+		</main>
+
+	</div>
+
+</div>
+
 
 <?php get_footer(); ?>
