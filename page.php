@@ -1,5 +1,5 @@
 <?php
-if (wp_get_post_parent_id($post)) {
+if (wp_get_post_parent_id($post) === 650 || wp_get_post_parent_id($post) === 1296 || $post->ID === 1296) {
 	get_template_part('index');
 } else {
 	?>
@@ -18,23 +18,14 @@ if (wp_get_post_parent_id($post)) {
 
 							<header class="article-header">
 
-								<h1 class="page-title"><?php
-																							$msh_h1tag_data = get_option('msh_h1tag_data');
-																							if ($msh_h1tag_data[$post->ID] != NULL) {
-																								echo $msh_h1tag_data[$post->ID];
-																							} else {
-																								the_title();
-																							}
-																							?></h1>
+								<h1 class="page-title"><?php the_title(); ?></h1>
 
-							</header> <?php // end article header 
-															?>
+							</header>
 
 							<section class="entry-content cf" itemprop="articleBody">
 								<?php the_content(); ?>
 
-							</section> <?php // end article section 
-																?>
+							</section>
 
 							<footer class="article-footer cf">
 

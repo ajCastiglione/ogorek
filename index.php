@@ -18,20 +18,23 @@
 			<!-- Categories -->
 			<div class="categories col-1">
 				<div class="category">
-					<a href="<?= site_url() . '/blog' ?>" class="link">
+					<a href="<?= site_url() . '/blog' ?>" class="link <?= is_home() || is_page(1296) ? 'active' : ''; ?>">
 						<i class="far fa-circle"></i>
 						<?= $cat->name ?>
 						<h3 class="cat-title">All</h3>
 					</a>
 				</div>
 				<?php
+				$id = $post->ID === 650 ? 14 : 15;
 				$cats = get_categories(array(
-					'parent' => 14
+					'parent' => $id,
+					'orderby' => 'menu_order'
 				));
+				$count = 0;
 				foreach ($cats as $cat) {
 					$icon = get_field('category_icon', $cat); ?>
 					<div class="category">
-						<a href="<?= site_url() . '/blog/' . $cat->slug ?>" class="link">
+						<a href="<?= site_url() . '/blog/' . $cat->slug ?>" class="link <?php if ($cat->slug === $post->post_name && !is_home()) echo 'active'; ?>">
 							<?= $icon ?>
 							<h3 class="cat-title"><?= $cat->name ?></h3>
 						</a>

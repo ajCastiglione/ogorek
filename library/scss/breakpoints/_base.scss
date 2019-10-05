@@ -1411,8 +1411,15 @@ Blog Section
       text-align: center;
       padding: 1rem;
       max-width: 280px;
-      a {
+      .link {
         color: $secondary;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: $black;
+        }
+        &.active {
+          color: $primary;
+        }
       }
       i {
         color: #777777;
@@ -1421,6 +1428,11 @@ Blog Section
       .cat-title {
         font-size: 20px;
         font-weight: bold;
+      }
+      &.main-cat {
+        .category .link:first-child {
+          color: $primary;
+        }
       }
     }
   }
