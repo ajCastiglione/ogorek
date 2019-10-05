@@ -40,11 +40,13 @@
 			</div>
 
 			<!-- Content for blog page -->
-			<?= get_template_part('template-parts/content', 'posts'); ?>
+			<div class="blog-posts grid-col-3">
+				<?= get_template_part('template-parts/content', 'posts'); ?>
+			</div>
+
+			<?php bones_page_navi(); ?>
 
 		</main>
-
-		<?php get_sidebar(); ?>
 
 	</div>
 

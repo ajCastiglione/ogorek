@@ -288,6 +288,26 @@ Blog Section
       width: 50%;
     }
   }
+
+  .post-card {
+    .featured-image {
+      min-height: 300px;
+      object-fit: cover;
+    }
+  }
+}
+
+// Page for blog posts - format.php
+.single-post {
+  .entry-content {
+    font-size: 20px;
+    .author {
+      width: 30%;
+    }
+    .text {
+      width: 70%;
+    }
+  }
 }
 
 /****************************

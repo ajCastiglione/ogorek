@@ -3,43 +3,35 @@
 
       <header class="article-header">
 
-        <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= the_title() ?>" class="featured-image">
+        <div class="featured-image-container">
+          <a href="<?= the_permalink() ?>" class="post-link">
+            <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= the_title() ?>" class="featured-image">
+            <span class="overlay"><i class="far fa-file-alt"></i></span>
+          </a>
+        </div>
 
         <h1 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-        <p class="byline entry-meta vcard">
+        <p class="byline entry-meta">
           <?php printf(
-                __('Posted', 'bonestheme') . ' %1$s %2$s',
+                __('', 'bonestheme') . ' %1$s %2$s',
                 /* the time the post was published */
                 '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
-                /* the author of the post */
-                '<span class="by">' . __('by', 'bonestheme') . '</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link(get_the_author_meta('ID')) . '</span>'
+                /* the categories of the post */
+                '<span class="by">' . __('|', 'bonestheme') . '</span> <span class="post-categories" itemprop="categories">' .  get_the_category_list(', ') . '</span>'
               ); ?>
         </p>
 
       </header>
 
-      <section class="entry-content cf">
-        <?php the_content(); ?>
+      <section class="excerpt-content cf">
+        <a href="<?= the_permalink() ?>" class="post-link">
+          <?php the_excerpt(); ?>
+        </a>
       </section>
-
-      <footer class="article-footer cf">
-        <p class="footer-comment-count">
-          <?php comments_number(__('<span>No</span> Comments', 'bonestheme'), __('<span>One</span> Comment', 'bonestheme'), __('<span>%</span> Comments', 'bonestheme')); ?>
-        </p>
-
-
-        <?php printf('<p class="footer-category">' . __('filed under', 'bonestheme') . ': %1$s</p>', get_the_category_list(', ')); ?>
-
-        <?php the_tags('<p class="footer-tags tags"><span class="tags-title">' . __('Tags:', 'bonestheme') . '</span> ', ', ', '</p>'); ?>
-
-
-      </footer>
 
     </article>
 
   <?php endwhile; ?>
-
-  <?php bones_page_navi(); ?>
 
 <?php else : ?>
 
@@ -51,7 +43,7 @@
       <p><?php _e('Uh Oh. Something is missing. Try double checking things.', 'bonestheme'); ?></p>
     </section>
     <footer class="article-footer">
-      <p><?php _e('This is the error message in the index.php template.', 'bonestheme'); ?></p>
+      <p><?php _e('Please try clearing your browser\'s cache and cookies if you believe this error should not be occuring.', 'bonestheme'); ?></p>
     </footer>
   </article>
 

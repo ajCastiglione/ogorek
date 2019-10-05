@@ -65,7 +65,8 @@ gulp.task("watch-scss", ["compile", "compile-login", "min-images"], () => {
   bs.init({
     proxy: "http://ogorek.local",
     injectChanges: true,
-    files: all
+    files: all,
+    codeSync: false
   });
   gulp.watch(scss, ["compile", "compile-login"]);
 });
