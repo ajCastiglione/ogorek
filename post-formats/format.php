@@ -22,20 +22,22 @@
   </header>
 
   <section class="entry-content cf" itemprop="articleBody">
-    <div class="author">
-      <?php $nn = get_the_author_meta('user_nicename'); ?>
-      <?php $a = new WP_Query(array('post_type' => 'team'));
-      while ($a->have_posts()) : $a->the_post();
-        $un = get_field('user_link')['user_nicename'];
-        if ($un === $nn) { ?>
+    <?php $nn = get_the_author_meta('user_nicename');
+    $found = false; ?>
+    <?php $a = new WP_Query(array('post_type' => 'team'));
+    while ($a->have_posts()) : $a->the_post();
+      $un = get_field('user_link')['user_nicename'];
+      if ($un === $nn) {
+        $found = true; ?>
+        <div class="author">
           <img src="<?= get_field('team_member_photo')['url'] ?>" alt="<?= the_title() ?>" class="portrait">
           <h2 class="name"><?= the_title() ?></h2>
           <a href="mailto:<?= get_field('email') ?>" class="email"><?= get_field('email') ?></a>
-      <?php }
-      endwhile;
-      wp_reset_query(); ?>
-    </div>
-    <div class="text">
+        </div>
+    <?php }
+    endwhile;
+    wp_reset_query(); ?>
+    <div class="text <?= $found ? '' : 'full-width' ?>">
       <?php
       the_content();
       ?>

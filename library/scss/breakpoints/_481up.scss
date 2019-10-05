@@ -44,3 +44,25 @@ Partials Section
     margin-top: 0;
   }
 }
+
+/****************************
+Internal Pages Section
+****************************/
+.page-template-default {
+  .hotlinks {
+    .hotlink {
+      width: 50%;
+      .link {
+        font-size: 18px;
+      }
+      &:first-child {
+        width: 100%;
+      }
+    }
+  }
+  .app-locations {
+    .app-dl {
+      margin: 0 3rem 0 0;
+    }
+  }
+}
