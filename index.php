@@ -25,7 +25,7 @@
 					</a>
 				</div>
 				<?php
-				$id = $post->ID === 650 ? 14 : 15;
+				$id = is_home() || wp_get_post_parent_id($post) === 650 ? 14 : 15;
 				$cats = get_categories(array(
 					'parent' => $id,
 					'orderby' => 'menu_order'
