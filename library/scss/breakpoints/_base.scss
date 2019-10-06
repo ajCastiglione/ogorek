@@ -244,6 +244,11 @@ Global Section
   padding: 0;
 }
 
+.aligncenter {
+  display: block;
+  margin: auto;
+}
+
 html {
   font-size: 100%;
 }
@@ -289,7 +294,7 @@ body {
 
 h2.title,
 h2.aside-title {
-  font-size: 35px;
+  font-size: 30px;
 }
 .content,
 .aside {
@@ -514,8 +519,7 @@ Home Page Section
       background-repeat: no-repeat;
       background-size: cover;
       background-position: top center;
-      min-height: 400px;
-      max-height: 400px;
+      min-height: 420px;
       position: relative;
       .slide-content {
         position: absolute;
@@ -838,7 +842,8 @@ Internal Pages Section
   .app-locations {
     border-top: 3px solid #f5f5f5;
     text-align: center;
-    padding: 0 1rem;
+    padding: 0 1rem 2rem;
+
     .sub-title {
       font-size: 35px;
       text-align: center;
@@ -858,6 +863,10 @@ Internal Pages Section
   .section-1 {
     background-color: #f5f5f5;
     padding: 2rem 0 4rem;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
     .content {
       .title {
         color: $primary;
@@ -869,6 +878,10 @@ Internal Pages Section
       }
       .aside-text {
         color: $black;
+        img {
+          max-width: 100%;
+          height: auto;
+        }
         li {
           color: $black;
           &:before {
@@ -1187,6 +1200,7 @@ Partials Section
     text-align: center;
     color: $white;
     margin: 0;
+    font-size: 45px;
   }
   .text {
     color: $white;
@@ -1263,6 +1277,9 @@ Partials Section
         }
       }
     }
+    &:last-child {
+      margin-bottom: 0;
+    }
     &:nth-child(even) {
       background-color: #f5f5f5;
       flex-direction: row-reverse;
@@ -1294,14 +1311,51 @@ Partials Section
     .page-id-564 & {
       &:nth-child(even) {
         flex-direction: row;
+        .content {
+          padding: 0 3rem 0 0;
+        }
         .aside img {
           object-position: right;
         }
       }
       &:nth-child(odd) {
         flex-direction: row-reverse;
+        .content {
+          padding: 0 0 0 3rem;
+        }
         .aside img {
           object-position: left;
+        }
+      }
+    }
+    .page-id-1771 & {
+      flex-direction: row-reverse;
+      hr {
+        background-color: $secondary;
+        height: 1px;
+        margin: 3rem 0;
+      }
+      &:nth-child(2) {
+        flex-direction: row;
+        .title,
+        h2 {
+          color: $primary;
+        }
+        img {
+          max-height: 100%;
+        }
+      }
+      a {
+        color: $white;
+        background-color: $secondary;
+        padding: 8px 2rem;
+        display: inline-block;
+        margin-top: 1rem;
+        border: 2px solid $secondary;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          background-color: transparent;
+          color: $secondary;
         }
       }
     }
@@ -1709,6 +1763,7 @@ Blog Section
     .author {
       width: 100%;
       text-align: center;
+      word-break: break-word;
       .portrait {
         border-radius: 100%;
         width: 100%;

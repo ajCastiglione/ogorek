@@ -118,6 +118,14 @@ Partials Section
     .aside {
       width: 35%;
     }
+    .page-id-1771 & {
+      &:nth-child(2) {
+        .title,
+        h2 {
+          font-size: 55px;
+        }
+      }
+    }
   }
 }
 

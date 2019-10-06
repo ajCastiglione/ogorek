@@ -8,7 +8,9 @@
             <div class="slide-text">
               <?= get_sub_field('content'); ?>
             </div>
-            <a href="<?= get_sub_field('button_link'); ?>" class="slide-link"><?= get_sub_field('button_text'); ?></a>
+            <div>
+              <a href="<?= get_sub_field('button_link'); ?>" class="slide-link"><?= get_sub_field('button_text'); ?></a>
+            </div>
           </div>
         </div>
     <?php endwhile;

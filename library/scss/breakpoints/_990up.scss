@@ -1,5 +1,5 @@
 /****************************
-Service Pages Section
+Internal Pages Section
 ****************************/
 .service {
   .section-2 {
@@ -16,6 +16,24 @@ Service Pages Section
       .item {
         margin-bottom: 4rem;
       }
+    }
+  }
+}
+
+/****************************
+Partials Section
+****************************/
+.alternating {
+  .alt-container {
+    padding: 3rem 5rem;
+    .content {
+      width: 50%;
+      padding-bottom: 0;
+      padding-right: 3rem;
+    }
+    .aside {
+      width: 50%;
+      text-align: right;
     }
   }
 }
