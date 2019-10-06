@@ -54,10 +54,12 @@
     }
   }
   .grid-col-3 {
-    grid-template-columns: repeat(2, 1fr);
-    .item:nth-child(3) {
-      grid-column-start: 1;
-      grid-column-end: 3;
+    .page-id-334 & {
+      grid-template-columns: repeat(2, 1fr);
+      .item:nth-child(3) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
     }
   }
 }
