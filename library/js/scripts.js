@@ -139,7 +139,9 @@ jQuery(document).ready(function($) {
   if (
     $("iframe").length > 0 &&
     !$("body").hasClass("home") &&
-    !$("body").hasClass("page-id-286")
+    !$("body").hasClass("page-id-286") &&
+    !$("body").hasClass("page-id-375") &&
+    !$("body").hasClass("page-id-2351")
   ) {
     addPlaceholder($);
     showVideo($);

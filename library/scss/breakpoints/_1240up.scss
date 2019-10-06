@@ -10,7 +10,7 @@ LAYOUT & GRID STYLES
 }
 
 /****************************
-Service Pages Section
+Internal Pages Section
 ****************************/
 .service {
   .section-2 {
@@ -18,6 +18,14 @@ Service Pages Section
       .item {
         max-width: 416px;
       }
+    }
+  }
+}
+
+.landing-page {
+  .page-content {
+    .aside-text {
+      flex-wrap: nowrap;
     }
   }
 }
