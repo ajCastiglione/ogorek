@@ -5,7 +5,7 @@
             $title = get_sub_field('title');
             $content = get_sub_field('content'); ?>
         <div class="item">
-          <?= $icon ?>
+          <img src="<?= $icon['url'] ?>" alt="">
           <h3 class="title"><?= $title ?></h3>
           <div class="content">
             <?= $content ?>
