@@ -11,7 +11,7 @@ $img = get_field('video_placeholder_img');  ?>
       </div>
     </div>
     <div class="video">
-      <iframe width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="yt-video" data-src="<?= $url; ?>"></iframe>
+      <iframe width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="yt-video" data-src="<?= $url; ?>" loading="lazy"></iframe>
       <div style="background-image:url(<?= $img['url']; ?>)" class="placeholder"></div>
     </div>
   </div>

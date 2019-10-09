@@ -5,6 +5,7 @@ function hasSubMenu($) {
 }
 
 function loadIframe() {
+  if (!jQuery("body").hasClass("home")) return;
   var vidDefer = document.getElementsByTagName("iframe");
   for (var i = 0; i < vidDefer.length; i++) {
     if (vidDefer[i].getAttribute("data-src")) {
@@ -88,7 +89,6 @@ jQuery(document).ready(function($) {
 
   if ($("body").hasClass("home")) {
     initSlider($);
-    window.onload = loadIframe;
   }
 
   if (
@@ -102,3 +102,5 @@ jQuery(document).ready(function($) {
     showVideo($);
   }
 }); /* end of as page load scripts */
+
+window.onload = loadIframe;
