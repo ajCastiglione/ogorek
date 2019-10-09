@@ -4,6 +4,15 @@ function hasSubMenu($) {
   item.append(arrow);
 }
 
+function loadIframe() {
+  var vidDefer = document.getElementsByTagName("iframe");
+  for (var i = 0; i < vidDefer.length; i++) {
+    if (vidDefer[i].getAttribute("data-src")) {
+      vidDefer[i].setAttribute("src", vidDefer[i].getAttribute("data-src"));
+    }
+  }
+}
+
 function initSlider($) {
   $(".owl-carousel").owlCarousel({
     items: 1,
@@ -78,7 +87,7 @@ jQuery(document).ready(function($) {
 
   if ($("body").hasClass("home")) {
     initSlider($);
-    $(window).trigger("resize");
+    loadIframe();
   }
 
   if (
