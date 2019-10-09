@@ -87,7 +87,7 @@ jQuery(document).ready(function($) {
 
   if ($("body").hasClass("home")) {
     initSlider($);
-    loadIframe();
+    window.onload = loadIframe;
   }
 
   if (
