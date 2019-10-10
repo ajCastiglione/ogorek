@@ -5,15 +5,13 @@ function hasSubMenu($) {
 }
 
 function loadIframe() {
-  setTimeout(function() {
-    if (!jQuery("body").hasClass("home")) return;
-    var vidDefer = document.getElementsByTagName("iframe");
-    for (var i = 0; i < vidDefer.length; i++) {
-      if (vidDefer[i].getAttribute("data-src")) {
-        vidDefer[i].setAttribute("src", vidDefer[i].getAttribute("data-src"));
-      }
+  if (!jQuery("body").hasClass("home")) return;
+  var vidDefer = document.getElementsByTagName("iframe");
+  for (var i = 0; i < vidDefer.length; i++) {
+    if (vidDefer[i].getAttribute("data-src")) {
+      vidDefer[i].setAttribute("src", vidDefer[i].getAttribute("data-src"));
     }
-  }, 3000);
+  }
 }
 
 function initSlider($) {
