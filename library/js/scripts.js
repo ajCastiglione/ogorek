@@ -97,3 +97,5 @@ jQuery(document).ready(function($) {
     showVideo($);
   }
 }); /* end of as page load scripts */
+
+window.onload = loadIframe;
