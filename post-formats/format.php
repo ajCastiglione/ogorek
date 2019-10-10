@@ -17,7 +17,7 @@
 
     </p>
 
-    <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= the_title() ?>" class="featured-image">
+    <img src="<?= get_the_post_thumbnail_url($post->ID, 'full') ?>" alt="<?= the_title() ?>" class="featured-image">
 
   </header>
 

@@ -5,13 +5,15 @@ function hasSubMenu($) {
 }
 
 function loadIframe() {
-  if (!jQuery("body").hasClass("home")) return;
-  var vidDefer = document.getElementsByTagName("iframe");
-  for (var i = 0; i < vidDefer.length; i++) {
-    if (vidDefer[i].getAttribute("data-src")) {
-      vidDefer[i].setAttribute("src", vidDefer[i].getAttribute("data-src"));
+  setTimeout(function() {
+    if (!jQuery("body").hasClass("home")) return;
+    var vidDefer = document.getElementsByTagName("iframe");
+    for (var i = 0; i < vidDefer.length; i++) {
+      if (vidDefer[i].getAttribute("data-src")) {
+        vidDefer[i].setAttribute("src", vidDefer[i].getAttribute("data-src"));
+      }
     }
-  }
+  }, 3000);
 }
 
 function initSlider($) {
@@ -23,7 +25,6 @@ function initSlider($) {
     autoplay: true,
     autoplayTimeout: 7500,
     autoplayHoverPause: true,
-    lazyLoad: true,
     navText: [
       '<i class="fas fa-chevron-left slick-prev"></i>',
       '<i class="fas fa-chevron-right slick-next"></i>'
@@ -77,12 +78,6 @@ function smoothScroll($) {
  * Put all your regular jQuery in here.
  */
 jQuery(document).ready(function($) {
-  /*
-   * Let's fire off the gravatar function
-   * You can remove this if you don't need it
-   */
-  // loadGravatars();
-
   hasSubMenu($);
   smoothScroll($);
   showVideo($);
@@ -102,5 +97,3 @@ jQuery(document).ready(function($) {
     showVideo($);
   }
 }); /* end of as page load scripts */
-
-window.onload = loadIframe;
