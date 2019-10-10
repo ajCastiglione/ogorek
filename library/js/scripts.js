@@ -6,14 +6,12 @@ function hasSubMenu($) {
 
 function loadIframe() {
   if (!jQuery("body").hasClass("home")) return;
-  setTimeout(function() {
-    var vidDefer = document.getElementsByTagName("iframe");
-    for (var i = 0; i < vidDefer.length; i++) {
-      if (vidDefer[i].getAttribute("data-src")) {
-        vidDefer[i].setAttribute("src", vidDefer[i].getAttribute("data-src"));
-      }
+  var vidDefer = document.getElementsByTagName("iframe");
+  for (var i = 0; i < vidDefer.length; i++) {
+    if (vidDefer[i].getAttribute("data-src")) {
+      vidDefer[i].setAttribute("src", vidDefer[i].getAttribute("data-src"));
     }
-  }, 3000);
+  }
 }
 
 function initSlider($) {
@@ -79,6 +77,12 @@ function smoothScroll($) {
  * Put all your regular jQuery in here.
  */
 jQuery(document).ready(function($) {
+  /*
+   * Let's fire off the gravatar function
+   * You can remove this if you don't need it
+   */
+  // loadGravatars();
+
   hasSubMenu($);
   smoothScroll($);
   showVideo($);
