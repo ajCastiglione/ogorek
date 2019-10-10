@@ -23,6 +23,7 @@ function initSlider($) {
     autoplay: true,
     autoplayTimeout: 7500,
     autoplayHoverPause: true,
+    lazyload: true,
     navText: [
       '<i class="fas fa-chevron-left slick-prev"></i>',
       '<i class="fas fa-chevron-right slick-next"></i>'
