@@ -54,6 +54,15 @@
 
 	<?php // drop Google Analytics Here 
 	?>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-45852794-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-45852794-1');
+	</script>
 	<?php // end analytics 
 	?>
 
