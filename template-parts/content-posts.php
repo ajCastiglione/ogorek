@@ -1,17 +1,18 @@
 <div class="blog-posts grid-col-3">
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+      <?php $link = get_field('external_link', $post->ID) ? get_field('link', $post->ID) : get_permalink(); ?>
       <article id="post-<?php the_ID(); ?>" <?php post_class('cf post-card'); ?> role="article">
 
         <header class="article-header">
 
           <div class="featured-image-container">
-            <a href="<?= the_permalink() ?>" class="post-link">
+            <a href="<?= $link ?>" class="post-link">
               <img src="<?= get_the_post_thumbnail_url($post->ID, 'full') ?>" alt="<?= the_title() ?>" class="featured-image">
               <span class="overlay"><i class="far fa-file-alt"></i></span>
             </a>
           </div>
 
-          <h1 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+          <h1 class="h2 entry-title"><a href="<?= $link ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
           <p class="byline entry-meta">
             <?php printf(
                   __('', 'bonestheme') . ' %1$s %2$s',
