@@ -26,7 +26,7 @@
         </header>
 
         <section class="excerpt-content cf">
-          <a href="<?= the_permalink() ?>" class="post-link">
+          <a href="<?= $link ?>" class="post-link">
             <?php the_excerpt(); ?>
           </a>
         </section>
