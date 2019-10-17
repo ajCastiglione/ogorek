@@ -11,7 +11,9 @@
 
 			<!-- Header -->
 			<header class="blog-header">
-				<h1 class="title">Blogs</h1>
+				<?php if (is_home()) : ?>
+					<h1 class="title">Blogs</h1>
+				<?php endif; ?>
 				<?= get_search_form(); ?>
 			</header>
 
