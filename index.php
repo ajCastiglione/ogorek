@@ -11,9 +11,7 @@
 
 			<!-- Header -->
 			<header class="blog-header">
-				<?php if (is_home()) : ?>
-					<h1 class="title">Blogs</h1>
-				<?php endif; ?>
+				<h1 class="title"><?= is_home() || wp_get_post_parent_id($post) ? 'Blogs' : 'News Articles'; ?></h1>
 				<?= get_search_form(); ?>
 			</header>
 
