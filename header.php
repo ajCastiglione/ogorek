@@ -57,11 +57,14 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-45852794-1"></script>
 	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
+		window.dataLayer = window.dataLayer || [];
 
-	gtag('config', 'UA-45852794-1');
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-45852794-1');
 	</script>
 	<?php // end analytics 
 	?>
@@ -99,7 +102,7 @@
 
 				<div class="header-bottom grid-3070">
 					<div class="header-left">
-						<a href="<?= home_url(); ?>" rel="nofollow">
+						<a href="<?= home_url(); ?>">
 							<img src="<?= get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
 						</a>
 					</div>
