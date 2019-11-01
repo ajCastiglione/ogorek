@@ -2,8 +2,7 @@
 $args = array(
   'post_type' => 'team',
   'posts_per_page' => -1,
-  'orderby' => "date",
-  'order' => 'ASC'
+  'orderby' => "menu_order"
 );
 $title = get_field('team_title');
 $query = new WP_Query($args);
