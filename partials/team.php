@@ -5,12 +5,13 @@ $args = array(
   'orderby' => "menu_order"
 );
 $title = get_field('team_title');
+$per_row = get_field('per_row');
 $query = new WP_Query($args);
 ?>
 
 <div id="team" class="team-members">
   <h2 class="title"><?= $title ?></h2>
-  <div class="team-grid col-1">
+  <div class="team-grid col-1 <?= $per_row ?>">
     <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
         <?php
             $img = get_field('team_member_photo');

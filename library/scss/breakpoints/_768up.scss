@@ -279,12 +279,8 @@ Partials Section
 }
 
 // This is Team.php - have a CPT with the name Team already
-.team-members {
-  .team-grid {
-    .member {
-      width: 50%;
-    }
-  }
+.team-members.grid-col-3 {
+  grid-template-columns: 50% 50%;
 }
 
 /****************************
