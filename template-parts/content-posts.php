@@ -27,7 +27,10 @@
 
         <section class="excerpt-content cf">
           <a href="<?= $link ?>" class="post-link">
-            <?php the_excerpt(); ?>
+            <?php
+                $meta = get_post_meta(get_the_ID(), '_yoast_wpseo_metadesc', true);
+                echo !empty($meta) ? $meta : the_excerpt();
+                ?>
           </a>
         </section>
 
