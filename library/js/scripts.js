@@ -60,7 +60,6 @@ function smoothScroll($) {
     ) {
       e.preventDefault();
       let target = $(this.hash);
-      console.log(target);
 
       $("html, body").animate(
         {
