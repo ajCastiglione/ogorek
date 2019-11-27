@@ -67,9 +67,11 @@ $query = new WP_Query($args);
 
 <nav class="pagination">
   <?php
-  echo paginate_links(array(
+  $links = paginate_links(array(
     'total' => $query->max_num_pages,
     'type' => 'list'
   ));
+  $links = str_replace('<a ', '<a rel="canonical" ', $links);
+  echo $links;
   ?>
 </nav>
