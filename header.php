@@ -24,18 +24,19 @@
 	<meta name="MobileOptimized" content="320">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) 
+	<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/)
+	$siteUrl = site_url();
 	?>
-	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-touch-icon.png">
-	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?= $siteUrl ?>/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?= $siteUrl ?>/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?= $siteUrl ?>/favicon-16x16.png">
+	<link rel="manifest" href="<?= $siteUrl ?>/site.webmanifest">
+	<link rel="mask-icon" href="<?= $siteUrl ?>/safari-pinned-tab.svg" color="#5bbad5">
 	<!--[if IE]>
 			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 		<![endif]-->
-	<?php // or, set /favicon.ico for IE10 win 
-	?>
-	<meta name="msapplication-TileColor" content="#f01d4f">
-	<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
-	<meta name="theme-color" content="#121212">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="theme-color" content="#ffffff">
 
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
