@@ -19,7 +19,7 @@ if (wp_get_post_parent_id($post) === 650 || wp_get_post_parent_id($post) === 129
 							<?= get_template_part('partials/hero'); ?>
 
 							<section class="entry-content col-1 cf" itemprop="articleBody">
-								<?php if (have_rows('values')) : echo '<div class="hotlinks">';
+								<?php if (have_rows('values') && !is_page(3595)) : echo '<div class="hotlinks">';
 												while (have_rows('values')) : the_row(); ?>
 										<div class="hotlink">
 											<a href="<?= get_sub_field('link') ?>" class="link">
@@ -31,6 +31,19 @@ if (wp_get_post_parent_id($post) === 650 || wp_get_post_parent_id($post) === 129
 												echo '</div>';
 											endif; ?>
 								<?php the_content(); ?>
+
+								<?php if (have_rows('values') && is_page(3595)) : echo '<div class="hotlinks hotlinks-trust-solution">';
+												while (have_rows('values')) : the_row(); ?>
+										<div class="hotlink">
+											<a href="<?= get_sub_field('link') ?>" class="link">
+												<img src="<?= get_sub_field('icon')['url'] ?>" alt="Icon" class="icon">
+												<span><?= get_sub_field('title') ?></span>
+											</a>
+										</div>
+								<?php endwhile;
+												echo '</div>';
+											endif; ?>
+
 							</section>
 
 							<?php if (have_rows('store_locations')) : echo '<div class="app-locations"><h2 class="sub-title">' . get_field('app_title') . '</h2>';
