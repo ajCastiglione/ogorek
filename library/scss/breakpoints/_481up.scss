@@ -60,6 +60,12 @@ Internal Pages Section
       }
     }
   }
+  .hotlinks-trust-solution {
+    .hotlink,
+    .hotlink:first-child {
+      width: 50%;
+    }
+  }
   .app-locations {
     .app-dl {
       margin: 0 3rem 0 0;

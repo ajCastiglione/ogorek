@@ -235,6 +235,26 @@ Internal Pages Section
     }
   }
 }
+
+.page-template-default {
+  .hotlinks {
+    .hotlink {
+      width: 50%;
+      .link {
+        font-size: 18px;
+      }
+      &:first-child {
+        width: 100%;
+      }
+    }
+  }
+  .hotlinks-trust-solution {
+    .hotlink,
+    .hotlink:first-child {
+      width: 25%;
+    }
+  }
+}
 /****************************
 Singles Section
 ****************************/
