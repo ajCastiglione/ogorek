@@ -63,7 +63,7 @@ gulp.task("min-images", () => {
 // Watch all files for compiling
 gulp.task("watch-scss", ["compile", "compile-login", "min-images"], () => {
   bs.init({
-    proxy: "http://ogorek.local",
+    proxy: "http://ogorek.loc",
     injectChanges: true,
     files: all
   });

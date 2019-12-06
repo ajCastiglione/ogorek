@@ -455,7 +455,6 @@ NAVIGATION STYLES
       > a {
         background-color: $secondary;
         color: $white;
-        border-radius: 30px;
         transition: all 0.3s ease-in-out;
         &:hover {
           background-color: lighten($secondary, 10%);
@@ -473,6 +472,17 @@ NAVIGATION STYLES
       }
       > a > i {
         padding-left: 8px;
+      }
+    }
+    &.trust-solution {
+      > a {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+    &.trust-solution.current-menu-item {
+      > a {
+        background-color: lighten($primary, 10%);
       }
     }
     ul.sub-menu,
