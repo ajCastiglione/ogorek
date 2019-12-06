@@ -478,6 +478,10 @@ NAVIGATION STYLES
       > a {
         background-color: $primary;
         color: $white;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          background-color: lighten($primary, 10%);
+        }
       }
     }
     &.trust-solution.current-menu-item {
