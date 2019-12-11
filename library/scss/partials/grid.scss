@@ -112,3 +112,15 @@
     }
   }
 }
+
+@media (min-width: 1180px) and (max-width: 1333px) {
+  .header-bottom.grid-3070 {
+    grid-template-columns: 20% 80%;
+  }
+}
+
+@media (max-width: 1180px) {
+  .header-bottom.grid-3070 {
+    grid-template-columns: 100% 0;
+  }
+}

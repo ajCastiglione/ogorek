@@ -427,6 +427,11 @@ HeaderSection
     width: 100%;
     max-width: 300px;
   }
+  .header-left {
+    @media (max-width: 1180px) {
+      text-align: center;
+    }
+  }
 }
 
 /*********************
