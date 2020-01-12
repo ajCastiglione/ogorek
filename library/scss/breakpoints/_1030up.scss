@@ -98,6 +98,11 @@ Singles Section
     font-size: 22px;
   }
 }
+.single-attorneys {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 /****************************
 Partials Section
@@ -167,6 +172,18 @@ Blog Section
   .categories {
     .category {
       width: 25%;
+    }
+  }
+}
+
+/****************************
+Custom Post Types Section
+****************************/
+
+.page-template-page-secured {
+  .law-firm {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }

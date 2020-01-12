@@ -293,6 +293,12 @@ Singles Section
   }
 }
 
+.single-attorneys {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /****************************
 Partials Section
 ****************************/
@@ -357,6 +363,18 @@ Blog Section
     }
     .text {
       width: 70%;
+    }
+  }
+}
+
+/****************************
+Custom Post Types Section
+****************************/
+
+.page-template-page-secured {
+  .law-firm {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }

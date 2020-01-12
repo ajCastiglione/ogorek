@@ -214,4 +214,11 @@ add_action('wp_enqueue_scripts', 'bones_fonts');
 /*Adds gravity forms field title visibilty: hidden for use of placeholders only. */
 add_filter('gform_enable_field_label_visibility_settings', '__return_true');
 
+/************* PROTECTED PAGES *********************/
+add_filter('protected_title_format', 'remove_protected_text');
+function remove_protected_text()
+{
+  return __('%s');
+}
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>
