@@ -18,6 +18,8 @@
 
 						<?= get_template_part('partials/home/banner'); ?>
 
+						<?= get_template_part('partials/home/popup'); ?>
+
 						<?= get_template_part('partials/home/section-2'); ?>
 
 						<?= get_template_part('partials/home/section-3'); ?>
