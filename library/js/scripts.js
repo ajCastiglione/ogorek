@@ -44,9 +44,9 @@ function addPlaceholder($) {
 
 function showVideo($) {
   let placeholder = $(".placeholder");
-  placeholder.on("click", e => {
+  placeholder.on("click", function(e) {
     placeholder.addClass("fadeOut");
-    setTimeout(() => {
+    setTimeout(function() {
       placeholder.remove();
     }, 700);
   });
@@ -61,7 +61,7 @@ function popup($) {
     body.addClass("popup-active");
   }, 1500);
 
-  close.on("click", e => {
+  close.on("click", function(e) {
     e.preventDefault();
     modal.removeClass("active");
     body.removeClass("popup-active");
@@ -70,7 +70,7 @@ function popup($) {
     }, 1200);
   });
 
-  body.on("click", e => {
+  body.on("click", function(e) {
     if (!$(e.target).closest(".inner-popup").length) {
       modal.removeClass("active");
       body.removeClass("popup-active");
