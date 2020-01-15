@@ -24,7 +24,8 @@ gulp.task("compile", () => {
       postcss([
         autoprefixer({
           browsers: ["last 2 versions"],
-          cascade: false
+          cascade: false,
+          grid: true
         })
       ])
     )
