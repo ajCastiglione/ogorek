@@ -106,14 +106,12 @@ function smoothScroll($) {
  * Put all your regular jQuery in here.
  */
 jQuery(document).ready(function($) {
-  console.log("loading...");
   hasSubMenu($);
   smoothScroll($);
   showVideo($);
 
   if ($("body").hasClass("home")) {
     initSlider($);
-    // popup($);
   }
 
   if (
