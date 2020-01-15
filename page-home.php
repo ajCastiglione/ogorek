@@ -16,7 +16,8 @@
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-						<?= get_template_part('partials/home/banner'); ?>
+						<?php # get_template_part('partials/home/banner'); 
+						?>
 
 						<?= get_template_part('partials/home/popup'); ?>
 
