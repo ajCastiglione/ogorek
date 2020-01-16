@@ -19,7 +19,7 @@
 						<?php get_template_part('partials/hero') ?>
 
 						<section class="entry-content large-wrapper cf">
-							<h2 class="subtitle">Forms: </h2>
+							<h2 class="subtitle">Trusts: </h2>
 							<div class="grid">
 								<?php if (have_rows('forms')) : while (have_rows('forms')) : the_row(); ?>
 										<div class="form">
