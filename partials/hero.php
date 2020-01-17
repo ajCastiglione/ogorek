@@ -19,12 +19,11 @@ if (is_page(460)) {
 ?>
 
 <?php if (get_page_template_slug($post->ID) == 'page-secured.php') : ?>
-  <div class="hero <?php echo $hero ? '' : 'no-image' ?>" style="background-image:url(<?= $hero['url'] ?>)">
+  <div class="hero <?php echo $hero ? '' : 'no-image law-firm-hero' ?>" style="background-image:url(<?= $hero['url'] ?>)">
     <?php !empty(get_field('law_firm_logo')) ? $hero_title = get_field('law_firm_logo') : $hero_title = get_the_title();
     $ogorek_logo = get_field('logo', 'options'); ?>
     <div class="split-logo">
-      <img src="<?= $ogorek_logo ?>" alt="Ogorek Wealth Management">
-      <span>|</span>
+      <img src="<?= $ogorek_logo['url'] ?>" alt="Ogorek Wealth Management" class="logo">
       <h1 class="title"><?= $hero_title ?></h1>
     </div>
   </div>

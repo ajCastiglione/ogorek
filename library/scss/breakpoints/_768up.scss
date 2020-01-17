@@ -372,6 +372,24 @@ Custom Post Types Section
 ****************************/
 
 .page-template-page-secured {
+  .law-firm-hero {
+    .split-logo {
+      .title {
+        width: auto;
+        margin-left: 20px;
+        padding-left: 20px;
+        margin-top: 0;
+        padding-top: 0;
+        &:after {
+          width: 3px;
+          height: 100%;
+          left: 0;
+          top: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
   .law-firm {
     .grid {
       grid-template-columns: repeat(2, 1fr);
