@@ -99,6 +99,9 @@ Singles Section
   }
 }
 .single-attorneys {
+  .layout-grid {
+    grid-template-columns: 3fr 1fr;
+  }
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
