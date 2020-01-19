@@ -2012,10 +2012,12 @@ Page Template Section
       padding: 0.5rem 2rem;
       border: 2px solid $secondary;
       background-color: $secondary;
+      color: $white;
       text-transform: capitalize;
       transition: all 0.4s ease;
       &:hover {
         background-color: transparent;
+        color: $black;
       }
     }
   }
