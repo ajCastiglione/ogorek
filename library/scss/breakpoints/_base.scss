@@ -2003,6 +2003,25 @@ Blog Section
 }
 
 /****************************
+Page Template Section
+****************************/
+.page-template-page-service {
+  .content {
+    a {
+      display: inline-block;
+      padding: 0.5rem 2rem;
+      border: 2px solid $secondary;
+      background-color: $secondary;
+      text-transform: capitalize;
+      transition: all 0.4s ease;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+/****************************
 Custom Post Types Section
 ****************************/
 
