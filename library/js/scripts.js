@@ -102,6 +102,21 @@ function smoothScroll($) {
   });
 }
 
+function newsletterSignup($) {
+  jQuery(document).on("gform_confirmation_loaded", function(event, formId) {
+    // code to be trigger when confirmation page is loaded
+    setTimeout(function() {
+      let body = $("body");
+      let modal = $(".popup");
+      modal.removeClass("active");
+      body.removeClass("popup-active");
+      setTimeout(function() {
+        modal.remove();
+      }, 1200);
+    }, 3500);
+  });
+}
+
 /*
  * Put all your regular jQuery in here.
  */
@@ -109,6 +124,7 @@ jQuery(document).ready(function($) {
   hasSubMenu($);
   smoothScroll($);
   showVideo($);
+  newsletterSignup($);
 
   if ($("body").hasClass("home")) {
     initSlider($);

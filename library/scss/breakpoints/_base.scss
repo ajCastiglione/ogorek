@@ -917,16 +917,27 @@ Home Page Section
         text-align: center;
         font-size: 18px;
       }
-      #mc4wp-form-1 {
-        .field-group {
+      #gform_wrapper_4 {
+        .gform_body {
+          li {
+            padding-right: 0;
+            margin-right: 8px;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
           input {
             border: 2px solid $primary;
+            width: 100%;
             transition: all 0.4s ease;
             &:hover,
             &:focus {
               border-color: $secondary;
               background-color: $white;
             }
+          }
+          li.hide-field {
+            display: none;
           }
         }
         input[type="submit"] {
