@@ -90,6 +90,25 @@ Internal Pages Section
   }
 }
 
+// Landing pages
+.page-template-page-landing-marketing {
+  // hero
+  .hero-landing-page {
+    .right {
+      padding: 1rem 3rem;
+      .title {
+        font-size: 60px;
+      }
+      .subtitle {
+        font-size: 45px;
+      }
+      .form {
+        max-width: 80%;
+      }
+    }
+  }
+}
+
 /****************************
 Singles Section
 ****************************/

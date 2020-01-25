@@ -277,6 +277,42 @@ Internal Pages Section
     }
   }
 }
+
+// Landing pages
+.page-template-page-landing-marketing {
+  // hero
+  .hero-landing-page {
+    height: 100vh;
+    .grid-50 {
+      height: 100%;
+    }
+
+    .right {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+      padding: 1rem 2rem;
+      .title {
+        font-size: 45px;
+      }
+      .subtitle {
+        font-size: 35px;
+      }
+      .form {
+        max-width: 90%;
+        margin: 1rem 0;
+        .form-title {
+          font-size: 30px;
+        }
+      }
+      .learn-more {
+        display: flex;
+      }
+    }
+  }
+}
+
 /****************************
 Singles Section
 ****************************/
