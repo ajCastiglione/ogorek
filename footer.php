@@ -5,6 +5,8 @@ $logos = get_field('footer_logos', 'options');
 $disclosures = get_field('disclosures', 'options'); ?>
 <footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
+	<?= get_template_part('template-parts/footer', 'newsletter') ?>
+
 	<div id="inner-footer" class="cf col-1">
 
 		<div class="content">

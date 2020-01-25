@@ -401,6 +401,37 @@ Custom Post Types Section
 }
 
 /****************************
+Footer Section
+****************************/
+.footer {
+  // Newsletter in the footer
+  .newsletter-section {
+    #gform_wrapper_4 {
+      // form fields
+      .gform_body {
+        #gform_fields_4 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          li {
+            padding-right: 10px;
+            &:last-child {
+              padding-right: 0;
+            }
+          }
+        }
+      }
+      // submit button
+      .gform_footer {
+        .gform_button {
+          max-width: 250px;
+        }
+      }
+    }
+  }
+}
+
+/****************************
 Sidebar Section
 ****************************/
 

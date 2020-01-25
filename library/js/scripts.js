@@ -56,6 +56,12 @@ function popup($) {
   let body = $("body");
   let modal = $(".popup");
   let close = $(".popup .close");
+  // if popup was closed this session, don't show it again
+  if (sessionStorage.popShown) {
+    modal.remove();
+    return;
+  }
+  // show popup
   setTimeout(function() {
     modal.addClass("active");
     body.addClass("popup-active");
@@ -65,6 +71,7 @@ function popup($) {
     e.preventDefault();
     modal.removeClass("active");
     body.removeClass("popup-active");
+    sessionStorage.popShown = true;
     setTimeout(function() {
       modal.remove();
     }, 1200);
@@ -74,6 +81,7 @@ function popup($) {
     if (!$(e.target).closest(".inner-popup").length) {
       modal.removeClass("active");
       body.removeClass("popup-active");
+      sessionStorage.popShown = true;
       setTimeout(function() {
         modal.remove();
       }, 1200);

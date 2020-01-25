@@ -1784,6 +1784,48 @@ Footer Section
   .logos {
     max-width: 100%;
   }
+  // Newsletter in the footer
+  .newsletter-section {
+    .title {
+      margin: 1rem 0;
+      color: $white;
+    }
+    #gform_wrapper_4 {
+      // form fields
+      .gform_body {
+        margin-top: 0;
+        #gform_fields_4 {
+          li {
+            width: 100%;
+            padding: 0;
+            margin-top: 0;
+          }
+          input {
+            width: 100%;
+            margin: 0;
+          }
+          li.hide-field {
+            display: none;
+          }
+        }
+      }
+      // submit button
+      .gform_footer {
+        text-align: center;
+        margin-top: 10px;
+        padding: 0;
+        .gform_button {
+          width: 100%;
+          padding: 0.5rem 0;
+          height: 95%;
+          font-size: 16px;
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
 }
 
 /****************************
