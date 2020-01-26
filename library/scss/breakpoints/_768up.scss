@@ -286,12 +286,21 @@ Internal Pages Section
     .grid-50 {
       height: 100%;
     }
+    .left {
+      .logo {
+        max-width: 350px;
+      }
+      &:before {
+        height: 120px;
+      }
+    }
 
     .right {
       display: flex;
       justify-content: center;
       flex-direction: column;
       flex-wrap: wrap;
+      text-align: left;
       padding: 1rem 2rem;
       .title {
         font-size: 45px;
@@ -299,12 +308,36 @@ Internal Pages Section
       .subtitle {
         font-size: 35px;
       }
+      .get-started {
+        display: none;
+      }
       .form {
+        opacity: 1;
+        height: auto;
         max-width: 90%;
         margin: 1rem 0;
+        .close {
+          display: none;
+        }
         .form-title {
           font-size: 30px;
         }
+        .gform_footer {
+          .gform_button {
+            padding: 1rem 0.5rem;
+          }
+        }
+      }
+      .popup-container {
+        position: static;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        margin: 0;
       }
       .learn-more {
         display: flex;
