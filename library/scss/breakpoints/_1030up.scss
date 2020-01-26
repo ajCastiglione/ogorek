@@ -107,6 +107,21 @@ Internal Pages Section
       }
     }
   }
+  // Page content
+  .landing-page-section-content {
+    .title {
+      font-size: 45px;
+    }
+    .content {
+      font-size: 17px;
+    }
+
+    &.s2 {
+      .repeater {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
 }
 
 /****************************

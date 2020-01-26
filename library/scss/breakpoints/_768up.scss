@@ -344,6 +344,43 @@ Internal Pages Section
       }
     }
   }
+  // Page content
+  .landing-page-section-content {
+    .grid-50 {
+      align-items: center;
+    }
+    .title {
+      font-size: 35px;
+    }
+    .content {
+      font-size: 16px;
+    }
+    &.s2 {
+      text-align: center;
+      .subtitle {
+        font-size: 17px;
+      }
+      .repeater {
+        .value {
+          padding: 1rem;
+          .icon {
+            font-size: 40px;
+          }
+        }
+      }
+    }
+    &.s4 {
+      .repeater {
+        grid-template-columns: 1fr 1fr;
+        .cta {
+          margin-top: 2rem;
+        }
+      }
+      .map {
+        min-height: 450px;
+      }
+    }
+  }
 }
 
 /****************************
@@ -475,6 +512,7 @@ Footer Section
 .footer {
   // Newsletter in the footer
   .newsletter-section {
+    overflow: hidden;
     #gform_wrapper_4 {
       // form fields
       .gform_body {
