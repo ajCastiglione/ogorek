@@ -381,6 +381,23 @@ Internal Pages Section
       }
     }
   }
+  .landing-footer {
+    .lower-footer {
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      p {
+        margin: 0;
+      }
+      .copyright {
+        padding-right: 1rem;
+        text-align: left;
+      }
+      .disclosures {
+        text-align: right;
+        padding-left: 1rem;
+      }
+    }
+  }
 }
 
 /****************************

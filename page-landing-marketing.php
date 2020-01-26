@@ -31,5 +31,5 @@
 
 </div>
 
-
+<?= get_template_part('template-parts/landing', 'footer') ?>
 <?php get_footer(); ?>
