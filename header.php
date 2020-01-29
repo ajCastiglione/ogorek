@@ -112,7 +112,7 @@
 								<i class="fas fa-phone"></i> <?= trim(get_field('phone_number', 'options')); ?>
 							</a>
 							<a href="mailto:<?= trim(get_field('email_address', 'options')); ?>">
-								<i class="fas fa-envelope"></i> <?= is_page(3595) ? 'trust@ogorek.com' : trim(get_field('email_address', 'options')); ?>
+								<i class="fas fa-envelope"></i> <?= is_page(3595) || is_page(286) ? 'trust@ogorek.com' : trim(get_field('email_address', 'options')); ?>
 							</a>
 						</div>
 						<div class="socials">
