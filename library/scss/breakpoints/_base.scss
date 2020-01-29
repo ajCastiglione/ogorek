@@ -1394,9 +1394,22 @@ Internal Pages Section
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 20px;
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          // Targets IE10,11
+          display: flex;
+          flex-wrap: wrap;
+          align-items: stretch;
+          justify-content: center;
+        }
         .value {
           border: 2px dotted $primary;
           padding: 0.5rem;
+          @media (-ms-high-contrast: none),
+            (-ms-high-contrast: active) and (min-width: 1030px) {
+            // Targets IE10,11
+            width: 23%;
+            margin: 0 1%;
+          }
           .icon {
             color: $primary;
             font-size: 30px;
@@ -1441,6 +1454,30 @@ Internal Pages Section
         grid-gap: 20px;
         max-width: 500px;
         margin: 1rem auto;
+        @media (min-width: 768px) and (-ms-high-contrast: none),
+          (-ms-high-contrast: active) {
+          .cta {
+            margin: 0 10px;
+            &:first-child {
+              grid-column: 1;
+            }
+            &:last-child {
+              grid-column: 2;
+            }
+          }
+        }
+        @media (max-width: 768px) and (-ms-high-contrast: none),
+          (-ms-high-contrast: active) {
+          .cta {
+            margin: 10px 0;
+            &:first-child {
+              grid-row: 1;
+            }
+            &:last-child {
+              grid-row: 2;
+            }
+          }
+        }
         .cta {
           background-color: $secondary;
           color: $white;
