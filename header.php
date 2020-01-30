@@ -128,7 +128,15 @@
 
 				<div class="header-bottom grid-3070">
 					<div class="header-left">
-						<?php if (get_field('toggle_logo')) : ?>
+						<?php
+						if (get_field('hide_logo') !== null) :
+							if (get_field('hide_logo') === true) : null;
+							else : ?>
+								<a href="<?= home_url(); ?>">
+									<img src="<?= get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
+								</a>
+							<?php endif;
+						else : ?>
 							<a href="<?= home_url(); ?>">
 								<img src="<?= get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
 							</a>
