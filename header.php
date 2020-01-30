@@ -128,11 +128,12 @@
 
 				<div class="header-bottom grid-3070">
 					<div class="header-left">
-						<a href="<?= home_url(); ?>">
-							<img src="<?= get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
-						</a>
+						<?php if (get_field('toggle_logo') === false) : ?>
+							<a href="<?= home_url(); ?>">
+								<img src="<?= get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
+							</a>
+						<?php endif; ?>
 					</div>
-
 					<div class="header-right">
 						<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 							<?php wp_nav_menu(array(
