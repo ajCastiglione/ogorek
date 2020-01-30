@@ -128,7 +128,7 @@
 
 				<div class="header-bottom grid-3070">
 					<div class="header-left">
-						<?php if (get_field('toggle_logo') === false) : ?>
+						<?php if (get_field('toggle_logo')) : ?>
 							<a href="<?= home_url(); ?>">
 								<img src="<?= get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
 							</a>
