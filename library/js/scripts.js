@@ -161,13 +161,9 @@ jQuery(document).ready(function($) {
 
   if ($("body").hasClass("home")) {
     initSlider($);
-<<<<<<< HEAD
-    // popup($);
-=======
     popup($);
     addPlaceholder($);
     showVideo($);
->>>>>>> 75116f2c9be3a33cfd55d8d5de219d981591b529
   }
 
   if (

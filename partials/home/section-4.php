@@ -1,6 +1,6 @@
 <?php $title = get_field('s4_title');
 $content = get_field('s4_content');
-$iframe = get_field('video_url');
+$video = get_field('video');
 $img = get_field('video_placeholder_img');  ?>
 <section class="section-4 col-1">
   <div class="grid-50">
@@ -11,7 +11,9 @@ $img = get_field('video_placeholder_img');  ?>
       </div>
     </div>
     <div class="video">
-      <?= $iframe ?>
+      <video controls>
+        <source src="<?= $video ?>">
+      </video>
       <div style="background-image:url(<?= $img['url']; ?>)" class="placeholder"></div>
     </div>
   </div>
