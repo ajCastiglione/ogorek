@@ -125,6 +125,27 @@ function newsletterSignup($) {
   });
 }
 
+function showForm($) {
+  let cta = $(".get-started");
+  let form = $(".form");
+  let container = $(".popup-container");
+  let body = $("body");
+  let close = $(".form .close");
+  // Show form
+  cta.on("click", function(e) {
+    container.addClass("active");
+    form.addClass("active");
+    body.addClass("popup-active");
+  });
+  // Hide form
+  close.on("click", function(e) {
+    e.preventDefault();
+    form.removeClass("active");
+    body.removeClass("popup-active");
+    container.removeClass("active");
+  });
+}
+
 /*
  * Put all your regular jQuery in here.
  */
@@ -133,6 +154,10 @@ jQuery(document).ready(function($) {
   smoothScroll($);
   showVideo($);
   newsletterSignup($);
+
+  if ($("body").hasClass("page-template-page-landing-marketing")) {
+    showForm($);
+  }
 
   if ($("body").hasClass("home")) {
     initSlider($);

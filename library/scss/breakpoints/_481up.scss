@@ -72,3 +72,15 @@ Internal Pages Section
     }
   }
 }
+
+// Landing pages
+.page-template-page-landing-marketing {
+  // Page content
+  .landing-page-section-content {
+    &.s2 {
+      .repeater {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+}

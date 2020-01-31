@@ -90,6 +90,40 @@ Internal Pages Section
   }
 }
 
+// Landing pages
+.page-template-page-landing-marketing {
+  // hero
+  .hero-landing-page {
+    .right {
+      padding: 1rem 3rem;
+      .title {
+        font-size: 60px;
+      }
+      .subtitle {
+        font-size: 45px;
+      }
+      .form {
+        max-width: 80%;
+      }
+    }
+  }
+  // Page content
+  .landing-page-section-content {
+    .title {
+      font-size: 45px;
+    }
+    .content {
+      font-size: 17px;
+    }
+
+    &.s2 {
+      .repeater {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+}
+
 /****************************
 Singles Section
 ****************************/
@@ -187,6 +221,29 @@ Custom Post Types Section
   .law-firm {
     .grid {
       grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+/****************************
+Footer Section
+****************************/
+.footer {
+  // Newsletter in the footer
+  .newsletter-section {
+    #gform_wrapper_4 {
+      // actual form element
+      #gform_4 {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+      }
+      // submit button
+      .gform_footer {
+        max-width: 250px;
+        text-align: center;
+        padding: 0;
+      }
     }
   }
 }
