@@ -326,7 +326,7 @@ h2.aside-title {
 .video {
   position: relative;
   min-height: 400px;
-  .yt-video {
+  .yt-video, video  {
     position: absolute;
     top: 0;
     left: 0;
