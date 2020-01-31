@@ -29,7 +29,6 @@
 				$cats = get_categories(array(
 					'parent' => $id,
 					'orderby' => 'menu_order',
-					'exclude' => 23
 				));
 				$count = 0;
 				foreach ($cats as $cat) {
