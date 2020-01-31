@@ -221,4 +221,16 @@ function remove_protected_text()
   return __('%s');
 }
 
+/************* CAT Exclusion for jobs *********************/
+
+function exclude_category_jobs($query)
+{
+  if ($query->is_home) {
+    $query->set('cat', '-23');
+  }
+  return $query;
+}
+
+add_filter('pre_get_posts', 'exclude_category_home');
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>
