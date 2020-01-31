@@ -530,6 +530,9 @@ Footer Section
   // Newsletter in the footer
   .newsletter-section {
     overflow: hidden;
+    .title {
+      font-size: 40px;
+    }
     #gform_wrapper_4 {
       // form fields
       .gform_body {
