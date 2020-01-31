@@ -35,7 +35,7 @@ function addPlaceholder($) {
   let iframe = $("iframe");
   if (!iframe.attr("src").includes("youtube")) return;
   let placeholder = $(
-    '<div style="background-image:url(http://ogorek.local/wp-content/uploads/2018/11/7d1119db3034129b5863b4238d3cca58ea9e35d4-min.jpg)" class="placeholder"></div>'
+    '<div style="background-image:url(http://ogorek.com/wp-content/uploads/2018/11/7d1119db3034129b5863b4238d3cca58ea9e35d4-min.jpg)" class="placeholder"></div>'
   );
   iframe.addClass("yt-video");
   iframe.wrap('<div class="video"></div>');
@@ -162,6 +162,8 @@ jQuery(document).ready(function($) {
   if ($("body").hasClass("home")) {
     initSlider($);
     popup($);
+    addPlaceholder($);
+    showVideo($);
   }
 
   if (
