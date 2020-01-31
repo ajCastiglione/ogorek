@@ -231,6 +231,6 @@ function exclude_category_jobs($query)
   return $query;
 }
 
-add_filter('pre_get_posts', 'exclude_category_home');
+add_filter('pre_get_posts', 'exclude_category_jobs');
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
