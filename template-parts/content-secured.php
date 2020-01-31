@@ -6,7 +6,7 @@ if (!post_password_required($post)) { ?>
                     $attorney = get_sub_field('attorney'); ?>
                     <div class="attorney">
                         <h2 class="name"><?= $attorney->post_title ?></h2>
-                        <p class="fields">Forms: <?= count(get_field('forms', $attorney->ID)) ?></p>
+                        <p class="fields">Trusts: <?= count(get_field('form_group', $attorney->ID)) ?></p>
                         <a href="<?= the_permalink($attorney->ID) ?>" class="cta">View Attorney</a>
                     </div>
             <?php endwhile;

@@ -56,6 +56,12 @@ function popup($) {
   let body = $("body");
   let modal = $(".popup");
   let close = $(".popup .close");
+  // if popup was closed this session, don't show it again
+  if (sessionStorage.popShown) {
+    modal.remove();
+    return;
+  }
+  // show popup
   setTimeout(function() {
     modal.addClass("active");
     body.addClass("popup-active");
@@ -65,6 +71,7 @@ function popup($) {
     e.preventDefault();
     modal.removeClass("active");
     body.removeClass("popup-active");
+    sessionStorage.popShown = true;
     setTimeout(function() {
       modal.remove();
     }, 1200);
@@ -74,6 +81,7 @@ function popup($) {
     if (!$(e.target).closest(".inner-popup").length) {
       modal.removeClass("active");
       body.removeClass("popup-active");
+      sessionStorage.popShown = true;
       setTimeout(function() {
         modal.remove();
       }, 1200);
@@ -102,6 +110,42 @@ function smoothScroll($) {
   });
 }
 
+function newsletterSignup($) {
+  jQuery(document).on("gform_confirmation_loaded", function(event, formId) {
+    // code to be trigger when confirmation page is loaded
+    setTimeout(function() {
+      let body = $("body");
+      let modal = $(".popup");
+      modal.removeClass("active");
+      body.removeClass("popup-active");
+      setTimeout(function() {
+        modal.remove();
+      }, 1200);
+    }, 3500);
+  });
+}
+
+function showForm($) {
+  let cta = $(".get-started");
+  let form = $(".form");
+  let container = $(".popup-container");
+  let body = $("body");
+  let close = $(".form .close");
+  // Show form
+  cta.on("click", function(e) {
+    container.addClass("active");
+    form.addClass("active");
+    body.addClass("popup-active");
+  });
+  // Hide form
+  close.on("click", function(e) {
+    e.preventDefault();
+    form.removeClass("active");
+    body.removeClass("popup-active");
+    container.removeClass("active");
+  });
+}
+
 /*
  * Put all your regular jQuery in here.
  */
@@ -109,10 +153,21 @@ jQuery(document).ready(function($) {
   hasSubMenu($);
   smoothScroll($);
   showVideo($);
+  newsletterSignup($);
+
+  if ($("body").hasClass("page-template-page-landing-marketing")) {
+    showForm($);
+  }
 
   if ($("body").hasClass("home")) {
     initSlider($);
+<<<<<<< HEAD
     // popup($);
+=======
+    popup($);
+    addPlaceholder($);
+    showVideo($);
+>>>>>>> 75116f2c9be3a33cfd55d8d5de219d981591b529
   }
 
   if (

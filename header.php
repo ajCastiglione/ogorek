@@ -111,8 +111,8 @@
 							<a href="tel:+<?= trim(get_field('phone_number', 'options')); ?>">
 								<i class="fas fa-phone"></i> <?= trim(get_field('phone_number', 'options')); ?>
 							</a>
-							<a href="mailto:<?= trim(get_field('email_address', 'options')); ?>">
-								<i class="fas fa-envelope"></i> <?= is_page(3595) ? 'trust@ogorek.com' : trim(get_field('email_address', 'options')); ?>
+							<a href="mailto:<?= is_page(3595) || is_page(286) ? 'trust@ogorek.com' : trim(get_field('email_address', 'options')); ?>">
+								<i class="fas fa-envelope"></i> <?= is_page(3595) || is_page(286) ? 'trust@ogorek.com' : trim(get_field('email_address', 'options')); ?>
 							</a>
 						</div>
 						<div class="socials">
@@ -128,11 +128,20 @@
 
 				<div class="header-bottom grid-3070">
 					<div class="header-left">
-						<a href="<?= home_url(); ?>">
-							<img src="<?= get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
-						</a>
+						<?php
+						if (get_field('hide_logo') !== null) :
+							if (get_field('hide_logo') === true) : null;
+							else : ?>
+								<a href="<?= home_url(); ?>">
+									<img src="<?= get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
+								</a>
+							<?php endif;
+						else : ?>
+							<a href="<?= home_url(); ?>">
+								<img src="<?= get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
+							</a>
+						<?php endif; ?>
 					</div>
-
 					<div class="header-right">
 						<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 							<?php wp_nav_menu(array(

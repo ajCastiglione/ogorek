@@ -17,8 +17,9 @@
 
     </p>
 
-    <img src="<?= get_the_post_thumbnail_url($post->ID, 'full') ?>" alt="<?= the_title() ?>" class="featured-image">
-
+    <?php if (get_the_post_thumbnail_url($post->ID, 'full')) : ?>
+      <img src="<?= get_the_post_thumbnail_url($post->ID, 'full') ?>" alt="<?= the_title() ?>" class="featured-image">
+    <?php endif; ?>
   </header>
 
   <section class="entry-content cf" itemprop="articleBody">

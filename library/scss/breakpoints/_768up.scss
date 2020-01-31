@@ -210,9 +210,9 @@ Home Page Section
         margin-top: 2rem;
         font-size: 35px;
       }
-      #mc4wp-form-1 {
+      #gform_wrapper_4 {
         padding-bottom: 1rem;
-        .field-group {
+        #gform_fields_4 {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -277,6 +277,129 @@ Internal Pages Section
     }
   }
 }
+
+// Landing pages
+.page-template-page-landing-marketing {
+  // hero
+  .hero-landing-page {
+    height: 100vh;
+    .grid-50 {
+      height: 100%;
+    }
+    .left {
+      .logo {
+        max-width: 350px;
+      }
+      &:before {
+        height: 120px;
+      }
+    }
+
+    .right {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+      text-align: left;
+      padding: 1rem 2rem;
+      .title {
+        font-size: 45px;
+      }
+      .subtitle {
+        font-size: 35px;
+      }
+      .get-started {
+        display: none;
+      }
+      .form {
+        opacity: 1;
+        height: auto;
+        max-width: 90%;
+        margin: 1rem 0;
+        .close {
+          display: none;
+        }
+        .form-title {
+          font-size: 30px;
+        }
+        .gform_footer {
+          .gform_button {
+            padding: 1rem 0.5rem;
+          }
+        }
+      }
+      .popup-container {
+        position: static;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        margin: 0;
+      }
+      .learn-more {
+        display: flex;
+      }
+    }
+  }
+  // Page content
+  .landing-page-section-content {
+    .grid-50 {
+      align-items: center;
+    }
+    .title {
+      font-size: 35px;
+    }
+    .content {
+      font-size: 16px;
+    }
+    &.s2 {
+      text-align: center;
+      .subtitle {
+        font-size: 17px;
+      }
+      .repeater {
+        .value {
+          padding: 1rem;
+          .icon {
+            font-size: 40px;
+          }
+        }
+      }
+    }
+    &.s4 {
+      .repeater {
+        grid-template-columns: 1fr 1fr;
+        .cta {
+          margin-top: 2rem;
+        }
+      }
+      .map {
+        min-height: 450px;
+      }
+    }
+  }
+  .landing-footer {
+    .lower-footer {
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      p {
+        margin: 0;
+      }
+      .copyright {
+        padding-right: 1rem;
+        text-align: left;
+      }
+      .disclosures {
+        text-align: right;
+        padding-left: 1rem;
+      }
+    }
+  }
+}
+
 /****************************
 Singles Section
 ****************************/
@@ -294,6 +417,9 @@ Singles Section
 }
 
 .single-attorneys {
+  .layout-grid {
+    grid-template-columns: 1fr 1fr;
+  }
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -372,9 +498,62 @@ Custom Post Types Section
 ****************************/
 
 .page-template-page-secured {
+  .law-firm-hero {
+    .split-logo {
+      .title {
+        width: auto;
+        margin-left: 20px;
+        padding-left: 20px;
+        margin-top: 0;
+        padding-top: 0;
+        &:after {
+          width: 3px;
+          height: 100%;
+          left: 0;
+          top: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
   .law-firm {
     .grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+/****************************
+Footer Section
+****************************/
+.footer {
+  // Newsletter in the footer
+  .newsletter-section {
+    overflow: hidden;
+    .title {
+      font-size: 40px;
+    }
+    #gform_wrapper_4 {
+      // form fields
+      .gform_body {
+        #gform_fields_4 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          li {
+            padding-right: 10px;
+            &:last-child {
+              padding-right: 0;
+            }
+          }
+        }
+      }
+      // submit button
+      .gform_footer {
+        .gform_button {
+          max-width: 250px;
+        }
+      }
     }
   }
 }
