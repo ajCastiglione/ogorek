@@ -1,6 +1,7 @@
 <?php $title = get_field('footer_title', 'options');
 $addr = get_field('address', 'options');
 $phone = get_field('phone_number', 'options');
+$email = get_field('email_address', 'options');
 $logos = get_field('footer_logos', 'options');
 $disclosures = get_field('disclosures', 'options'); ?>
 <footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
@@ -15,6 +16,7 @@ $disclosures = get_field('disclosures', 'options'); ?>
 				<?= $addr; ?>
 			</address>
 			<a href="tel:+<?= $phone; ?>" class="phone"><?= $phone; ?></a>
+			<a href="mailto:<?= $email; ?>" class="phone"><?= $email; ?></a>
 			<div class="socials">
 				<?php if (have_rows('social_media', 'options')) : while (have_rows('social_media', 'options')) : the_row(); ?>
 						<a href="<?= get_sub_field('social_url'); ?>" target="_blank" rel="noopener noreferrer" class="social-icon">
