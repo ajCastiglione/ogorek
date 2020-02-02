@@ -342,6 +342,7 @@ h2.aside-title {
     height: 100%;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    z-index: 9;
     &:hover {
       cursor: pointer;
       &:before {
@@ -768,6 +769,7 @@ Home Page Section
         height: 100%;
         background-repeat: no-repeat;
         background-size: 100% 100%;
+        z-index: 9;
         &:hover {
           cursor: pointer;
           &:before {
