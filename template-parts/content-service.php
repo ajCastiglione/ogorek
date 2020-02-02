@@ -4,6 +4,7 @@ $s1_content = get_field('s1_content');
 $s1_aside_title = get_field('s1_aside_title');
 $s1_aside_content = get_field('s1_aside_content');
 $layout = get_field('layout');
+$placeholder = get_field('placeholder');
 ?>
 
 <article class="service">
@@ -30,6 +31,7 @@ $layout = get_field('layout');
   <?php if (get_field('layout') !== 'unused') : ?>
     <section class="section-2">
       <?php $layout === 'grid_three' ? get_template_part('partials/grid_three') : get_template_part('partials/alternating'); ?>
+      <span style="display: none" data-src="<?= $placeholder ?>" id="span-placeholder"></span>
     </section>
   <?php endif; ?>
 </article>

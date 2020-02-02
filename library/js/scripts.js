@@ -32,14 +32,40 @@ function initSlider($) {
 }
 
 function addPlaceholder($) {
-  let iframe = $("iframe");
-  if (!iframe.attr("src").includes("youtube")) return;
+  const iframe = $("iframe");
+  const defaultPlaceholderImg =
+    "http://ogorek.com/wp-content/uploads/2018/11/7d1119db3034129b5863b4238d3cca58ea9e35d4-min.jpg";
+  const placeholderSet = $("#span-placeholder").attr("data-src");
+  const placeholderImg = placeholderSet
+    ? placeholderSet
+    : defaultPlaceholderImg;
   let placeholder = $(
-    '<div style="background-image:url(http://ogorek.com/wp-content/uploads/2018/11/7d1119db3034129b5863b4238d3cca58ea9e35d4-min.jpg)" class="placeholder"></div>'
+    '<div style="background-image:url(' +
+      placeholderImg +
+      ')" class="placeholder"></div>'
   );
-  iframe.addClass("yt-video");
-  iframe.wrap('<div class="video"></div>');
-  iframe.after(placeholder);
+
+  if (iframe.length > 1) {
+    $.each(iframe, function(index, el) {
+      if (
+        $(el).attr("name") &&
+        $(el)
+          .attr("name")
+          .match("gform")
+      )
+        return;
+
+      $(el).addClass("yt-video");
+      $(el).wrap('<div class="video"></div>');
+      $(el).after(placeholder);
+    });
+  } else {
+    if (!iframe.attr("src").includes("youtube")) return;
+    if (iframe.attr("name") && iframe.attr("name").includes("gform")) return;
+    iframe.addClass("yt-video");
+    iframe.wrap('<div class="video"></div>');
+    iframe.after(placeholder);
+  }
 }
 
 function showVideo($) {
@@ -169,7 +195,8 @@ jQuery(document).ready(function($) {
     !$("body").hasClass("home") &&
     !$("body").hasClass("page-id-286") &&
     !$("body").hasClass("page-id-375") &&
-    !$("body").hasClass("page-id-2351")
+    !$("body").hasClass("page-id-2351") &&
+    !$("body").hasClass("page-id-3928")
   ) {
     addPlaceholder($);
     showVideo($);
