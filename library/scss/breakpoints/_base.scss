@@ -326,7 +326,8 @@ h2.aside-title {
 .video {
   position: relative;
   min-height: 400px;
-  .yt-video, video  {
+  .yt-video,
+  video {
     position: absolute;
     top: 0;
     left: 0;
@@ -386,6 +387,12 @@ Header Section
   background-color: $primary;
   text-align: center;
   padding: 8px 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9;
   .info {
     a {
       color: $white;
@@ -412,10 +419,13 @@ Header Section
       }
     }
   }
+  @media (max-width: 1180px) {
+    margin-top: 46px;
+  }
 }
 
 .header-bottom {
-  margin-top: 1rem;
+  margin-top: 43px;
   text-align: center;
   padding: 0 1rem;
 
@@ -434,6 +444,9 @@ Header Section
     @media (max-width: 1180px) {
       text-align: center;
     }
+  }
+  @media (max-width: 1180px) {
+    margin-top: 55px;
   }
 }
 
