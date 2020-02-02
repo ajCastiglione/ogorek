@@ -60,8 +60,7 @@ function addPlaceholder($) {
       $(el).after(placeholder);
     });
   } else {
-    if (!iframe.attr("src").includes("youtube")) return;
-    if (iframe.attr("name") && iframe.attr("name").includes("gform")) return;
+    if (iframe.attr("name") && iframe.attr("name").match("gform")) return;
     iframe.addClass("yt-video");
     iframe.wrap('<div class="video"></div>');
     iframe.after(placeholder);
