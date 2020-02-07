@@ -124,6 +124,14 @@ function smoothScroll($) {
     ) {
       e.preventDefault();
       let target = $(this.hash);
+      let nav = $(".shiftnav-shiftnav-main");
+
+      if (nav) {
+        nav.removeClass("shiftnav-open-target");
+        $("body").removeClass("shiftnav-open-left");
+        $("body").removeClass("shiftnav-open");
+        $("body").addClass("shiftnav-transitioning");
+      }
 
       $("html, body").animate(
         {
