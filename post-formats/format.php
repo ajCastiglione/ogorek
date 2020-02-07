@@ -35,9 +35,19 @@
           <h2 class="name"><?= the_title() ?></h2>
           <a href="mailto:<?= get_field('email') ?>" class="email"><?= get_field('email') ?></a>
         </div>
-    <?php }
+      <?php }
     endwhile;
-    wp_reset_query(); ?>
+    wp_reset_query();
+    if (!$found && !empty(get_field('post_author'))) {
+      $authorID = get_field('post_author')[0]->ID; ?>
+      <div class="author">
+        <img src="<?= get_field('team_member_photo', $authorID)['url'] ?>" alt="<?= the_title($authorID) ?>" class="portrait">
+        <h2 class="name"><?= get_the_title($authorID) ?></h2>
+        <a href="mailto:<?= get_field('email', $authorID) ?>" class="email"><?= get_field('email', $authorID) ?></a>
+      </div>
+    <?php $found = true;
+    }
+    ?>
     <div class="text <?= $found ? '' : 'full-width' ?>">
       <?php
       the_content();
