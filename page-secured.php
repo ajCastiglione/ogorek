@@ -1,6 +1,7 @@
 <?php
 /*
  Template Name: Secured Page
+ Template Post Type: post, page, firm
 */
 ?>
 
