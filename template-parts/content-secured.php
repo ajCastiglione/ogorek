@@ -14,7 +14,6 @@ if (isset($_GET['attorney'])) {
             }
         }
         if ($count > 1) {
-            var_dump($index_to_remove);
             delete_row('trusts', $index_to_remove, $chosen_attorney);
         }
     }
