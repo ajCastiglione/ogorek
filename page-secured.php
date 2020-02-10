@@ -1,7 +1,7 @@
 <?php
 /*
  Template Name: Secured Page
- Template Post Type: post, page, firm
+ Template Post Type: post, page, firms
 */
 ?>
 
@@ -19,7 +19,12 @@
 
             <?= get_template_part('partials/hero') ?>
 
-            <?= get_template_part('template-parts/content', 'secured'); ?>
+            <?php
+            is_user_logged_in() ?
+              get_template_part('template-parts/content', 'secured')
+              :
+              get_template_part('template-parts/content', 'login')
+            ?>
 
           </article>
 

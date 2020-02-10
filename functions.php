@@ -221,4 +221,14 @@ function remove_protected_text()
   return __('%s');
 }
 
+/************* ADD ROLES *********************/
+require 'theme/add-roles.php';
+
+/************* FAILED LOGIN REDIRECT FOR LAW FIRM ADMINS *********************/
+require 'theme/law-firm-login-redirect.php';
+
+/************* ADDING DEFAULT ROWS FOR TRUSTS *********************/
+require 'theme/acf-default-rows.php';
+
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>

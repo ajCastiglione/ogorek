@@ -416,15 +416,6 @@ Singles Section
   }
 }
 
-.single-attorneys {
-  .layout-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 /****************************
 Partials Section
 ****************************/
@@ -497,7 +488,7 @@ Blog Section
 Custom Post Types Section
 ****************************/
 
-.page-template-page-secured {
+.firms-template-page-secured {
   .law-firm-hero {
     .split-logo {
       .title {
@@ -519,6 +510,17 @@ Custom Post Types Section
   .law-firm {
     .grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+// Authenticated section
+.authenticated-view {
+  .attorney,
+  .trusts-selector,
+  .trusts {
+    .btn-group {
+      flex-wrap: nowrap;
     }
   }
 }
