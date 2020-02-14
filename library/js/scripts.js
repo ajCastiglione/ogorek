@@ -57,7 +57,7 @@ function popup($) {
   let modal = $(".popup");
   let close = $(".popup .close");
   // if popup was closed this session, don't show it again
-  if (sessionStorage.popShown) {
+  if (sessionStorage.popShown || localStorage.popShown) {
     modal.remove();
     return;
   }
@@ -118,6 +118,7 @@ function newsletterSignup($) {
       let modal = $(".popup");
       modal.removeClass("active");
       body.removeClass("popup-active");
+      localStorage.popShown = true;
       setTimeout(function() {
         modal.remove();
       }, 1200);
