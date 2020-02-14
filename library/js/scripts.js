@@ -152,6 +152,7 @@ function newsletterSignup($) {
       let modal = $(".popup");
       modal.removeClass("active");
       body.removeClass("popup-active");
+      localStorage.popShown = true;
       setTimeout(function() {
         modal.remove();
       }, 1200);
