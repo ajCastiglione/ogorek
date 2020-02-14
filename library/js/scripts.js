@@ -83,7 +83,7 @@ function popup($) {
   let modal = $(".popup");
   let close = $(".popup .close");
   // if popup was closed this session, don't show it again
-  if (sessionStorage.popShown) {
+  if (sessionStorage.popShown || localStorage.popShown) {
     modal.remove();
     return;
   }
