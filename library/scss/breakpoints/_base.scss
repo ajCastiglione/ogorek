@@ -514,6 +514,7 @@ NAVIGATION STYLES
     ul.sub-menu,
     ul.children {
       li {
+        position: relative;
         a {
           padding-left: 30px;
           &:hover,
