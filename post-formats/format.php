@@ -48,7 +48,6 @@
     <?php
     } elseif (!$found) { ?>
       <div class="author">
-        <img src="<?= get_template_directory_uri() . '/library/images/team-placeholder.png' ?>" alt="Ogorek Team" class="portrait">
         <h2 class="name">Ogorek Team</h2>
         <a href="mailto:prosper@ogorek.com" class="email">prosper@ogorek.com</a>
       </div>
