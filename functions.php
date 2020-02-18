@@ -61,8 +61,8 @@ function my_admin_theme_style()
 {
   wp_enqueue_style('my-admin-theme', get_stylesheet_directory_uri() . '/library/css/login.css');
 }
-add_action('admin_enqueue_scripts', 'my_admin_theme_style');
 add_action('login_enqueue_scripts', 'my_admin_theme_style');
+
 
 function minerva_url($url)
 {
