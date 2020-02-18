@@ -135,7 +135,7 @@ function smoothScroll($) {
 
       $("html, body").animate(
         {
-          scrollTop: target.offset().top - 150
+          scrollTop: target.offset().top - 210
         },
         500,
         "linear"
