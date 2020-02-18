@@ -46,9 +46,13 @@
         <a href="mailto:<?= get_field('email', $authorID) ?>" class="email"><?= get_field('email', $authorID) ?></a>
       </div>
     <?php $found = true;
-    }
-    ?>
-    <div class="text <?= $found ? '' : 'full-width' ?>">
+    } else { ?>
+      <div class="author">
+        <img src="<?= get_template_directory_uri() . '/library/images/team-placeholder.png' ?>" alt="Ogorek Team" class="portrait">
+        <h2 class="name">Ogorek Team</h2>
+      </div>
+    <?php } ?>
+    <div class="text">
       <?php
       the_content();
       ?>
