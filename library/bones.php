@@ -1,12 +1,7 @@
 <?php
 /* Welcome to Bones :)
-This is the core Bones file where most of the
-main functions & features reside. If you have
-any custom functions, it's best to put them
-in the functions.php file.
-
-Developed by: Eddie Machado
-URL: http://themble.com/bones/
+Developed by: Antonio Castiglione
+URL: https://minervawebdevelopment.com
 
   - head cleanup (remove rsd, uri links, junk css, ect)
   - enqueueing scripts & styles
@@ -46,9 +41,9 @@ function bones_head_cleanup()
 	// WP version
 	remove_action('wp_head', 'wp_generator');
 	// remove WP version from css
-	add_filter('style_loader_src', 'bones_remove_wp_ver_css_js', 9999);
+	// add_filter('style_loader_src', 'bones_remove_wp_ver_css_js', 9999);
 	// remove Wp version from scripts
-	add_filter('script_loader_src', 'bones_remove_wp_ver_css_js', 9999);
+	// add_filter('script_loader_src', 'bones_remove_wp_ver_css_js', 9999);
 } /* end bones head cleanup */
 
 // A better title
@@ -89,13 +84,14 @@ function bones_rss_version()
 }
 
 // remove WP version from scripts
+/*
 function bones_remove_wp_ver_css_js($src)
 {
 	if (strpos($src, 'ver='))
 		$src = remove_query_arg('ver', $src);
 	return $src;
 }
-
+*/
 // remove injected CSS for recent comments widget
 function bones_remove_wp_widget_recent_comments_style()
 {
@@ -147,7 +143,6 @@ function bones_scripts_and_styles()
 		}
 
 		//adding scripts file in the footer
-		wp_register_script('bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array('jquery'), '', true);
 
 		// enqueue styles and scripts
 		wp_enqueue_script('bones-modernizr');
@@ -156,13 +151,10 @@ function bones_scripts_and_styles()
 
 		$wp_styles->add_data('bones-ie-only', 'conditional', 'lt IE 9'); // add conditional wrapper around ie stylesheet
 
-		/*
-		I recommend using a plugin to call jQuery
-		using the google cdn. That way it stays cached
-		and your site will load faster.
-		*/
 		wp_enqueue_script('jquery');
-		wp_enqueue_script('bones-js');
+		$fTime = filemtime(get_stylesheet_directory() . '/library/js/scripts.js');
+		wp_enqueue_script('bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array('jquery'), $fTime, true);
+		// wp_enqueue_script('bones-js','','','123');
 	}
 }
 
@@ -257,7 +249,7 @@ function bones_related_posts()
 			foreach ($related_posts as $post) : setup_postdata($post); ?>
 				<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 			<?php endforeach;
-					} else { ?>
+		} else { ?>
 			<?php echo '<li class="no_related_post">' . __('No Related Posts Yet!', 'bonestheme') . '</li>'; ?>
 <?php }
 	}
