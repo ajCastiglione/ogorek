@@ -546,6 +546,16 @@ NAVIGATION STYLES
 // Mobile nav section
 #shiftnav-toggle-main {
   box-shadow: 0px 4px 12px 3px rgba(0, 0, 0, 0.64);
+  #shiftnav-toggle-main-button {
+    i {
+      font-size: 18px;
+    }
+  }
+  .shiftnav-main-toggle-content {
+    a {
+      border-bottom: 2px solid $secondary;
+    }
+  }
 }
 #shiftnav-main {
   .shiftnav-inner {
