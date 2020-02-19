@@ -98,6 +98,7 @@ function popup($) {
     modal.removeClass("active");
     body.removeClass("popup-active");
     sessionStorage.popShown = true;
+    localStorage.popShown = true;
     setTimeout(function() {
       modal.remove();
     }, 1200);
@@ -108,6 +109,7 @@ function popup($) {
       modal.removeClass("active");
       body.removeClass("popup-active");
       sessionStorage.popShown = true;
+      localStorage.popShown = true;
       setTimeout(function() {
         modal.remove();
       }, 1200);
