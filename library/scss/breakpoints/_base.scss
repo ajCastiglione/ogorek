@@ -531,24 +531,14 @@ NAVIGATION STYLES
 // Mobile nav section
 #shiftnav-toggle-main {
   box-shadow: 0px 4px 12px 3px rgba(0, 0, 0, 0.64);
-}
-#shiftnav-main {
-  .shiftnav-inner {
-    background-color: $primary;
+  #shiftnav-toggle-main-button {
+    i {
+      font-size: 18px;
+    }
   }
-  .shiftnav-nav {
-    .current-menu-item > a {
-      background-color: $secondary;
-    }
-    .shiftnav-target {
-      background-color: $primary;
-      color: $white;
-      border-bottom-color: darken($primary, 15%);
-    }
-    .sub-menu {
-      .shiftnav-target {
-        background-color: lighten($primary, 10%);
-      }
+  .shiftnav-main-toggle-content {
+    a {
+      border-bottom: 2px solid $secondary;
     }
   }
   .shiftnav-search-icon {
@@ -571,6 +561,27 @@ NAVIGATION STYLES
 
   &.active {
     top: 50px;
+  }
+}
+// Shiftnav nav items
+#shiftnav-main {
+  .shiftnav-inner {
+    background-color: $primary;
+  }
+  .shiftnav-nav {
+    .current-menu-item > a {
+      background-color: $secondary;
+    }
+    .shiftnav-target {
+      background-color: $primary;
+      color: $white;
+      border-bottom-color: darken($primary, 15%);
+    }
+    .sub-menu {
+      .shiftnav-target {
+        background-color: lighten($primary, 10%);
+      }
+    }
   }
 }
 /* end .nav */
