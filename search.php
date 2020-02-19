@@ -13,19 +13,21 @@
 
 						<header class="entry-header article-header">
 
-							<img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_title() ?>" class="featured-image">
+							<?php if (get_the_post_thumbnail_url()) : ?>
+								<img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_title() ?>" class="featured-image">
+							<?php endif; ?>
 
 							<h3 class="search-title title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 
 							<p class="byline entry-meta vcard">
 								<?php printf(
-											__('%1$s | %2$s | %3$s', 'bonestheme'),
-											/* the author of the post */
-											'<span class="by">by</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link(get_the_author_meta('ID')) . '</span>',
-											/* the time the post was published */
-											'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
-											get_the_category_list(', ') != '' ? get_the_category_list(', ') : ''
-										); ?>
+									__('%1$s | %2$s | %3$s', 'bonestheme'),
+									/* the author of the post */
+									'<span class="by">by</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link(get_the_author_meta('ID')) . '</span>',
+									/* the time the post was published */
+									'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
+									get_the_category_list(', ') != '' ? get_the_category_list(', ') : ''
+								); ?>
 							</p>
 
 						</header>
