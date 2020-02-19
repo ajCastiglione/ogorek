@@ -14,7 +14,7 @@ $img = get_field('video_placeholder_img');  ?>
       <video controls>
         <source src="<?= $video ?>">
       </video>
-      <div style="background-image:url(<?= $img['url']; ?>)" class="placeholder"></div>
+      <!-- <div style="background-image:url(<?= $img['url']; ?>)" class="placeholder"></div> -->
     </div>
   </div>
 </section>

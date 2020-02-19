@@ -33,7 +33,6 @@ function initSlider($) {
 
 function addPlaceholder($) {
   const video = $("video") || $("iframe");
-  console.log(video);
   const defaultPlaceholderImg =
     "http://ogorek.com/wp-content/uploads/2018/11/7d1119db3034129b5863b4238d3cca58ea9e35d4-min.jpg";
   const placeholderSet = $("#span-placeholder").attr("data-src");
@@ -202,7 +201,7 @@ jQuery(document).ready(function($) {
     initSlider($);
     popup($);
   }
-
+  /*
   if (
     $("iframe").length > 0 &&
     !$("body").hasClass("home") &&
@@ -213,7 +212,7 @@ jQuery(document).ready(function($) {
   ) {
     addPlaceholder($);
     showVideo($);
-  }
+  } */
 }); /* end of as page load scripts */
 
 window.onload = loadIframe;
