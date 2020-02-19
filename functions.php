@@ -226,7 +226,7 @@ function remove_protected_text()
 function exclude_category_jobs($query)
 {
   if ($query->is_home) {
-    $query->set('cat', '-23');
+    $query->set('cat', '-23, -18, -17, -16');
   }
   return $query;
 }
