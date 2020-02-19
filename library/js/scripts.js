@@ -203,7 +203,7 @@ jQuery(document).ready(function($) {
   smoothScroll($);
   showVideo($);
   newsletterSignup($);
-  addSearch($);
+  // addSearch($);
 
   if ($("body").hasClass("page-template-page-landing-marketing")) {
     showForm($);
