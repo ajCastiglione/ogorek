@@ -32,14 +32,39 @@ function initSlider($) {
 }
 
 function addPlaceholder($) {
-  let iframe = $("iframe");
-  if (!iframe.attr("src").includes("youtube")) return;
+  const video = $("video") || $("iframe");
+  const defaultPlaceholderImg =
+    "http://ogorek.com/wp-content/uploads/2018/11/7d1119db3034129b5863b4238d3cca58ea9e35d4-min.jpg";
+  const placeholderSet = $("#span-placeholder").attr("data-src");
+  const placeholderImg = placeholderSet
+    ? placeholderSet
+    : defaultPlaceholderImg;
   let placeholder = $(
-    '<div style="background-image:url(http://ogorek.local/wp-content/uploads/2018/11/7d1119db3034129b5863b4238d3cca58ea9e35d4-min.jpg)" class="placeholder"></div>'
+    '<div style="background-image:url(' +
+      placeholderImg +
+      ')" class="placeholder"></div>'
   );
-  iframe.addClass("yt-video");
-  iframe.wrap('<div class="video"></div>');
-  iframe.after(placeholder);
+
+  if (video.length > 1) {
+    $.each(video, function(index, el) {
+      if (
+        $(el).attr("name") &&
+        $(el)
+          .attr("name")
+          .match("gform")
+      )
+        return;
+
+      $(el).addClass("yt-video");
+      $(el).wrap('<div class="video"></div>');
+      $(el).after(placeholder);
+    });
+  } else {
+    if (video.attr("name") && video.attr("name").match("gform")) return;
+    video.addClass("yt-video");
+    video.wrap('<div class="video"></div>');
+    video.after(placeholder);
+  }
 }
 
 function showVideo($) {
@@ -72,6 +97,7 @@ function popup($) {
     modal.removeClass("active");
     body.removeClass("popup-active");
     sessionStorage.popShown = true;
+    localStorage.popShown = true;
     setTimeout(function() {
       modal.remove();
     }, 1200);
@@ -82,6 +108,7 @@ function popup($) {
       modal.removeClass("active");
       body.removeClass("popup-active");
       sessionStorage.popShown = true;
+      localStorage.popShown = true;
       setTimeout(function() {
         modal.remove();
       }, 1200);
@@ -98,10 +125,20 @@ function smoothScroll($) {
     ) {
       e.preventDefault();
       let target = $(this.hash);
+      let nav = $(".shiftnav-shiftnav-main");
+
+      if (nav) {
+        nav.removeClass("shiftnav-open-target");
+        $("body").removeClass("shiftnav-open-left");
+        $("body").removeClass("shiftnav-open");
+        $("body").addClass("shiftnav-transitioning");
+      }
 
       $("html, body").animate(
         {
-          scrollTop: target.offset().top - 100
+          scrollTop: $("body").hasClass("page-id-564")
+            ? target.offset().top - 210
+            : target.offset().top - 170
         },
         500,
         "linear"
@@ -147,85 +184,15 @@ function showForm($) {
   });
 }
 
-// Law firm scripts
-function trustChosen($) {
-  let trustForm = $("#trusts");
-  trustForm.change(function(e) {
-    let val = $(this).val();
-    let url = document.location;
-    if (url.href.match("trust")) {
-      let url = document.location.href.split("&trust")[0];
-      document.location = `${url}&trust=${val}`;
-    } else {
-      document.location = `${url}&trust=${val}`;
-    }
+function addSearch($) {
+  let shiftNavMain = $("#shiftnav-toggle-main");
+  let searchIcon =
+    '<div class="shiftnav-search-icon"><i class="fas fa-search"></i></div>';
+  shiftNavMain.append(searchIcon);
+
+  $(".shiftnav-search-icon").on("click", function() {
+    $(".search-field").toggleClass("active");
   });
-
-  // Update trust title
-  $("#updateField").on("click", function(e) {
-    let newTitle = $("#trustTitle").val();
-    let url = document.location;
-    if (url.href.match("title")) {
-      let url = document.location.href.split("&title")[0];
-      document.location = `${url}&title=${newTitle}`;
-    } else {
-      document.location = `${url}&title=${newTitle}`;
-    }
-  });
-}
-
-function createTrust($) {
-  $("#addTrust").on("click", function(e) {
-    let url = document.location;
-    let newTrustTitle = $("#trustTitle").val();
-    let curTitle = document
-      .querySelector("#trusts")
-      .options.namedItem("trust-" + $("#trusts").val()).text;
-
-    if (newTrustTitle == curTitle) {
-      $(".alert-error").fadeIn();
-      return;
-    }
-
-    if (url.href.match("create")) {
-      let url = document.location.href.split("&create")[0];
-      document.location = `${url}&create=${newTrustTitle}`;
-      $(".alert-error").fadeOut();
-    } else {
-      document.location = `${url}&create=${newTrustTitle}`;
-      $(".alert-error").fadeOut();
-    }
-  });
-}
-
-function removeCreate($) {
-  let url = document.location.href;
-  setTimeout(function() {
-    if (url.match("create") && !url.match("created")) {
-      let urlArr = url.split("&create")[0];
-      let created = url.split("&create")[1];
-      window.history.pushState(
-        { page: 1 },
-        document.title,
-        urlArr + "&created" + created
-      );
-      window.location.reload();
-    }
-  }, 500);
-}
-
-function removeTitleQs($) {
-  let url = document.location.href;
-  let urlArr = url.split("&");
-  let toRemove = "title";
-  if (url.match(toRemove) !== null) {
-    urlArr.forEach(function(element, index) {
-      if (element.match(toRemove) !== null) {
-        urlArr.splice(index, index);
-        document.location = urlArr.join("&");
-      }
-    });
-  }
 }
 
 /*
@@ -236,33 +203,28 @@ jQuery(document).ready(function($) {
   smoothScroll($);
   showVideo($);
   newsletterSignup($);
+  addSearch($);
 
   if ($("body").hasClass("page-template-page-landing-marketing")) {
     showForm($);
-  }
-
-  if ($("body").hasClass("firms-template-page-secured")) {
-    trustChosen($);
-    removeTitleQs($);
-    createTrust($);
-    removeCreate($);
   }
 
   if ($("body").hasClass("home")) {
     initSlider($);
     popup($);
   }
-
+  /*
   if (
     $("iframe").length > 0 &&
     !$("body").hasClass("home") &&
     !$("body").hasClass("page-id-286") &&
     !$("body").hasClass("page-id-375") &&
-    !$("body").hasClass("page-id-2351")
+    !$("body").hasClass("page-id-2351") &&
+    !$("body").hasClass("page-id-3928")
   ) {
     addPlaceholder($);
     showVideo($);
-  }
+  } */
 }); /* end of as page load scripts */
 
 window.onload = loadIframe;
