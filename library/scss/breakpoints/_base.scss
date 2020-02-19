@@ -556,7 +556,29 @@ NAVIGATION STYLES
       border-bottom: 2px solid $secondary;
     }
   }
+  .shiftnav-search-icon {
+    float: right;
+    padding: 1rem 20px;
+    z-index: 20;
+    line-height: 1em;
+    position: relative;
+  }
 }
+// Mobile search
+.search-field {
+  position: fixed;
+  z-index: 22;
+  top: -100px;
+  padding: 20px 0.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  transition: all 0.4s ease;
+
+  &.active {
+    top: 50px;
+  }
+}
+// Shiftnav nav items
 #shiftnav-main {
   .shiftnav-inner {
     background-color: $primary;

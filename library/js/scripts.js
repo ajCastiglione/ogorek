@@ -184,6 +184,17 @@ function showForm($) {
   });
 }
 
+function addSearch($) {
+  let shiftNavMain = $("#shiftnav-toggle-main");
+  let searchIcon =
+    '<div class="shiftnav-search-icon"><i class="fas fa-search"></i></div>';
+  shiftNavMain.append(searchIcon);
+
+  $(".shiftnav-search-icon").on("click", function() {
+    $(".search-field").toggleClass("active");
+  });
+}
+
 /*
  * Put all your regular jQuery in here.
  */
@@ -192,6 +203,7 @@ jQuery(document).ready(function($) {
   smoothScroll($);
   showVideo($);
   newsletterSignup($);
+  addSearch($);
 
   if ($("body").hasClass("page-template-page-landing-marketing")) {
     showForm($);
