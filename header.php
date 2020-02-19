@@ -103,6 +103,10 @@
 
 		<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
+			<div class="search-field">
+				<?= get_search_form(); ?>
+			</div>
+
 			<div id="inner-header" class="cf">
 
 				<div class="top-header">
