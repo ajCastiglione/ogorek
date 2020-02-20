@@ -110,13 +110,16 @@
 			<div id="inner-header" class="cf">
 
 				<div class="top-header">
+					<div class="search-field">
+						<?= get_search_form() ?>
+					</div>
 					<div class="grid-50">
 						<div class="info">
 							<a href="tel:+<?= trim(get_field('phone_number', 'options')); ?>">
-								<i class="fas fa-phone"></i> <?= trim(get_field('phone_number', 'options')); ?>
+								<i class="fas fa-phone"></i> <span><?= trim(get_field('phone_number', 'options')); ?></span>
 							</a>
-							<a href="mailto:<?= trim(get_field('email_address', 'options')); ?>">
-								<i class="fas fa-envelope"></i> <?= is_page(3595) ? 'trust@ogorek.com' : trim(get_field('email_address', 'options')); ?>
+							<a href="mailto:<?= is_page(3595) || is_page(286) ? 'trust@ogorek.com' : trim(get_field('email_address', 'options')); ?>">
+								<i class="fas fa-envelope"></i> <span><?= is_page(3595) || is_page(286) ? 'trust@ogorek.com' : trim(get_field('email_address', 'options')); ?></span>
 							</a>
 						</div>
 						<div class="socials">
