@@ -184,15 +184,10 @@ function showForm($) {
   });
 }
 
-function addSearch($) {
-  let shiftNavMain = $("#shiftnav-toggle-main");
-  let searchIcon =
-    '<div class="shiftnav-search-icon"><i class="fas fa-search"></i></div>';
-  shiftNavMain.append(searchIcon);
-
-  $(".shiftnav-search-icon").on("click", function() {
-    $(".search-field").toggleClass("active");
-  });
+// Append search icon
+function addSearchIcon($) {
+  let icon = '<i class="fas fa-search"></i>';
+  $(".form-container").append(icon);
 }
 
 /*
@@ -203,7 +198,7 @@ jQuery(document).ready(function($) {
   smoothScroll($);
   showVideo($);
   newsletterSignup($);
-  // addSearch($);
+  addSearchIcon($);
 
   if ($("body").hasClass("page-template-page-landing-marketing")) {
     showForm($);
