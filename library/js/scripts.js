@@ -187,7 +187,7 @@ function showForm($) {
 // Append search icon
 function addSearchIcon($) {
   let icon = '<i class="fas fa-search"></i>';
-  $(".form-container").append(icon);
+  $(".top-header .form-container").append(icon);
 }
 
 /*
