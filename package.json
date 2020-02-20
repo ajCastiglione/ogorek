@@ -9,7 +9,7 @@
   "author": "AJ C",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^8.4.1",
+    "autoprefixer": "^8.6.5",
     "browser-sync": "^2.26.7",
     "gulp-image": "^4.4.1",
     "gulp-plumber": "^1.2.0",

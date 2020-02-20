@@ -103,10 +103,6 @@
 
 		<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
-			<div class="search-field">
-				<?= get_search_form(); ?>
-			</div>
-
 			<div id="inner-header" class="cf">
 
 				<div class="top-header">
@@ -135,11 +131,20 @@
 
 				<div class="header-bottom grid-3070">
 					<div class="header-left">
-						<a href="<?= home_url(); ?>">
-							<img src="<?= get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
-						</a>
+						<?php
+						if (get_field('hide_logo') !== null) :
+							if (get_field('hide_logo') === true) : null;
+							else : ?>
+								<a href="<?= home_url(); ?>">
+									<img src="<?= get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
+								</a>
+							<?php endif;
+						else : ?>
+							<a href="<?= home_url(); ?>">
+								<img src="<?= get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
+							</a>
+						<?php endif; ?>
 					</div>
-
 					<div class="header-right">
 						<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 							<?php wp_nav_menu(array(

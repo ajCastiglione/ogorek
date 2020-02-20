@@ -51,13 +51,32 @@ HeaderSection
 ****************************/
 .top-header {
   text-align: inherit;
+  .grid-50 {
+    display: grid;
+  }
   .socials {
     text-align: right;
   }
+  .info {
+    a {
+      span {
+        display: inline;
+      }
+      &:nth-child(2) {
+        margin-left: 12px;
+      }
+    }
+  }
+}
+
+// mobile search field
+.search-field {
+  display: none;
 }
 
 .header-bottom {
   text-align: inherit;
+  margin-top: 55px;
 
   .header-right {
     justify-content: flex-end;
@@ -532,6 +551,9 @@ Footer Section
   // Newsletter in the footer
   .newsletter-section {
     overflow: hidden;
+    .title {
+      font-size: 40px;
+    }
     #gform_wrapper_4 {
       // form fields
       .gform_body {

@@ -326,7 +326,8 @@ h2.aside-title {
 .video {
   position: relative;
   min-height: 400px;
-  .yt-video {
+  .yt-video,
+  video {
     position: absolute;
     top: 0;
     left: 0;
@@ -341,6 +342,7 @@ h2.aside-title {
     height: 100%;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    z-index: 9;
     &:hover {
       cursor: pointer;
       &:before {
@@ -392,17 +394,29 @@ Header Section
   right: 0;
   width: 100%;
   z-index: 9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9;
+  .grid-50 {
+    display: flex;
+    justify-content: center;
+  }
   .info {
     a {
       color: $white;
       font-weight: bold;
       font-size: 16px;
       transition: all 0.3s ease-in-out;
+      padding: 0 0.8rem;
       &:hover {
         color: darken($white, 15%);
       }
-      &:nth-child(2) {
-        margin-left: 12px;
+
+      span {
+        display: none;
       }
     }
   }
@@ -443,6 +457,9 @@ Header Section
     @media (max-width: 1180px) {
       text-align: center;
     }
+  }
+  @media (max-width: 1180px) {
+    margin-top: 150px;
   }
 }
 
@@ -509,6 +526,7 @@ NAVIGATION STYLES
     ul.sub-menu,
     ul.children {
       li {
+        position: relative;
         a {
           padding-left: 30px;
           &:hover,
@@ -560,16 +578,27 @@ NAVIGATION STYLES
 }
 // Mobile search
 .search-field {
-  position: fixed;
-  z-index: 22;
-  top: -100px;
   padding: 20px 0.5rem;
-  background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   transition: all 0.4s ease;
+  .form-container {
+    padding: 4px 0;
+    .fa-search {
+      position: absolute;
+      top: 7px;
+      left: 0;
+      padding: 10px;
+      color: $gray;
+    }
 
-  &.active {
-    top: 50px;
+    input[type="search"] {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    #searchsubmit {
+      display: none;
+    }
   }
 }
 // Shiftnav nav items
@@ -796,6 +825,7 @@ Home Page Section
         height: 100%;
         background-repeat: no-repeat;
         background-size: 100% 100%;
+        z-index: 9;
         &:hover {
           cursor: pointer;
           &:before {
@@ -2407,6 +2437,30 @@ Blog Section
       }
       a {
         color: $secondary;
+      }
+    }
+  }
+}
+
+/****************************
+Page Template Section
+****************************/
+.page-template-page-service,
+.page-template-page-landing {
+  #main {
+    .content {
+      a {
+        display: inline-block;
+        padding: 0.5rem 2rem;
+        border: 2px solid $secondary;
+        background-color: $secondary;
+        color: $white;
+        text-transform: capitalize;
+        transition: all 0.4s ease;
+        &:hover {
+          background-color: transparent;
+          color: $black;
+        }
       }
     }
   }

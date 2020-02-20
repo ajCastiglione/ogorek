@@ -1,6 +1,6 @@
 <?php $title = get_field('s4_title');
 $content = get_field('s4_content');
-$url = get_field('video_url');
+$video = get_field('video');
 $img = get_field('video_placeholder_img');  ?>
 <section class="section-4 col-1">
   <div class="grid-50">
@@ -11,8 +11,10 @@ $img = get_field('video_placeholder_img');  ?>
       </div>
     </div>
     <div class="video">
-      <iframe width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="yt-video" data-src="<?= $url; ?>" loading="lazy"></iframe>
-      <div style="background-image:url(<?= $img['url']; ?>)" class="placeholder"></div>
+      <video controls>
+        <source src="<?= $video ?>">
+      </video>
+      <!-- <div style="background-image:url(<?= $img['url']; ?>)" class="placeholder"></div> -->
     </div>
   </div>
 </section>

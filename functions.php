@@ -61,8 +61,8 @@ function my_admin_theme_style()
 {
   wp_enqueue_style('my-admin-theme', get_stylesheet_directory_uri() . '/library/css/login.css');
 }
-add_action('admin_enqueue_scripts', 'my_admin_theme_style');
 add_action('login_enqueue_scripts', 'my_admin_theme_style');
+
 
 function minerva_url($url)
 {
@@ -230,5 +230,20 @@ require 'theme/law-firm-login-redirect.php';
 /************* ADDING DEFAULT ROWS FOR TRUSTS *********************/
 require 'theme/acf-default-rows.php';
 
+
+/************* CAT Exclusion for jobs *********************/
+
+function exclude_category_jobs($query)
+{
+  if ($query->is_home) {
+    $query->set('cat', '-23, -18, -17, -16');
+  }
+  return $query;
+}
+
+add_filter('pre_get_posts', 'exclude_category_jobs');
+
+/************* Cron Jobs Include *********************/
+require "theme/cron-jobs.php";
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
