@@ -14,7 +14,7 @@
 						<header class="entry-header article-header">
 
 							<?php if (get_the_post_thumbnail_url()) : ?>
-								<img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_title() ?>" class="featured-image">
+								<img src="<?= get_the_post_thumbnail_url($post->ID, 'full') ?>" alt="<?= get_the_title() ?>" class="featured-image">
 							<?php endif; ?>
 
 							<h3 class="search-title title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
