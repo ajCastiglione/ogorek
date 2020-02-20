@@ -7,7 +7,14 @@
     <p class="byline entry-meta vcard">
 
       <?php
-      $post_author = get_field('post_author') ? get_the_title(get_field('post_author')[0]->ID) : get_the_author_meta('display_name', 2);
+      if (get_field('post_author')) {
+        $post_author = get_the_title(get_field('post_author')[0]->ID);
+      } elseif (get_the_author_meta('ID') !== 2 && get_the_author_meta('ID') !== 12) {
+        $post_author = get_the_author_link(get_the_author_meta('ID'));
+      } else {
+        $post_author = get_the_author_meta('display_name', 2);
+      }
+
       printf(
         __('', 'bonestheme') . ' %1$s %2$s %3$s',
         /* the time the post was published */
