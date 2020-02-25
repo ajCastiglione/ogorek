@@ -43,7 +43,7 @@
     <?php $a = new WP_Query(array('post_type' => 'team'));
     while ($a->have_posts()) : $a->the_post();
       $un = get_field('user_link')['user_nicename'];
-      if ($un === $nn && !strstr($post_author, 'Team')) {
+      if ($un === $nn && !strstr($post_author, 'Team') && empty(get_field('post_author'))) {
         $found = true; ?>
         <div class="author">
           <img src="<?= get_field('team_member_photo')['url'] ?>" alt="<?= the_title() ?>" class="portrait">
