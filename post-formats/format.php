@@ -34,6 +34,11 @@
   <section class="entry-content cf" itemprop="articleBody">
     <?php $nn = get_the_author_meta('user_nicename');
     $found = false;
+    if (is_user_logged_in()) {
+      echo "<pre>";
+      var_dump(get_field('post_author')[0], $post_author);
+      echo "</pre>";
+    }
     ?>
     <?php $a = new WP_Query(array('post_type' => 'team'));
     while ($a->have_posts()) : $a->the_post();
