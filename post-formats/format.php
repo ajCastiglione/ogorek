@@ -46,7 +46,7 @@
       if ($un === $nn && !strstr($post_author, 'Team')) {
         if (is_user_logged_in()) {
           echo "<pre>";
-          var_dump($nn, $un);
+          var_dump(strstr($post_author, 'Team'));
           echo "</pre>";
         }
         $found = true; ?>
