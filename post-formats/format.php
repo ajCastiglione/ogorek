@@ -48,6 +48,9 @@
     endwhile;
     wp_reset_query();
     if (!$found && !empty(get_field('post_author'))) {
+      if (is_user_logged_in()) {
+        var_dump(get_field('post_author')[0]);
+      }
       $found = true;
       $authorID = get_field('post_author')[0]->ID; ?>
       <div class="author">
