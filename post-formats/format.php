@@ -42,8 +42,7 @@
       if ($un === $nn && !strstr($post_author, 'Team') && empty(get_field('post_author'))) {
         if (is_user_logged_in()) {
           echo "<pre>";
-          echo 'firing on first';
-          var_dump($un === $nn && !strstr($post_author, 'Team') && empty(get_field('post_author')));
+          var_dump($un === $nn, !strstr($post_author, 'Team'), empty(get_field('post_author')));
           echo "</pre>";
         }
         $found = true; ?>
