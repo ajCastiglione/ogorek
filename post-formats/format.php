@@ -37,12 +37,13 @@
 
     ?>
     <?php $a = new WP_Query(array('post_type' => 'team'));
+    $post_author_exists = !empty(get_field('post_author')) ? true : false;
     while ($a->have_posts()) : $a->the_post();
       $un = get_field('user_link')['user_nicename'];
-      if ($un === $nn && !strstr($post_author, 'Team') && empty(get_field('post_author'))) {
+      if ($un === $nn && !strstr($post_author, 'Team') && $post_author_exists) {
         if (is_user_logged_in()) {
           echo "<pre>";
-          var_dump($un === $nn, !strstr($post_author, 'Team'), empty(get_field('post_author')));
+          var_dump($un === $nn, !strstr($post_author, 'Team'), $post_author_exists);
           echo "</pre>";
         }
         $found = true; ?>
