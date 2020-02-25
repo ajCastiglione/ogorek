@@ -33,7 +33,11 @@
 
   <section class="entry-content cf" itemprop="articleBody">
     <?php $nn = get_the_author_meta('user_nicename');
-    $found = false; ?>
+    $found = false;
+    if (is_user_logged_in()) {
+      var_dump(get_field('post_author')[0], $post_author);
+    }
+    ?>
     <?php $a = new WP_Query(array('post_type' => 'team'));
     while ($a->have_posts()) : $a->the_post();
       $un = get_field('user_link')['user_nicename'];
@@ -48,9 +52,6 @@
     endwhile;
     wp_reset_query();
     if (!$found && !empty(get_field('post_author'))) {
-      if (is_user_logged_in()) {
-        var_dump(get_field('post_author')[0]);
-      }
       $found = true;
       $authorID = get_field('post_author')[0]->ID; ?>
       <div class="author">
