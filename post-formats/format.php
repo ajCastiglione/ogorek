@@ -34,16 +34,18 @@
   <section class="entry-content cf" itemprop="articleBody">
     <?php $nn = get_the_author_meta('user_nicename');
     $found = false;
-    if (is_user_logged_in()) {
-      echo "<pre>";
-      var_dump($post_author, !strstr($post_author, 'Team'));
-      echo "</pre>";
-    }
+
     ?>
     <?php $a = new WP_Query(array('post_type' => 'team'));
     while ($a->have_posts()) : $a->the_post();
       $un = get_field('user_link')['user_nicename'];
       if ($un === $nn && !strstr($post_author, 'Team') && empty(get_field('post_author'))) {
+        if (is_user_logged_in()) {
+          echo "<pre>";
+          echo 'firing on first';
+          // var_dump($post_author, !strstr($post_author, 'Team'));
+          echo "</pre>";
+        }
         $found = true; ?>
         <div class="author">
           <img src="<?= get_field('team_member_photo')['url'] ?>" alt="<?= the_title() ?>" class="portrait">
