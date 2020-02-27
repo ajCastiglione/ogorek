@@ -51,13 +51,25 @@ HeaderSection
 ****************************/
 .top-header {
   text-align: inherit;
-  .grid-50 {
+  .top-header-grid {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .search-field {
+    grid-column: 1 / 3;
+    padding: 0.5rem;
+    .form-container {
+      margin-left: 0;
+      max-width: 100%;
+      width: 100%;
+    }
   }
   .socials {
     text-align: right;
+    grid-row: 2;
   }
   .info {
+    grid-row: 2;
     a {
       span {
         display: inline;
@@ -67,11 +79,6 @@ HeaderSection
       }
     }
   }
-}
-
-// mobile search field
-.search-field {
-  display: none;
 }
 
 .header-bottom {

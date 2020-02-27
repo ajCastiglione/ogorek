@@ -400,11 +400,41 @@ Header Section
   right: 0;
   width: 100%;
   z-index: 9;
-  .grid-50 {
+  .top-header-grid {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
+  // Mobile search
+  .search-field {
+    padding: 20px 0.5rem;
+    width: 100%;
+    transition: all 0.4s ease;
+    .form-container {
+      padding: 4px 0;
+      .fa-search {
+        position: absolute;
+        top: 7px;
+        left: 0;
+        padding: 10px;
+        color: $gray;
+      }
+
+      input[type="search"] {
+        position: relative;
+        padding-left: 30px;
+      }
+
+      #searchsubmit {
+        display: none;
+      }
+    }
+  }
+  // Email and phone
   .info {
+    order: 2;
     a {
       color: $white;
       font-weight: bold;
@@ -420,7 +450,9 @@ Header Section
       }
     }
   }
+  // SM icons
   .socials {
+    order: 2;
     .social-icon {
       color: $white;
       padding: 0 0.8rem;
@@ -576,31 +608,7 @@ NAVIGATION STYLES
     position: relative;
   }
 }
-// Mobile search
-.search-field {
-  padding: 20px 0.5rem;
-  width: 100%;
-  transition: all 0.4s ease;
-  .form-container {
-    padding: 4px 0;
-    .fa-search {
-      position: absolute;
-      top: 7px;
-      left: 0;
-      padding: 10px;
-      color: $gray;
-    }
 
-    input[type="search"] {
-      position: relative;
-      padding-left: 30px;
-    }
-
-    #searchsubmit {
-      display: none;
-    }
-  }
-}
 // Shiftnav nav items
 #shiftnav-main {
   .shiftnav-inner {

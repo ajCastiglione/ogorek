@@ -25,6 +25,34 @@ h2.aside-title {
   }
 }
 
+/****************************
+HeaderSection
+****************************/
+.top-header {
+  .top-header-grid {
+    grid-template-columns: 2fr 1fr 1fr;
+    justify-content: center;
+  }
+  .search-field {
+    grid-column: 3;
+  }
+  .info {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .socials {
+    text-align: right;
+    grid-row: 1;
+    grid-column: 2;
+  }
+}
+
+.header-bottom {
+  @media (min-width: 1181px) {
+    margin-top: 76px;
+  }
+}
+
 /*********************
 NAVIGATION STYLES
 *********************/

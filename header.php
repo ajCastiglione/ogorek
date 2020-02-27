@@ -106,10 +106,8 @@
 			<div id="inner-header" class="cf">
 
 				<div class="top-header">
-					<div class="search-field">
-						<?= get_search_form() ?>
-					</div>
-					<div class="grid-50">
+
+					<div class="top-header-grid">
 						<div class="info">
 							<a href="tel:+<?= trim(get_field('phone_number', 'options')); ?>">
 								<i class="fas fa-phone"></i> <span><?= trim(get_field('phone_number', 'options')); ?></span>
@@ -118,6 +116,11 @@
 								<i class="fas fa-envelope"></i> <span><?= is_page(3595) || is_page(286) ? 'trust@ogorek.com' : trim(get_field('email_address', 'options')); ?></span>
 							</a>
 						</div>
+
+						<div class="search-field">
+							<?= get_search_form() ?>
+						</div>
+
 						<div class="socials">
 							<?php if (have_rows('social_media', 'options')) : while (have_rows('social_media', 'options')) : the_row(); ?>
 									<a href="<?= get_sub_field('social_url'); ?>" target="_blank" rel="noopener noreferrer" class="social-icon">
