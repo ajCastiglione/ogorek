@@ -1902,6 +1902,22 @@ Partials Section
       font-weight: 300;
     }
   }
+  &.three-part {
+    display: grid;
+    padding: 1rem;
+    .title {
+      color: $primary;
+      font-size: 30px;
+      text-transform: capitalize;
+      mix-blend-mode: multiply;
+      padding-bottom: 4rem;
+    }
+    .text {
+      img {
+        max-width: 100%;
+      }
+    }
+  }
 }
 
 .hero-large {

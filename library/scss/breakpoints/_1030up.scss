@@ -164,6 +164,13 @@ Partials Section
     font-size: 25px;
     margin-top: 3rem;
   }
+  &.three-part {
+    grid-template-columns: repeat(3, 1fr);
+    .title {
+      grid-column: 3;
+      font-size: 40px;
+    }
+  }
 }
 
 .hero-large {
