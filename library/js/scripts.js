@@ -271,6 +271,12 @@ function removeTitleQs($) {
   }
 }
 
+// Add check to completed form options
+function addCheck($) {
+  let btn = $(".trusts .form .btn.completed");
+  btn.html("Form Completed" + '<i class="fas fa-check"></i>');
+}
+
 /*
  * Put all your regular jQuery in here.
  */
@@ -295,6 +301,7 @@ jQuery(document).ready(function($) {
     removeTitleQs($);
     createTrust($);
     removeCreate($);
+    addCheck($);
   }
   /*
   if (

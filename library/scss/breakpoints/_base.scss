@@ -2614,6 +2614,9 @@ Custom Post Types Section
         border-color: $secondary;
         pointer-events: none;
         cursor: default;
+        i {
+          padding-left: 10px;
+        }
         &:hover {
           color: $white;
         }
