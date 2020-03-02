@@ -246,4 +246,6 @@ add_filter('pre_get_posts', 'exclude_category_jobs');
 /************* Cron Jobs Include *********************/
 require "theme/cron-jobs.php";
 
+
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>
