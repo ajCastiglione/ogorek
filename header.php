@@ -112,8 +112,8 @@
 							<a href="tel:+<?= trim(get_field('phone_number', 'options')); ?>">
 								<i class="fas fa-phone"></i> <span><?= trim(get_field('phone_number', 'options')); ?></span>
 							</a>
-							<a href="mailto:<?= is_page(3595) || is_page(286) ? 'trust@ogorek.com' : trim(get_field('email_address', 'options')); ?>">
-								<i class="fas fa-envelope"></i> <span><?= is_page(3595) || is_page(286) ? 'trust@ogorek.com' : trim(get_field('email_address', 'options')); ?></span>
+							<a href="mailto:<?= is_page(3595) ? 'trust@ogorek.com' : trim(get_field('email_address', 'options')); ?>">
+								<i class="fas fa-envelope"></i> <span><?= is_page(3595) ? 'trust@ogorek.com' : trim(get_field('email_address', 'options')); ?></span>
 							</a>
 						</div>
 
