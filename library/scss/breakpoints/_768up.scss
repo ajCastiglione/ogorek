@@ -451,6 +451,10 @@ Partials Section
     .title {
       grid-column: 2;
       font-size: 35px;
+      align-self: flex-start;
+    }
+    .text {
+      align-self: flex-end;
     }
   }
 }

@@ -190,9 +190,11 @@ Partials Section
   }
   &.three-part {
     grid-template-columns: repeat(3, 1fr);
+    min-height: 600px;
     .title {
       grid-column: 3;
       font-size: 40px;
+      padding-bottom: 5rem;
     }
   }
 }
