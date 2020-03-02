@@ -25,6 +25,38 @@ h2.aside-title {
   }
 }
 
+/****************************
+HeaderSection
+****************************/
+.top-header {
+  .top-header-grid {
+    grid-template-columns: 2fr 1fr 1fr;
+    justify-content: center;
+  }
+  .search-field {
+    grid-column: 3;
+  }
+  .info {
+    grid-column: 1;
+    grid-row: 1;
+    a {
+      font-size: 20px;
+    }
+  }
+  .socials {
+    text-align: right;
+    grid-row: 1;
+    grid-column: 2;
+  }
+}
+
+.header-bottom {
+  margin-top: 80px;
+  @media (min-width: 1181px) {
+    margin-top: 76px;
+  }
+}
+
 /*********************
 Header section
 *********************/
@@ -144,14 +176,6 @@ Singles Section
     font-size: 22px;
   }
 }
-.single-attorneys {
-  .layout-grid {
-    grid-template-columns: 3fr 1fr;
-  }
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
 /****************************
 Partials Section
@@ -236,7 +260,7 @@ Blog Section
 Custom Post Types Section
 ****************************/
 
-.page-template-page-secured {
+.firm-template-page-secured {
   .law-firm {
     .grid {
       grid-template-columns: repeat(3, 1fr);

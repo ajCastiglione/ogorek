@@ -221,6 +221,16 @@ function remove_protected_text()
   return __('%s');
 }
 
+/************* ADD ROLES *********************/
+require 'theme/add-roles.php';
+
+/************* FAILED LOGIN REDIRECT FOR LAW FIRM ADMINS *********************/
+require 'theme/law-firm-login-redirect.php';
+
+/************* ADDING DEFAULT ROWS FOR TRUSTS *********************/
+require 'theme/acf-default-rows.php';
+
+
 /************* CAT Exclusion for jobs *********************/
 
 function exclude_category_jobs($query)

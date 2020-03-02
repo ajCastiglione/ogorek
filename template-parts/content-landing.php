@@ -2,8 +2,8 @@
   <div class="grid-col-3 col-1">
     <?php if (have_rows('values')) : while (have_rows('values')) : the_row(); ?>
         <?php $icon = get_sub_field('icon');
-            $title = get_sub_field('title');
-            $content = get_sub_field('content'); ?>
+        $title = get_sub_field('title');
+        $content = get_sub_field('content'); ?>
         <div class="item">
           <img src="<?= $icon['url'] ?>" alt="">
           <h3 class="title"><?= $title ?></h3>

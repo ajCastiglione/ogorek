@@ -51,13 +51,39 @@ HeaderSection
 ****************************/
 .top-header {
   text-align: inherit;
+  .top-header-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .search-field {
+    grid-column: 1 / 3;
+    padding: 0.5rem;
+    .form-container {
+      margin-left: 0;
+      max-width: 100%;
+      width: 100%;
+    }
+  }
   .socials {
     text-align: right;
+    grid-row: 2;
+  }
+  .info {
+    grid-row: 2;
+    a {
+      span {
+        display: inline;
+      }
+      &:nth-child(2) {
+        margin-left: 12px;
+      }
+    }
   }
 }
 
 .header-bottom {
   text-align: inherit;
+  margin-top: 95px;
 
   .header-right {
     justify-content: flex-end;
@@ -416,15 +442,6 @@ Singles Section
   }
 }
 
-.single-attorneys {
-  .layout-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 /****************************
 Partials Section
 ****************************/
@@ -506,7 +523,7 @@ Blog Section
 Custom Post Types Section
 ****************************/
 
-.page-template-page-secured {
+.firms-template-page-secured {
   .law-firm-hero {
     .split-logo {
       .title {
@@ -528,6 +545,17 @@ Custom Post Types Section
   .law-firm {
     .grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+// Authenticated section
+.authenticated-view {
+  .attorney,
+  .trusts-selector,
+  .trusts {
+    .btn-group {
+      flex-wrap: nowrap;
     }
   }
 }
