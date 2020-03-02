@@ -60,9 +60,6 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
 // forms (inputs & labels)
 @import "modules/forms";
 
-// IE styles
-// @import "ie";
-
 /*********************
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If
@@ -141,4 +138,3 @@ be set to display none.
   // styles in print.scss
   @import "partials/print";
 }
-

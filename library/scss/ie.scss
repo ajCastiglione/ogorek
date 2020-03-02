@@ -56,7 +56,7 @@ header.php file to see what they are:
 */
 
 // Hero
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
   /* IE10+ CSS styles go here */
   .hero {
     &.three-part {
