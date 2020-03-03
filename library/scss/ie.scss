@@ -57,4 +57,13 @@ header.php file to see what they are:
 
 // Hero
 @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .blog {
+    .blog-posts {
+      display: flex;
+      flex-wrap: wrap;
+      .post-card {
+        flex-basis: 30%;
+      }
+    }
+  }
 }
