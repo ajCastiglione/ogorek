@@ -198,9 +198,9 @@ function trustChosen($) {
     let url = document.location;
     if (url.href.match("trust")) {
       let url = document.location.href.split("&trust")[0];
-      document.location = `${url}&trust=${val}`;
+      document.location = url + "&trust=" + val;
     } else {
-      document.location = `${url}&trust=${val}`;
+      document.location = url + "&trust=" + val;
     }
   });
 
@@ -210,9 +210,9 @@ function trustChosen($) {
     let url = document.location;
     if (url.href.match("title")) {
       let url = document.location.href.split("&title")[0];
-      document.location = `${url}&title=${newTitle}`;
+      document.location = url + "&title=" + newTitle;
     } else {
-      document.location = `${url}&title=${newTitle}`;
+      document.location = url + "&title=" + newTitle;
     }
   });
 }
@@ -232,10 +232,10 @@ function createTrust($) {
 
     if (url.href.match("create")) {
       let url = document.location.href.split("&create")[0];
-      document.location = `${url}&create=${newTrustTitle}`;
+      document.location = url + "&create=" + newTrustTitle;
       $(".alert-error").fadeOut();
     } else {
-      document.location = `${url}&create=${newTrustTitle}`;
+      document.location = url + "&create=" + newTrustTitle;
       $(".alert-error").fadeOut();
     }
   });

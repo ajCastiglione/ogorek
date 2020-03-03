@@ -57,38 +57,4 @@ header.php file to see what they are:
 
 // Hero
 @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  /* IE10+ CSS styles go here */
-  .hero {
-    &.three-part {
-      height: 400px;
-      .title {
-        padding-top: 2rem;
-      }
-      .text {
-        grid-row: 2;
-        align-self: end;
-        margin-top: 4rem;
-      }
-    }
-  }
-}
-
-@media (max-width: 1030px) and (-ms-high-contrast: none),
-  (-ms-high-contrast: active) {
-  /* IE10+ CSS styles go here */
-  .hero {
-    &.three-part {
-      grid-template-columns: 1fr;
-      .title {
-        font-size: 35px !important;
-        grid-column: 1;
-      }
-      .text {
-        grid-column: 1;
-        grid-row: 2;
-        align-self: end;
-        margin-top: 2rem;
-      }
-    }
-  }
 }
