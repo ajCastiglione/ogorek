@@ -30,7 +30,7 @@ $map = get_field('map_embed');
           <div class="socials">
             <?php if (have_rows('social_media', 'options')) : while (have_rows('social_media', 'options')) : the_row(); ?>
                 <a href="<?= get_sub_field('social_url'); ?>" target="_blank" rel="noopener noreferrer" class="social-icon">
-                  <?= get_sub_field('social_icon'); ?>
+                  <?= (get_sub_field('icon_or_svg')) ? get_sub_field('social_icon') : '<figure>' . get_sub_field('social_icon_svg') . '</figure>'; ?>
                 </a>
             <?php endwhile;
             endif; ?>
