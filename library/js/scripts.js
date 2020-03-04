@@ -277,6 +277,19 @@ function addCheck($) {
   btn.html("Form Completed" + '<i class="fas fa-check"></i>');
 }
 
+// Add preload to videos embedded in content
+function addPlaceholderInternalPages($) {
+  let videos = $(".entry-content .wp-video-shortcode source");
+  if (videos.length > 0) {
+    $.each(videos, function(index, video) {
+      let src = $(video).attr("src");
+      let removeQueryString = src.split("?")[0];
+      let formattedSrc = removeQueryString + "#t=0.1";
+      $(video).attr("src", formattedSrc);
+    });
+  }
+}
+
 /*
  * Put all your regular jQuery in here.
  */
@@ -286,6 +299,7 @@ jQuery(document).ready(function($) {
   showVideo($);
   newsletterSignup($);
   addSearchIcon($);
+  addPlaceholderInternalPages($);
 
   if ($("body").hasClass("page-template-page-landing-marketing")) {
     showForm($);
