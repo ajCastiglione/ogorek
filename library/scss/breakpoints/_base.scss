@@ -1527,6 +1527,7 @@ Internal Pages Section
       .half {
         &:first-child {
           text-align: center;
+          padding-right: 2rem;
         }
         &:last-child {
           padding: 1rem 0 1rem 1rem;
