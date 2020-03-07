@@ -316,8 +316,16 @@ Internal Pages Section
       .logo {
         max-width: 350px;
       }
-      &:before {
-        height: 120px;
+      .content {
+        h1,
+        h2,
+        h3,
+        h4 {
+          font-size: 35px;
+        }
+        p {
+          font-size: 20px;
+        }
       }
     }
 
@@ -332,7 +340,7 @@ Internal Pages Section
         font-size: 45px;
       }
       .subtitle {
-        font-size: 35px;
+        font-size: 28px;
       }
       .get-started {
         display: none;

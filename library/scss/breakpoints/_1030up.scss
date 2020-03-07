@@ -126,13 +126,23 @@ Internal Pages Section
 .page-template-page-landing-marketing {
   // hero
   .hero-landing-page {
+    .left {
+      .content {
+        h1,
+        h2,
+        h3,
+        h4 {
+          font-size: 45px;
+        }
+        p {
+          font-size: 22px;
+        }
+      }
+    }
     .right {
       padding: 1rem 3rem;
       .title {
         font-size: 60px;
-      }
-      .subtitle {
-        font-size: 45px;
       }
       .form {
         max-width: 80%;
