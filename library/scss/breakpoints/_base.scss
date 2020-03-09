@@ -1479,6 +1479,7 @@ Internal Pages Section
     }
     &.s2 {
       text-align: center;
+      color: $primary;
       .subtitle {
         font-size: 17px;
       }
@@ -1508,7 +1509,7 @@ Internal Pages Section
             font-size: 30px;
           }
           .value-title {
-            color: darken($primary, 30%);
+            color: $primary;
             font-weight: bold;
             font-size: 18px;
           }
