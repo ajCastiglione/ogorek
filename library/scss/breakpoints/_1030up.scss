@@ -159,6 +159,9 @@ Internal Pages Section
     }
 
     &.s2 {
+      .subtitle {
+        font-size: 22px;
+      }
       .repeater {
         grid-template-columns: repeat(4, 1fr);
       }
