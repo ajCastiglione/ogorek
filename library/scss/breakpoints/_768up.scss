@@ -348,7 +348,7 @@ Internal Pages Section
       .form {
         opacity: 1;
         height: auto;
-        max-width: 90%;
+        // max-width: 90%;
         margin: 1rem 0;
         .close {
           display: none;
@@ -372,6 +372,7 @@ Internal Pages Section
         bottom: auto;
         left: auto;
         margin: 0 0 2rem;
+        padding-left: 0;
       }
       .learn-more {
         display: flex;

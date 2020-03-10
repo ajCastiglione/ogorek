@@ -127,6 +127,7 @@ Internal Pages Section
   // hero
   .hero-landing-page {
     .left {
+      padding-left: 2rem;
       .content {
         h1,
         h2,
@@ -140,12 +141,12 @@ Internal Pages Section
       }
     }
     .right {
-      padding: 2rem;
+      padding: 2rem 2rem 2rem 1rem;
       .title {
         font-size: 60px;
       }
       .form {
-        max-width: 80%;
+        // max-width: 80%;
       }
     }
   }
