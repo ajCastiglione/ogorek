@@ -132,6 +132,11 @@ Internal Pages Section
   .aside-title {
     font-size: 45px;
   }
+  .aside {
+    .grid-50 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 }
 
 // Landing pages
