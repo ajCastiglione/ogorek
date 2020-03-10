@@ -308,7 +308,6 @@ Internal Pages Section
 .page-template-page-landing-marketing {
   // hero
   .hero-landing-page {
-    height: 100vh;
     .grid-50 {
       height: 100%;
     }
@@ -336,11 +335,12 @@ Internal Pages Section
       flex-wrap: wrap;
       text-align: left;
       padding: 1rem 2rem;
+      border: none;
       .title {
-        font-size: 45px;
+        font-size: 35px;
       }
       .subtitle {
-        font-size: 28px;
+        font-size: 24px;
       }
       .get-started {
         display: none;
@@ -371,7 +371,7 @@ Internal Pages Section
         top: auto;
         bottom: auto;
         left: auto;
-        margin: 0;
+        margin: 0 0 2rem;
       }
       .learn-more {
         display: flex;

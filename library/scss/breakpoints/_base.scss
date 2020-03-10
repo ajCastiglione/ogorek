@@ -1274,7 +1274,7 @@ Internal Pages Section
       background-position: top center;
       min-height: 350px;
       background-color: $primary;
-      padding: 1rem;
+      padding: 2rem 1rem;
 
       .logo {
         position: relative;
@@ -1312,6 +1312,8 @@ Internal Pages Section
       color: $white;
       position: relative;
       text-align: center;
+      padding: 2rem;
+      border-top: 2px solid $secondary;
       .title {
         font-weight: bold;
         margin: 1rem 0 0.5rem;
@@ -1426,7 +1428,7 @@ Internal Pages Section
         flex-direction: column;
         justify-content: center;
         position: absolute;
-        bottom: 1rem;
+        bottom: 10px;
         left: 32%;
         font-size: 20px;
         .down-arrow {
