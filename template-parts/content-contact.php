@@ -11,7 +11,7 @@ $map = get_field('map_embed');
   <?= get_template_part('partials/hero'); ?>
 
   <section class="entry" id="core">
-    <div class="grid-6535 col-1">
+    <div class="grid-50 col-1">
       <div class="content">
         <h2 class="title"><?= $title ?></h2>
         <div class="text">
