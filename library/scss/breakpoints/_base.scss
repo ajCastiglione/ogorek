@@ -1935,6 +1935,7 @@ Partials Section
       grid-column: 1;
       img {
         max-width: 100%;
+        height: auto;
       }
     }
     @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
