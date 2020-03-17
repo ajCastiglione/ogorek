@@ -106,7 +106,9 @@
 			<div id="inner-header" class="cf">
 
 				<div class="top-header">
-
+					<div class="alert-header">
+						<?= get_field('alert_content', 'options') ?>
+					</div>
 					<div class="top-header-grid">
 						<div class="info">
 							<a href="tel:+<?= trim(get_field('phone_number', 'options')); ?>">

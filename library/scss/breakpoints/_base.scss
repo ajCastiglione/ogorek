@@ -400,6 +400,17 @@ Header Section
   right: 0;
   width: 100%;
   z-index: 9;
+  .alert-header {
+    text-align: center;
+    padding: 10px;
+    color: $white;
+    font-weight: bold;
+    font-size: 16px;
+    border-bottom: 2px solid $white;
+    p {
+      margin: 0;
+    }
+  }
   .top-header-grid {
     display: flex;
     justify-content: center;
@@ -409,7 +420,7 @@ Header Section
   }
   // Mobile search
   .search-field {
-    padding: 20px 0.5rem;
+    padding: 10px 0.5rem;
     width: 100%;
     transition: all 0.4s ease;
     .form-container {
@@ -512,7 +523,7 @@ Header Section
     }
   }
   @media (max-width: 1180px) {
-    margin-top: 150px;
+    margin-top: 170px;
   }
 }
 

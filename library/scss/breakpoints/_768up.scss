@@ -51,6 +51,9 @@ HeaderSection
 ****************************/
 .top-header {
   text-align: inherit;
+  .alert-header {
+    font-size: 18px;
+  }
   .top-header-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -83,7 +86,7 @@ HeaderSection
 
 .header-bottom {
   text-align: inherit;
-  margin-top: 95px;
+  margin-top: 145px;
 
   .header-right {
     justify-content: flex-end;
