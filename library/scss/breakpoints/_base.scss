@@ -93,6 +93,7 @@ h5,
   line-height: 2.09em;
   text-transform: uppercase;
   letter-spacing: 2px;
+  color: $red;
 }
 
 /*********************
@@ -1761,7 +1762,7 @@ Singles Section
     }
     .text {
       h5 {
-        color: red;
+        color: $red;
       }
     }
   }
