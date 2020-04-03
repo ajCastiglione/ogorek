@@ -14,6 +14,14 @@ function loadIframe() {
   }
 }
 
+function addLightbox($) {
+  let imgs = $(".entry-content img");
+  $.each(imgs, function(index, img) {
+    let src = $(img).attr("src");
+    $(img).wrap("<a href='" + src + "' class='foobox'></a>");
+  });
+}
+
 function initSlider($) {
   $(".owl-carousel").owlCarousel({
     items: 1,
@@ -303,6 +311,10 @@ jQuery(document).ready(function($) {
 
   if ($("body").hasClass("page-template-page-landing-marketing")) {
     showForm($);
+  }
+
+  if ($("body").hasClass("single-post")) {
+    addLightbox($);
   }
 
   if ($("body").hasClass("home")) {
