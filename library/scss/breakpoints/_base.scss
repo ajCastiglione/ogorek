@@ -93,6 +93,7 @@ h5,
   line-height: 2.09em;
   text-transform: uppercase;
   letter-spacing: 2px;
+  color: $red;
 }
 
 /*********************
@@ -400,6 +401,17 @@ Header Section
   right: 0;
   width: 100%;
   z-index: 9;
+  .alert-header {
+    text-align: center;
+    padding: 10px;
+    color: $white;
+    font-weight: bold;
+    font-size: 16px;
+    border-bottom: 2px solid $white;
+    p {
+      margin: 0;
+    }
+  }
   .top-header-grid {
     display: flex;
     justify-content: center;
@@ -409,7 +421,7 @@ Header Section
   }
   // Mobile search
   .search-field {
-    padding: 20px 0.5rem;
+    padding: 10px 0.5rem;
     width: 100%;
     transition: all 0.4s ease;
     .form-container {
@@ -453,14 +465,35 @@ Header Section
   // SM icons
   .socials {
     order: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     .social-icon {
       color: $white;
       padding: 0 0.8rem;
       font-size: 18px;
       transition: all 0.3s ease-in-out;
+      display: flex;
+      align-items: center;
+      figure {
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        max-height: 100%;
+        max-width: 100%;
+      }
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: $white;
+      }
       &:hover {
         color: $secondary;
         transform: scale(0.95);
+        svg {
+          fill: $secondary;
+          transition: all 0.4s ease;
+        }
       }
     }
   }
@@ -491,7 +524,7 @@ Header Section
     }
   }
   @media (max-width: 1180px) {
-    margin-top: 150px;
+    margin-top: 170px;
   }
 }
 
@@ -1753,6 +1786,11 @@ Singles Section
     h3 {
       color: $primary;
     }
+    .text {
+      h5 {
+        color: $red;
+      }
+    }
   }
 
   .aside-inner {
@@ -1786,24 +1824,53 @@ Singles Section
   .socials {
     margin-top: 1rem;
     .social-icon {
+      &:hover {
+        background-color: transparent;
+        i {
+          color: $secondary;
+        }
+      }
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    .social-icon {
       background-color: $secondary;
       color: $white;
-      display: inline-block;
-      border-radius: 100%;
-      border: 2px solid $secondary;
+      font-size: 1.5rem;
       margin: 0 4px;
+      display: inline-block;
       transition: all 0.3s ease-in-out;
+      border: 2px solid $secondary;
+      border-color: $secondary;
+      border-radius: 100%;
+      padding: 5px;
+      figure {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        max-height: 100%;
+        max-width: 100%;
+        min-width: 40px;
+      }
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: $white;
+      }
       i {
-        padding: 10px;
         font-size: 20px;
         min-width: 40px;
         text-align: center;
+        &:hover {
+          border-color: $secondary;
+          background-color: transparent;
+        }
       }
       &:hover {
-        background-color: transparent;
-        border-color: $secondary;
-        i {
-          color: $secondary;
+        svg {
+          fill: $secondary;
+          transition: all 0.4s ease;
         }
       }
       &:first-child {
@@ -1822,6 +1889,40 @@ Singles Section
       left: 0;
       width: 100%;
       height: 100%;
+    }
+  }
+
+  .schedule-icon {
+    background-color: $secondary;
+    color: $white;
+    font-size: 1.5rem;
+    margin: 0 4px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid $secondary;
+    border-color: $secondary;
+    border-radius: 100%;
+    padding: 5px;
+    figure {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      max-height: 100%;
+      max-width: 100%;
+      min-width: 40px;
+      padding-top: 1px;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: $white;
+    }
+    &:hover {
+      background-color: transparent;
+      svg {
+        fill: $secondary;
+        transition: all 0.4s ease;
+      }
     }
   }
 }
@@ -1859,6 +1960,38 @@ Partials Section
   .single-team & {
     .title {
       font-weight: 300;
+    }
+  }
+  &.three-part {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    .title {
+      color: $primary;
+      font-size: 30px;
+      text-transform: capitalize;
+      mix-blend-mode: multiply;
+      padding-bottom: 4rem;
+      grid-column: 1;
+    }
+    .text {
+      grid-column: 1;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+    @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      /* IE10+ CSS styles go here */
+      height: 400px;
+      .title {
+        padding-top: 2rem;
+      }
+      .text {
+        grid-row: 2;
+        align-self: end;
+        margin-top: 4rem;
+      }
     }
   }
 }
@@ -2146,12 +2279,39 @@ Footer Section
     }
     .socials {
       margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       .social-icon {
         color: $white;
         padding: 0 1rem;
         font-size: 1.5rem;
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        figure {
+          width: 1.5rem;
+          height: 1.5rem;
+          display: inline-block;
+          max-height: 100%;
+          max-width: 100%;
+        }
+        svg {
+          width: 100%;
+          height: 100%;
+          fill: $white;
+        }
+        &:hover {
+          color: $secondary;
+          transform: scale(0.95);
+          svg {
+            fill: $secondary;
+            transition: all 0.4s ease;
+          }
+        }
       }
     }
+
     .disclosures {
       margin-top: 2rem;
       p {
@@ -2163,7 +2323,6 @@ Footer Section
       }
     }
     .copyright {
-      font-weight: bold;
       font-size: 18px;
       margin: 0;
     }

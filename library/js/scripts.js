@@ -198,9 +198,9 @@ function trustChosen($) {
     let url = document.location;
     if (url.href.match("trust")) {
       let url = document.location.href.split("&trust")[0];
-      document.location = `${url}&trust=${val}`;
+      document.location = url + "&trust=" + val;
     } else {
-      document.location = `${url}&trust=${val}`;
+      document.location = url + "&trust=" + val;
     }
   });
 
@@ -210,9 +210,9 @@ function trustChosen($) {
     let url = document.location;
     if (url.href.match("title")) {
       let url = document.location.href.split("&title")[0];
-      document.location = `${url}&title=${newTitle}`;
+      document.location = url + "&title=" + newTitle;
     } else {
-      document.location = `${url}&title=${newTitle}`;
+      document.location = url + "&title=" + newTitle;
     }
   });
 }
@@ -232,10 +232,10 @@ function createTrust($) {
 
     if (url.href.match("create")) {
       let url = document.location.href.split("&create")[0];
-      document.location = `${url}&create=${newTrustTitle}`;
+      document.location = url + "&create=" + newTrustTitle;
       $(".alert-error").fadeOut();
     } else {
-      document.location = `${url}&create=${newTrustTitle}`;
+      document.location = url + "&create=" + newTrustTitle;
       $(".alert-error").fadeOut();
     }
   });
@@ -277,6 +277,19 @@ function addCheck($) {
   btn.html("Form Completed" + '<i class="fas fa-check"></i>');
 }
 
+// Add preload to videos embedded in content
+function addPlaceholderInternalPages($) {
+  let videos = $(".entry-content .wp-video-shortcode source");
+  if (videos.length > 0) {
+    $.each(videos, function(index, video) {
+      let src = $(video).attr("src");
+      let removeQueryString = src.split("?")[0];
+      let formattedSrc = removeQueryString + "#t=0.1";
+      $(video).attr("src", formattedSrc);
+    });
+  }
+}
+
 /*
  * Put all your regular jQuery in here.
  */
@@ -286,6 +299,7 @@ jQuery(document).ready(function($) {
   showVideo($);
   newsletterSignup($);
   addSearchIcon($);
+  addPlaceholderInternalPages($);
 
   if ($("body").hasClass("page-template-page-landing-marketing")) {
     showForm($);

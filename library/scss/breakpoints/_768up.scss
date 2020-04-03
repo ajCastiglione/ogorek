@@ -51,6 +51,9 @@ HeaderSection
 ****************************/
 .top-header {
   text-align: inherit;
+  .alert-header {
+    font-size: 18px;
+  }
   .top-header-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -83,7 +86,7 @@ HeaderSection
 
 .header-bottom {
   text-align: inherit;
-  margin-top: 95px;
+  margin-top: 145px;
 
   .header-right {
     justify-content: flex-end;
@@ -270,6 +273,11 @@ Internal Pages Section
   .content {
     padding-right: 3rem;
   }
+  .aside {
+    .grid-50 {
+      grid-template-columns: 1fr;
+    }
+  }
 }
 
 .landing-page {
@@ -454,6 +462,19 @@ Singles Section
 /****************************
 Partials Section
 ****************************/
+.hero {
+  &.three-part {
+    grid-template-columns: repeat(2, 1fr);
+    .title {
+      grid-column: 2;
+      font-size: 35px;
+      align-self: flex-start;
+    }
+    .text {
+      align-self: flex-end;
+    }
+  }
+}
 .alternating {
   .alt-container {
     padding: 3rem 5rem;
@@ -500,8 +521,6 @@ Blog Section
 
   .post-card {
     .featured-image {
-      min-height: 300px;
-      object-fit: cover;
     }
   }
 }

@@ -41,3 +41,14 @@ Internal Pages Section
     }
   }
 }
+
+/****************************
+Partials Section
+****************************/
+.hero {
+  &.three-part {
+    .title {
+      font-size: 45px;
+    }
+  }
+}

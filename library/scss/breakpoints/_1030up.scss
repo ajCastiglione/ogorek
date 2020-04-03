@@ -51,14 +51,26 @@ HeaderSection
 }
 
 .header-bottom {
-  margin-top: 80px;
+  margin-top: 125px;
   @media (min-width: 1181px) {
-    margin-top: 76px;
+    margin-top: 135px;
   }
 }
 
 /*********************
-NAVIGATION STYLES
+Header section
+*********************/
+
+.top-header {
+  .info {
+    a {
+      font-size: 20px;
+    }
+  }
+}
+
+/*********************
+Navigation Section
 *********************/
 
 .nav {
@@ -119,6 +131,11 @@ Internal Pages Section
   .title,
   .aside-title {
     font-size: 45px;
+  }
+  .aside {
+    .grid-50 {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }
 
@@ -189,6 +206,16 @@ Partials Section
   .text {
     font-size: 25px;
     margin-top: 3rem;
+  }
+  &.three-part {
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 600px;
+    .title {
+      grid-column: 3/5;
+      font-size: 40px;
+      padding-bottom: 5rem;
+      padding-right: 4rem;
+    }
   }
 }
 

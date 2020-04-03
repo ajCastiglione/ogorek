@@ -16,6 +16,7 @@ if (is_page(460)) {
   $hero_title = get_field('custom_hero_title');
   $content = get_field('content');
 }
+
 ?>
 
 <?php if (get_page_template_slug($post->ID) == 'page-secured.php') : ?>
@@ -27,6 +28,15 @@ if (is_page(460)) {
     </div>
   </div>
 
+<?php elseif (get_field('hero_selector') == 'unique') : ?>
+  <div class="hero three-part" style="background-image:url(<?= $hero['url'] ?>)">
+    <h1 class="title"><?php echo $hero_title ? $hero_title : get_the_title(); ?></h1>
+    <?php if (!empty($hero_content)) : ?>
+      <div class="text">
+        <?= $hero_content; ?>
+      </div>
+    <?php endif; ?>
+  </div>
 
 <?php elseif (!is_page(460)) : ?>
   <div class="hero <?php echo $hero ? '' : 'no-image' ?>" style="background-image:url(<?= $hero['url'] ?>)">
