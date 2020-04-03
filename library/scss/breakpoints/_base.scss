@@ -1963,36 +1963,8 @@ Partials Section
     }
   }
   &.three-part {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 1rem;
-    .title {
-      color: $primary;
-      font-size: 30px;
-      text-transform: capitalize;
-      mix-blend-mode: multiply;
-      padding-bottom: 4rem;
-      grid-column: 1;
-    }
-    .text {
-      grid-column: 1;
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-    }
-    @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      /* IE10+ CSS styles go here */
-      height: 400px;
-      .title {
-        padding-top: 2rem;
-      }
-      .text {
-        grid-row: 2;
-        align-self: end;
-        margin-top: 4rem;
-      }
-    }
+    min-height: 150px;
+    background-size: 100% 100%;
   }
 }
 

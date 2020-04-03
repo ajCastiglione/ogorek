@@ -30,12 +30,12 @@ if (is_page(460)) {
 
 <?php elseif (get_field('hero_selector') == 'unique') : ?>
   <div class="hero three-part" style="background-image:url(<?= $hero['url'] ?>)">
-    <h1 class="title"><?php echo $hero_title ? $hero_title : get_the_title(); ?></h1>
+    <!-- <h1 class="title"><?php echo $hero_title ? $hero_title : get_the_title(); ?></h1>
     <?php if (!empty($hero_content)) : ?>
       <div class="text">
         <?= $hero_content; ?>
       </div>
-    <?php endif; ?>
+    <?php endif; ?> -->
   </div>
 
 <?php elseif (!is_page(460)) : ?>

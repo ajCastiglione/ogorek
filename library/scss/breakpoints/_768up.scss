@@ -464,15 +464,7 @@ Partials Section
 ****************************/
 .hero {
   &.three-part {
-    grid-template-columns: repeat(2, 1fr);
-    .title {
-      grid-column: 2;
-      font-size: 35px;
-      align-self: flex-start;
-    }
-    .text {
-      align-self: flex-end;
-    }
+    min-height: 300px;
   }
 }
 .alternating {

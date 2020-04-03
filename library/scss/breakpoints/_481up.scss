@@ -45,6 +45,12 @@ Partials Section
   }
 }
 
+.hero {
+  &.three-part {
+    min-height: 250px;
+  }
+}
+
 /****************************
 Internal Pages Section
 ****************************/
