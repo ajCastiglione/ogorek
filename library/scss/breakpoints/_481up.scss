@@ -48,6 +48,20 @@ Partials Section
 .hero {
   &.three-part {
     min-height: 250px;
+    .title {
+      position: absolute;
+      left: auto;
+      right: 15px;
+      margin: auto;
+      background: none;
+    }
+    // logo
+    .text {
+      left: 10px;
+      img {
+        max-width: 225px;
+      }
+    }
   }
 }
 
