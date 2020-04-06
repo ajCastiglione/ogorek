@@ -1971,20 +1971,20 @@ Partials Section
       right: 0;
       left: 0;
       top: 10px;
-      font-size: 22px;
+      font-size: 25px;
       max-width: 500px;
       margin: 0 auto 70px;
       color: $primary;
       mix-blend-mode: multiply;
     }
     // logo
-    .text {
+    .logo {
       position: absolute;
       left: 0;
       bottom: 5px;
       img {
         width: 100%;
-        max-width: 125px;
+        max-width: 140px;
         height: auto;
       }
     }
