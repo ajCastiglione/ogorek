@@ -1963,8 +1963,31 @@ Partials Section
     }
   }
   &.three-part {
+    position: relative;
     min-height: 150px;
     background-size: 100% 100%;
+    // hero title
+    .title {
+      right: 0;
+      left: 0;
+      top: 10px;
+      font-size: 22px;
+      max-width: 500px;
+      margin: 0 auto 70px;
+      color: $primary;
+      mix-blend-mode: multiply;
+    }
+    // logo
+    .text {
+      position: absolute;
+      left: 0;
+      bottom: 5px;
+      img {
+        width: 100%;
+        max-width: 125px;
+        height: auto;
+      }
+    }
   }
 }
 

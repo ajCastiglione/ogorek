@@ -465,6 +465,15 @@ Partials Section
 .hero {
   &.three-part {
     min-height: 300px;
+    .title {
+      right: 20px;
+      font-size: 28px;
+      max-width: 600px;
+      margin-right: auto;
+    }
+    .text {
+      bottom: 15px;
+    }
   }
 }
 .alternating {
