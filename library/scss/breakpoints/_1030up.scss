@@ -211,7 +211,13 @@ Partials Section
     .title {
       font-size: 35px;
       max-width: 700px;
-      right: 30px;
+      right: 15%;
+    }
+    // logo
+    .text {
+      img {
+        max-width: 300px;
+      }
     }
   }
 }

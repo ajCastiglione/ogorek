@@ -466,13 +466,16 @@ Partials Section
   &.three-part {
     min-height: 300px;
     .title {
-      right: 20px;
+      right: 10%;
       font-size: 28px;
       max-width: 600px;
       margin-right: auto;
     }
     .text {
       bottom: 15px;
+      img {
+        max-width: 270px;
+      }
     }
   }
 }
