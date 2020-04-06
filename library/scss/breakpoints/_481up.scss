@@ -51,15 +51,16 @@ Partials Section
     .title {
       position: absolute;
       left: auto;
-      right: 8%;
+      right: 15%;
       margin: auto;
       background: none;
     }
     // logo
-    .text {
+    .logo {
       left: 10px;
+      bottom: 15px;
       img {
-        max-width: 225px;
+        max-width: 250px;
       }
     }
   }
