@@ -47,10 +47,14 @@ Partials Section
 ****************************/
 .hero {
   &.three-part {
+    .title {
+      font-size: 45px;
+      right: 15%;
+    }
     .logo {
-      bottom: 25px;
+      bottom: 45px;
       img {
-        max-width: 400px;
+        max-width: 450px;
       }
     }
   }
