@@ -1965,7 +1965,7 @@ Partials Section
   &.three-part {
     position: relative;
     min-height: 150px;
-    background-size: 100% 100%;
+    background-size: cover;
     // hero title
     .title {
       right: 0;
@@ -1980,8 +1980,8 @@ Partials Section
     // logo
     .logo {
       position: absolute;
-      left: 0;
-      bottom: 5px;
+      left: 5px;
+      bottom: 10px;
       img {
         width: 100%;
         max-width: 140px;
