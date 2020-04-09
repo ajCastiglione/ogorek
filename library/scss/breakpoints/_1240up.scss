@@ -36,7 +36,7 @@ Internal Pages Section
   .hero-landing-page {
     .right {
       .form {
-        max-width: 70%;
+        // max-width: 70%;
       }
     }
   }
@@ -49,6 +49,14 @@ Partials Section
   &.three-part {
     .title {
       font-size: 45px;
+      right: 12%;
+      top: 30px;
+    }
+    .logo {
+      bottom: 60px;
+      img {
+        max-width: 450px;
+      }
     }
   }
 }

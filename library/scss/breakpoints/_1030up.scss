@@ -143,16 +143,27 @@ Internal Pages Section
 .page-template-page-landing-marketing {
   // hero
   .hero-landing-page {
+    .left {
+      padding-left: 2rem;
+      .content {
+        h1,
+        h2,
+        h3,
+        h4 {
+          font-size: 45px;
+        }
+        p {
+          font-size: 22px;
+        }
+      }
+    }
     .right {
-      padding: 1rem 3rem;
+      padding: 2rem 2rem 2rem 1rem;
       .title {
         font-size: 60px;
       }
-      .subtitle {
-        font-size: 45px;
-      }
       .form {
-        max-width: 80%;
+        // max-width: 80%;
       }
     }
   }
@@ -166,6 +177,9 @@ Internal Pages Section
     }
 
     &.s2 {
+      .subtitle {
+        font-size: 22px;
+      }
       .repeater {
         grid-template-columns: repeat(4, 1fr);
       }
@@ -194,13 +208,19 @@ Partials Section
     margin-top: 3rem;
   }
   &.three-part {
-    grid-template-columns: repeat(4, 1fr);
-    min-height: 600px;
+    background-size: 100% 100%;
     .title {
-      grid-column: 3/5;
-      font-size: 40px;
-      padding-bottom: 5rem;
-      padding-right: 4rem;
+      top: 30px;
+      font-size: 35px;
+      max-width: 700px;
+      right: 12%;
+    }
+    // logo
+    .logo {
+      bottom: 50px;
+      img {
+        max-width: 350px;
+      }
     }
   }
 }
