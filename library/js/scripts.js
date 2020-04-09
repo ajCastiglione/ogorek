@@ -75,8 +75,11 @@ function popup($) {
   let body = $("body");
   let modal = $(".popup");
   let close = $(".popup .close");
+  let date = new Date(Date.now() + 86400e3).toUTCString();
+  let cookieString = "popShown=true; expires=" + date;
+  console.log(cookieString);
   // if popup was closed this session, don't show it again
-  if (sessionStorage.popShown || localStorage.popShown) {
+  if (document.cookie.match("popShown")) {
     modal.remove();
     return;
   }
@@ -92,8 +95,8 @@ function popup($) {
     e.preventDefault();
     modal.removeClass("active");
     body.removeClass("popup-active");
-    sessionStorage.popShown = true;
-    localStorage.popShown = true;
+    document.cookie = cookieString;
+    document.cookie = cookieString;
     setTimeout(function () {
       modal.remove();
     }, 1200);
@@ -103,8 +106,8 @@ function popup($) {
     if (!$(e.target).closest(".inner-popup").length) {
       modal.removeClass("active");
       body.removeClass("popup-active");
-      sessionStorage.popShown = true;
-      localStorage.popShown = true;
+      document.cookie = cookieString;
+      document.cookie = cookieString;
       setTimeout(function () {
         modal.remove();
       }, 1200);
