@@ -230,24 +230,28 @@ Home Page Section
       min-height: 550px;
     }
   }
-  .popup {
-    .inner-popup {
-      width: 90%;
-      max-width: 800px;
-      max-height: 55%;
-      .popup-title {
-        margin-top: 2rem;
-        font-size: 35px;
-      }
-      #gform_wrapper_4 {
-        padding-bottom: 1rem;
-        #gform_fields_4 {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          input {
-            margin: 1rem 0.5rem;
-          }
+}
+
+/****************************
+Popup Section
+****************************/
+.popup {
+  .inner-popup {
+    width: 90%;
+    max-width: 800px;
+    max-height: 65%;
+    .popup-title {
+      margin-top: 2rem;
+      font-size: 35px;
+    }
+    #gform_wrapper_4 {
+      padding-bottom: 1rem;
+      #gform_fields_4 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        input {
+          margin: 1rem 0.5rem;
         }
       }
     }

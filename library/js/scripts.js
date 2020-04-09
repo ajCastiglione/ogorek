@@ -26,8 +26,8 @@ function initSlider($) {
     lazyload: true,
     navText: [
       '<i class="fas fa-chevron-left slick-prev"></i>',
-      '<i class="fas fa-chevron-right slick-next"></i>'
-    ]
+      '<i class="fas fa-chevron-right slick-next"></i>',
+    ],
   });
 }
 
@@ -46,14 +46,8 @@ function addPlaceholder($) {
   );
 
   if (video.length > 1) {
-    $.each(video, function(index, el) {
-      if (
-        $(el).attr("name") &&
-        $(el)
-          .attr("name")
-          .match("gform")
-      )
-        return;
+    $.each(video, function (index, el) {
+      if ($(el).attr("name") && $(el).attr("name").match("gform")) return;
 
       $(el).addClass("yt-video");
       $(el).wrap('<div class="video"></div>');
@@ -69,9 +63,9 @@ function addPlaceholder($) {
 
 function showVideo($) {
   let placeholder = $(".placeholder");
-  placeholder.on("click", function(e) {
+  placeholder.on("click", function (e) {
     placeholder.addClass("fadeOut");
-    setTimeout(function() {
+    setTimeout(function () {
       placeholder.remove();
     }, 700);
   });
@@ -87,29 +81,31 @@ function popup($) {
     return;
   }
   // show popup
-  setTimeout(function() {
-    modal.addClass("active");
-    body.addClass("popup-active");
-  }, 1500);
+  if (modal.length > 0) {
+    setTimeout(function () {
+      modal.addClass("active");
+      body.addClass("popup-active");
+    }, 1500);
+  }
 
-  close.on("click", function(e) {
+  close.on("click", function (e) {
     e.preventDefault();
     modal.removeClass("active");
     body.removeClass("popup-active");
     sessionStorage.popShown = true;
     localStorage.popShown = true;
-    setTimeout(function() {
+    setTimeout(function () {
       modal.remove();
     }, 1200);
   });
 
-  body.on("click", function(e) {
+  body.on("click", function (e) {
     if (!$(e.target).closest(".inner-popup").length) {
       modal.removeClass("active");
       body.removeClass("popup-active");
       sessionStorage.popShown = true;
       localStorage.popShown = true;
-      setTimeout(function() {
+      setTimeout(function () {
         modal.remove();
       }, 1200);
     }
@@ -117,7 +113,7 @@ function popup($) {
 }
 
 function smoothScroll($) {
-  $('a[href*="#"]').on("click", function(e) {
+  $('a[href*="#"]').on("click", function (e) {
     if (
       location.pathname.replace(/^\//, "") ==
         this.pathname.replace(/^\//, "") &&
@@ -138,7 +134,7 @@ function smoothScroll($) {
         {
           scrollTop: $("body").hasClass("page-id-564")
             ? target.offset().top - 210
-            : target.offset().top - 170
+            : target.offset().top - 170,
         },
         500,
         "linear"
@@ -148,15 +144,15 @@ function smoothScroll($) {
 }
 
 function newsletterSignup($) {
-  jQuery(document).on("gform_confirmation_loaded", function(event, formId) {
+  jQuery(document).on("gform_confirmation_loaded", function (event, formId) {
     // code to be trigger when confirmation page is loaded
-    setTimeout(function() {
+    setTimeout(function () {
       let body = $("body");
       let modal = $(".popup");
       modal.removeClass("active");
       body.removeClass("popup-active");
       localStorage.popShown = true;
-      setTimeout(function() {
+      setTimeout(function () {
         modal.remove();
       }, 1200);
     }, 3500);
@@ -170,13 +166,13 @@ function showForm($) {
   let body = $("body");
   let close = $(".form .close");
   // Show form
-  cta.on("click", function(e) {
+  cta.on("click", function (e) {
     container.addClass("active");
     form.addClass("active");
     body.addClass("popup-active");
   });
   // Hide form
-  close.on("click", function(e) {
+  close.on("click", function (e) {
     e.preventDefault();
     form.removeClass("active");
     body.removeClass("popup-active");
@@ -193,7 +189,7 @@ function addSearchIcon($) {
 // Law firm scripts
 function trustChosen($) {
   let trustForm = $("#trusts");
-  trustForm.change(function(e) {
+  trustForm.change(function (e) {
     let val = $(this).val();
     let url = document.location;
     if (url.href.match("trust")) {
@@ -205,7 +201,7 @@ function trustChosen($) {
   });
 
   // Update trust title
-  $("#updateField").on("click", function(e) {
+  $("#updateField").on("click", function (e) {
     let newTitle = $("#trustTitle").val();
     let url = document.location;
     if (url.href.match("title")) {
@@ -218,7 +214,7 @@ function trustChosen($) {
 }
 
 function createTrust($) {
-  $("#addTrust").on("click", function(e) {
+  $("#addTrust").on("click", function (e) {
     let url = document.location;
     let newTrustTitle = $("#trustTitle").val();
     let curTitle = document
@@ -243,7 +239,7 @@ function createTrust($) {
 
 function removeCreate($) {
   let url = document.location.href;
-  setTimeout(function() {
+  setTimeout(function () {
     if (url.match("create") && !url.match("created")) {
       let urlArr = url.split("&create")[0];
       let created = url.split("&create")[1];
@@ -262,7 +258,7 @@ function removeTitleQs($) {
   let urlArr = url.split("&");
   let toRemove = "title";
   if (url.match(toRemove) !== null) {
-    urlArr.forEach(function(element, index) {
+    urlArr.forEach(function (element, index) {
       if (element.match(toRemove) !== null) {
         urlArr.splice(index, index);
         document.location = urlArr.join("&");
@@ -281,7 +277,7 @@ function addCheck($) {
 function addPlaceholderInternalPages($) {
   let videos = $(".entry-content .wp-video-shortcode source");
   if (videos.length > 0) {
-    $.each(videos, function(index, video) {
+    $.each(videos, function (index, video) {
       let src = $(video).attr("src");
       let removeQueryString = src.split("?")[0];
       let formattedSrc = removeQueryString + "#t=0.1";
@@ -293,13 +289,14 @@ function addPlaceholderInternalPages($) {
 /*
  * Put all your regular jQuery in here.
  */
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
   hasSubMenu($);
   smoothScroll($);
   showVideo($);
   newsletterSignup($);
   addSearchIcon($);
   addPlaceholderInternalPages($);
+  popup($);
 
   if ($("body").hasClass("page-template-page-landing-marketing")) {
     showForm($);
@@ -307,7 +304,6 @@ jQuery(document).ready(function($) {
 
   if ($("body").hasClass("home")) {
     initSlider($);
-    popup($);
   }
 
   if ($("body").hasClass("firms-template-page-secured")) {
