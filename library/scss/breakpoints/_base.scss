@@ -975,7 +975,7 @@ Popup Section
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.55);
-  z-index: 9;
+  z-index: -1;
   opacity: 0;
   transition: all 1s ease;
 
@@ -1075,6 +1075,7 @@ Popup Section
   }
   &.active {
     opacity: 1;
+    z-index: 9;
   }
 }
 
