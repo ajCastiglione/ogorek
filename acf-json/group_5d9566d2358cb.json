@@ -257,6 +257,25 @@
             ]
         },
         {
+            "key": "field_5e9609f1acacc",
+            "label": "Schedule title",
+            "name": "schedule_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5e680ec5c3dd8",
             "label": "Schedule Icon",
             "name": "schedule_icon",
@@ -312,5 +331,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1583877824
+    "modified": 1586891268
 }

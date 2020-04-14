@@ -39,7 +39,7 @@ $map = get_field('map_embed');
               </div>
             </div>
             <div class="half">
-              <h3 class="sub-title">Schedule A Phone Call or Zoom Video Meeting:</h3>
+              <h3 class="sub-title"><?= get_field('schedule_title') ?></h3>
               <a class="schedule-icon" href="/schedule">
                 <figure>
                   <?= get_field('schedule_icon') ?>
