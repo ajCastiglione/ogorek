@@ -18,7 +18,7 @@ function addLightbox($) {
   let imgs = $(".entry-content img");
   $.each(imgs, function (index, img) {
     let src = $(img).attr("src");
-    $(img).wrap("<a href='" + src + "' class='foobox'></a>");
+    $(img).wrap("<a href='" + src + "' class='foobox post-image-wrapper'></a>");
   });
 }
 
@@ -296,21 +296,30 @@ function addPlaceholderInternalPages($) {
   }
 }
 
-(function () {
-  if (document.getElementsByTagName("body")[0].classList.contains("single")) {
-    var imgWidth = document.getElementsByClassName("featured-image")[0]
-      .offsetWidth;
-    var options = {
-      width: imgWidth, // required
-      // more options here
-      offset: {
-        vertical: 0,
-        horizontal: 10,
-      },
-    };
-    new ImageZoom(document.getElementsByClassName("foobox")[0], options);
-  }
-})();
+function addImageZoom($) {
+  var imgWidth = document.getElementsByClassName("featured-image")[0]
+    .offsetWidth;
+  var options = {
+    width: imgWidth, // required
+    // more options here
+    offset: {
+      vertical: 0,
+      horizontal: 10,
+    },
+  };
+  new ImageZoom(document.getElementsByClassName("foobox")[0], options);
+  var postImgOptions = {
+    width: 450,
+    offset: {
+      vertical: 0,
+      hortizontal: 10,
+    },
+  };
+  var postImgs = $(".post-image-wrapper");
+  $.each(postImgs, function (idx, el) {
+    new ImageZoom(el, postImgOptions);
+  });
+}
 
 /*
  * Put all your regular jQuery in here.
@@ -330,6 +339,7 @@ jQuery(document).ready(function ($) {
 
   if ($("body").hasClass("single-post")) {
     addLightbox($);
+    addImageZoom($);
   }
 
   if ($("body").hasClass("home")) {
