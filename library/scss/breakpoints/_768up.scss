@@ -230,24 +230,28 @@ Home Page Section
       min-height: 550px;
     }
   }
-  .popup {
-    .inner-popup {
-      width: 90%;
-      max-width: 800px;
-      max-height: 55%;
-      .popup-title {
-        margin-top: 2rem;
-        font-size: 35px;
-      }
-      #gform_wrapper_4 {
-        padding-bottom: 1rem;
-        #gform_fields_4 {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          input {
-            margin: 1rem 0.5rem;
-          }
+}
+
+/****************************
+Popup Section
+****************************/
+.popup {
+  .inner-popup {
+    width: 90%;
+    max-width: 800px;
+    max-height: 65%;
+    .popup-title {
+      margin-top: 2rem;
+      font-size: 35px;
+    }
+    #gform_wrapper_4 {
+      padding-bottom: 1rem;
+      #gform_fields_4 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        input {
+          margin: 1rem 0.5rem;
         }
       }
     }
@@ -316,7 +320,6 @@ Internal Pages Section
 .page-template-page-landing-marketing {
   // hero
   .hero-landing-page {
-    height: 100vh;
     .grid-50 {
       height: 100%;
     }
@@ -324,8 +327,16 @@ Internal Pages Section
       .logo {
         max-width: 350px;
       }
-      &:before {
-        height: 120px;
+      .content {
+        h1,
+        h2,
+        h3,
+        h4 {
+          font-size: 35px;
+        }
+        p {
+          font-size: 20px;
+        }
       }
     }
 
@@ -336,11 +347,12 @@ Internal Pages Section
       flex-wrap: wrap;
       text-align: left;
       padding: 1rem 2rem;
+      border: none;
       .title {
-        font-size: 45px;
+        font-size: 35px;
       }
       .subtitle {
-        font-size: 35px;
+        font-size: 24px;
       }
       .get-started {
         display: none;
@@ -348,7 +360,7 @@ Internal Pages Section
       .form {
         opacity: 1;
         height: auto;
-        max-width: 90%;
+        // max-width: 90%;
         margin: 1rem 0;
         .close {
           display: none;
@@ -371,7 +383,8 @@ Internal Pages Section
         top: auto;
         bottom: auto;
         left: auto;
-        margin: 0;
+        margin: 0 0 2rem;
+        padding-left: 0;
       }
       .learn-more {
         display: flex;
@@ -455,14 +468,18 @@ Partials Section
 ****************************/
 .hero {
   &.three-part {
-    grid-template-columns: repeat(2, 1fr);
+    min-height: 300px;
     .title {
-      grid-column: 2;
-      font-size: 35px;
-      align-self: flex-start;
+      right: 12%;
+      font-size: 28px;
+      max-width: 600px;
+      margin-right: auto;
     }
-    .text {
-      align-self: flex-end;
+    .logo {
+      bottom: 45px;
+      img {
+        max-width: 270px;
+      }
     }
   }
 }

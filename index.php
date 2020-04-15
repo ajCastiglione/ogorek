@@ -9,6 +9,9 @@
 			<!-- Hero -->
 			<?= get_template_part('partials/hero'); ?>
 
+			<!-- Popup -->
+			<?= get_template_part('partials/home/popup'); ?>
+
 			<!-- Header -->
 			<header class="blog-header">
 				<h1 class="title"><?= is_home() || wp_get_post_parent_id($post) === 650 ? 'Blogs' : 'News Articles'; ?></h1>

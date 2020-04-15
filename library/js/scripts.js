@@ -94,23 +94,27 @@ function popup($) {
   let body = $("body");
   let modal = $(".popup");
   let close = $(".popup .close");
+  let date = new Date(Date.now() + 86400e3).toUTCString();
+  let cookieString = "popShown=true; expires=" + date;
   // if popup was closed this session, don't show it again
-  if (sessionStorage.popShown || localStorage.popShown) {
+  if (document.cookie.match("popShown")) {
     modal.remove();
     return;
   }
   // show popup
-  setTimeout(function () {
-    modal.addClass("active");
-    body.addClass("popup-active");
-  }, 1500);
+  if (modal.length > 0) {
+    setTimeout(function () {
+      modal.addClass("active");
+      body.addClass("popup-active");
+    }, 5000);
+  }
 
   close.on("click", function (e) {
     e.preventDefault();
     modal.removeClass("active");
     body.removeClass("popup-active");
-    sessionStorage.popShown = true;
-    localStorage.popShown = true;
+    document.cookie = cookieString;
+    document.cookie = cookieString;
     setTimeout(function () {
       modal.remove();
     }, 1200);
@@ -120,8 +124,8 @@ function popup($) {
     if (!$(e.target).closest(".inner-popup").length) {
       modal.removeClass("active");
       body.removeClass("popup-active");
-      sessionStorage.popShown = true;
-      localStorage.popShown = true;
+      document.cookie = cookieString;
+      document.cookie = cookieString;
       setTimeout(function () {
         modal.remove();
       }, 1200);
@@ -313,7 +317,7 @@ jQuery(document).ready(function ($) {
   newsletterSignup($);
   addSearchIcon($);
   addPlaceholderInternalPages($);
-  addImageZoom($);
+  popup($);
 
   if ($("body").hasClass("page-template-page-landing-marketing")) {
     showForm($);
@@ -325,7 +329,6 @@ jQuery(document).ready(function ($) {
 
   if ($("body").hasClass("home")) {
     initSlider($);
-    popup($);
   }
 
   if ($("body").hasClass("firms-template-page-secured")) {

@@ -1,7 +1,5 @@
 <?php
 
-/************* COMMENT LAYOUT *********************/
-
 // Comment Layout
 function bones_comments($comment, $args, $depth)
 {

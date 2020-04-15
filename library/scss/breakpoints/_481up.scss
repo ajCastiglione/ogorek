@@ -45,6 +45,28 @@ Partials Section
   }
 }
 
+.hero {
+  &.three-part {
+    min-height: 250px;
+    background-size: 150% 100%;
+    .title {
+      position: absolute;
+      left: auto;
+      right: 4%;
+      margin: auto;
+      background: none;
+    }
+    // logo
+    .logo {
+      left: 10px;
+      bottom: 15px;
+      img {
+        max-width: 250px;
+      }
+    }
+  }
+}
+
 /****************************
 Internal Pages Section
 ****************************/

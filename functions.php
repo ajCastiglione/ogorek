@@ -166,7 +166,8 @@ function bones_register_sidebars()
   ));
 } // don't remove this bracket!
 
-// WP Comments
+
+/************* COMMENT LAYOUT *********************/
 require "theme/comments.php";
 
 function bones_fonts()
@@ -186,8 +187,8 @@ function remove_protected_text()
   return __('%s');
 }
 
-/************* ADD ROLES *********************/
-require "theme/acf-saves.php";
+/************* ACF SAVES *********************/
+require 'theme/acf-json.php';
 
 /************* ADD ROLES *********************/
 require 'theme/add-roles.php';
@@ -226,3 +227,4 @@ function add_input_debug_preview() {
 }
 
 /* DON'T DELETE THIS CLOSING TAG */
+?>

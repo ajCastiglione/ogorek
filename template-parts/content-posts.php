@@ -7,7 +7,7 @@
 
           <div class="featured-image-container">
             <a href="<?= $link ?>" class="post-link">
-              <img src="<?= get_the_post_thumbnail_url($post->ID, 'full') ?>" alt="<?= the_title() ?>" class="featured-image">
+              <img src="<?= get_the_post_thumbnail_url($post->ID, 'large') ?>" alt="<?= the_title() ?>" class="featured-image">
               <span class="overlay"><i class="far fa-file-alt"></i></span>
             </a>
           </div>
