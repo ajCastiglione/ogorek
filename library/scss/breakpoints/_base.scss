@@ -2639,6 +2639,10 @@ Blog Section
         color: $secondary;
       }
     }
+    .post-image-wrapper {
+      display: inline-block;
+      margin: 1rem 0;
+    }
   }
 }
 
