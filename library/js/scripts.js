@@ -22,17 +22,6 @@ function addLightbox($) {
   });
 }
 
-function addImageZoom($) {
-  $("a.foobox").on("click", function () {
-    setTimeout(function () {
-      let img = $(".fbx-item-current > img");
-      img.on("mouseover", function () {
-        img.css("transform", "translate(-10, 10)");
-      });
-    }, 1000);
-  });
-}
-
 function initSlider($) {
   $(".owl-carousel").owlCarousel({
     items: 1,
@@ -306,6 +295,20 @@ function addPlaceholderInternalPages($) {
     });
   }
 }
+
+(function () {
+  if (document.getElementsByTagName("body")[0].classList.contains("single")) {
+    var options = {
+      width: 600, // required
+      // more options here
+      offset: {
+        vertical: 0,
+        horizontal: 10,
+      },
+    };
+    new ImageZoom(document.getElementsByClassName("foobox")[0], options);
+  }
+})();
 
 /*
  * Put all your regular jQuery in here.
