@@ -296,6 +296,7 @@ function addPlaceholderInternalPages($) {
   }
 }
 
+// Add zoom functionality
 function addImageZoom($) {
   var imgWidth = document.getElementsByClassName("featured-image")[0]
     .offsetWidth;
@@ -308,15 +309,16 @@ function addImageZoom($) {
     },
   };
   new ImageZoom(document.getElementsByClassName("foobox")[0], options);
-  var postImgOptions = {
-    width: 450,
-    offset: {
-      vertical: 0,
-      hortizontal: 10,
-    },
-  };
+  // For the inner post imgs
   var postImgs = $(".post-image-wrapper");
   $.each(postImgs, function (idx, el) {
+    var postImgOptions = {
+      width: $(el).width(),
+      offset: {
+        vertical: 0,
+        hortizontal: 10,
+      },
+    };
     new ImageZoom(el, postImgOptions);
   });
 }
