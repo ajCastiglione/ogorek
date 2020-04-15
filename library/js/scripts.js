@@ -16,7 +16,7 @@ function loadIframe() {
 
 function addLightbox($) {
   let imgs = $(".entry-content img");
-  $.each(imgs, function(index, img) {
+  $.each(imgs, function (index, img) {
     let src = $(img).attr("src");
     $(img).wrap("<a href='" + src + "' class='foobox'></a>");
   });
@@ -85,7 +85,6 @@ function popup($) {
   let close = $(".popup .close");
   let date = new Date(Date.now() + 86400e3).toUTCString();
   let cookieString = "popShown=true; expires=" + date;
-  console.log(cookieString);
   // if popup was closed this session, don't show it again
   if (document.cookie.match("popShown")) {
     modal.remove();
@@ -96,7 +95,7 @@ function popup($) {
     setTimeout(function () {
       modal.addClass("active");
       body.addClass("popup-active");
-    }, 1500);
+    }, 5000);
   }
 
   close.on("click", function (e) {
@@ -296,6 +295,22 @@ function addPlaceholderInternalPages($) {
     });
   }
 }
+
+(function () {
+  if (document.getElementsByTagName("body")[0].classList.contains("single")) {
+    var imgWidth = document.getElementsByClassName("featured-image")[0]
+      .offsetWidth;
+    var options = {
+      width: imgWidth, // required
+      // more options here
+      offset: {
+        vertical: 0,
+        horizontal: 10,
+      },
+    };
+    new ImageZoom(document.getElementsByClassName("foobox")[0], options);
+  }
+})();
 
 /*
  * Put all your regular jQuery in here.
