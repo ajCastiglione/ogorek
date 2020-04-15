@@ -298,8 +298,10 @@ function addPlaceholderInternalPages($) {
 
 (function () {
   if (document.getElementsByTagName("body")[0].classList.contains("single")) {
+    var imgWidth = document.getElementsByClassName("featured-image")[0]
+      .offsetWidth;
     var options = {
-      width: 600, // required
+      width: imgWidth, // required
       // more options here
       offset: {
         vertical: 0,
