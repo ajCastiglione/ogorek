@@ -118,6 +118,11 @@ This is for the larger monitors and possibly full screen viewers.
   @import "breakpoints/1240up";
 } // end of media query
 
+@media only screen and (min-width: 1500px) {
+  // styles in 1240up.scss
+  @import "breakpoints/1500up";
+} // end of media query
+
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with
