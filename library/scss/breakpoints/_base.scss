@@ -401,15 +401,31 @@ Header Section
   right: 0;
   width: 100%;
   z-index: 9;
-  .alert-header {
-    text-align: center;
-    padding: 10px;
-    color: $white;
-    font-weight: bold;
-    font-size: 16px;
-    border-bottom: 2px solid $white;
-    p {
-      margin: 0;
+  .alert {
+    &__header {
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      border-bottom: 2px solid $white;
+      p {
+        margin: 0;
+      }
+    }
+    &__link {
+      display: inline-block;
+      color: $white;
+      svg {
+        fill: $white;
+        margin-right: 1rem;
+        max-width: 25px;
+        max-height: 25px;
+      }
+    }
+    &__inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
   .top-header-grid {
