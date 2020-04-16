@@ -302,6 +302,7 @@ function addImageZoom($) {
     .offsetWidth;
   var options = {
     width: imgWidth, // required
+    zoomPosition: "original",
     // more options here
     offset: {
       vertical: 0,
@@ -314,6 +315,7 @@ function addImageZoom($) {
   $.each(postImgs, function (idx, el) {
     var postImgOptions = {
       width: $(el).width(),
+      zoomPosition: "original",
       offset: {
         vertical: 0,
         hortizontal: 10,
