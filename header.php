@@ -108,7 +108,7 @@
 				<div class="top-header">
 					<?php if (!empty(get_field('alert_content', 'options'))) : ?>
 						<div class="alert__header">
-							<a href="<?= get_field('alert_link', 'options') ?>" class="alert__link">
+							<a <?php if (get_field('alert_link', 'options')) : ?> href="<?= get_field('alert_link', 'options') ?>" <?php endif; ?> class="alert__link">
 								<div class="alert__inner">
 									<?= get_field('alert_icon', 'options') ?: null ?>
 									<p><?= get_field('alert_content', 'options') ?: null ?></p>
