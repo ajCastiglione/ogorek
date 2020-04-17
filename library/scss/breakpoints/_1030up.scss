@@ -211,9 +211,9 @@ Partials Section
     background-size: 100% 100%;
     .title {
       top: 30px;
-      font-size: 35px;
+      font-size: 40px;
       max-width: 700px;
-      right: 12%;
+      right: 17%;
     }
     // logo
     .logo {
@@ -284,6 +284,27 @@ Blog Section
   }
 }
 
+// Singles - posts
+.single-post {
+  .article-header {
+    .header {
+      &__grid {
+        max-width: 1024px;
+        grid-template-columns: 1.5fr 1fr;
+      }
+      &__info {
+        .single-title {
+          font-size: 35px;
+        }
+      }
+    }
+  }
+  .entry-content {
+    .post-grid {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+}
 /****************************
 Custom Post Types Section
 ****************************/

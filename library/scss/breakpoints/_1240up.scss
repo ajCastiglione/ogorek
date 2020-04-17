@@ -49,13 +49,27 @@ Partials Section
   &.three-part {
     .title {
       font-size: 45px;
-      right: 15%;
+      right: 20%;
       top: 30px;
     }
     .logo {
       bottom: 60px;
       img {
         max-width: 450px;
+      }
+    }
+  }
+}
+
+/****************************
+Blog Section
+****************************/
+// Singles - posts
+.single-post {
+  .article-header {
+    .header {
+      &__grid {
+        max-width: 1140px;
       }
     }
   }
