@@ -50,7 +50,8 @@ function get_related_posts($post)
     $args = array(
       'post_type' => 'post',
       'category_name' => $cats,
-      'posts_per_page' => 3
+      'posts_per_page' => 3,
+      'post__not_in' => array($post->ID)
     );
     $query = new WP_Query($args); ?>
 

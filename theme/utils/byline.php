@@ -9,7 +9,9 @@ function get_byline($post)
     $post_author = get_the_author_meta('display_name', 2);
   }
 
-  if (!strstr($post_author, get_field('post_author', $post->ID)[0]->post_title)) {
+  $compare_to = get_field('post_author') ? get_field('post_author', $post->ID)[0]->post_title : null;
+
+  if (!strstr($post_author, $compare_to)) {
     printf(
       __('', 'bonestheme') . ' %1$s %2$s %3$s',
       /* the time the post was published */
