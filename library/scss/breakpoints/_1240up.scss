@@ -60,3 +60,17 @@ Partials Section
     }
   }
 }
+
+/****************************
+Blog Section
+****************************/
+// Singles - posts
+.single-post {
+  .article-header {
+    .header {
+      &__grid {
+        max-width: 1140px;
+      }
+    }
+  }
+}

@@ -284,6 +284,22 @@ Blog Section
   }
 }
 
+// Singles - posts
+.single-post {
+  .article-header {
+    .header {
+      &__grid {
+        max-width: 1024px;
+        grid-template-columns: 1.5fr 1fr;
+      }
+      &__info {
+        .single-title {
+          font-size: 35px;
+        }
+      }
+    }
+  }
+}
 /****************************
 Custom Post Types Section
 ****************************/

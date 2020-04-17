@@ -527,20 +527,34 @@ Blog Section
       width: 50%;
     }
   }
-
-  .post-card {
-    .featured-image {
-    }
-  }
 }
 
 // Page for blog posts - format.php
 .single-post {
+  .article-header {
+    padding: 3rem 1rem;
+    .header {
+      &__grid {
+        max-width: 760px;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+      }
+      &__info {
+        .byline {
+          text-align: left;
+        }
+        .single-title {
+          font-size: 30px;
+        }
+        .author-profile {
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
   .entry-content {
     font-size: 20px;
-    .author {
-      width: 30%;
-    }
+
     .text {
       width: 70%;
     }

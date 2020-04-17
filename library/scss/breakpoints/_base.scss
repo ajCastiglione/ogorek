@@ -2598,17 +2598,56 @@ Blog Section
 // Page for blog posts - format.php
 .single-post {
   .article-header {
-    text-align: center;
-    .single-title {
-      color: $primary;
-    }
-    .byline {
-      margin-top: 0.7rem;
-    }
-    .featured-image {
-      width: 100%;
-      max-width: 1100px;
-      margin: 1rem auto 0;
+    background-color: #f4f4f4;
+    padding: 2rem 1rem;
+    width: 100vw;
+    transform: translate(-5vw, 0);
+    .header {
+      &__grid {
+        display: grid;
+        margin: auto;
+      }
+      &__info {
+        align-self: center;
+        .byline {
+          margin-top: 0.7rem;
+          text-align: center;
+        }
+        .single-title {
+          color: $primary;
+          margin-top: 1rem;
+          font-size: 28px;
+        }
+        .author-profile {
+          text-align: left;
+          word-break: break-word;
+          display: flex;
+          align-items: center;
+          margin-top: 1rem;
+          .portrait {
+            border-radius: 100%;
+            width: 100%;
+            max-width: 85px;
+            max-height: 85px;
+            margin-right: 1.5rem;
+          }
+          .name {
+            font-size: 18px;
+            color: $black;
+          }
+          .email {
+            color: $secondary;
+            font-size: 16px;
+          }
+        }
+      }
+
+      &__image {
+        .featured-image {
+          width: 100%;
+          margin: 1rem auto 0;
+        }
+      }
     }
   }
   .entry-content {
@@ -2620,24 +2659,6 @@ Blog Section
     align-items: flex-start;
     justify-content: center;
 
-    .author {
-      width: 100%;
-      text-align: center;
-      word-break: break-word;
-      .portrait {
-        border-radius: 100%;
-        width: 100%;
-        max-width: 125px;
-        max-height: 125px;
-      }
-      .name {
-        font-size: 20px;
-        color: $black;
-      }
-      .email {
-        color: $secondary;
-      }
-    }
     .text {
       width: 100%;
       padding: 0 1rem;
