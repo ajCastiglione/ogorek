@@ -304,10 +304,6 @@ function addImageZoom($) {
     width: imgWidth, // required
     zoomPosition: "original",
     // more options here
-    offset: {
-      vertical: 0,
-      horizontal: 10,
-    },
   };
   new ImageZoom(document.getElementsByClassName("foobox")[0], options);
   // For the inner post imgs
@@ -316,10 +312,6 @@ function addImageZoom($) {
     var postImgOptions = {
       width: $(el).width(),
       zoomPosition: "original",
-      offset: {
-        vertical: 0,
-        hortizontal: 10,
-      },
     };
     new ImageZoom(el, postImgOptions);
   });
