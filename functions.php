@@ -200,6 +200,7 @@ require 'theme/law-firm-login-redirect.php';
 require 'theme/acf-default-rows.php';
 
 /************* Utils *********************/
+require 'theme/utils/byline.php';
 require 'theme/utils/get-author.php';
 require 'theme/utils/get-related-posts.php';
 

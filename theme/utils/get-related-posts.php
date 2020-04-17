@@ -93,6 +93,6 @@ function get_related_posts($post)
       endif; ?>
 
     </div>
-<?php return;
+<?php
   }
 }
