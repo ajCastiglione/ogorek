@@ -554,9 +554,21 @@ Blog Section
   }
   .entry-content {
     font-size: 20px;
-
-    .text {
-      width: 70%;
+    .post-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      grid-gap: 10px 20px;
+    }
+  }
+  // sidebar / related posts
+  .related-posts {
+    &__single {
+      .entry-title {
+        font-size: 25px;
+      }
+      .byline {
+        font-size: 17px;
+      }
     }
   }
 }

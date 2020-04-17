@@ -299,6 +299,11 @@ Blog Section
       }
     }
   }
+  .entry-content {
+    .post-grid {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
 }
 /****************************
 Custom Post Types Section

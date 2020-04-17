@@ -29,7 +29,6 @@ function get_author($post)
     endwhile;
     wp_reset_query();
     if (!$found && !empty(get_field('post_author'))) {
-        $found = true;
         $authorID = get_field('post_author')[0]->ID; ?>
         <div class="author-profile">
             <img src="<?= get_field('team_member_photo', $authorID)['url'] ?>" alt="<?= the_title($authorID) ?>" class="portrait">

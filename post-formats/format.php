@@ -5,6 +5,7 @@
       <div class="header__info">
         <div class="byline entry-meta vcard">
           <?php
+
           if (get_field('post_author')) {
             $post_author = get_the_title(get_field('post_author')[0]->ID);
           } elseif (get_the_author_meta('ID') !== 2 && get_the_author_meta('ID') !== 12) {
@@ -35,18 +36,17 @@
     </div>
   </header>
 
-  <section class="entry-content cf" itemprop="articleBody">
-    <div class="text">
-      <?php
-      the_content();
-      ?>
-    </div>
+  <section class="entry-content" itemprop="articleBody">
+    <article class="post-grid">
+      <div class="text">
+        <?= the_content() ?>
+      </div>
+      <aside class="related-posts">
+        <h2 class="related-posts__title"><?= get_field('related_posts_title') ?></h2>
+        <?= get_field('related_posts_content') ?: null ?>
+        <?= get_related_posts($post) ?>
+      </aside>
+    </article>
   </section>
-
-  <footer class="article-footer">
-
-    <?php the_tags('<p class="tags"><span class="tags-title">' . __('Tags:', 'bonestheme') . '</span> ', ', ', '</p>'); ?>
-
-  </footer>
 
 </article>

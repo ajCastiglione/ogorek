@@ -201,6 +201,7 @@ require 'theme/acf-default-rows.php';
 
 /************* Utils *********************/
 require 'theme/utils/get-author.php';
+require 'theme/utils/get-related-posts.php';
 
 
 /************* CAT Exclusion for jobs *********************/
