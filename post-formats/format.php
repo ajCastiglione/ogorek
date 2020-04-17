@@ -13,7 +13,7 @@
       </div>
       <div class="header__image">
         <?php if (get_the_post_thumbnail_url($post->ID, 'full')) : ?>
-          <a href="<?= get_the_post_thumbnail_url($post->ID, 'full') ?>" class="foobox">
+          <a href="<?= get_the_post_thumbnail_url($post->ID, 'full') ?>" id="single-image-container" class="foobox">
             <img src="<?= get_the_post_thumbnail_url($post->ID, 'full') ?>" alt="<?= the_title() ?>" class="featured-image">
           </a>
         <?php endif; ?>
