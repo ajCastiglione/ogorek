@@ -82,14 +82,14 @@ gulp.task("min-images", () => {
 });
 
 // Watch all files for compiling
-gulp.task("watch-scss", ["compile", "compile-login", "min-images"], () => {
+gulp.task("init", () => {
   bs.init({
-    proxy: "http://ogorek.test",
+    proxy: "ogorek.test",
     injectChanges: true,
     files: all,
   });
-  gulp.watch(scss, ["compile", "compile-login"]);
+  gulp.watch(scss, gulp.series("compile", "compile-login"));
 });
 
 // Start the process
-gulp.task("default", ["watch-scss"]);
+gulp.task("default", gulp.series("init"));
