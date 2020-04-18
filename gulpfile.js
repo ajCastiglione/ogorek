@@ -5,10 +5,33 @@ const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const image = require("gulp-image");
 const bs = require("browser-sync");
+const browserify = require("browserify");
+const rename = require("gulp-rename");
+const uglify = require("gulp-uglify");
+const babel = require("gulp-babel");
 
 const scss = ["library/scss/*/*.scss"];
 const imgs = ["library/images/*"];
+const js = "library/js/scripts.js";
 const all = ["library/*.php", "*.php", "*/*.php", "library/js/*.js"];
+
+// Compile and minify JS + babel
+gulp.task("js", function () {
+  return gulp
+    .src(js)
+    .pipe(
+      babel({
+        presets: ["@babel/preset-env"],
+      })
+    )
+    .pipe(
+      rename({
+        extname: ".min.js",
+      })
+    )
+    .pipe(uglify())
+    .pipe(gulp.dest("library/js"));
+});
 
 //Compile scss
 gulp.task("compile", () => {
@@ -17,7 +40,7 @@ gulp.task("compile", () => {
     .pipe(plumber())
     .pipe(
       sass({
-        outputStyle: "compressed"
+        outputStyle: "compressed",
       }).on("error", sass.logError)
     )
     .pipe(
@@ -25,8 +48,8 @@ gulp.task("compile", () => {
         autoprefixer({
           browsers: ["last 2 versions"],
           cascade: false,
-          grid: true
-        })
+          grid: true,
+        }),
       ])
     )
     .pipe(gulp.dest("./library/css"))
@@ -39,15 +62,15 @@ gulp.task("compile-login", () => {
     .pipe(plumber())
     .pipe(
       sass({
-        outputStyle: "compressed"
+        outputStyle: "compressed",
       }).on("error", sass.logError)
     )
     .pipe(
       postcss([
         autoprefixer({
           browsers: ["last 2 versions"],
-          cascade: false
-        })
+          cascade: false,
+        }),
       ])
     )
     .pipe(gulp.dest("./library/css"));
@@ -55,10 +78,7 @@ gulp.task("compile-login", () => {
 
 // Compress images and return them to folder
 gulp.task("min-images", () => {
-  gulp
-    .src("./library/images/*")
-    .pipe(image())
-    .pipe(gulp.dest("./library/images"));
+  gulp.src(imgs).pipe(image()).pipe(gulp.dest("./library/images"));
 });
 
 // Watch all files for compiling
@@ -66,7 +86,7 @@ gulp.task("watch-scss", ["compile", "compile-login", "min-images"], () => {
   bs.init({
     proxy: "http://ogorek.test",
     injectChanges: true,
-    files: all
+    files: all,
   });
   gulp.watch(scss, ["compile", "compile-login"]);
 });
