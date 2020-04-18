@@ -96,7 +96,7 @@
 
 </head>
 
-<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+<body <?php body_class(detect_ie() ? 'ie' : ''); ?> itemscope itemtype="http://schema.org/WebPage">
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TRVGDQV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
