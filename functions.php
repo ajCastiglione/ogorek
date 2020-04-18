@@ -203,6 +203,7 @@ require 'theme/acf-default-rows.php';
 require 'theme/utils/byline.php';
 require 'theme/utils/get-author.php';
 require 'theme/utils/get-related-posts.php';
+require 'theme/utils/detect-IE.php';
 
 
 /************* CAT Exclusion for jobs *********************/
