@@ -298,6 +298,7 @@ function addPlaceholderInternalPages($) {
 
 // Add zoom functionality
 function addImageZoom($) {
+  if ($(window).width() <= 1024) return;
   var imgWidth = document.getElementsByClassName("featured-image")[0]
     .offsetWidth;
   var options = {
