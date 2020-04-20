@@ -6,6 +6,7 @@ if (!is_home() && !is_category()) {
 } else if (is_home()) {
   $hero_title = get_field('title', get_option('page_for_posts'));
   $hero = get_field('image', get_option('page_for_posts'));
+  $hero_selection = get_field('hero_selector', get_option('page_for_posts'));
 } else if (is_category()) {
   $hero_title = single_cat_title('', false);
 }
@@ -29,7 +30,7 @@ if (is_page(460)) {
     </div>
   </div>
 
-<?php elseif (get_field('hero_selector') == 'unique' || get_field('hero_selector', get_option('page_for_posts')) == 'unique') : $logo = get_field('logo')['url'] ?: 'https://ogorek.com/wp-content/uploads/2020/04/OGOREK-Logo-White-01.png'; ?>
+<?php elseif (get_field('hero_selector') == 'unique' || (is_home() && $hero_selection == 'unique')) : $logo = get_field('logo')['url'] ?: 'https://ogorek.com/wp-content/uploads/2020/04/OGOREK-Logo-White-01.png'; ?>
   <div class="hero three-part" style="background-image:url(<?= $hero['url'] ?: 'https://ogorek.com/wp-content/uploads/2020/04/new-bg-higher-point.png' ?>)">
     <h1 class="title"><?php echo $hero_title ? $hero_title : get_the_title(); ?></h1>
     <?php if (!empty($logo)) : ?>
