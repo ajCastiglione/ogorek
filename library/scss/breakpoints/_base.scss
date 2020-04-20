@@ -1996,7 +1996,7 @@ Partials Section
       margin: 0 auto 100px;
       color: $primary;
       mix-blend-mode: multiply;
-      font-weight: bold;
+      font-weight: bold !important;
     }
     // logo
     .logo {
