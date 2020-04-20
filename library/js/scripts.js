@@ -7,7 +7,7 @@ function hasSubMenu($) {
 function mobileMenuSubMenu($) {
   let navUl = $(".shiftnav-nav .shiftnav-menu");
   let parent = navUl.find(".menu-item-has-children");
-  let btn = parent.find(".shiftnav-target");
+  let btn = parent.children(".shiftnav-target");
   $.each(btn, (idx, el) => {
     !$(el).parent().hasClass("menu-item-has-children")
       ? null
@@ -16,6 +16,7 @@ function mobileMenuSubMenu($) {
   btn.on("click", (e) => {
     e.preventDefault();
     $(e.target).parent().find(".sub-menu").slideDown(400);
+    console.log($(e.target));
     if ($(e.target).hasClass("fas")) {
       return;
     } else if (
