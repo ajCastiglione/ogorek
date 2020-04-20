@@ -3,13 +3,14 @@
   <header class="article-header entry-header">
     <div class="header__grid">
       <div class="header__info">
+
+        <h1 class="entry-title single-title" itemprop="headline" rel="bookmark"><?php the_title(); ?></h1>
         <div class="byline entry-meta vcard">
           <?= get_byline($post); ?>
         </div>
 
-        <h1 class="entry-title single-title" itemprop="headline" rel="bookmark"><?php the_title(); ?></h1>
-
         <?= get_author($post) ?>
+
       </div>
       <div class="header__image">
         <?php if (get_the_post_thumbnail_url($post->ID, 'full')) : ?>
