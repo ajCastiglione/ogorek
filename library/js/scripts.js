@@ -4,6 +4,37 @@ function hasSubMenu($) {
   item.append(arrow);
 }
 
+function mobileMenuSubMenu($) {
+  let navUl = $(".shiftnav-nav .shiftnav-menu");
+  let parent = navUl.find(".menu-item-has-children");
+  let btn = parent.find(".shiftnav-target");
+  $.each(btn, (idx, el) => {
+    !$(el).parent().hasClass("menu-item-has-children")
+      ? null
+      : $(el).html($(el).html() + " <i class='fas fa-plus'></i>");
+  });
+  btn.on("click", (e) => {
+    e.preventDefault();
+    $(e.target).parent().find(".sub-menu").slideDown(400);
+    if ($(e.target).hasClass("fas")) {
+      return;
+    } else if (
+      !$(e.target).hasClass("fas") &&
+      $(e.target).parent().find(".sub-menu").css("display") == "block"
+    ) {
+      $(e.target).unbind(e);
+    }
+  });
+  $(btn)
+    .find(".fas")
+    .on("click", (e) => {
+      $(e.target)
+        .closest(".menu-item-has-children")
+        .find(".sub-menu")
+        .slideToggle(400);
+    });
+}
+
 function loadIframe() {
   if (!jQuery("body").hasClass("home")) return;
   var vidDefer = document.getElementsByTagName("iframe");
@@ -329,6 +360,7 @@ jQuery(document).ready(function ($) {
   addSearchIcon($);
   addPlaceholderInternalPages($);
   popup($);
+  mobileMenuSubMenu($);
 
   if ($("body").hasClass("page-template-page-landing-marketing")) {
     showForm($);
