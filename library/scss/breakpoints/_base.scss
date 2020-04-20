@@ -415,11 +415,16 @@ Header Section
     &__link {
       display: inline-block;
       color: $white;
+      font-weight: bold;
+      font-size: 16px;
       svg {
         fill: $white;
         margin-right: 1rem;
         max-width: 25px;
         max-height: 25px;
+      }
+      p {
+        margin: 0;
       }
     }
     &__inner {
@@ -1985,7 +1990,8 @@ Partials Section
   &.three-part {
     position: relative;
     min-height: 150px;
-    background-size: cover;
+    background-size: 270% 100%;
+    transition: all 0.4s ease;
     // hero title
     .title {
       right: 0;

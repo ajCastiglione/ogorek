@@ -218,6 +218,33 @@
             "endpoint": 0
         },
         {
+            "key": "field_5e9df0f94b636",
+            "label": "Alert Options",
+            "name": "alert_options",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "type1": "First Option",
+                "type2": "Second Option"
+            },
+            "default_value": [
+                "type1"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_5e98648bbaed7",
             "label": "Alert Icon",
             "name": "alert_icon",
@@ -445,5 +472,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1587045567
+    "modified": 1587409634
 }
