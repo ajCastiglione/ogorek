@@ -433,6 +433,31 @@ Header Section
       justify-content: center;
     }
   }
+  // Replaced social media icons
+  .header-message {
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .icon {
+      margin-right: 10px;
+      svg {
+        width: 25px;
+        height: 25px;
+        fill: $white;
+      }
+    }
+    .text {
+      font-weight: bold;
+      font-size: 16px;
+      p {
+        margin: 0;
+      }
+      a {
+        color: inherit;
+      }
+    }
+  }
   .top-header-grid {
     display: flex;
     justify-content: center;
@@ -524,7 +549,7 @@ Header Section
 }
 
 .header-bottom {
-  margin-top: 43px;
+  margin-top: 150px;
   text-align: center;
   padding: 0 1rem;
 
@@ -544,8 +569,10 @@ Header Section
       text-align: center;
     }
   }
-  @media (max-width: 1180px) {
-    margin-top: 170px;
+  &.mb-lg {
+    @media (max-width: 1180px) {
+      margin-top: 200px;
+    }
   }
 }
 
