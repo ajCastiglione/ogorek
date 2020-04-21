@@ -15,13 +15,12 @@ function mobileMenuSubMenu($) {
   });
   btn.on("click", (e) => {
     e.preventDefault();
-    $(e.target).parent().find(".sub-menu").slideDown(400);
-    console.log($(e.target));
+    $(e.target).parent().children(".sub-menu").slideDown(400);
     if ($(e.target).hasClass("fas")) {
       return;
     } else if (
       !$(e.target).hasClass("fas") &&
-      $(e.target).parent().find(".sub-menu").css("display") == "block"
+      $(e.target).parent().children(".sub-menu").css("display") == "block"
     ) {
       $(e.target).unbind(e);
     }
@@ -31,7 +30,7 @@ function mobileMenuSubMenu($) {
     .on("click", (e) => {
       $(e.target)
         .closest(".menu-item-has-children")
-        .find(".sub-menu")
+        .children(".sub-menu")
         .slideToggle(400);
     });
 }
