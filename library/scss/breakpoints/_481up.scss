@@ -1,6 +1,11 @@
 /****************************
 Header Section
 ****************************/
+.top-header {
+  .top-header-grid {
+    flex-direction: row-reverse;
+  }
+}
 .header-bottom {
   margin-top: 120px;
   &.mb-lg {
