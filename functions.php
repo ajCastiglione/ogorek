@@ -218,14 +218,15 @@ function exclude_category_jobs($query)
 
 add_filter('pre_get_posts', 'exclude_category_jobs');
 
+/**
+ * Sort general queries by post type
+ */
 add_filter('relevanssi_hits_filter', 'separate_result_types');
 function separate_result_types($hits)
 {
   $types = array();
-  $types['mycustomtypethatgoesfirst'] = array();
-  $types['thesecondmostimportanttype'] = array();
-  $types['post'] = array();
   $types['page'] = array();
+  $types['post'] = array();
 
   // Split the post types in array $types
   if (!empty($hits)) {
@@ -236,7 +237,7 @@ function separate_result_types($hits)
   }
 
   // Merge back to $hits in the desired order
-  $hits[0] = array_merge($types['mycustomtypethatgoesfirst'], $types['thesecondmostimportanttype'], $types['post'], $types['page']);
+  $hits[0] = array_merge($types['page'], $types['post']);
   return $hits;
 }
 
