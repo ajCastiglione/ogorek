@@ -218,21 +218,27 @@ function exclude_category_jobs($query)
 
 add_filter('pre_get_posts', 'exclude_category_jobs');
 
-/**
- * Sort general queries by post type
- */
-function order_search_by_posttype($orderby, $wp_query)
+add_filter('relevanssi_hits_filter', 'separate_result_types');
+function separate_result_types($hits)
 {
-  if (!$wp_query->is_admin && $wp_query->is_search) :
-    global $wpdb;
-    $orderby = "CASE WHEN {$wpdb->prefix}posts.post_type = 'page' THEN '1' 
-                 WHEN {$wpdb->prefix}posts.post_type = 'post' THEN '2' 
-            ELSE {$wpdb->prefix}posts.post_type END ASC, 
-            {$wpdb->prefix}posts.post_title ASC";
-  endif;
-  return $orderby;
+  $types = array();
+  $types['mycustomtypethatgoesfirst'] = array();
+  $types['thesecondmostimportanttype'] = array();
+  $types['post'] = array();
+  $types['page'] = array();
+
+  // Split the post types in array $types
+  if (!empty($hits)) {
+    foreach ($hits[0] as $hit) {
+      if (!is_array($types[$hit->post_type])) $types[$hit->post_type] = array();
+      array_push($types[$hit->post_type], $hit);
+    }
+  }
+
+  // Merge back to $hits in the desired order
+  $hits[0] = array_merge($types['mycustomtypethatgoesfirst'], $types['thesecondmostimportanttype'], $types['post'], $types['page']);
+  return $hits;
 }
-add_filter('posts_orderby', 'order_search_by_posttype', 10, 2);
 
 /************* Cron Jobs Include *********************/
 require "theme/cron-jobs.php";
