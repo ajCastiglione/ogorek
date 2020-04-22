@@ -19,39 +19,15 @@ $map = get_field('map_embed');
         </div>
       </div>
       <div class="aside">
-        <h2 class="aside-title"><?= $aside_title ?></h2>
         <div class="aside-text">
-          <div class="aside-inner">
-            <?= $aside_content ?>
-          </div>
-          <div class="grid-50">
-            <div class="half">
-              <h3 class="sub-title">call us:</h3>
-              <a href="tel:+<?= $phone ?>" class="phone"><?= $phone ?></a>
-              <h3 class="sub-title">Follow Us:</h3>
-              <div class="socials">
-                <?php if (have_rows('social_media')) : while (have_rows('social_media')) : the_row(); ?>
-                    <a href="<?= get_sub_field('social_url'); ?>" target="_blank" rel="noopener noreferrer" class="social-icon">
-                      <?= get_sub_field('social_icon') ?>
-                    </a>
-                <?php endwhile;
-                endif; ?>
-              </div>
-            </div>
-            <div class="half">
-              <h3 class="sub-title"><?= get_field('schedule_title') ?></h3>
-              <a class="schedule-icon" href="/schedule">
-                <figure>
-                  <?= get_field('schedule_icon') ?>
-                </figure>
-              </a>
-              <h3 class="sub-title">email us:</h3>
-              <a href="mailto:<?= get_field('email_address', 'options') ?>"><?= get_field('email_address', 'options') ?></a>
-            </div>
-          </div>
           <h3 class="sub-title">map:</h3>
           <div class="map">
             <?= $map ?>
+          </div>
+
+          <h2 class="aside-title"><?= $aside_title ?></h2>
+          <div class="aside-inner">
+            <?= $aside_content ?>
           </div>
         </div>
       </div>
