@@ -67,6 +67,12 @@ HeaderSection
       width: 100%;
     }
   }
+  .header-message {
+    grid-row: 2;
+    text-align: right;
+    margin-left: 0;
+    margin-right: 10px;
+  }
   .socials {
     text-align: right;
     grid-row: 2;
@@ -86,7 +92,10 @@ HeaderSection
 
 .header-bottom {
   text-align: inherit;
-  margin-top: 145px;
+  margin-top: 90px;
+  &.mb-lg {
+    margin-top: 145px;
+  }
 
   .header-right {
     justify-content: flex-end;

@@ -1,3 +1,30 @@
+/****************************
+Header Section
+****************************/
+.top-header {
+  .top-header-grid {
+    flex-direction: row-reverse;
+    .header-message {
+      margin-left: 10px;
+      order: 1;
+      margin-top: 0;
+      .text {
+        white-space: normal;
+        font-size: 15px;
+      }
+    }
+    .info {
+      order: 2;
+    }
+  }
+}
+.header-bottom {
+  margin-top: 120px;
+  &.mb-lg {
+    margin-top: 170px;
+  }
+}
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/

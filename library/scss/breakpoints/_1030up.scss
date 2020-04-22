@@ -43,6 +43,12 @@ HeaderSection
       font-size: 20px;
     }
   }
+  .header-message {
+    grid-row: 1;
+    grid-column: 2;
+    padding-right: 10px;
+    align-self: center;
+  }
   .socials {
     text-align: right;
     grid-row: 1;
@@ -51,9 +57,11 @@ HeaderSection
 }
 
 .header-bottom {
-  margin-top: 125px;
-  @media (min-width: 1181px) {
-    margin-top: 135px;
+  &.mb-lg {
+    margin-top: 125px;
+    @media (min-width: 1181px) {
+      margin-top: 135px;
+    }
   }
 }
 

@@ -415,17 +415,51 @@ Header Section
     &__link {
       display: inline-block;
       color: $white;
+      font-weight: bold;
+      font-size: 16px;
       svg {
         fill: $white;
         margin-right: 1rem;
         max-width: 25px;
         max-height: 25px;
       }
+      p {
+        margin: 0;
+      }
     }
     &__inner {
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+  }
+  // Replaced social media icons
+  .header-message {
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 5px;
+    margin-left: 5px;
+    order: 2;
+    .icon {
+      margin-right: 10px;
+      svg {
+        width: 20px;
+        height: 20px;
+        fill: $white;
+      }
+    }
+    .text {
+      font-weight: bold;
+      font-size: 13px;
+      white-space: nowrap;
+      p {
+        margin: 0;
+      }
+      a {
+        color: inherit;
+      }
     }
   }
   .top-header-grid {
@@ -462,7 +496,7 @@ Header Section
   }
   // Email and phone
   .info {
-    order: 2;
+    order: 1;
     a {
       color: $white;
       font-weight: bold;
@@ -519,7 +553,7 @@ Header Section
 }
 
 .header-bottom {
-  margin-top: 43px;
+  margin-top: 150px;
   text-align: center;
   padding: 0 1rem;
 
@@ -539,8 +573,10 @@ Header Section
       text-align: center;
     }
   }
-  @media (max-width: 1180px) {
-    margin-top: 170px;
+  &.mb-lg {
+    @media (max-width: 1180px) {
+      margin-top: 200px;
+    }
   }
 }
 
