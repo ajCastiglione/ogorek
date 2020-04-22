@@ -441,7 +441,7 @@ Header Section
     justify-content: flex-end;
     margin-top: 5px;
     margin-left: 5px;
-    order: 2;
+    order: 1;
     .icon {
       margin-right: 10px;
       svg {
@@ -496,7 +496,7 @@ Header Section
   }
   // Email and phone
   .info {
-    order: 1;
+    order: 2;
     a {
       color: $white;
       font-weight: bold;
@@ -704,11 +704,25 @@ NAVIGATION STYLES
       background-color: $secondary;
     }
     .shiftnav-target {
+      position: relative;
       background-color: $primary;
       color: $white;
       border-bottom-color: darken($primary, 15%);
+
+      .fas {
+        position: absolute;
+        right: 10%;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        z-index: 99;
+      }
     }
     .sub-menu {
+      display: none;
       .shiftnav-target {
         background-color: lighten($primary, 10%);
       }
