@@ -6,6 +6,15 @@ Header Section
     flex-direction: row-reverse;
     .header-message {
       margin-left: 10px;
+      order: 1;
+      margin-top: 0;
+      .text {
+        white-space: normal;
+        font-size: 15px;
+      }
+    }
+    .info {
+      order: 2;
     }
   }
 }
