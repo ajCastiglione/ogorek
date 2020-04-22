@@ -35,7 +35,9 @@ if (is_page(460)) {
     <h1 class="title"><?php echo $hero_title ? $hero_title : get_the_title(); ?></h1>
     <?php if (!empty($logo)) : ?>
       <div class="logo">
-        <img src="<?= $logo; ?>" alt="Ogorek wealth management">
+        <a href="<?= site_url('/') ?>">
+          <img src="<?= $logo; ?>" alt="Ogorek wealth management">
+        </a>
       </div>
     <?php endif; ?>
   </div>
