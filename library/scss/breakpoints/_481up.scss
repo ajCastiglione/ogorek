@@ -4,6 +4,9 @@ Header Section
 .top-header {
   .top-header-grid {
     flex-direction: row-reverse;
+    .header-message {
+      margin-left: 10px;
+    }
   }
 }
 .header-bottom {
