@@ -218,6 +218,22 @@ function exclude_category_jobs($query)
 
 add_filter('pre_get_posts', 'exclude_category_jobs');
 
+/**
+ * Sort general queries by post type
+ */
+function order_search_by_posttype($orderby, $wp_query)
+{
+  if (!$wp_query->is_admin && $wp_query->is_search) :
+    global $wpdb;
+    $orderby = "CASE WHEN {$wpdb->prefix}posts.post_type = 'page' THEN '1' 
+                 WHEN {$wpdb->prefix}posts.post_type = 'post' THEN '2' 
+            ELSE {$wpdb->prefix}posts.post_type END ASC, 
+            {$wpdb->prefix}posts.post_title ASC";
+  endif;
+  return $orderby;
+}
+add_filter('posts_orderby', 'order_search_by_posttype', 10, 2);
+
 /************* Cron Jobs Include *********************/
 require "theme/cron-jobs.php";
 
