@@ -30,7 +30,6 @@ HeaderSection
 ****************************/
 .top-header {
   .top-header-grid {
-    grid-template-columns: 2fr 1fr 1fr;
     justify-content: center;
   }
   .search-field {
@@ -48,6 +47,9 @@ HeaderSection
     grid-column: 2;
     padding-right: 10px;
     align-self: center;
+    a {
+      font-size: 20px;
+    }
   }
   .socials {
     text-align: right;

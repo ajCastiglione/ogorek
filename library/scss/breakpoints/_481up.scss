@@ -4,8 +4,9 @@ Header Section
 .top-header {
   .top-header-grid {
     flex-direction: row-reverse;
+    padding: 15px 0;
     .header-message {
-      margin-left: 10px;
+      margin-right: 20px;
       order: 1;
       margin-top: 0;
       .text {
@@ -19,7 +20,7 @@ Header Section
   }
 }
 .header-bottom {
-  margin-top: 120px;
+  margin-top: 80px;
   &.mb-lg {
     margin-top: 170px;
   }
