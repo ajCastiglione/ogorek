@@ -30,7 +30,6 @@ HeaderSection
 ****************************/
 .top-header {
   .top-header-grid {
-    grid-template-columns: 2fr 1fr 1fr;
     justify-content: center;
   }
   .search-field {
@@ -48,6 +47,9 @@ HeaderSection
     grid-column: 2;
     padding-right: 10px;
     align-self: center;
+    a {
+      font-size: 20px;
+    }
   }
   .socials {
     text-align: right;
@@ -216,7 +218,7 @@ Partials Section
     margin-top: 3rem;
   }
   &.three-part {
-    background-size: 100% 100%;
+    background-size: 130% 100%;
     .title {
       top: 30px;
       font-size: 40px;
@@ -329,6 +331,12 @@ Custom Post Types Section
 Footer Section
 ****************************/
 .footer {
+  // inner footer content
+  .content {
+    .title {
+      font-size: 45px;
+    }
+  }
   // Newsletter in the footer
   .newsletter-section {
     #gform_wrapper_4 {

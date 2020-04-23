@@ -444,6 +444,8 @@ Header Section
     order: 1;
     .icon {
       margin-right: 10px;
+      display: flex;
+      align-items: center;
       svg {
         width: 20px;
         height: 20px;
@@ -468,6 +470,7 @@ Header Section
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
+    padding: 20px 0;
   }
   // Mobile search
   .search-field {
@@ -553,7 +556,7 @@ Header Section
 }
 
 .header-bottom {
-  margin-top: 150px;
+  margin-top: 100px;
   text-align: center;
   padding: 0 1rem;
 
@@ -1762,6 +1765,13 @@ Internal Pages Section
         margin: 8px 0;
       }
     }
+  }
+}
+
+// Video comms page
+.page-id-3928 {
+  iframe {
+    max-width: 100%;
   }
 }
 

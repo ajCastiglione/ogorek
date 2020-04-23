@@ -21,10 +21,6 @@
     </a>
   </div>
 
-  <div class="search-field">
-    <?= get_search_form() ?>
-  </div>
-
   <div class="header-message">
     <div class="icon"><?= get_field('header_message_icon', 'options') ?></div>
     <div class="text"><a href="<?= get_field('header_link', 'options') ?>"><?= get_field('header_message', 'options') ?></a></div>
