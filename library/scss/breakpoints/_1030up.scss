@@ -331,6 +331,12 @@ Custom Post Types Section
 Footer Section
 ****************************/
 .footer {
+  // inner footer content
+  .content {
+    .title {
+      font-size: 45px;
+    }
+  }
   // Newsletter in the footer
   .newsletter-section {
     #gform_wrapper_4 {
