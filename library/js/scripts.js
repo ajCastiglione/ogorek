@@ -4,6 +4,23 @@ function hasSubMenu($) {
   item.append(arrow);
 }
 
+function scrollTop($) {
+  let btn = $("#scrollTop");
+  let bod = $("html, body");
+  btn.on("click", () => {
+    bod.animate({
+      scrollTop: "0",
+    });
+  });
+  $(window).on("scroll", () => {
+    if (bod.scrollTop() >= 500) {
+      btn.fadeIn(300);
+    } else {
+      btn.fadeOut(300);
+    }
+  });
+}
+
 function mobileMenuSubMenu($) {
   let navUl = $(".shiftnav-nav .shiftnav-menu");
   let parent = navUl.find(".menu-item-has-children");
@@ -330,14 +347,14 @@ function addPlaceholderInternalPages($) {
 // Add zoom functionality
 function addImageZoom($) {
   if ($(window).width() <= 1024) return;
-  var imgWidth = document.getElementsByClassName("featured-image")[0]
-    .offsetWidth;
-  var options = {
-    width: imgWidth, // required
-    zoomPosition: "original",
-    // more options here
-  };
-  new ImageZoom(document.getElementsByClassName("foobox")[0], options);
+  // var imgWidth = document.getElementsByClassName("featured-image")[0]
+  //   .offsetWidth;
+  // var options = {
+  //   width: imgWidth, // required
+  //   zoomPosition: "original",
+  //   // more options here
+  // };
+  // new ImageZoom(document.getElementsByClassName("foobox")[0], options);
   // For the inner post imgs
   var postImgs = $(".post-image-wrapper");
   $.each(postImgs, function (idx, el) {
@@ -361,6 +378,7 @@ jQuery(document).ready(function ($) {
   addPlaceholderInternalPages($);
   popup($);
   mobileMenuSubMenu($);
+  scrollTop($);
 
   if ($("body").hasClass("page-template-page-landing-marketing")) {
     showForm($);
