@@ -245,6 +245,20 @@ Global Section
   padding: 0;
 }
 
+.scroll-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  display: none;
+  i {
+    font-size: 40px;
+    color: $secondary;
+    background-color: $white;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+}
+
 .aligncenter {
   display: block;
   margin: auto;

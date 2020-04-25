@@ -33,6 +33,8 @@ $disclosures = get_field('disclosures', 'options'); ?>
 
 	</div>
 
+	<div id="scrollTop" class="scroll-top-btn"><i class="fas fa-arrow-circle-up"></i></div>
+
 </footer>
 
 </div>
