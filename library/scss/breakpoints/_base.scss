@@ -2368,6 +2368,12 @@ Footer Section
       font-size: 22px;
       font-weight: bold;
     }
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
     .socials {
       margin: 1rem 0;
       display: flex;
