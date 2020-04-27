@@ -11,19 +11,22 @@ $disclosures = get_field('disclosures', 'options'); ?>
 	<div id="inner-footer" class="cf col-1">
 
 		<div class="content">
-			<h2 class="title"><?= $title; ?></h2>
 			<address class="address">
 				<?= $addr; ?>
 			</address>
 
-			<div class="socials">
-				<?php if (have_rows('social_media', 'options')) : while (have_rows('social_media', 'options')) : the_row(); ?>
-						<a href="<?= get_sub_field('social_url'); ?>" target="_blank" rel="noopener noreferrer" class="social-icon">
-							<?= (get_sub_field('icon_or_svg')) ? get_sub_field('social_icon') : '<figure>' . get_sub_field('social_icon_svg') . '</figure>'; ?>
-						</a>
-				<?php endwhile;
-				endif; ?>
+			<div class="flex">
+				<h2 class="title"><?= $title; ?></h2>
+				<div class="socials">
+					<?php if (have_rows('social_media', 'options')) : while (have_rows('social_media', 'options')) : the_row(); ?>
+							<a href="<?= get_sub_field('social_url'); ?>" target="_blank" rel="noopener noreferrer" class="social-icon">
+								<?= (get_sub_field('icon_or_svg')) ? get_sub_field('social_icon') : '<figure>' . get_sub_field('social_icon_svg') . '</figure>'; ?>
+							</a>
+					<?php endwhile;
+					endif; ?>
+				</div>
 			</div>
+
 			<img src="<?= $logos['url']; ?>" alt="Logos" class="logos">
 			<div class="disclosures">
 				<?= $disclosures; ?>
