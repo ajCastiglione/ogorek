@@ -2353,9 +2353,12 @@ Footer Section
 ****************************/
 .footer {
   background-color: lighten($primary, 5%);
-  padding: 1.5rem 1rem;
+  padding: 15px 1rem;
   text-align: center;
   border-top: 30px solid $secondary;
+  .title {
+    margin: 0;
+  }
   .content {
     color: $white;
 
@@ -2373,6 +2376,7 @@ Footer Section
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
+      margin: 8px 0;
     }
     .socials {
       margin: 1rem 0;
