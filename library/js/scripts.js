@@ -366,6 +366,14 @@ function addImageZoom($) {
   });
 }
 
+// Redirect from old #newsletter to contact page since its all in one
+function newsletterRedirect() {
+  let urlSplit = document.URL.split("#");
+  if (urlSplit[1] && urlSplit.includes("newsletter")) {
+    location.href = "https://ogorek.com/contact/";
+  }
+}
+
 /*
  * Put all your regular jQuery in here.
  */
@@ -379,6 +387,7 @@ jQuery(document).ready(function ($) {
   popup($);
   mobileMenuSubMenu($);
   scrollTop($);
+  newsletterRedirect();
 
   if ($("body").hasClass("page-template-page-landing-marketing")) {
     showForm($);
