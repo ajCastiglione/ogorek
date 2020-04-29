@@ -181,6 +181,10 @@ function smoothScroll($) {
       let target = $(this.hash);
       let nav = $(".shiftnav-shiftnav-main");
 
+      if (target.selector.includes("newsletter")) {
+        location.href = "https://ogorek.com/contact/";
+      }
+
       if (nav) {
         nav.removeClass("shiftnav-open-target");
         $("body").removeClass("shiftnav-open-left");
@@ -188,15 +192,17 @@ function smoothScroll($) {
         $("body").addClass("shiftnav-transitioning");
       }
 
-      $("html, body").animate(
-        {
-          scrollTop: $("body").hasClass("page-id-564")
-            ? target.offset().top - 210
-            : target.offset().top - 170,
-        },
-        500,
-        "linear"
-      );
+      if (target.offset()) {
+        $("html, body").animate(
+          {
+            scrollTop: $("body").hasClass("page-id-564")
+              ? target.offset().top - 210
+              : target.offset().top - 170,
+          },
+          500,
+          "linear"
+        );
+      }
     }
   });
 }
@@ -358,6 +364,14 @@ function addImageZoom($) {
   });
 }
 
+// Redirect from old #newsletter to contact page since its all in one
+function newsletterRedirect() {
+  let urlSplit = document.URL.split("#");
+  if (urlSplit[1] && urlSplit.includes("newsletter")) {
+    location.href = "https://ogorek.com/contact/";
+  }
+}
+
 /*
  * Put all your regular jQuery in here.
  */
@@ -371,6 +385,7 @@ jQuery(document).ready(function ($) {
   popup($);
   mobileMenuSubMenu($);
   scrollTop($);
+  newsletterRedirect();
 
   if ($("body").hasClass("page-template-page-landing-marketing")) {
     showForm($);
