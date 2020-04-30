@@ -2064,8 +2064,9 @@ Partials Section
     transition: all 0.4s ease;
     // hero title
     .title {
+      position: relative;
       right: 0;
-      left: 0;
+      left: 40px;
       top: 10px;
       font-size: 28px;
       max-width: 500px;
