@@ -478,18 +478,19 @@ Partials Section
 ****************************/
 .hero {
   &.three-part {
-    background-size: 160% 100%;
+    min-height: 180px;
+    background-size: 220% 100%;
     .title {
-      right: 15%;
-      top: 65px;
+      right: 13%;
+      top: 35px;
       font-size: 35px;
       max-width: 600px;
       margin-right: auto;
     }
     .logo {
-      bottom: 45px;
+      bottom: 25px;
       img {
-        max-width: 270px;
+        max-width: 210px;
       }
     }
   }
