@@ -353,16 +353,8 @@ function addPlaceholderInternalPages($) {
 // Add zoom functionality
 function addImageZoom($) {
   if ($(window).width() <= 1024) return;
-  // var imgWidth = document.getElementsByClassName("featured-image")[0]
-  //   .offsetWidth;
-  // var options = {
-  //   width: imgWidth, // required
-  //   zoomPosition: "original",
-  //   // more options here
-  // };
-  // new ImageZoom(document.getElementsByClassName("foobox")[0], options);
   // For the inner post imgs
-  var postImgs = $(".post-image-wrapper");
+  var postImgs = $(".imgzoom").parent(".post-image-wrapper");
   $.each(postImgs, function (idx, el) {
     var postImgOptions = {
       width: $(el).width(),
