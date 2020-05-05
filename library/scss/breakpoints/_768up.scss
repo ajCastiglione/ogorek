@@ -283,6 +283,30 @@ Internal Pages Section
   }
 }
 
+// Client center page
+.page-template-page-client-center {
+  .hotlinks {
+    grid-template-columns: 1fr 1fr;
+    .hotlink {
+      a {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .client-information {
+    margin-top: 50px;
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .info {
+      a {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
 // contact page
 .contact {
   .content {
