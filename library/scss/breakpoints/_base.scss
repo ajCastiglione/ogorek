@@ -1777,6 +1777,7 @@ Internal Pages Section
     display: grid;
     grid-gap: 20px 10px;
     .hotlink {
+      border: 2px solid $primary;
       a {
         display: flex;
         flex-direction: column;
@@ -1784,6 +1785,17 @@ Internal Pages Section
         color: $secondary;
         font-size: 18px;
         text-align: center;
+        span {
+          width: 100%;
+          display: block;
+          background-color: $primary;
+          color: $white;
+          padding: 0.5rem;
+        }
+        img {
+          margin: 0;
+          padding: 20px 0;
+        }
       }
     }
   }
@@ -1799,6 +1811,7 @@ Internal Pages Section
       margin: 0 0 15px;
       color: $white !important;
       background-color: $primary;
+      padding: 0.5rem;
     }
     .grid {
       display: grid;
