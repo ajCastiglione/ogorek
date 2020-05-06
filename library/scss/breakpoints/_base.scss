@@ -1790,13 +1790,15 @@ Internal Pages Section
 
   .client-information {
     border: 2px solid $primary;
-    padding: 1rem;
+    padding: 0 0 1rem;
     margin: 25px 0;
     .section-title {
       text-align: center;
       font-weight: bold;
       font-size: 28px;
-      margin: 0;
+      margin: 0 0 15px;
+      color: $white !important;
+      background-color: $primary;
     }
     .grid {
       display: grid;
