@@ -55,7 +55,7 @@ if (!empty($atts)) :
             </form>
         </section>
 
-        <?php if (get_field('trusts', $chosen_attorney)) :  $trusts = get_field('trusts', $chosen_attorney); ?>
+        <?php if (!empty($chosen_attorney) && get_field('trusts', $chosen_attorney)) :  $trusts = get_field('trusts', $chosen_attorney); ?>
             <section class="trusts-selector">
                 <form action="" method="get">
                     <label for="trusts">Trusts</label>
