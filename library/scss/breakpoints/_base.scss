@@ -2993,8 +2993,8 @@ Custom Post Types Section
         color: $primary;
       }
       &:visited {
-        background-color: darken($primary, 15%);
-        border-color: darken($primary, 15%);
+        background-color: darken($primary, 25%);
+        border-color: darken($primary, 25%);
       }
       &.completed {
         background-color: $secondary;
