@@ -1801,7 +1801,7 @@ Internal Pages Section
   }
 
   .client-information {
-    border: 2px solid $primary;
+    border: 2px solid $secondary;
     padding: 0 0 1rem;
     margin: 25px 0;
     .section-title {
@@ -1809,7 +1809,7 @@ Internal Pages Section
       font-size: 28px;
       margin: 0 0 15px;
       color: $white !important;
-      background-color: $primary;
+      background-color: $secondary;
       padding: 0.5rem;
     }
     .grid {
@@ -1823,7 +1823,7 @@ Internal Pages Section
         align-items: center;
         justify-content: center;
         text-align: center;
-        color: $secondary;
+        color: $black;
         font-size: 16px;
       }
     }
