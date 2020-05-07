@@ -2091,24 +2091,29 @@ Singles Section
   .gform_wrapper {
     border: 2px solid $primary;
     padding: 10px 25px;
-  }
-  .gform_body {
-    .gfield_checkbox {
-      li {
-        display: flex;
 
-        input {
-          &:checked {
-            + label {
-              font-weight: 700;
+    .gform_body {
+      .gfield_checkbox {
+        li {
+          display: flex;
+
+          input {
+            &:checked {
+              + label {
+                font-weight: 700;
+              }
             }
           }
-        }
-        label {
-          margin-left: 5px;
-          font-weight: 500;
+          label {
+            margin-left: 5px;
+            font-weight: 500;
+          }
         }
       }
+    }
+    .gform_footer {
+      margin-top: 0;
+      padding-top: 0;
     }
   }
 }
