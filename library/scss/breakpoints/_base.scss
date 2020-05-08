@@ -2092,7 +2092,17 @@ Singles Section
     background-color: $light-gray;
     padding: 10px 25px;
 
+    .gform_title {
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+
     .gform_body {
+      select {
+        width: 100% !important;
+        max-width: 100%;
+      }
+
       .gfield_checkbox {
         li {
           display: flex;
