@@ -1163,6 +1163,31 @@ Popup Section
 }
 
 /****************************
+Appt (bookly) section
+****************************/
+.bookly-form {
+  // Step 1 - customer setting avail times
+  .bookly-time-range {
+    select {
+      padding-right: 20px !important;
+    }
+  }
+  // Step 3 - customer info
+  .bookly-form-group {
+    input,
+    textarea {
+      transition: all 0.4s ease;
+      border-width: 2px !important;
+      &:active,
+      &:focus {
+        background-color: $white;
+        border-color: $secondary !important;
+      }
+    }
+  }
+}
+
+/****************************
 Internal Pages Section
 ****************************/
 .page-template-default {

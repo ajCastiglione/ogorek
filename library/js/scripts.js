@@ -372,6 +372,38 @@ function newsletterRedirect() {
   }
 }
 
+function prePopulateScheduler($) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const name = urlParams.get("fname");
+  const email = urlParams.get("email");
+  const phone = urlParams.get("phone");
+  const doc = $(document);
+
+  doc.on("click", ".bookly-time-screen", () => {
+    let checkLength = setInterval(function () {
+      let count = 0;
+      let progressFields = $(".bookly-progress-tracker > div");
+      $.each(progressFields, (idx, el) => {
+        $(el).hasClass("active") ? count++ : null;
+      });
+      if (count === 3) {
+        // Stop interval to avoid overwriting new input
+        clearInterval(checkLength);
+        // Get name and email fields
+        let nameField = $(".bookly-js-full-name");
+        let emailField = $(".bookly-js-user-email");
+        let phoneField = $(".bookly-user-phone");
+        // Populate fields with query params if they exist
+        if (name && email) {
+          nameField.val(name);
+          emailField.val(email);
+          phoneField.val(phone);
+        }
+      }
+    }, 500);
+  });
+}
+
 /*
  * Put all your regular jQuery in here.
  */
@@ -386,6 +418,7 @@ jQuery(document).ready(function ($) {
   mobileMenuSubMenu($);
   scrollTop($);
   newsletterRedirect();
+  prePopulateScheduler($);
 
   if ($("body").hasClass("page-template-page-landing-marketing")) {
     showForm($);
