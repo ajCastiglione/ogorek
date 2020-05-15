@@ -386,7 +386,7 @@ function prePopulateScheduler($) {
       $.each(progressFields, (idx, el) => {
         $(el).hasClass("active") ? count++ : null;
       });
-      if (count === 3) {
+      if (count === 2) {
         // Stop interval to avoid overwriting new input
         clearInterval(checkLength);
         // Get name and email fields
