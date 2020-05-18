@@ -38,7 +38,7 @@ if ($_POST['post-link']) {
             <div class="form-wrap">
                 <input type="email" name="email" id="email" placeholder="Email..." required>
                 <input type="hidden" name="post-link" value="https:<?= get_permalink() ?>">
-                <input type="hidden" name="post-title" value="<?= get_the_title($post->ID) ?>">
+                <input type="hidden" name="post-title" value="<?= single_post_title() ?>">
                 <input type="submit" value="Save for later">
             </div>
         </form>
