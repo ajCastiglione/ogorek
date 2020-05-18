@@ -97,4 +97,5 @@ function get_related_posts($post)
     </div>
 <?php
   }
+  wp_reset_postdata();
 }
