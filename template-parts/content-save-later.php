@@ -1,5 +1,7 @@
 <?php
 
+$form_title = get_field('form_title', 'options');
+
 if ($_POST['post-link']) {
 
     $email = $_POST['email'];
@@ -30,18 +32,15 @@ if ($_POST['post-link']) {
     ?>
 
     <section class="save-for-later">
-        <?php if ($_GET['success']) : ?>
-            <div class="alert alert-success">
-                Successfully sent an email with the link to read the article later!
-            </div>
-        <?php else :  ?>
-            <h3 class="sfl-title">Please enter your email to have this blog sent to you!</h3>
-            <form action="" method="POST">
+        <form action="" method="POST" id="save-form" class="">
+            <div id="close-sfl" class="close"><i class="far fa-times-circle"></i></div>
+            <h3 class="sfl-title"><?= $form_title ?></h3>
+            <div class="form-wrap">
                 <input type="email" name="email" id="email" placeholder="Email..." required>
                 <input type="hidden" name="post-link" value="https:<?= get_permalink() ?>">
                 <input type="hidden" name="post-title" value="<?= get_the_title($post->ID) ?>">
                 <input type="submit" value="Save for later">
-            </form>
+            </div>
+        </form>
     </section>
-<?php endif;
-    } ?>
+<?php } ?>

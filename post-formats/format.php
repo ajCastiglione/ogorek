@@ -9,6 +9,8 @@
           <?= get_byline($post); ?>
         </div>
 
+        <a href="#" id="save-for-later" class="save-later"><i class="fas fa-bookmark"></i> Save for later</a>
+
         <?= get_author($post) ?>
 
       </div>
