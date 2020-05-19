@@ -415,7 +415,7 @@ function prePopulateScheduler($) {
             $.each(progressFields, (idx, el) => {
                 $(el).hasClass("active") ? count++ : null;
             });
-            if (count === 2) {
+            if (count === 3) {
                 // Stop interval to avoid overwriting new input
                 clearInterval(checkLength);
                 // Get name and email fields
@@ -447,6 +447,7 @@ jQuery(document).ready(function ($) {
     mobileMenuSubMenu($);
     scrollTop($);
     newsletterRedirect();
+    prePopulateScheduler($);
 
     if ($("body").hasClass("page-template-page-landing-marketing")) {
         showForm($);
