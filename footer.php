@@ -9,9 +9,6 @@ $disclosures = get_field('disclosures', 'options'); ?>
 	<div id="inner-footer" class="cf col-1">
 
 		<div class="content">
-			<address class="address">
-				<?= $addr; ?>
-			</address>
 
 			<div class="flex">
 				<h2 class="title"><?= $title; ?></h2>
@@ -24,6 +21,10 @@ $disclosures = get_field('disclosures', 'options'); ?>
 					endif; ?>
 				</div>
 			</div>
+
+			<address class="address">
+				<?= $addr; ?>
+			</address>
 
 			<img src="<?= $logos['url']; ?>" alt="Logos" class="logos">
 			<div class="disclosures">
