@@ -415,6 +415,7 @@ function prePopulateScheduler($) {
             $.each(progressFields, (idx, el) => {
                 $(el).hasClass("active") ? count++ : null;
             });
+            console.log(count);
             if (count === 3) {
                 // Stop interval to avoid overwriting new input
                 clearInterval(checkLength);
