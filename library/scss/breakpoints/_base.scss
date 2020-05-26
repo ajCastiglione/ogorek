@@ -2435,6 +2435,9 @@ Footer Section
         .address {
             font-size: 20px;
             margin-bottom: 0;
+            a {
+                color: $white;
+            }
         }
         .phone {
             color: $secondary;
