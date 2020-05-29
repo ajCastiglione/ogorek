@@ -379,35 +379,16 @@ function newsletterRedirect() {
 
 function prePopulateScheduler($) {
     const urlParams = new URLSearchParams(window.location.search);
-    const name = urlParams.get("fname");
+    const firstName = urlParams.get("fname").split(" ")[0];
+    const lastName = urlParams.get("fname").split(" ")[1];
     const email = urlParams.get("email");
     const phone = urlParams.get("phone");
-    const doc = $(document);
+    const scheduler = $("iframe[src*=acuity]");
+    const formattedURL = `${scheduler.attr(
+        "src"
+    )}&firstName=${firstName}&lastName=${lastName}&phone=${phone}&email=${email}`;
 
-    doc.on("click", ".bookly-time-screen", () => {
-        let checkLength = setInterval(function () {
-            let count = 0;
-            let progressFields = $(".bookly-progress-tracker > div");
-            $.each(progressFields, (idx, el) => {
-                $(el).hasClass("active") ? count++ : null;
-            });
-            console.log(count);
-            if (count === 3) {
-                // Stop interval to avoid overwriting new input
-                clearInterval(checkLength);
-                // Get name and email fields
-                let nameField = $(".bookly-js-full-name");
-                let emailField = $(".bookly-js-user-email");
-                let phoneField = $(".bookly-user-phone");
-                // Populate fields with query params if they exist
-                if (name && email) {
-                    nameField.val(name);
-                    emailField.val(email);
-                    phoneField.val(phone);
-                }
-            }
-        }, 500);
-    });
+    scheduler.attr("src", formattedURL);
 }
 
 /*
@@ -424,7 +405,6 @@ jQuery(document).ready(function ($) {
     mobileMenuSubMenu($);
     scrollTop($);
     newsletterRedirect();
-    prePopulateScheduler($);
 
     if ($("body").hasClass("page-template-page-landing-marketing")) {
         showForm($);
@@ -445,6 +425,10 @@ jQuery(document).ready(function ($) {
         createTrust($);
         removeCreate($);
         addCheck($);
+    }
+
+    if ($("iframe").attr("src").includes("acuity")) {
+        prePopulateScheduler($);
     }
     /*
   if (
