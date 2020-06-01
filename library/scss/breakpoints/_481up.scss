@@ -2,28 +2,28 @@
 Header Section
 ****************************/
 .top-header {
-  .top-header-grid {
-    flex-direction: row-reverse;
-    padding: 15px 0;
-    .header-message {
-      margin-right: 20px;
-      order: 1;
-      margin-top: 0;
-      .text {
-        white-space: normal;
-        font-size: 15px;
-      }
+    .top-header-grid {
+        flex-direction: row-reverse;
+        padding: 15px 0;
+        .header-message {
+            margin-right: 20px;
+            order: 1;
+            margin-top: 0;
+            .text {
+                white-space: normal;
+                font-size: 15px;
+            }
+        }
+        .info {
+            order: 2;
+        }
     }
-    .info {
-      order: 2;
-    }
-  }
 }
 .header-bottom {
-  margin-top: 80px;
-  &.mb-lg {
-    margin-top: 170px;
-  }
+    margin-top: 80px;
+    &.mb-lg {
+        margin-top: 170px;
+    }
 }
 
 /*********************
@@ -32,24 +32,24 @@ POSTS & CONTENT STYLES
 
 /* entry content */
 .entry-content {
-  /* at this larger size, we can start to align images */
-  .alignleft,
-  img.alignleft {
-    margin-right: 1.5em;
-    display: inline;
-  }
-  .alignright,
-  img.alignright {
-    margin-left: 1.5em;
-    display: inline;
-  }
-  .aligncenter,
-  img.aligncenter {
-    margin-right: auto;
-    margin-left: auto;
-    display: block;
-    clear: both;
-  }
+    /* at this larger size, we can start to align images */
+    .alignleft,
+    img.alignleft {
+        margin-right: 1.5em;
+        display: inline;
+    }
+    .alignright,
+    img.alignright {
+        margin-left: 1.5em;
+        display: inline;
+    }
+    .aligncenter,
+    img.aligncenter {
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        clear: both;
+    }
 } /* end .entry-content */
 
 /****************************
@@ -57,86 +57,86 @@ Partials Section
 ****************************/
 
 .form-container {
-  position: relative;
-  input {
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-  }
-  button {
-    position: absolute;
-    top: 0;
-    right: 1rem;
-    border-bottom-right-radius: 8px;
-    border-top-right-radius: 8px;
-    width: auto;
-    margin-top: 0;
-  }
+    position: relative;
+    input {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+    button {
+        position: absolute;
+        top: 0;
+        right: 1rem;
+        border-bottom-right-radius: 8px;
+        border-top-right-radius: 8px;
+        width: auto;
+        margin-top: 0;
+    }
 }
 
 .hero {
-  &.three-part {
-    min-height: 210px;
-    background-size: 215% 100%;
-    .title {
-      position: absolute;
-      left: auto;
-      top: 35px;
-      font-size: 35px;
-      right: 13%;
-      margin: auto;
-      background: none;
+    &.three-part {
+        min-height: 250px;
+        background-size: 215% 100%;
+        .title {
+            position: absolute;
+            left: auto;
+            top: 35px;
+            font-size: 35px;
+            right: 13%;
+            margin: auto;
+            background: none;
+        }
+        // logo
+        .logo {
+            left: 10px;
+            bottom: 15px;
+            img {
+                max-width: 250px;
+            }
+        }
     }
-    // logo
-    .logo {
-      left: 10px;
-      bottom: 15px;
-      img {
-        max-width: 250px;
-      }
-    }
-  }
 }
 
 /****************************
 Internal Pages Section
 ****************************/
 .page-template-default {
-  .hotlinks {
-    .hotlink {
-      width: 50%;
-      .link {
-        font-size: 18px;
-      }
-      &:first-child {
-        width: 100%;
-      }
+    .hotlinks {
+        .hotlink {
+            width: 50%;
+            .link {
+                font-size: 18px;
+            }
+            &:first-child {
+                width: 100%;
+            }
+        }
     }
-  }
-  .hotlinks-trust-solution {
-    .hotlink,
-    .hotlink:first-child {
-      width: 50%;
+    .hotlinks-trust-solution {
+        .hotlink,
+        .hotlink:first-child {
+            width: 50%;
+        }
     }
-  }
-}
-
-// Client center page
-.page-template-page-client-center {
-  .app-locations {
-    .app-dl {
-      margin: 0 3rem 0 0;
+    .app-locations {
+        .app-dl {
+            margin: 0 3rem 0 0;
+        }
     }
-  }
 }
 
 // Landing pages
 .page-template-page-landing-marketing {
-  // Page content
-  .landing-page-section-content {
-    &.s2 {
-      .repeater {
-        grid-template-columns: 1fr 1fr;
-      }
+    // Page content
+    .landing-page-section-content {
+        &.s2 {
+            .repeater {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
     }
-  }
+}
+
+// contact page
+.contact {
 }
