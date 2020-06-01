@@ -1977,6 +1977,32 @@ Singles Section
             h5 {
                 color: $red;
             }
+            a {
+                display: inline-block;
+                padding: 8px 16px;
+                background-color: $secondary;
+                color: $white;
+                margin: 10px 0;
+                width: 100%;
+                max-width: 290px;
+                border: 2px solid $secondary;
+                font-weight: bold;
+                &:hover {
+                    background-color: transparent;
+                    color: $black;
+                }
+            }
+            p {
+                &:nth-of-type(3) {
+                    a {
+                        background-color: $primary;
+                        border-color: $primary;
+                        &:hover {
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
         }
     }
 
