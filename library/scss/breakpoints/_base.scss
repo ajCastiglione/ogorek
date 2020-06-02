@@ -2571,7 +2571,7 @@ Footer Section
 }
 
 /****************************
-Gravity Forms Section
+Gravity Forms & WPForms Section
 ****************************/
 #gform_2 {
   background-color: $white;
@@ -2619,6 +2619,13 @@ Gravity Forms Section
       color: $secondary;
     }
   }
+}
+
+#wpforms-conversational-form-page
+  .wpforms-field-checkbox
+  li:not(.wpforms-image-choices-item)
+  label:before {
+  content: "" !important;
 }
 
 /****************************
