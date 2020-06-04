@@ -23,7 +23,7 @@ LINK STYLES
 
 a,
 a:visited {
-  color: $black;
+  color: $primary;
   border-radius: 0;
   /* on click */
   &:active {
@@ -1789,6 +1789,16 @@ Internal Pages Section
   }
 }
 
+// Schedule page
+.page-id-375 {
+  .entry-content {
+    p {
+      font-size: 22px;
+      color: $primary;
+    }
+  }
+}
+
 // Video comms page
 .page-id-3928 {
   iframe {
@@ -2525,6 +2535,9 @@ Footer Section
     .address {
       font-size: 20px;
       margin-bottom: 0;
+      a {
+        color: $white;
+      }
     }
     .phone {
       color: $secondary;

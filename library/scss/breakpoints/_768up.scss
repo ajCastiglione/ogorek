@@ -297,12 +297,21 @@ Internal Pages Section
   .client-information {
     margin-top: 50px;
     .grid {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
     .info {
       a {
         font-size: 18px;
       }
+    }
+  }
+}
+
+// Schedule page
+.page-id-375 {
+  .entry-content {
+    p {
+      font-size: 28px;
     }
   }
 }
