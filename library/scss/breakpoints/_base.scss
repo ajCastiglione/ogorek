@@ -1976,15 +1976,34 @@ Singles Section
   .aside {
     padding: 1rem;
   }
-
-  .content {
-    h2,
-    h3 {
-      color: $primary;
+  .text {
+    h5 {
+      color: $red;
     }
-    .text {
-      h5 {
-        color: $red;
+    a {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: $secondary;
+      color: $white;
+      margin: 10px 0;
+      width: 100%;
+      max-width: 290px;
+      border: 2px solid $secondary;
+      font-weight: bold;
+      &:hover {
+        background-color: transparent;
+        color: $black;
+      }
+    }
+    p {
+      &:nth-of-type(3) {
+        a {
+          background-color: $primary;
+          border-color: $primary;
+          &:hover {
+            background-color: transparent;
+          }
+        }
       }
       a {
         display: inline-block;
@@ -2148,43 +2167,42 @@ Singles Section
     }
   }
 
-  // Form section
-  .gform_wrapper {
-    background-color: $light-gray;
-    padding: 10px 25px;
-
-    .gform_title {
-      font-weight: 500;
-      text-transform: capitalize;
-    }
-
+  // Newsletter section
+  #gform_wrapper_4 {
+    display: none;
+    // form fields
     .gform_body {
-      select {
-        width: 100% !important;
-        max-width: 100%;
-      }
-
-      .gfield_checkbox {
+      margin-top: 0;
+      #gform_fields_4 {
         li {
-          display: flex;
-
-          input {
-            &:checked {
-              + label {
-                font-weight: 700;
-              }
-            }
-          }
-          label {
-            margin-left: 5px;
-            font-weight: 500;
-          }
+          width: 100%;
+          padding: 0;
+          margin-top: 0;
+        }
+        input {
+          width: 100%;
+          margin: 0;
+          border: 2px solid $secondary;
+        }
+        li.hide-field {
+          display: none;
         }
       }
     }
+    // submit button
     .gform_footer {
-      margin-top: 0;
-      padding-top: 0;
+      text-align: center;
+      margin-top: 10px;
+      padding: 0;
+      .gform_button {
+        width: 100%;
+        padding: 0.5rem 0;
+        height: 95%;
+        font-size: 16px;
+        &:hover {
+          color: $secondary;
+        }
+      }
     }
   }
 }
