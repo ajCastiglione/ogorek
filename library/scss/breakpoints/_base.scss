@@ -1990,6 +1990,7 @@ Singles Section
       max-width: 290px;
       border: 2px solid $secondary;
       font-weight: bold;
+      transition: all 0.4s ease;
       &:hover {
         background-color: transparent;
         color: $black;
