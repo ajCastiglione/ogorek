@@ -407,6 +407,10 @@ jQuery(document).ready(function ($) {
     removeCreate($);
     addCheck($);
   }
+
+  if ($("iframe").length > 0 && $("iframe").attr("src").includes("acuity")) {
+    prePopulateScheduler($);
+  }
   /*
   if (
     $("iframe").length > 0 &&
