@@ -1976,15 +1976,35 @@ Singles Section
   .aside {
     padding: 1rem;
   }
-
-  .content {
-    h2,
-    h3 {
-      color: $primary;
+  .text {
+    h5 {
+      color: $red;
     }
-    .text {
-      h5 {
-        color: $red;
+    a {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: $secondary;
+      color: $white;
+      margin: 10px 0;
+      width: 100%;
+      max-width: 290px;
+      border: 2px solid $secondary;
+      font-weight: bold;
+      transition: all 0.4s ease;
+      &:hover {
+        background-color: transparent;
+        color: $black;
+      }
+    }
+    p {
+      &:nth-of-type(3) {
+        a {
+          background-color: $primary;
+          border-color: $primary;
+          &:hover {
+            background-color: transparent;
+          }
+        }
       }
     }
   }
@@ -2118,6 +2138,45 @@ Singles Section
       svg {
         fill: $secondary;
         transition: all 0.4s ease;
+      }
+    }
+  }
+
+  // Newsletter section
+  #gform_wrapper_4 {
+    display: none;
+    // form fields
+    .gform_body {
+      margin-top: 0;
+      #gform_fields_4 {
+        li {
+          width: 100%;
+          padding: 0;
+          margin-top: 0;
+        }
+        input {
+          width: 100%;
+          margin: 0;
+          border: 2px solid $secondary;
+        }
+        li.hide-field {
+          display: none;
+        }
+      }
+    }
+    // submit button
+    .gform_footer {
+      text-align: center;
+      margin-top: 10px;
+      padding: 0;
+      .gform_button {
+        width: 100%;
+        padding: 0.5rem 0;
+        height: 95%;
+        font-size: 16px;
+        &:hover {
+          color: $secondary;
+        }
       }
     }
   }

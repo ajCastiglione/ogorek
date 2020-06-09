@@ -386,6 +386,16 @@ function prePopulateScheduler($) {
   scheduler.attr("src", formattedURL);
 }
 
+function contactNewsletter($) {
+  let btn = $("a[href*=letter]");
+  let form = $("#gform_wrapper_4");
+
+  btn.on("click", (e) => {
+    e.preventDefault();
+    form.show(500);
+  });
+}
+
 /*
  * Put all your regular jQuery in here.
  */
@@ -400,6 +410,10 @@ jQuery(document).ready(function ($) {
   mobileMenuSubMenu($);
   scrollTop($);
   newsletterRedirect();
+
+  if ($("body").hasClass("page-template-page-contact")) {
+    contactNewsletter($);
+  }
 
   if ($("body").hasClass("page-template-page-landing-marketing")) {
     showForm($);

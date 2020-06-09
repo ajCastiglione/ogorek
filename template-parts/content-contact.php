@@ -20,11 +20,12 @@ $map = get_field('map_embed');
       </div>
       <div class="aside">
         <div class="aside-text">
-          <h3 class="sub-title">map:</h3>
-          <div class="map">
-            <?= $map ?>
-          </div>
-
+          <?php if (!empty($map)) : ?>
+            <h3 class="sub-title">map:</h3>
+            <div class="map">
+              <?= $map ?>
+            </div>
+          <?php endif; ?>
           <h2 class="aside-title"><?= $aside_title ?></h2>
           <div class="aside-inner">
             <?= $aside_content ?>
