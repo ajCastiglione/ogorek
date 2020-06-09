@@ -422,7 +422,7 @@ jQuery(document).ready(function ($) {
     addCheck($);
   }
 
-  if ($("iframe").attr("src").includes("acuity")) {
+  if ($("iframe").length > 0 && $("iframe").attr("src").includes("acuity")) {
     prePopulateScheduler($);
   }
   /*
