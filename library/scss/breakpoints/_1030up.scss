@@ -127,6 +127,17 @@ Home Page Section
 }
 
 /****************************
+Page Template Section
+****************************/
+.page-template-page-faq {
+  .faqs {
+    &__content {
+      margin: 50px 0;
+    }
+  }
+}
+
+/****************************
 Internal Pages Section
 ****************************/
 .service {

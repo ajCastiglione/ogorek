@@ -420,6 +420,28 @@ function contactNewsletter($) {
   });
 }
 
+// FAQs page
+function toggleFAQ($) {
+  let questions = $(".faqs__question");
+
+  questions.on("click", (e) => {
+    let self = $(e.target);
+    // Traverses DOM until it gets the right level
+    let question =
+      self.is("span") || self.is("i") ? self.parentsUntil(".text") : self;
+
+    // Setting active class to question toggled to enable animation
+    question.toggleClass("active");
+
+    // Selects the correct answer to toggle the visibility of
+    let answerToToggle = question.next();
+
+    answerToToggle.slideToggle(300, function () {
+      answerToToggle.toggleClass("active");
+    });
+  });
+}
+
 /*
  * Put all your regular jQuery in here.
  */
@@ -464,18 +486,10 @@ jQuery(document).ready(function ($) {
   if ($("iframe").length > 0 && $("iframe").attr("src").includes("acuity")) {
     prePopulateScheduler($);
   }
-  /*
-  if (
-    $("iframe").length > 0 &&
-    !$("body").hasClass("home") &&
-    !$("body").hasClass("page-id-286") &&
-    !$("body").hasClass("page-id-375") &&
-    !$("body").hasClass("page-id-2351") &&
-    !$("body").hasClass("page-id-3928")
-  ) {
-    addPlaceholder($);
-    showVideo($);
-  } */
+
+  if ($("body").hasClass("page-template-page-faq")) {
+    toggleFAQ($);
+  }
 }); /* end of as page load scripts */
 
 window.onload = loadIframe;
