@@ -21,11 +21,11 @@ $aside_content = get_field('aside_content');
               <?php endif; ?>
               <div class="text">
                 <p class="faqs__question">
-                  <span>Q. <?= $question ?></span>
+                  <span><?= $question ?></span>
                   <span><i class="fas fa-plus"></i></span>
                 </p>
                 <p class="faqs__answer">
-                  A. <?= $answer ?>
+                  <?= $answer ?>
                 </p>
               </div>
             </div>
