@@ -116,7 +116,7 @@ NAVIGATION STYLES
   li {
     position: relative;
     display: inline-block;
-    z-index: 9;
+    z-index: 2;
     a {
       &:hover,
       &:focus {
@@ -284,6 +284,7 @@ Page Template Section
       margin: 30px 0;
     }
     &__question {
+      font-size: 25px;
       span {
         display: inline-block;
         &:last-child {

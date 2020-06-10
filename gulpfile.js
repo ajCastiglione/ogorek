@@ -89,7 +89,7 @@ gulp.task("init", () => {
     files: all,
   });
   gulp.watch(scss, gulp.series("compile", "compile-login"));
-  gulp.watch(js, gulp.series("js"));
+  // gulp.watch(js, gulp.series("js"));
 });
 
 // Start the process
