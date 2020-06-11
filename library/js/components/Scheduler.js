@@ -4,10 +4,10 @@ function prePopulateScheduler($) {
   const lastName = urlParams.get("lname");
   const email = urlParams.get("email");
   const phone = urlParams.get("phone");
-  const scheduler = $("iframe[src*=acuity]");
+  const scheduler = $("iframe[src*=calendly]");
   const formattedURL = `${scheduler.attr(
     "src"
-  )}&firstName=${firstName}&lastName=${lastName}&phone=${phone}&email=${email}`;
+  )}&name=${firstName}%20${lastName}&a1=${phone}&email=${email}`;
 
   scheduler.attr("src", formattedURL);
 }

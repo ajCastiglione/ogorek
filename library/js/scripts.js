@@ -62,9 +62,14 @@ jQuery(document).ready(function ($) {
     addCheck($);
   }
 
-  if ($("iframe").length > 0 && $("iframe").attr("src").includes("acuity")) {
-    prePopulateScheduler($);
-  }
+  setTimeout(() => {
+    if (
+      $("iframe").length > 0 &&
+      $("iframe").attr("src").includes("calendly")
+    ) {
+      prePopulateScheduler($);
+    }
+  }, 1000);
 
   if ($("body").hasClass("page-template-page-faq")) {
     toggleFAQ($);
