@@ -5,11 +5,15 @@ function prePopulateScheduler($) {
   const email = urlParams.get("email");
   const phone = urlParams.get("phone");
   const scheduler = $("iframe[src*=calendly]");
-  const formattedURL = `${scheduler.attr(
-    "src"
-  )}&name=${firstName}%20${lastName}&a1=${phone}&email=${email}`;
-
-  scheduler.attr("src", formattedURL);
+  let formattedURL;
+  if (firstName && lastName) {
+    formattedURL = `${scheduler.attr(
+      "src"
+    )}&name=${firstName}%20${lastName}&a1=${phone}&email=${email}`;
+    scheduler.attr("src", formattedURL);
+  } else {
+    return;
+  }
 }
 
 export default prePopulateScheduler;
