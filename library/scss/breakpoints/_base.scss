@@ -619,7 +619,7 @@ NAVIGATION STYLES
         color: lighten($primary, 15%);
       }
     }
-    &.menu-item-110 {
+    &.menu-cta {
       > a {
         background-color: $secondary;
         color: $white;
@@ -629,7 +629,7 @@ NAVIGATION STYLES
         }
       }
     }
-    &.menu-item-110.current-menu-item {
+    &.menu-cta.current-menu-item {
       > a {
         background-color: $primary;
       }
