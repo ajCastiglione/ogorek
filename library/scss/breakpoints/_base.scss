@@ -1805,6 +1805,27 @@ Internal Pages Section
   }
 }
 
+// Services Page
+.page-template-page-services {
+  .services {
+    display: grid;
+    margin: 25px auto;
+    grid-gap: 25px 50px;
+    grid-template-columns: 1fr;
+    a {
+      display: block;
+      transition: all 0.4s ease;
+      border: 15px solid transparent;
+      &:hover {
+        border-color: $primary;
+      }
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
 // Client center page
 .page-template-page-client-center {
   .hotlinks {
