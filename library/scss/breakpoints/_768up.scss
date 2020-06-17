@@ -309,6 +309,13 @@ Internal Pages Section
   }
 }
 
+// Services Page
+.page-template-page-services {
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 // Client center page
 .page-template-page-client-center {
   .hotlinks {
