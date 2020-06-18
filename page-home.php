@@ -28,7 +28,8 @@
 
 						<?= get_template_part('partials/home/section-5'); ?>
 
-						<?= get_template_part('partials/home/section-6'); ?>
+						<?php #  get_template_part('partials/home/section-6'); 
+						?>
 
 					</article>
 
