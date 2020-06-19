@@ -96,4 +96,4 @@ gulp.task("init", () => {
 gulp.task("default", gulp.series("init"));
 
 // Build command
-gulp.task("build", gulp.series("compile", "compile-login", "js"));
+gulp.task("build", gulp.series("compile", "compile-login"));

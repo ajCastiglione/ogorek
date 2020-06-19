@@ -62,4 +62,25 @@ body.ie {
       }
     }
   }
+
+  // client center
+  &.page-template-page-client-center {
+    .hotlinks {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .hotlink {
+        width: 48%;
+      }
+    }
+    .client-information {
+      .grid {
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+    }
+  }
 }
