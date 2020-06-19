@@ -17,6 +17,7 @@ function addLightbox($) {
   let imgs = $(".entry-content img").not(".featured-image");
   $.each(imgs, function (index, img) {
     let src = $(img).attr("src");
+    console.log(src);
     $(img).wrap("<a href='" + src + "' class='foobox post-image-wrapper'></a>");
   });
 }
