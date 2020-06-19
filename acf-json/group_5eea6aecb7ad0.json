@@ -47,7 +47,7 @@
             "key": "field_5eecb39f6534a",
             "label": "Image",
             "name": "image",
-            "type": "text",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -56,11 +56,16 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_5eecb3aa6534b",
@@ -85,7 +90,7 @@
             "key": "field_5eecb3b46534c",
             "label": "Logo",
             "name": "logo",
-            "type": "text",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
@@ -102,17 +107,22 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_5eecb3c26534d",
             "label": "Hero Content",
             "name": "hero_content",
-            "type": "text",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
@@ -130,10 +140,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_5eecb38465348",
@@ -219,9 +229,9 @@
     "location": [
         [
             {
-                "param": "post_template",
+                "param": "page_template",
                 "operator": "==",
-                "value": "default"
+                "value": "page-services.php"
             }
         ]
     ],
@@ -233,5 +243,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1592570834
+    "modified": 1592571009
 }
