@@ -2,7 +2,7 @@
 if (wp_get_post_parent_id($post) === 650 || wp_get_post_parent_id($post) === 1296 || $post->ID === 1296) {
 	get_template_part('index');
 } else {
-	?>
+?>
 
 	<?php get_header(); ?>
 
@@ -20,7 +20,7 @@ if (wp_get_post_parent_id($post) === 650 || wp_get_post_parent_id($post) === 129
 
 							<section class="entry-content col-1 cf" itemprop="articleBody">
 								<?php if (have_rows('values') && !is_page(3595)) : echo '<div class="hotlinks">';
-												while (have_rows('values')) : the_row(); ?>
+									while (have_rows('values')) : the_row(); ?>
 										<div class="hotlink">
 											<a href="<?= get_sub_field('link') ?>" class="link">
 												<img src="<?= get_sub_field('icon')['url'] ?>" alt="Icon" class="icon">
@@ -28,12 +28,12 @@ if (wp_get_post_parent_id($post) === 650 || wp_get_post_parent_id($post) === 129
 											</a>
 										</div>
 								<?php endwhile;
-												echo '</div>';
-											endif; ?>
+									echo '</div>';
+								endif; ?>
 								<?php the_content(); ?>
 
 								<?php if (have_rows('values') && is_page(3595)) : echo '<div class="hotlinks hotlinks-trust-solution">';
-												while (have_rows('values')) : the_row(); ?>
+									while (have_rows('values')) : the_row(); ?>
 										<div class="hotlink">
 											<a href="<?= get_sub_field('link') ?>" class="link">
 												<img src="<?= get_sub_field('icon')['url'] ?>" alt="Icon" class="icon">
@@ -41,24 +41,24 @@ if (wp_get_post_parent_id($post) === 650 || wp_get_post_parent_id($post) === 129
 											</a>
 										</div>
 								<?php endwhile;
-												echo '</div>';
-											endif; ?>
+									echo '</div>';
+								endif; ?>
 
 							</section>
 
 							<?php if (have_rows('store_locations')) : echo '<div class="app-locations"><h2 class="sub-title">' . get_field('app_title') . '</h2>';
-											while (have_rows('store_locations')) : the_row(); ?>
+								while (have_rows('store_locations')) : the_row(); ?>
 									<div class="app-dl">
 										<a href="<?= get_sub_field('link') ?>" target="_blank" rel="noopener noreferrer"><img src="<?= get_sub_field('image')['url']; ?>" alt="App Location"></a>
 									</div>
 							<?php endwhile;
-											echo '</div>';
-										endif; ?>
+								echo '</div>';
+							endif; ?>
 
 						</article>
 
 				<?php endwhile;
-					endif; ?>
+				endif; ?>
 
 			</main>
 
