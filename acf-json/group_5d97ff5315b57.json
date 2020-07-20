@@ -358,6 +358,13 @@
                 "operator": "!=",
                 "value": "650"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-videos.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -368,5 +375,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1587393822
+    "modified": 1595271231
 }
