@@ -23,7 +23,6 @@
 				<div class="category">
 					<a href="<?= site_url() . '/blog' ?>" class="link <?= is_home() || is_page(1296) ? 'active' : ''; ?>">
 						<i class="far fa-circle"></i>
-						<?= $cat->name ?>
 						<h3 class="cat-title">All</h3>
 					</a>
 				</div>
