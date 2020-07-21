@@ -366,6 +366,12 @@ Custom Post Types Section
   }
 }
 
+.page-template-page-videos {
+  .video-commentaries {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /****************************
 Footer Section
 ****************************/
