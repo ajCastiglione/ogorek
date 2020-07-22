@@ -42,7 +42,7 @@ $query = new WP_Query($args);
 
               <section class="excerpt-content cf">
                 <a href="<?= the_permalink() ?>" class="video-link">
-                  <?php the_content(); ?>
+                  <?= get_field('video_excerpt'); ?>
                 </a>
               </section>
             </div>
