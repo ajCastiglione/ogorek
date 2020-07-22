@@ -2224,6 +2224,20 @@ Singles Section
   }
 }
 
+.single-video_commentaries {
+  .video-single {
+    margin: 32px 0;
+    .excerpt {
+      margin: 16px 0 24px;
+    }
+    .content {
+      margin: 16px 0;
+      font-size: 16px;
+      color: $black;
+    }
+  }
+}
+
 /****************************
 Partials Section
 ****************************/
@@ -3241,7 +3255,6 @@ Custom Post Types Section
 }
 
 .page-template-page-videos {
-  //
   .video-commentaries {
     display: grid;
     grid-gap: 25px;

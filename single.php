@@ -9,8 +9,12 @@
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 					<?php
-							get_template_part('post-formats/format', get_post_format());
-							?>
+					if (get_post_type() !== 'post') {
+						get_template_part('template-parts/content', get_post_type());
+					} else {
+						get_template_part('post-formats/format', get_post_format());
+					}
+					?>
 
 				<?php endwhile; ?>
 
