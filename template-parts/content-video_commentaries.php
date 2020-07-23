@@ -8,7 +8,6 @@ $vid = get_field('video_url');
 
 <article class="video-single">
     <section class="large-wrapper">
-        <div class="excerpt"><?= $excerpt ?></div>
         <div class="video"><?= $vid ?></div>
         <div class="content"><?= $content ?></div>
     </section>
