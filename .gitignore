@@ -1,6 +1,12 @@
 # folders and files to be ignored by git
 
 ############
+## Dist Files
+############
+library/js/dist
+library/css
+
+############
 ## Bones
 ############
 
