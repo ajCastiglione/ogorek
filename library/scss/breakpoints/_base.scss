@@ -2229,6 +2229,10 @@ Singles Section
     margin: 32px 0;
     .video {
       text-align: center;
+      margin-top: 32px;
+      iframe {
+        max-width: 100%;
+      }
     }
     .content {
       margin: 16px 0;
