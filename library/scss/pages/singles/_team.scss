@@ -1,0 +1,93 @@
+.team {
+  margin: 2rem 0 4rem;
+
+  .title {
+    color: $primary;
+  }
+  .text {
+    color: #777777;
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+  .email {
+    color: $secondary;
+    font-size: 16px;
+  }
+  .socials {
+    margin-top: 1rem;
+    .social-icon {
+      background-color: $primary;
+      color: $white;
+      display: inline-block;
+      border-radius: 100%;
+      border: 2px solid $primary;
+      margin: 0 4px;
+      transition: all 0.3s ease-in-out;
+      i {
+        padding: 10px;
+        font-size: 20px;
+      }
+      &:hover {
+        background-color: transparent;
+        border-color: $primary;
+        i {
+          color: $secondary;
+        }
+      }
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+  .aside {
+    margin-top: 1rem;
+    .portrait {
+      width: 100%;
+      max-width: 800px;
+      max-height: 600px;
+      object-fit: contain;
+    }
+  }
+  .return {
+    border: 2px solid $secondary;
+    background-color: $secondary;
+    color: $white;
+    display: inline-block;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    padding: 12px 2rem;
+    font-size: 18px;
+    text-transform: capitalize;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      transform: scale(0.95);
+      background-color: transparent;
+      color: $primary;
+    }
+  }
+  .video {
+    video {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @include media("tablet") {
+    .content {
+      padding-right: 1rem;
+    }
+    .title {
+      font-size: 45px;
+    }
+    .aside {
+      margin-top: 0;
+      padding-left: 2rem;
+    }
+  }
+  @include media("laptop") {
+    .text {
+      font-size: 22px;
+    }
+  }
+}

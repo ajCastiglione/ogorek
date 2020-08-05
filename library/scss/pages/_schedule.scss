@@ -1,0 +1,15 @@
+// Schedule page
+.page-id-375 {
+  .entry-content {
+    p {
+      font-size: 18px;
+    }
+  }
+  @include media("tablet") {
+    .entry-content {
+      p {
+        font-size: 19px;
+      }
+    }
+  }
+}
