@@ -638,6 +638,10 @@ Blog Section
       grid-template-columns: 1.5fr 1fr;
       grid-gap: 10px 20px;
     }
+    .contact-cta {
+      display: flex;
+      align-items: center;
+    }
   }
   // sidebar / related posts
   .related-posts {

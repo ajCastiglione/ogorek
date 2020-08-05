@@ -3020,6 +3020,33 @@ Blog Section
         color: $secondary;
       }
     }
+
+    .contact-cta {
+      .cta-text {
+        .text {
+          padding: 0;
+          margin: 18px 0;
+        }
+      }
+      .cta-link {
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background-color: $primary;
+          color: $white;
+          text-transform: capitalize;
+          padding: 8px 20px;
+          transition: all 0.3s ease;
+          i {
+            padding-left: 16px;
+          }
+          &:hover {
+            background-color: $secondary;
+          }
+        }
+      }
+    }
   }
   // sidebar / related posts
   .related-posts {
