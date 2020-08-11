@@ -253,6 +253,7 @@ Blog Section
       background-color: $primary;
       color: $white;
       padding: 8px 24px;
+      margin: 32px 0;
       @include media("tablet") {
         display: flex;
         align-items: center;
