@@ -1,0 +1,72 @@
+.page-template-default {
+  .hotlinks {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    .hotlink {
+      width: 100%;
+      margin: 1rem 0;
+      padding: 0.5rem 1rem;
+      .link {
+        display: block;
+        text-align: center;
+        color: $secondary;
+        font-size: 16px;
+        .icon {
+          display: block;
+          margin: 0 auto 1rem;
+          filter: grayscale(1);
+        }
+      }
+    }
+  }
+  .entry-content {
+    max-width: 1080px;
+    margin: auto;
+    p {
+      font-size: 18px;
+    }
+  }
+
+  @include media("phablet") {
+    .hotlinks {
+      .hotlink {
+        width: 50%;
+        .link {
+          font-size: 18px;
+        }
+        &:first-child {
+          width: 100%;
+        }
+      }
+    }
+    .hotlinks-trust-solution {
+      .hotlink,
+      .hotlink:first-child {
+        width: 50%;
+      }
+    }
+  }
+
+  @include media("tablet") {
+    .hotlinks {
+      .hotlink {
+        width: 50%;
+        .link {
+          font-size: 18px;
+        }
+        &:first-child {
+          width: 100%;
+        }
+      }
+    }
+    .hotlinks-trust-solution {
+      .hotlink,
+      .hotlink:first-child {
+        width: 25%;
+      }
+    }
+  }
+}

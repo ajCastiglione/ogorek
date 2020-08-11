@@ -1,0 +1,179 @@
+.alternating {
+  margin-top: 2rem;
+  .alt-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem;
+    margin: 1rem 0;
+    .title {
+      color: $secondary;
+      margin: 0 0 1rem;
+    }
+    .content {
+      padding-right: 1rem;
+      padding-bottom: 1rem;
+    }
+    .aside {
+      width: 100%;
+      img {
+        max-width: 100%;
+        height: auto;
+        max-height: 486px;
+        object-fit: contain;
+        object-position: right;
+        .page-id-460 & {
+          max-height: 360px;
+        }
+      }
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:nth-child(even) {
+      background-color: #f5f5f5;
+      flex-direction: row-reverse;
+      .content {
+        padding-left: 1rem;
+        padding-right: 0;
+      }
+      .aside {
+        img {
+          object-position: left;
+        }
+      }
+    }
+    .page-id-520 & {
+      &:nth-child(odd) {
+        .title {
+          color: $primary;
+        }
+      }
+      &:nth-child(2) {
+        img {
+          background-color: $primary;
+        }
+      }
+      &:last-child {
+        border-top: 20px solid $secondary;
+      }
+    }
+    .page-id-564 & {
+      &:nth-child(even) {
+        flex-direction: row;
+        .content {
+          padding: 0 3rem 0 0;
+        }
+        .aside img {
+          object-position: right;
+        }
+      }
+      &:nth-child(odd) {
+        flex-direction: row-reverse;
+        .content {
+          padding: 0 0 0 3rem;
+        }
+        .aside img {
+          object-position: left;
+        }
+      }
+    }
+    .page-id-1771 & {
+      flex-direction: row-reverse;
+      hr {
+        background-color: $secondary;
+        height: 1px;
+        margin: 3rem 0;
+      }
+      &:nth-child(2) {
+        flex-direction: row;
+        .title,
+        h2 {
+          color: $primary;
+        }
+        img {
+          max-height: 100%;
+        }
+      }
+      a {
+        color: $white;
+        background-color: $secondary;
+        padding: 8px 2rem;
+        display: inline-block;
+        margin-top: 1rem;
+        border: 2px solid $secondary;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          background-color: transparent;
+          color: $secondary;
+        }
+      }
+    }
+  }
+  @include media("tablet") {
+    .alt-container {
+      padding: 3rem 5rem;
+
+      &:nth-child(even) {
+        .content {
+          padding: 0 0 0 3rem;
+        }
+        .aside {
+          text-align: left;
+        }
+      }
+      .page-id-1771 & {
+        padding: 1.5rem 5rem;
+
+        &:nth-child(2) {
+          .content {
+            padding: 0 3rem 0 0;
+          }
+        }
+      }
+    }
+  }
+  @include media("laptop") {
+    .alt-container {
+      .content {
+        width: 65%;
+      }
+      .aside {
+        width: 35%;
+      }
+      .page-id-520 & {
+        &:last-child {
+          .content {
+            width: 55%;
+          }
+          .aside {
+            width: 45%;
+          }
+        }
+      }
+      .page-id-1771 & {
+        &:nth-child(2) {
+          .title,
+          h2 {
+            font-size: 55px;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 990px) {
+    .alt-container {
+      padding: 3rem 5rem;
+      .content {
+        width: 50%;
+        padding-bottom: 0;
+        padding-right: 3rem;
+      }
+      .aside {
+        width: 50%;
+        text-align: right;
+      }
+    }
+  }
+}

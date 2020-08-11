@@ -4,14 +4,14 @@ $breakpoints: (
   "tablet": 768px,
   "laptop": 1030px,
   "desktop": 1240px,
-  "2k": 1920px,
+  "2k": 1500px,
 ) !default;
 
 /// Mixin to manage responsive breakpoints
 /// @author Antonio Castiglione
 /// @param {String} $breakpoint - Breakpoint name
 /// @require $breakpoints
-@mixin breakpoint($breakpoint) {
+@mixin media($breakpoint) {
   // If the key exists in the map
   @if map-has-key($breakpoints, $breakpoint) {
     // Prints a media query based on the value

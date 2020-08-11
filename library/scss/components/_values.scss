@@ -1,0 +1,36 @@
+.values {
+  padding: 2rem 0;
+  border-bottom: 20px solid $secondary;
+  .grid-col-3 {
+    @media (max-width: 1240px) {
+      grid-template-columns: 50% 50%;
+    }
+    @media (max-width: 768px) {
+      grid-template-columns: 100%;
+    }
+  }
+
+  .title {
+    color: $secondary;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .value {
+    text-align: center;
+    padding: 1rem 2rem;
+    max-width: 600px;
+    margin: auto;
+    i {
+      font-size: 3rem;
+      color: #777777;
+    }
+    .value-title {
+      color: $primary;
+      font-size: 25px;
+    }
+    .text {
+      font-size: 17px;
+      color: #777777;
+    }
+  }
+}
