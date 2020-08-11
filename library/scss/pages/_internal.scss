@@ -1,0 +1,65 @@
+.landing-page {
+  .values {
+    display: flex;
+    align-items: flex-start;
+    .item {
+      text-align: center;
+      padding: 1rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      i {
+        color: #777777;
+        font-size: 55px;
+      }
+      .title {
+        color: $primary;
+        font-size: 25px;
+      }
+      .content {
+        font-size: 16px;
+        max-width: 500px;
+        margin: auto;
+      }
+    }
+  }
+  .page-content {
+    .title {
+      color: $primary;
+    }
+    .aside-text {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      justify-content: center;
+      h2,
+      h3 {
+        color: $secondary;
+        font-size: 25px;
+      }
+      ul li {
+        color: $black;
+      }
+      div {
+        padding: 0 1rem;
+      }
+    }
+  }
+  @include media("tablet") {
+    .page-content {
+      .title {
+        font-size: 45px;
+      }
+      .text {
+        font-size: 22px;
+        padding-right: 2rem;
+      }
+    }
+  }
+  @include media("desktop") {
+    .page-content {
+      .aside-text {
+        flex-wrap: nowrap;
+      }
+    }
+  }
+}

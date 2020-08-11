@@ -1,0 +1,123 @@
+// Secured pages
+.secured-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  max-width: 500px;
+  margin: auto;
+  p {
+    font-size: 18px;
+    margin: 1rem 0;
+  }
+  #loginform {
+    width: 100%;
+    input {
+      border: 2px solid $primary;
+      background-color: $white;
+      width: 100%;
+      max-width: 500px;
+      margin: auto;
+    }
+    input[type="submit"] {
+      background-color: $secondary;
+      color: $white;
+      border: 2px solid $secondary;
+      &:hover {
+        background-color: $white;
+        color: $secondary;
+      }
+    }
+  }
+}
+
+// Authenticated section
+.authenticated-view {
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  .attorney,
+  .trusts-selector,
+  .trusts {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    select,
+    input {
+      width: 100%;
+      max-width: 600px;
+      border: 2px solid #f5f5f5;
+      &:active,
+      &:focus {
+        background-color: #f5f5f5;
+      }
+    }
+    .btn-group {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      input[type="submit"] {
+        margin: 0 0.5rem;
+        background-color: $secondary;
+        color: $white;
+        border: 2px solid $secondary;
+        font-weight: bold;
+        &:hover {
+          background-color: transparent;
+          color: $secondary;
+        }
+      }
+    }
+  }
+  .alert-error {
+    display: none;
+  }
+
+  // Trusts section
+  .trusts {
+    .btn {
+      background-color: $primary;
+      border: 2px solid $primary;
+      border-radius: 0;
+      padding: 0.5rem 2rem;
+      color: $white;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: all 0.4s ease;
+      font-size: 16px;
+      text-transform: capitalize;
+      &:hover {
+        background-color: transparent;
+        color: $primary;
+      }
+      &:visited {
+        background-color: darken($primary, 15%);
+        border-color: darken($primary, 15%);
+      }
+      &.completed {
+        background-color: $secondary;
+        border-color: $secondary;
+        pointer-events: none;
+        cursor: default;
+        i {
+          padding-left: 10px;
+        }
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+  @include media("tablet") {
+    .attorney,
+    .trusts-selector,
+    .trusts {
+      .btn-group {
+        flex-wrap: nowrap;
+      }
+    }
+  }
+}

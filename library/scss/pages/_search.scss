@@ -1,0 +1,16 @@
+// Search page
+.search {
+  .featured-image {
+    width: 100%;
+  }
+  .title {
+    margin-top: 2rem;
+    a {
+      color: $primary;
+    }
+  }
+  .byline {
+    text-align: center;
+    margin-top: 0.7rem;
+  }
+}
