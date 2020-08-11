@@ -2,6 +2,7 @@
 $cta_text = get_field('blog_cta_text', 'options');
 $cta_link = get_field('blog_cta_link', 'options');
 $cta_text_blurb = get_field('blog_cta_text_blurb', 'options');
+$hide_contact_cta = get_field('hide_contact_cta');
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('cf col-1'); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 
@@ -32,11 +33,13 @@ $cta_text_blurb = get_field('blog_cta_text_blurb', 'options');
   <section class="entry-content" itemprop="articleBody">
     <article class="post-grid">
       <div class="text">
-        <?= the_content() ?>
-        <div class="contact-cta">
-          <div class="cta-text"><?= $cta_text_blurb ?></div>
-          <div class="cta-link"><a href="<?= $cta_link ?>"><?= $cta_text ?> <i class="fas fa-arrow-right"></i></a></div>
-        </div>
+        <?= the_content(); ?>
+        <?php if (!$hide_contact_cta) : ?>
+          <div class="contact-cta">
+            <div class="cta-text"><?= $cta_text_blurb ?></div>
+            <div class="cta-link"><a href="<?= $cta_link ?>"><?= $cta_text ?> <i class="fas fa-arrow-right"></i></a></div>
+          </div>
+        <?php endif; ?>
       </div>
       <aside class="related-posts">
         <h2 class="related-posts__title"><?= get_field('related_posts_title') ?></h2>
