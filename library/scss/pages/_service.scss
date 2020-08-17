@@ -1,0 +1,186 @@
+.service {
+  .section-1 {
+    background-color: #f5f5f5;
+    padding: 2rem 0 4rem;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .content {
+      .title {
+        color: $primary;
+      }
+    }
+    .aside {
+      .aside-title {
+        color: $secondary;
+      }
+      .aside-text {
+        color: $black;
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+        li {
+          color: $black;
+          &:before {
+            color: $black;
+          }
+        }
+        .page-id-552 & {
+          color: $secondary;
+          li {
+            color: $secondary;
+            &:before {
+              color: $secondary;
+            }
+          }
+        }
+      }
+    }
+  }
+  .section-2 {
+    .grid_three {
+      padding: 3rem 0;
+      .first-third {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .mid-third {
+        margin: 1rem 0;
+        display: flex;
+        align-items: center;
+        img {
+          width: 100%;
+          margin: 0;
+        }
+      }
+      .last-third {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 1rem;
+      }
+      .item {
+        margin-bottom: 1rem;
+        .item-title {
+          color: $primary;
+          font-size: 23px;
+          i {
+            color: $black;
+            padding-right: 1rem;
+            font-size: 22px;
+          }
+        }
+        .text {
+          ul {
+            list-style-type: disc;
+            margin-left: 2rem;
+          }
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    @media (max-width: 990px) {
+      .grid-col-3 {
+        grid-template-columns: 100%;
+      }
+    }
+  }
+  @include media("tablet") {
+    .section-1 {
+      .aside {
+        padding-left: 3rem;
+        .aside-title {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+  @media (min-width: 990px) {
+    .section-2 {
+      .grid_three {
+        .first-third {
+          align-items: flex-start;
+        }
+        .mid-third {
+          margin: 0;
+        }
+        .last-third {
+          align-items: flex-end;
+        }
+        .item {
+          margin-bottom: 4rem;
+        }
+      }
+    }
+  }
+  @include media("laptop") {
+    .content {
+      .title {
+        font-size: 45px;
+      }
+    }
+  }
+  @include media("desktop") {
+    .section-2 {
+      .grid_three {
+        .item {
+          max-width: 416px;
+        }
+      }
+    }
+  }
+}
+
+// Services Page
+.page-template-page-services {
+  .services {
+    display: grid;
+    margin: 25px auto;
+    grid-gap: 25px 50px;
+    grid-template-columns: 1fr;
+    a {
+      display: block;
+      transition: all 0.4s ease;
+      border: 15px solid transparent;
+      &:hover {
+        border-color: $primary;
+      }
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+  @include media("tablet") {
+    .services {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+.page-template-page-service,
+.page-template-page-landing {
+  #main {
+    .content {
+      a {
+        display: inline-block;
+        padding: 0.5rem 2rem;
+        border: 2px solid $secondary;
+        background-color: $secondary;
+        color: $white;
+        text-transform: capitalize;
+        transition: all 0.4s ease;
+        &:hover {
+          background-color: transparent;
+          color: $black;
+        }
+      }
+    }
+  }
+}

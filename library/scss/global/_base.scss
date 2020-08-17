@@ -1,0 +1,653 @@
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap {
+  width: 96%;
+  margin: 0 auto;
+  @include media("tablet") {
+    width: 760px;
+  }
+  @include media("laptop") {
+    width: 990px;
+  }
+  @include media("desktop") {
+    width: 1140px;
+  }
+}
+
+.large-wrapper {
+  width: 96%;
+  margin: 0 auto;
+  @include media("tablet") {
+    width: 85%;
+  }
+  @include media("laptop") {
+    width: 80%;
+  }
+  @include media("desktop") {
+    width: 75%;
+  }
+}
+
+.col-1 {
+  width: 90%;
+  margin: auto;
+}
+
+/*********************
+    LINK STYLES
+    *********************/
+
+a,
+a:visited {
+  color: $primary;
+  border-radius: 0;
+  /* on click */
+  &:active {
+  }
+  /* mobile tap color */
+  &:link {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/******************************************************************
+    H STYLES
+    ******************************************************************/
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+  text-rendering: optimizelegibility;
+  font-weight: 500;
+  a,
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+h1,
+.h1 {
+  font-size: 2.5em;
+  line-height: 1.333em;
+}
+
+h2,
+.h2 {
+  font-size: 1.75em;
+  line-height: 1.4em;
+  margin-bottom: 0.375em;
+}
+h2:not(.aside-title):not(.title):not(.slide-title) {
+  color: $primary;
+}
+
+h3,
+.h3 {
+  font-size: 1.125em;
+}
+
+h4,
+.h4 {
+  font-size: 1.3em;
+  font-weight: 300;
+  color: $primary;
+}
+
+h5,
+.h5 {
+  font-size: 0.846em;
+  line-height: 2.09em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: $red;
+}
+h2.title,
+h2.aside-title {
+  @include media("tablet") {
+    font-size: 45px;
+  }
+  @include media("laptop") {
+    font-size: 55px;
+  }
+}
+
+.content,
+.aside {
+  .text,
+  .aside-text {
+    @include media("tablet") {
+      font-size: 18px;
+    }
+    @include media("laptop") {
+      font-size: 20px;
+    }
+  }
+}
+
+/*********************
+    POSTS & CONTENT STYLES
+    *********************/
+
+#content {
+  margin-top: 1.5em;
+}
+
+.hentry {
+  background-color: transparent;
+  header {
+    padding: 1.5em;
+  }
+  footer {
+    padding: 1.5em;
+    p {
+      margin: 0;
+    }
+  }
+}
+
+/* end .hentry */
+
+.single-title,
+.page-title,
+.entry-title {
+  margin: 0;
+}
+
+/* entry content */
+
+.entry-content {
+  padding: 1.5em 1.5em 0;
+  p {
+    margin: 0.5rem 0;
+  }
+  ul {
+    li {
+      list-style: disc;
+      margin-left: 2em;
+    }
+  }
+  ol {
+    li {
+      list-style: decimal;
+      margin-left: 2em;
+    }
+  }
+  img {
+    margin: 0 0 1.5em 0;
+    max-width: 100%;
+    height: auto;
+  }
+  .size-thumbnail {
+    max-width: 100%;
+    height: auto;
+  }
+  @include media("phablet") {
+    /* at this larger size, we can start to align images */
+    .alignleft,
+    img.alignleft {
+      margin-right: 1.5em;
+      display: inline;
+    }
+    .alignright,
+    img.alignright {
+      margin-left: 1.5em;
+      display: inline;
+    }
+    .aligncenter,
+    img.aligncenter {
+      margin-right: auto;
+      margin-left: auto;
+      display: block;
+      clear: both;
+    }
+  }
+}
+
+/* end .entry-content */
+
+// the tag output
+.tags {
+  margin: 0;
+}
+
+/******************************************************************
+    PAGE NAVI STYLES
+    ******************************************************************/
+
+.pagination,
+.wp-prev-next {
+  margin: 1.5em 0;
+}
+
+.pagination {
+  text-align: center;
+  ul {
+    display: inline-block;
+    background-color: $white;
+    white-space: nowrap;
+    padding: 0;
+    clear: both;
+    border-radius: 3px;
+  }
+  li {
+    padding: 0;
+    margin: 0;
+    float: left;
+    display: inline;
+    overflow: hidden;
+    border-right: 1px solid $gray;
+  }
+  a,
+  span {
+    margin: 0;
+    text-decoration: none;
+    padding: 0;
+    line-height: 1em;
+    font-size: 1em;
+    font-weight: normal;
+    padding: 0.75em;
+    min-width: 1em;
+    display: block;
+    color: $blue;
+    &:hover,
+    &:focus {
+      background-color: $blue;
+      color: $white;
+    }
+  }
+  .current {
+    cursor: default;
+    color: $text-color;
+    &:hover,
+    &:focus {
+      background-color: $white;
+      color: $text-color;
+    }
+  }
+}
+
+/* end .bones_page_navi */
+
+/* fallback previous & next links */
+
+.wp-prev-next {
+  .prev-link {
+    float: left;
+  }
+  .next-link {
+    float: right;
+  }
+}
+
+/* end .wp-prev-next */
+
+/*********** Pre-defined styles from bones stock them above ***************/
+
+/****************************
+    Global Section
+    ****************************/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  display: none;
+  i {
+    font-size: 40px;
+    color: $secondary;
+    background-color: $white;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+}
+
+.aligncenter {
+  display: block;
+  margin: auto;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: $font;
+  line-height: 1.5;
+  color: $black;
+  background-color: $white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    background-color: transparent;
+    border: 2px solid $black;
+    color: $black;
+  }
+  input[type="submit"] {
+    background-color: $black;
+    color: $white;
+    border: 2px solid $black;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: transparent;
+      color: $black;
+    }
+  }
+  select {
+    background-color: $white;
+    border: 2px solid #f5f5f5;
+    color: $black;
+    &:active,
+    &:focus {
+      background-color: #f5f5f5;
+      border-color: $primary;
+    }
+  }
+  &.popup-active {
+    overflow: hidden;
+  }
+}
+
+h2.title,
+h2.aside-title {
+  font-size: 30px;
+}
+.content,
+.aside {
+  .text,
+  .aside-text {
+    font-size: 16px;
+  }
+}
+.aside-text {
+  ul li {
+    color: $secondary;
+    &:before {
+      content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+      color: $secondary;
+      display: inline-block; /* Needed to add space between the bullet and the text */
+      width: 1em;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  }
+  a {
+    color: $secondary;
+  }
+}
+
+.video {
+  position: relative;
+  min-height: 400px;
+  .yt-video,
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 9;
+    &:hover {
+      cursor: pointer;
+      &:before {
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+    }
+    &:before {
+      transition: all 0.5s ease-in-out;
+      position: absolute;
+      content: "\f144";
+      font-family: "Font Awesome 5 Free";
+      z-index: 99;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      font-size: 6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $primary;
+    }
+  }
+  .fadeOut {
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+/****************
+  Sidebars
+  ****************/
+
+.sidebar {
+  margin: 1em 0;
+  #archives-2 {
+    label {
+      display: none;
+    }
+  }
+  @include media("tablet") {
+    margin: 0;
+  }
+}
+
+.widget {
+  @include media("tablet") {
+    padding: 0 10px;
+    margin: 2.2em 0;
+    ul {
+      li {
+        margin-bottom: 0.75em;
+
+        /* deep nesting */
+        ul {
+          margin-top: 0.75em;
+          padding-left: 1em;
+        }
+      }
+    }
+  }
+}
+
+/****************************
+Appt (bookly) section
+****************************/
+.bookly-form {
+  // Step 1 - customer setting avail times
+  .bookly-time-range {
+    select {
+      padding-right: 20px !important;
+    }
+  }
+  // Step 3 - customer info
+  .bookly-form-group {
+    input,
+    textarea {
+      transition: all 0.4s ease;
+      border-width: 2px !important;
+      &:active,
+      &:focus {
+        background-color: $white;
+        border-color: $secondary !important;
+      }
+    }
+  }
+}
+
+/****************************
+Popup Section
+****************************/
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: -1;
+  opacity: 0;
+  transition: all 1s ease;
+
+  .inner-popup {
+    background-color: rgba(255, 255, 255, 0.95);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 80%;
+    max-height: 70%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 12;
+    border-radius: 10px;
+    padding: 1rem;
+
+    .close {
+      z-index: 13;
+      position: absolute;
+      color: $white;
+      top: 10px;
+      right: 15px;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      background-color: $black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      float: none;
+      text-shadow: none;
+      opacity: 0.7;
+      transition: all 0.4s ease;
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .popup-logo {
+      margin-top: 40px;
+      max-width: 100%;
+    }
+    .popup-title {
+      font-size: 25px;
+      text-align: center;
+    }
+    .popup-content {
+      text-align: center;
+      font-size: 18px;
+    }
+    #gform_wrapper_4 {
+      .gform_body {
+        li {
+          padding-right: 0;
+          margin-right: 8px;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+        input {
+          border: 2px solid $primary;
+          width: 100%;
+          transition: all 0.4s ease;
+          &:hover,
+          &:focus {
+            border-color: $secondary;
+            background-color: $white;
+          }
+        }
+        li.hide-field {
+          display: none;
+        }
+      }
+      input[type="submit"] {
+        display: inline-block;
+        width: 100%;
+        background-color: $primary;
+        border: 2px solid $primary;
+        font-size: 15px;
+        padding: 0.5rem 2rem;
+        transition: all 0.4s ease;
+        font-weight: bold;
+        &:hover {
+          background-color: transparent;
+          border-color: $secondary;
+          color: $black;
+        }
+      }
+    }
+  }
+  &.active {
+    opacity: 1;
+    z-index: 9;
+  }
+  @include media("tablet") {
+    .inner-popup {
+      width: 90%;
+      max-width: 800px;
+      max-height: 65%;
+      .popup-title {
+        margin-top: 2rem;
+        font-size: 35px;
+      }
+      #gform_wrapper_4 {
+        padding-bottom: 1rem;
+        #gform_fields_4 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          input {
+            margin: 1rem 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}

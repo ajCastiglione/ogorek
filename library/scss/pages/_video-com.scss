@@ -1,0 +1,120 @@
+// Video comms page
+.page-id-3928 {
+    iframe {
+        max-width: 100%;
+    }
+}
+
+.single-video_commentaries {
+    .video-single {
+        margin: 32px 0;
+        .video {
+            text-align: center;
+            margin-top: 32px;
+            iframe {
+                max-width: 100%;
+            }
+        }
+        .content {
+            margin: 16px 0;
+            font-size: 16px;
+            color: $black;
+        }
+    }
+}
+
+.page-template-page-videos {
+    .video-commentaries {
+        display: grid;
+        grid-gap: 25px;
+        margin: 32px auto;
+        padding: 0 16px;
+        max-width: 1500px;
+        @include media("tablet") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .video-commentary {
+            box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.24);
+            border-radius: 5px;
+            .video-header {
+                padding: 0;
+            }
+            .featured-image-container {
+                position: relative;
+            }
+            .video-image {
+                width: 100%;
+                border-top-right-radius: 5px;
+                border-top-left-radius: 5px;
+            }
+            .overlay {
+                transition: all 0.4s ease-in-out;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                i {
+                    color: $secondary;
+                    font-size: 35px;
+                }
+            }
+            .entry-title {
+                margin-top: 1rem;
+                text-align: center;
+                padding: 0 1rem;
+                a {
+                    color: lighten($primary, 10%);
+                }
+            }
+            .byline {
+                margin: 8px 0;
+                padding: 0 1rem;
+                text-align: center;
+                color: $secondary;
+                a {
+                    color: $secondary;
+                }
+            }
+            .excerpt-content {
+                padding: 8px 1rem;
+                font-size: 16px;
+                a {
+                    color: $black;
+                }
+            }
+            &:hover {
+                .overlay {
+                    opacity: 1;
+                }
+            }
+        }
+        .pagination {
+            grid-column: 1/3;
+            .page-numbers {
+                border: 2px solid $secondary;
+                li {
+                    color: $primary;
+                    a,
+                    span {
+                        display: inline-block;
+                        border: none;
+                        color: inherit;
+                        padding: 10px 14px;
+                        transition: all 0.3s ease;
+                    }
+                    a {
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

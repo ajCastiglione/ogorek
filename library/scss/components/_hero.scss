@@ -1,0 +1,190 @@
+.hero {
+  background-color: $primary;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-bottom: 20px solid $secondary;
+  .title {
+    text-align: center;
+    color: $white;
+    margin: 0;
+    font-size: 45px;
+  }
+  .text {
+    color: $white;
+    font-size: 18px;
+    margin-top: 1rem;
+    padding: 0 1rem;
+  }
+  &.no-image {
+    min-height: 300px;
+    padding: 1rem;
+  }
+  .single-team & {
+    .title {
+      font-weight: 300;
+    }
+  }
+  &.three-part {
+    position: relative;
+    margin-top: -1.5rem;
+    min-height: 150px;
+    background-size: 270% 100%;
+    transition: all 0.4s ease;
+    // hero title
+    .title {
+      position: relative;
+      right: 0;
+      left: 40px;
+      top: 10px;
+      font-size: 28px;
+      max-width: 500px;
+      margin: 0 auto 100px;
+      color: $primary;
+      mix-blend-mode: multiply;
+      font-weight: bold !important;
+    }
+    // logo
+    .logo {
+      position: absolute;
+      left: 5px;
+      bottom: 10px;
+      img {
+        width: 100%;
+        max-width: 140px;
+        height: auto;
+      }
+    }
+  }
+  @include media("phablet") {
+    &.three-part {
+      min-height: 210px;
+      background-size: 215% 100%;
+      .title {
+        position: absolute;
+        left: auto;
+        top: 35px;
+        font-size: 35px;
+        right: 13%;
+        margin: auto;
+        background: none;
+      }
+      // logo
+      .logo {
+        left: 10px;
+        bottom: 15px;
+        img {
+          max-width: 250px;
+        }
+      }
+    }
+  }
+  @include media("tablet") {
+    &.three-part {
+      min-height: 180px;
+      background-size: 220% 100%;
+      .title {
+        right: 13%;
+        top: 35px;
+        font-size: 35px;
+        max-width: 600px;
+        margin-right: auto;
+      }
+      .logo {
+        bottom: 25px;
+        img {
+          max-width: 210px;
+        }
+      }
+    }
+  }
+  @include media("laptop") {
+    .title {
+      font-size: 55px;
+    }
+    .text {
+      font-size: 25px;
+      margin-top: 3rem;
+    }
+    &.three-part {
+      min-height: 225px;
+      background-size: 130% 100%;
+      .title {
+        top: 30px;
+        font-size: 40px;
+        max-width: 700px;
+        right: 17%;
+      }
+      // logo
+      .logo {
+        bottom: 50px;
+        img {
+          max-width: 350px;
+        }
+      }
+    }
+  }
+
+  @include media("desktop") {
+    &.three-part {
+      background-size: 100% 100%;
+      .title {
+        right: 17%;
+        top: 30px;
+      }
+      .logo {
+        bottom: 60px;
+        img {
+          max-width: 450px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1500px) {
+    &.three-part {
+      .title {
+        font-size: 45px;
+        right: 19%;
+      }
+    }
+  }
+}
+
+.hero-large {
+  background-color: $primary;
+  border-bottom: 20px solid $secondary;
+
+  .img-container {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 100%;
+      max-width: 500px;
+    }
+  }
+  .title {
+    text-align: center;
+    color: $white;
+  }
+  .text {
+    color: $white;
+    font-size: 18px;
+    padding: 0 0 1rem 2rem;
+  }
+  @media (max-width: 1030px) {
+    .grid-col-3 {
+      grid-template-columns: 100%;
+    }
+  }
+  @include media("laptop") {
+    .title {
+      font-size: 50px;
+    }
+  }
+}
