@@ -33,6 +33,9 @@
         @include media("tablet") {
             grid-template-columns: repeat(2, 1fr);
         }
+        @include media("laptop") {
+            grid-template-columns: repeat(3, 1fr);
+        }
         .video-commentary {
             box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.24);
             border-radius: 5px;
