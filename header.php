@@ -104,7 +104,7 @@
 
 		<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
-			<div id="inner-header" class="cf">
+			<div id="inner-header">
 
 				<div class="top-header">
 					<?= get_template_part('template-parts/content', 'topheader') ?>
