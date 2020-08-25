@@ -187,47 +187,66 @@ Home Page Section
             }
         }
     }
-
-    .section-2 {
-        margin-top: 1rem;
-
-        .content {
-            padding-right: 1rem;
+    // Section 2
+    .home-values {
+        text-align: center;
+        background-color: #f9fafc;
+        position: relative;
+        width: 100vw;
+        left: calc(50% - 50vw);
+        padding: 24px;
+        @include media("tablet") {
+            padding: 24px 48px 85px;
+        }
+        &__title {
+            font-size: 32px;
+            color: $black !important;
+            font-weight: bold;
             @include media("tablet") {
-                padding-right: 4rem;
-            }
-            @include media("laptop") {
-                padding-right: 8rem;
-            }
-            h1 {
-                color: $primary;
-                margin-bottom: 1rem;
-                font-size: 35px;
-                text-transform: capitalize;
-                font-weight: 300;
-                @include media("tablet") {
-                    font-size: 45px;
-                }
-                @include media("laptop") {
-                    font-size: 55px;
-                }
-            }
-            p {
-                color: $black;
-                margin: 0;
-                font-size: 18px;
-                @include media("tablet") {
-                    font-size: 20px;
-                }
+                font-size: 48px;
+                margin: 24px 0;
             }
         }
-        .mc_img {
-            width: 100%;
-            height: 100%;
-            min-height: 300px;
-            max-height: 300px;
-            object-fit: cover;
-            -ms-grid-column: 2;
+        &__content {
+            font-size: 16px;
+            @include media("tablet") {
+                font-size: 18px;
+                max-width: 753px;
+                margin: auto;
+            }
+        }
+        &__rows {
+            gap: 25px;
+            margin-top: 24px;
+            grid-template-columns: 1fr;
+            @include media("tablet") {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: 48px;
+            }
+            @include media("desktop") {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .value {
+                border: 2px dotted $primary;
+                background-color: $white;
+                max-width: 334px;
+                margin: auto;
+                padding: 24px;
+                @include media("tablet") {
+                    padding: 42px;
+                }
+                i {
+                    font-size: 80px;
+                    color: $primary;
+                }
+                &-title {
+                    font-size: 24px;
+                    font-weight: bold;
+                }
+                &-content {
+                    font-size: 18px;
+                }
+            }
         }
     }
 
