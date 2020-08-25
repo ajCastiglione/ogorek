@@ -227,13 +227,25 @@ Home Page Section
                 grid-template-columns: repeat(4, 1fr);
             }
             .value {
+                position: relative;
+                display: block;
                 border: 2px dotted $primary;
                 background-color: $white;
                 max-width: 334px;
                 margin: auto;
                 padding: 24px;
+                height: 100%;
+                transition: all 0.3s ease;
+                border-radius: 5px;
                 @include media("tablet") {
                     padding: 42px;
+                }
+                &:hover {
+                    border-style: solid;
+                    cursor: pointer;
+                    span {
+                        opacity: 1;
+                    }
                 }
                 i {
                     font-size: 80px;
@@ -242,9 +254,21 @@ Home Page Section
                 &-title {
                     font-size: 24px;
                     font-weight: bold;
+                    color: $black;
                 }
                 &-content {
                     font-size: 18px;
+                    color: $black;
+                }
+                &-cta {
+                    position: absolute;
+                    bottom: 10px;
+                    left: 0;
+                    right: 0;
+                    text-transform: capitalize;
+                    text-decoration: underline;
+                    opacity: 0;
+                    transition: all 0.3s ease;
                 }
             }
         }

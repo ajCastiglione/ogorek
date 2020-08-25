@@ -11,12 +11,16 @@ $content = get_field('s2_content');
         $icon = get_sub_field('icon');
         $value_title = get_sub_field('title');
         $value_content = get_sub_field('content');
+        $value_link = get_sub_field('link');
     ?>
 
         <div class="value">
-          <?= $icon ?>
-          <h3 class="value-title"><?= $value_title ?></h3>
-          <div class="value-content"><?= $value_content ?></div>
+          <a href="<?= $value_link ?>">
+            <?= $icon ?>
+            <h3 class="value-title"><?= $value_title ?></h3>
+            <div class="value-content"><?= $value_content ?></div>
+            <span class="value-cta">learn more</span>
+          </a>
         </div>
 
     <?php endwhile;
