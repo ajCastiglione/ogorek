@@ -341,9 +341,71 @@
             "endpoint": 0
         },
         {
+            "key": "field_5f45476505e00",
+            "label": "Image",
+            "name": "s3_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5f45380e4a3b5",
+            "label": "Title",
+            "name": "s3_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f4538164a3b6",
+            "label": "Content",
+            "name": "s3_content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
             "key": "field_5d93b21210faf",
-            "label": "Benefits",
-            "name": "benefits",
+            "label": "Services",
+            "name": "s3_services",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -361,8 +423,8 @@
             "sub_fields": [
                 {
                     "key": "field_5d93b22210fb0",
-                    "label": "CTA",
-                    "name": "cta",
+                    "label": "Title",
+                    "name": "title",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -740,5 +802,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1598369741
+    "modified": 1598375798
 }
