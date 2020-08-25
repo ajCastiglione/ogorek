@@ -2,10 +2,11 @@
 /*
  Template Name: Video Commentaries
 */
-
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
   'post_type' => 'video_commentaries',
-  'posts_per_page' => 6,
+  'posts_per_page' => 9,
+  'paged' => $paged
 );
 
 $query = new WP_Query($args);
@@ -42,7 +43,10 @@ $query = new WP_Query($args);
 
               <section class="excerpt-content cf">
                 <a href="<?= the_permalink() ?>" class="video-link">
-                  <?= get_field('video_excerpt'); ?>
+                  <?php
+                  $meta = get_post_meta(get_the_ID(), '_yoast_wpseo_metadesc', true);
+                  echo !empty($meta) ? $meta : get_field('video_excerpt');
+                  ?>
                 </a>
               </section>
             </div>
