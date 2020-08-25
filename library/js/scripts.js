@@ -23,6 +23,7 @@ import prePopulateScheduler from "./components/Scheduler";
 import showForm from "./components/LandingPage";
 import toggleFAQ from "./components/FAQ";
 import inputMask from "./components/Masking";
+import initHomeSlider from "./components/Home";
 
 /*
  * Put all your regular jQuery in here.
@@ -37,6 +38,10 @@ jQuery(document).ready(function ($) {
   mobileMenuSubMenu($);
   scrollTop($);
   newsletterRedirect();
+
+  if ($("body").hasClass("home")) {
+    initHomeSlider($);
+  }
 
   if ($("body").hasClass("wpforms-template-default")) {
     inputMask($);
