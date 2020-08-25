@@ -651,9 +651,9 @@
         },
         {
             "key": "field_5d93b32d10fbc",
-            "label": "Aside Title",
-            "name": "s5_aside_title",
-            "type": "text",
+            "label": "Call To Actions",
+            "name": "s5_ctas",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -662,17 +662,60 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "collapsed": "",
+            "min": 0,
+            "max": 2,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5f455e7d106ae",
+                    "label": "CTA Text",
+                    "name": "cta_text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5f455e82106af",
+                    "label": "CTA Link",
+                    "name": "cta_link",
+                    "type": "page_link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "post",
+                        "page"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "allow_archives": 0,
+                    "multiple": 0
+                }
+            ]
         },
         {
             "key": "field_5d93b33710fbd",
-            "label": "Aside Content",
-            "name": "s5_aside_content",
-            "type": "wysiwyg",
+            "label": "Number Of Posts To Show",
+            "name": "s5_posts_to_show",
+            "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -681,11 +724,13 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "default_value": 2,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 1,
+            "max": 2,
+            "step": ""
         },
         {
             "key": "field_5d93b397c1d31",
@@ -799,5 +844,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1598377710
+    "modified": 1598381753
 }

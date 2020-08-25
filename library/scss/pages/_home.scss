@@ -491,35 +491,130 @@ Home Page Section
         }
     }
 
-    .section-5 {
-        margin-top: 3rem;
-        padding: 1rem 0 2rem;
-        border-top: 30px solid $secondary;
-        background-color: #f5f5f5;
-        .content {
-            padding: 0 1rem;
-            .title {
-                color: $primary;
+    .home-articles {
+        background: transparent
+            linear-gradient(294deg, #246db1 0%, #123759 100%) 0% 0% no-repeat
+            padding-box;
+        position: relative;
+        width: 100vw;
+        left: calc(50% - 50vw);
+        padding: 24px 32px;
+        display: grid;
+        gap: 25px;
+        align-items: center;
+        color: $white;
+        @include media("tablet") {
+            padding: 48px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px 96px;
+        }
+        @include media("laptop") {
+            padding: 130px 60px;
+        }
+        @include media("desktop") {
+            padding: 130px 120px;
+        }
+        &__title {
+            font-size: 38px;
+            color: $white !important;
+            font-weight: bold;
+            @include media("tablet") {
+                font-size: 46px;
+            }
+            @include media("laptop") {
+                font-size: 55px;
             }
         }
-        .aside {
-            padding: 0 1rem;
-            .aside-title {
-                color: $secondary;
+        &__content {
+            font-size: 18px;
+        }
+        &__ctas {
+            margin-top: 42px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            @include media("tablet") {
+                display: block;
             }
-            .aside-text {
-                ul li {
-                    &:before {
-                        content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
-                        color: $secondary;
-                        display: inline-block; /* Needed to add space between the bullet and the text */
-                        width: 1em;
-                        font-size: 22px;
-                        font-weight: bold;
+            .cta {
+                display: inline-block;
+                color: $white;
+                background-color: $secondary;
+                padding: 8px 24px;
+                border: 2px solid $secondary;
+                border-radius: 5px;
+                margin-right: 24px;
+                margin-bottom: 18px;
+                font-weight: bold;
+                font-size: 20px;
+                transition: all 0.3s ease;
+                width: 100%;
+                &:hover {
+                    background-color: darken($secondary, 10%);
+                    border-color: darken($secondary, 10%);
+                }
+                @include media("tablet") {
+                    padding: 8px 32px;
+                    width: auto;
+                    margin-bottom: 0;
+                }
+                &:nth-child(2) {
+                    margin-right: 0;
+                    background-color: transparent;
+                    border-color: $white;
+                    &:hover {
+                        background-color: $white;
+                        color: $black;
                     }
                 }
-                a {
+            }
+        }
+        &__articles {
+            display: grid;
+            gap: 25px;
+            @include media("laptop") {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .article-card {
+                background-color: $white;
+                position: relative;
+                border-radius: 5px;
+            }
+            .article-header {
+                padding: 0;
+
+                .featured-image {
+                    max-width: 100%;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                }
+            }
+            .article-content {
+                padding: 12px 12px 45px;
+
+                .entry-title {
+                    a {
+                        font-size: 22px;
+                        @include media("desktop") {
+                            font-size: 25px;
+                        }
+                    }
+                }
+                .byline {
+                    font-size: 12px;
+                    text-align: center;
                     color: $secondary;
+                    margin-bottom: 0;
+                    position: absolute;
+                    bottom: 8px;
+                    left: 0;
+                    right: 0;
+                    a {
+                        color: inherit;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
                 }
             }
         }
