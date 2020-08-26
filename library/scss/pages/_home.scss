@@ -231,14 +231,15 @@ Home Page Section
                 display: block;
                 border: 2px dotted $primary;
                 background-color: $white;
-                max-width: 334px;
                 margin: auto;
                 padding: 24px;
                 height: 100%;
                 transition: all 0.3s ease;
                 border-radius: 5px;
+                width: 100%;
                 @include media("tablet") {
                     padding: 42px;
+                    max-width: 334px;
                 }
                 &:hover {
                     border-style: solid;
@@ -511,7 +512,6 @@ Home Page Section
         padding: 24px 32px;
         display: grid;
         gap: 25px;
-        align-items: center;
         color: $white;
         @include media("tablet") {
             padding: 48px;
@@ -519,6 +519,7 @@ Home Page Section
             gap: 25px 96px;
         }
         @include media("laptop") {
+            align-items: center;
             padding: 130px 60px;
         }
         @include media("desktop") {
@@ -530,7 +531,7 @@ Home Page Section
             font-weight: bold;
             margin-top: 0;
             @include media("tablet") {
-                font-size: 46px;
+                font-size: 42px;
             }
             @include media("laptop") {
                 font-size: 55px;
@@ -560,6 +561,7 @@ Home Page Section
                 font-size: 20px;
                 transition: all 0.3s ease;
                 width: 100%;
+                text-align: center;
                 &:hover {
                     background-color: darken($secondary, 10%);
                     border-color: darken($secondary, 10%);
@@ -567,6 +569,8 @@ Home Page Section
                 @include media("tablet") {
                     padding: 8px 32px;
                     width: auto;
+                }
+                @include media("laptop") {
                     margin-bottom: 0;
                 }
                 &:nth-child(2) {
@@ -584,7 +588,7 @@ Home Page Section
             display: grid;
             gap: 25px;
             padding-bottom: 32px;
-            @include media("laptop") {
+            @include media("desktop") {
                 grid-template-columns: repeat(2, 1fr);
             }
             .article-card {
@@ -596,23 +600,24 @@ Home Page Section
                 padding: 0;
 
                 .featured-image {
+                    width: 100%;
                     max-width: 100%;
                     border-top-left-radius: 5px;
                     border-top-right-radius: 5px;
+                    @include media("desktop") {
+                        width: auto;
+                    }
                 }
             }
             .article-content {
                 padding: 12px 12px 45px;
                 text-align: center;
-                @include media("tablet") {
+                @include media("desktop") {
                     min-height: 170px;
                 }
                 .entry-title {
                     a {
                         font-size: 22px;
-                        @include media("desktop") {
-                            font-size: 25px;
-                        }
                     }
                 }
                 .byline {
