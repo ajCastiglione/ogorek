@@ -2,315 +2,327 @@
 Header Section
 ****************************/
 .top-header {
-  background-color: $primary;
-  text-align: center;
-  padding: 8px 1rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 9;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 9;
-  .alert {
-    &__header {
-      text-align: center;
-      padding: 10px;
-      font-weight: bold;
-      font-size: 16px;
-      border-bottom: 2px solid $white;
-      p {
-        margin: 0;
-      }
-    }
-    &__link {
-      display: inline-block;
-      color: $white;
-      font-weight: bold;
-      font-size: 16px;
-      svg {
-        fill: $white;
-        margin-right: 1rem;
-        max-width: 25px;
-        max-height: 25px;
-      }
-      p {
-        margin: 0;
-      }
-    }
-    &__inner {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-  // Replaced social media icons
-  .header-message {
-    color: $white;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-top: 5px;
-    margin-left: 5px;
-    order: 1;
-    .icon {
-      margin-right: 10px;
-      display: flex;
-      align-items: center;
-      svg {
-        width: 20px;
-        height: 20px;
-        fill: $white;
-      }
-    }
-    .text {
-      font-weight: bold;
-      font-size: 13px;
-      white-space: nowrap;
-      p {
-        margin: 0;
-      }
-      a {
-        color: inherit;
-      }
-    }
-  }
-  .top-header-grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 20px 0;
-  }
-  // Mobile search
-  .search-field {
-    padding: 10px 0.5rem;
+    background-color: $primary;
+    text-align: center;
+    padding: 8px 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
-    transition: all 0.4s ease;
-    .form-container {
-      padding: 4px 0;
-      .fa-search {
-        position: absolute;
-        top: 7px;
-        left: 0;
-        padding: 10px;
-        color: $gray;
-      }
-
-      input[type="search"] {
-        position: relative;
-        padding-left: 30px;
-      }
-
-      #searchsubmit {
-        display: none;
-      }
-    }
-  }
-  // Email and phone
-  .info {
-    order: 2;
-    a {
-      color: $white;
-      font-weight: bold;
-      font-size: 16px;
-      transition: all 0.3s ease-in-out;
-      padding: 0 0.8rem;
-      &:hover {
-        color: darken($white, 15%);
-      }
-
-      span {
-        display: none;
-      }
-    }
-  }
-  // SM icons
-  .socials {
-    order: 2;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    .social-icon {
-      color: $white;
-      padding: 0 0.8rem;
-      font-size: 18px;
-      transition: all 0.3s ease-in-out;
-      display: flex;
-      align-items: center;
-      figure {
-        width: 18px;
-        height: 18px;
-        display: inline-block;
-        max-height: 100%;
-        max-width: 100%;
-      }
-      svg {
-        width: 100%;
-        height: 100%;
-        fill: $white;
-      }
-      &:hover {
-        color: $secondary;
-        transform: scale(0.95);
-        svg {
-          fill: $secondary;
-          transition: all 0.4s ease;
+    z-index: 9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9;
+    .alert {
+        &__header {
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            border-bottom: 2px solid $white;
+            p {
+                margin: 0;
+            }
         }
-      }
+        &__link {
+            display: inline-block;
+            color: $white;
+            font-weight: bold;
+            font-size: 16px;
+            svg {
+                fill: $white;
+                margin-right: 1rem;
+                max-width: 25px;
+                max-height: 25px;
+            }
+            p {
+                margin: 0;
+            }
+        }
+        &__inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
-  }
-  @media (max-width: 1180px) {
-    margin-top: 46px;
-  }
-
-  @include media("phablet") {
-    .top-header-grid {
-      flex-direction: row-reverse;
-      padding: 15px 0;
-      .header-message {
-        margin-right: 20px;
+    // Replaced social media icons
+    .header-message {
+        color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 5px;
+        margin-left: 5px;
         order: 1;
-        margin-top: 0;
+        @include media("phablet") {
+            margin-right: 20px;
+            order: 1;
+            margin-top: 0;
+        }
         .text {
-          white-space: normal;
-          font-size: 15px;
+            font-weight: bold;
+            white-space: nowrap;
+            margin-bottom: 10px;
+            @include media("phablet") {
+                white-space: normal;
+            }
+            p {
+                margin: 0;
+            }
+            a {
+                display: inline-block;
+                color: inherit;
+                margin-right: 12px;
+                border: 2px solid $white;
+                border-radius: 5px;
+                padding: 4px 12px;
+                font-size: 18px;
+                transition: all 0.4s ease;
+                @include media("tablet") {
+                    margin-right: 24px;
+                }
+                &:hover {
+                    background-color: $white;
+                    color: $black;
+                }
+                &:nth-child(2) {
+                    margin-right: 0;
+                    background-color: $secondary;
+                    &:hover {
+                        color: $white;
+                        text-decoration: underline;
+                        background-color: darken($secondary, 15%);
+                    }
+                }
+            }
         }
-      }
-      .info {
-        order: 2;
-      }
-    }
-  }
-
-  @include media("tablet") {
-    text-align: inherit;
-    .alert-header {
-      font-size: 18px;
     }
     .top-header-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      padding: 12px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 20px 0;
+        @include media("phablet") {
+            flex-direction: row-reverse;
+            padding: 15px 0;
+        }
+        .info {
+            @include media("phablet") {
+                order: 2;
+            }
+        }
     }
+    // Mobile search
     .search-field {
-      grid-column: 1 / 3;
-      padding: 0.5rem;
-      .form-container {
-        margin-left: 0;
-        max-width: 100%;
+        padding: 10px 0.5rem;
         width: 100%;
-      }
-    }
-    .header-message {
-      grid-row: 2;
-      text-align: right;
-      margin-left: 0;
-      margin-right: 10px;
-    }
-    .socials {
-      text-align: right;
-      grid-row: 2;
-    }
-    .info {
-      grid-row: 2;
-      a {
-        span {
-          display: inline;
+        transition: all 0.4s ease;
+        .form-container {
+            padding: 4px 0;
+            .fa-search {
+                position: absolute;
+                top: 7px;
+                left: 0;
+                padding: 10px;
+                color: $gray;
+            }
+
+            input[type="search"] {
+                position: relative;
+                padding-left: 30px;
+            }
+
+            #searchsubmit {
+                display: none;
+            }
         }
-        &:nth-child(2) {
-          margin-left: 12px;
-        }
-      }
     }
-  }
-  @include media("laptop") {
-    .top-header-grid {
-      justify-content: center;
-    }
-    .search-field {
-      grid-column: 3;
-    }
+    // Email and phone
     .info {
-      grid-column: 1;
-      grid-row: 1;
-      a {
-        font-size: 20px;
-      }
+        order: 2;
+        a {
+            color: $white;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+            padding: 8px 0.8rem;
+            border-radius: 5px;
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+
+            span {
+                display: none;
+            }
+        }
     }
-    .header-message {
-      grid-row: 1;
-      grid-column: 2;
-      padding-right: 10px;
-      align-self: center;
-      a {
-        font-size: 20px;
-      }
-    }
+    // SM icons
     .socials {
-      text-align: right;
-      grid-row: 1;
-      grid-column: 2;
+        order: 2;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .social-icon {
+            color: $white;
+            padding: 0 0.8rem;
+            font-size: 18px;
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            figure {
+                width: 18px;
+                height: 18px;
+                display: inline-block;
+                max-height: 100%;
+                max-width: 100%;
+            }
+            svg {
+                width: 100%;
+                height: 100%;
+                fill: $white;
+            }
+            &:hover {
+                color: $secondary;
+                transform: scale(0.95);
+                svg {
+                    fill: $secondary;
+                    transition: all 0.4s ease;
+                }
+            }
+        }
     }
-  }
+    @media (max-width: 1180px) {
+        margin-top: 46px;
+    }
+
+    @include media("tablet") {
+        text-align: inherit;
+        .alert-header {
+            font-size: 18px;
+        }
+        .top-header-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            padding: 12px 0;
+        }
+        .search-field {
+            grid-column: 1 / 3;
+            padding: 0.5rem;
+            .form-container {
+                margin-left: 0;
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+        .header-message {
+            grid-row: 2;
+            text-align: right;
+            margin-left: 0;
+            margin-right: 10px;
+        }
+        .socials {
+            text-align: right;
+            grid-row: 2;
+        }
+        .info {
+            grid-row: 2;
+            a {
+                span {
+                    display: inline;
+                }
+                &:nth-child(2) {
+                    margin-left: 12px;
+                }
+            }
+        }
+    }
+    @include media("laptop") {
+        .top-header-grid {
+            justify-content: center;
+        }
+        .search-field {
+            grid-column: 3;
+        }
+        .info {
+            grid-column: 1;
+            grid-row: 1;
+            a {
+                font-size: 20px;
+            }
+        }
+        .header-message {
+            grid-row: 1;
+            grid-column: 2;
+            padding-right: 10px;
+            align-self: center;
+            a {
+                font-size: 20px;
+            }
+        }
+        .socials {
+            text-align: right;
+            grid-row: 1;
+            grid-column: 2;
+        }
+    }
 }
 
 .header-bottom {
-  margin-top: 100px;
-  text-align: center;
-  padding: 0 1rem;
-
-  .header-right {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #logo {
-    width: 100%;
-    max-width: 300px;
-  }
-  .header-left {
-    @media (max-width: 1180px) {
-      text-align: center;
-    }
-  }
-  &.mb-lg {
-    @media (max-width: 1180px) {
-      margin-top: 200px;
-    }
-  }
-  @include media("tablet") {
-    text-align: inherit;
-    margin-top: 70px;
-    &.mb-lg {
-      margin-top: 145px;
-    }
+    margin-top: 130px;
+    text-align: center;
+    padding: 0 1rem;
 
     .header-right {
-      justify-content: flex-end;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
     }
-  }
-  @include media("phablet") {
-    margin-top: 80px;
+
+    #logo {
+        width: 100%;
+        max-width: 300px;
+    }
+    .header-left {
+        @media (max-width: 1180px) {
+            text-align: center;
+        }
+    }
     &.mb-lg {
-      margin-top: 170px;
+        @media (max-width: 1180px) {
+            margin-top: 200px;
+        }
     }
-  }
-  @include media("laptop") {
-    margin-top: 90px;
-    &.mb-lg {
-      margin-top: 125px;
-      @media (min-width: 1181px) {
-        margin-top: 135px;
-      }
+    @include media("tablet") {
+        text-align: inherit;
+        margin-top: 70px;
+        &.mb-lg {
+            margin-top: 145px;
+        }
+
+        .header-right {
+            justify-content: flex-end;
+        }
     }
-  }
+    @include media("phablet") {
+        margin-top: 80px;
+        &.mb-lg {
+            margin-top: 170px;
+        }
+    }
+    @include media("laptop") {
+        margin-top: 90px;
+        &.mb-lg {
+            margin-top: 125px;
+            @media (min-width: 1181px) {
+                margin-top: 135px;
+            }
+        }
+    }
 }

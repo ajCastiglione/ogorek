@@ -22,8 +22,12 @@
   </div>
 
   <div class="header-message">
-    <div class="icon"><?= get_field('header_message_icon', 'options') ?></div>
-    <div class="text"><a href="<?= get_field('header_link', 'options') ?>"><?= get_field('header_message', 'options') ?></a></div>
+    <div class="text">
+      <?php if (have_rows('header_ctas', 'options')) : while (have_rows('header_ctas', 'options')) : the_row(); ?>
+          <a href="<?= get_sub_field('cta_link') ?>"><?= get_sub_field('cta_text') ?></a>
+      <?php endwhile;
+      endif; ?>
+    </div>
   </div>
 
   <!-- 

@@ -2,381 +2,670 @@
 Home Page Section
 ****************************/
 .home {
-  .hero {
-    margin-top: -25px;
-    background-color: transparent;
-    .slide {
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: top center;
-      min-height: 420px;
-      position: relative;
-      .slide-content {
-        position: absolute;
-        width: 100%;
-        max-width: 1000px;
-        height: 100%;
-        margin: 0 auto;
-        padding: 1rem 2.4rem;
-        top: 0;
-        left: 0;
-        right: 0;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        justify-content: center;
-        flex-direction: column;
-        color: $white;
-      }
-      .slide-title {
-        font-size: 35px;
-        width: 100%;
-        margin: 0;
-      }
-      .slide-text {
-        font-size: 16px;
-        margin: 1rem 0;
-      }
-      .slide-link {
-        display: inline-block;
-        color: $white;
-        border: 2px solid $white;
-        padding: 0.5rem 2rem;
-        margin-top: 1rem;
-        text-transform: capitalize;
-        font-size: 16px;
-        transition: all 0.3s ease-in-out;
-        &:hover {
-          background-color: rgba(255, 255, 255, 0.3);
-          transform: scale(0.95);
-        }
-      }
-    }
-    .owl-next {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      i {
-        color: $white;
-        font-size: 2rem;
-      }
-      &:hover {
-        background: none;
-      }
-    }
-    .owl-prev {
-      position: absolute;
-      top: 50%;
-      left: 10px;
-      i {
-        color: $white;
-        font-size: 2rem;
-      }
-      &:hover {
-        background: none;
-      }
-    }
-  }
+    .banner {
+        position: relative;
+        overflow-x: hidden;
+        width: 100vw;
+        left: calc(50% - 50vw);
 
-  .section-2 {
-    margin-top: 1rem;
-    .content {
-      padding-right: 1rem;
-      h1 {
-        color: $primary;
-        margin-bottom: 1rem;
-        font-size: 35px;
-        text-transform: capitalize;
-        font-weight: 300;
-      }
-      p {
-        color: $black;
-        margin: 0;
-        font-size: 18px;
-      }
-    }
-    .mc_img {
-      width: 100%;
-      height: 100%;
-      min-height: 300px;
-      max-height: 300px;
-      object-fit: cover;
-      -ms-grid-column: 2;
-    }
-  }
-
-  .section-3 {
-    border-top: 30px solid $secondary;
-    padding-top: 4rem;
-    padding-bottom: 3rem;
-    background-color: #f5f5f5;
-    .item {
-      position: relative;
-      padding: 1rem 2rem 4rem;
-      .cta {
-        display: block;
-        border: 2px solid $primary;
-        color: $primary;
-        font-size: 25px;
-        text-transform: capitalize;
-        text-align: center;
-        padding: 1rem;
-      }
-
-      .content {
-        text-align: center;
-        margin-top: 1rem;
-        font-size: 16px;
-      }
-      .btn-container {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        display: block;
-        text-align: center;
-        margin-top: 1rem;
-        .btn {
-          background-color: $primary;
-          border: 2px solid $primary;
-          padding: 8px 1rem;
-          border-radius: 0;
-          color: $white;
-          text-transform: capitalize;
-          font-weight: bold;
-          font-size: 16px;
-          transition: all 0.3s ease-in-out;
-          &:hover {
-            background-color: $secondary;
-            border-color: $secondary;
-          }
-        }
-      }
-      &:nth-child(even) {
-        .btn {
-          background-color: $secondary;
-          border-color: $secondary;
-          &:hover {
-            background-color: $primary;
-            border-color: $primary;
-          }
-        }
-        .cta {
-          border-color: $secondary;
-          color: $secondary;
-        }
-      }
-    }
-  }
-
-  .section-4 {
-    margin-top: 3rem;
-    .content {
-      .title {
-        color: $secondary;
-        font-size: 35px;
-      }
-      .text {
-        font-size: 16px;
-      }
-    }
-    .video {
-      position: relative;
-      min-height: 400px;
-      .yt-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-      .placeholder {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        z-index: 9;
-        &:hover {
-          cursor: pointer;
-          &:before {
-            background-color: rgba(0, 0, 0, 0.6);
-          }
-        }
         &:before {
-          transition: all 0.5s ease-in-out;
-          position: absolute;
-          content: "\f144";
-          font-family: "Font Awesome 5 Free";
-          z-index: 99;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          font-size: 6rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: $primary;
+            display: none;
+            position: absolute;
+            content: "";
+            background: transparent
+                linear-gradient(229deg, #246db1 0%, #123759 100%) 0% 0%
+                no-repeat padding-box;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            transform: skew(-10deg, 0);
+            transform-origin: top right;
+            @include media("tablet") {
+                display: block;
+                width: 68%;
+            }
+            @include media("laptop") {
+                width: 61%;
+            }
         }
-      }
-      .fadeOut {
-        animation-name: fadeOut;
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards;
-      }
-      @keyframes fadeOut {
-        0% {
-          opacity: 1;
+        &__img {
+            position: relative;
+            max-width: 125%;
+            left: -75px;
+            @include media("tablet") {
+                position: absolute;
+                width: 60%;
+                height: 100%;
+                object-fit: cover;
+                top: 0;
+                right: 0;
+                left: unset;
+                max-width: auto;
+            }
         }
-        100% {
-          opacity: 0;
+        &__content {
+            position: relative;
+            z-index: 3;
+            color: $white;
+            background: #20629f;
+            margin-top: -100px;
+            padding: 24px;
+            &:before {
+                position: absolute;
+                content: "";
+                top: -30px;
+                left: -10%;
+                width: 110%;
+                height: 60px;
+                transform: rotate(4deg);
+                background: #20629f;
+                @include media("tablet") {
+                    display: none;
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+            @include media("tablet") {
+                background: none;
+                padding: 24px 48px;
+                max-width: 60%;
+                margin-top: 100px;
+            }
+            @include media("laptop") {
+                margin-top: 177px;
+                max-width: 55%;
+            }
+            @include media("desktop") {
+                padding: 24px 120px;
+            }
         }
-      }
+        &__title {
+            font-size: 45px;
+            margin: 0;
+            font-weight: 900;
+            @include media("tablet") {
+                font-size: 60px;
+            }
+            @include media("laptop") {
+                font-size: 75px;
+            }
+            @include media("desktop") {
+                font-size: 95px;
+                line-height: 95px;
+            }
+        }
+        &__sub-title {
+            color: inherit !important;
+            font-size: 24px;
+            @include media("tablet") {
+                font-size: 35px;
+            }
+            @include media("laptop") {
+                font-size: 45px;
+            }
+            @include media("desktop") {
+                font-size: 55px;
+            }
+        }
+        @include media("tablet") {
+            min-height: 450px;
+        }
+        @include media("laptop") {
+            min-height: 948px;
+        }
+        &__ctas {
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            @include media("tablet") {
+                margin-top: 64px;
+                flex-direction: row;
+            }
+        }
+        &__btn {
+            display: inline-block;
+            padding: 12px;
+            background-color: $secondary;
+            color: $white;
+            border: 2px solid $secondary;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-right: 24px;
+            font-weight: 700;
+            transition: all 0.4s ease;
+            width: 100%;
+            margin-bottom: 24px;
+            text-align: center;
+            &:hover {
+                background-color: transparent;
+            }
+            @include media("tablet") {
+                width: auto;
+                font-size: 20px;
+                margin-bottom: 0;
+                padding: 8px 32px;
+            }
+            @include media("laptop") {
+                padding: 8px 45px;
+            }
+            &:nth-child(2) {
+                background-color: transparent;
+                border-color: $white;
+                margin-right: 0;
+                &:hover {
+                    background-color: $white;
+                    color: $black;
+                }
+            }
+            &.has-arrow {
+                position: relative;
+                span {
+                    position: relative;
+                    left: 0;
+                    transition: all 0.4s ease;
+                }
+                i {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 30%;
+                    margin: auto;
+                    opacity: 0;
+                    display: flex;
+                    align-items: center;
+                    transition: all 0.4s ease;
+                }
+                &:hover {
+                    span {
+                        left: -12px;
+                    }
+                    i {
+                        right: 10%;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
     }
-  }
-
-  .section-5 {
-    margin-top: 3rem;
-    padding: 1rem 0 2rem;
-    border-top: 30px solid $secondary;
-    background-color: #f5f5f5;
-    .content {
-      padding: 0 1rem;
-      .title {
-        color: $primary;
-      }
-    }
-    .aside {
-      padding: 0 1rem;
-      .aside-title {
-        color: $secondary;
-      }
-      .aside-text {
-        ul li {
-          &:before {
-            content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
-            color: $secondary;
-            display: inline-block; /* Needed to add space between the bullet and the text */
-            width: 1em;
-            font-size: 22px;
-            font-weight: bold;
-          }
-        }
-        a {
-          color: $secondary;
-        }
-      }
-    }
-  }
-
-  .section-6 {
-    border-top: 30px solid $secondary;
-    padding-top: 1rem;
-    padding-bottom: 2rem;
-    .content {
-      .title {
-        color: $primary;
-      }
-      .btn-container {
+    // Section 2
+    .home-values {
         text-align: center;
-        margin-top: 2rem;
-        .btn {
-          background-color: $secondary;
-          border: 2px solid $secondary;
-          color: $white;
-          border-radius: 0;
-          text-transform: capitalize;
-          font-size: 18px;
-          font-weight: bold;
+        background-color: #f9fafc;
+        position: relative;
+        width: 100vw;
+        left: calc(50% - 50vw);
+        padding: 24px;
+        @include media("tablet") {
+            padding: 24px 48px 85px;
         }
-      }
+        &__title {
+            font-size: 32px;
+            color: $black !important;
+            font-weight: bold;
+            @include media("tablet") {
+                font-size: 48px;
+                margin: 24px 0;
+            }
+        }
+        &__content {
+            font-size: 16px;
+            @include media("tablet") {
+                font-size: 18px;
+                max-width: 753px;
+                margin: auto;
+            }
+        }
+        &__rows {
+            gap: 25px;
+            margin-top: 24px;
+            grid-template-columns: 1fr;
+            @include media("tablet") {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: 48px;
+            }
+            @include media("desktop") {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .value {
+                position: relative;
+                display: block;
+                border: 2px dotted $primary;
+                background-color: $white;
+                max-width: 334px;
+                margin: auto;
+                padding: 24px;
+                height: 100%;
+                transition: all 0.3s ease;
+                border-radius: 5px;
+                @include media("tablet") {
+                    padding: 42px;
+                }
+                &:hover {
+                    border-style: solid;
+                    cursor: pointer;
+                    span {
+                        opacity: 1;
+                    }
+                }
+                i {
+                    font-size: 80px;
+                    color: $primary;
+                }
+                &-title {
+                    font-size: 24px;
+                    font-weight: bold;
+                    color: $black;
+                }
+                &-content {
+                    font-size: 18px;
+                    color: $black;
+                }
+                &-cta {
+                    position: absolute;
+                    bottom: 10px;
+                    left: 0;
+                    right: 0;
+                    text-transform: capitalize;
+                    text-decoration: underline;
+                    opacity: 0;
+                    transition: all 0.3s ease;
+                }
+            }
+        }
     }
-  }
-  @include media("tablet") {
-    .hero {
-      margin-top: 0;
-      .slide {
-        min-height: 500px;
-        .slide-title {
-          font-size: 45px;
+
+    .home-services {
+        display: grid;
+        color: $white;
+        @include media("tablet") {
+            grid-template-columns: repeat(2, 1fr);
         }
-        .slide-text {
-          font-size: 18px;
+
+        &__img {
+            width: 100%;
+            max-height: 420px;
+            object-fit: cover;
+            object-position: top center;
+            @include media("tablet") {
+                height: 100%;
+                max-height: 100%;
+            }
         }
-        .slide-link {
-          font-size: 18px;
+
+        &__info {
+            padding: 34px;
+            background: transparent
+                linear-gradient(237deg, #123759 0%, #246db1 100%) 0% 0%
+                no-repeat padding-box;
         }
-      }
+        &__title {
+            color: $white !important;
+            font-size: 32px;
+            font-weight: bold;
+            @include media("tablet") {
+                font-size: 42px;
+            }
+            @include media("laptop") {
+                font-size: 55px;
+            }
+        }
+        &__content {
+            font-size: 18px;
+            margin-bottom: 48px;
+        }
+        // Individual services
+        &__services {
+            display: grid;
+            gap: 25px;
+            @include media("tablet") {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .service {
+                a {
+                    border: 2px dotted $secondary;
+                    display: inline-block;
+                    padding: 8px 18px;
+                    color: inherit;
+                    transition: all 0.3s ease;
+                    &:hover {
+                        border-style: solid;
+                        background-color: rgba(0, 0, 0, 0.2);
+                    }
+                }
+                &-title {
+                    font-weight: bold;
+                    font-size: 22px;
+                    @include media("tablet") {
+                        font-size: 18px;
+                    }
+                    @include media("laptop") {
+                        font-size: 22px;
+                    }
+                }
+                &-content {
+                    margin-bottom: 32px;
+                }
+                &-cta {
+                    text-transform: capitalize;
+                    text-decoration: underline;
+                }
+            }
+        }
     }
-    .section-2 {
-      .content {
-        padding-right: 4rem;
-        h1 {
-          font-size: 45px;
+
+    .home-team {
+        text-align: center;
+        background-color: #f4f4f4;
+        position: relative;
+        left: calc(50% - 50vw);
+        width: 100vw;
+        padding: 24px 32px;
+        overflow-x: hidden;
+        @include media("tablet") {
+            padding: 24px 48px;
         }
-        p {
-          font-size: 20px;
+        &__title {
+            font-size: 32px;
+            color: $black !important;
+            font-weight: bold;
+            u {
+                font-style: italic;
+                margin-right: 5px;
+            }
+            @include media("tablet") {
+                font-size: 48px;
+            }
         }
-      }
+        &__content {
+            font-size: 18px;
+            max-width: 928px;
+            margin: 12px auto 32px;
+        }
+        &__slider {
+            position: relative;
+            right: -50px;
+            @include media("tablet") {
+                right: unset;
+                max-width: 1240px;
+                margin: auto;
+                padding: 0 60px;
+            }
+            .owl-stage-outer {
+                z-index: 3;
+            }
+            .owl-nav {
+                display: none;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: 0;
+                width: 100%;
+                align-items: center;
+                justify-content: space-between;
+                @include media("tablet") {
+                    display: flex;
+                }
+                button {
+                    border-radius: 100%;
+                    width: 45px;
+                    height: 45px;
+                    background-color: rgba(0, 0, 0, 0.3);
+                    color: $white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 24px;
+                    outline: none;
+                    position: relative;
+                    z-index: 4;
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.8);
+                    }
+                }
+            }
+            .owl-stage {
+                margin-left: -50px;
+                @include media("tablet") {
+                    margin-left: 0;
+                }
+            }
+            .team-member {
+                &_img {
+                    // max-width: 250px;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    margin: 0;
+                    @include media("tablet") {
+                        max-width: 100%;
+                    }
+                }
+                .info {
+                    background-color: $white;
+                    padding: 8px 24px;
+                    min-height: 95px;
+                    position: relative;
+                    @include media("laptop") {
+                        min-height: 114px;
+                    }
+                }
+                &_link {
+                    display: block;
+                }
+                &_name {
+                    margin-top: 0;
+                    margin-bottom: 12px;
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+                &_position {
+                    text-transform: capitalize;
+                    font-size: 18px;
+                    position: absolute;
+                    bottom: 8px;
+                    left: 0;
+                    right: 0;
+                    padding: 0 24px;
+                }
+            }
+        }
+        &__cta {
+            color: $primary;
+            display: inline-block;
+            margin-top: 32px;
+            border: 2px solid $primary;
+            border-radius: 5px;
+            padding: 8px 24px;
+            font-weight: bold;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            width: 100%;
+            @include media("tablet") {
+                width: auto;
+            }
+            &:hover {
+                background-color: $primary;
+                color: $white;
+            }
+        }
     }
-    .section-3 {
-      .item {
-        .cta {
-          font-size: 30px;
+
+    .home-articles {
+        background: transparent
+            linear-gradient(294deg, #246db1 0%, #123759 100%) 0% 0% no-repeat
+            padding-box;
+        position: relative;
+        width: 100vw;
+        left: calc(50% - 50vw);
+        padding: 24px 32px;
+        display: grid;
+        gap: 25px;
+        align-items: center;
+        color: $white;
+        @include media("tablet") {
+            padding: 48px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px 96px;
         }
-      }
+        @include media("laptop") {
+            padding: 130px 60px;
+        }
+        @include media("desktop") {
+            padding: 130px 120px;
+        }
+        &__title {
+            font-size: 38px;
+            color: $white !important;
+            font-weight: bold;
+            @include media("tablet") {
+                font-size: 46px;
+            }
+            @include media("laptop") {
+                font-size: 55px;
+            }
+        }
+        &__content {
+            font-size: 18px;
+        }
+        &__ctas {
+            margin-top: 42px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            @include media("tablet") {
+                display: block;
+            }
+            .cta {
+                display: inline-block;
+                color: $white;
+                background-color: $secondary;
+                padding: 8px 24px;
+                border: 2px solid $secondary;
+                border-radius: 5px;
+                margin-right: 24px;
+                margin-bottom: 18px;
+                font-weight: bold;
+                font-size: 20px;
+                transition: all 0.3s ease;
+                width: 100%;
+                &:hover {
+                    background-color: darken($secondary, 10%);
+                    border-color: darken($secondary, 10%);
+                }
+                @include media("tablet") {
+                    padding: 8px 32px;
+                    width: auto;
+                    margin-bottom: 0;
+                }
+                &:nth-child(2) {
+                    margin-right: 0;
+                    background-color: transparent;
+                    border-color: $white;
+                    &:hover {
+                        background-color: $white;
+                        color: $black;
+                    }
+                }
+            }
+        }
+        &__articles {
+            display: grid;
+            gap: 25px;
+            padding-bottom: 32px;
+            @include media("laptop") {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .article-card {
+                background-color: $white;
+                position: relative;
+                border-radius: 5px;
+            }
+            .article-header {
+                padding: 0;
+
+                .featured-image {
+                    max-width: 100%;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                }
+            }
+            .article-content {
+                padding: 12px 12px 45px;
+                text-align: center;
+                @include media("tablet") {
+                    text-align: left;
+                }
+                .entry-title {
+                    a {
+                        font-size: 22px;
+                        @include media("desktop") {
+                            font-size: 25px;
+                        }
+                    }
+                }
+                .byline {
+                    font-size: 12px;
+                    text-align: center;
+                    color: $secondary;
+                    margin-bottom: 0;
+                    position: absolute;
+                    bottom: 8px;
+                    left: 0;
+                    right: 0;
+                    a {
+                        color: inherit;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
     }
-    .section-4 {
-      .content {
-        padding-right: 2rem;
-        .title {
-          font-size: 45px;
+
+    .home-connected {
+        display: grid;
+        @include media("tablet") {
+            grid-template-columns: repeat(2, 1fr);
         }
-        .text {
-          font-size: 18px;
+        &__img {
+            width: 100%;
+            object-fit: cover;
+            @include media("tablet") {
+                height: 100%;
+            }
         }
-      }
-      .video {
-        min-height: 550px;
-      }
+        // container for content, title, btns
+        &__info {
+            padding: 24px 32px;
+            @include media("laptop") {
+                padding: 52px 32px;
+            }
+            @include media("desktop") {
+                padding: 82px 32px;
+            }
+        }
+        &__title {
+            font-size: 32px;
+            font-weight: bold;
+            color: $black !important;
+            margin-top: 0;
+            @include media("tablet") {
+                font-size: 46px;
+            }
+            @include media("laptop") {
+                font-size: 55px;
+            }
+        }
+        &__content {
+            font-size: 18px;
+        }
+        &__app {
+            margin-top: 48px;
+            @include media("tablet") {
+                margin-top: 96px;
+            }
+        }
     }
-  }
-  @include media("laptop") {
-    .hero {
-      .slide {
-        min-height: 600px;
-        .slide-title {
-          font-size: 65px;
-        }
-        .slide-text {
-          font-size: 20px;
-        }
-        .slide-link {
-          font-size: 20px;
-        }
-      }
-    }
-    .section-2 {
-      .content {
-        padding-right: 8rem;
-        h1 {
-          font-size: 55px;
-        }
-      }
-    }
-    .section-4 {
-      .content {
-        .title {
-          font-size: 55px;
-        }
-        .text {
-          font-size: 22px;
-        }
-      }
-    }
-  }
 }
