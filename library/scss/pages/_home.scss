@@ -572,6 +572,7 @@ Home Page Section
         &__articles {
             display: grid;
             gap: 25px;
+            padding-bottom: 32px;
             @include media("laptop") {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -591,7 +592,10 @@ Home Page Section
             }
             .article-content {
                 padding: 12px 12px 45px;
-
+                text-align: center;
+                @include media("tablet") {
+                    text-align: left;
+                }
                 .entry-title {
                     a {
                         font-size: 22px;
@@ -620,26 +624,47 @@ Home Page Section
         }
     }
 
-    .section-6 {
-        border-top: 30px solid $secondary;
-        padding-top: 1rem;
-        padding-bottom: 2rem;
-        .content {
-            .title {
-                color: $primary;
+    .home-connected {
+        display: grid;
+        @include media("tablet") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &__img {
+            width: 100%;
+            object-fit: cover;
+            @include media("tablet") {
+                height: 100%;
             }
-            .btn-container {
-                text-align: center;
-                margin-top: 2rem;
-                .btn {
-                    background-color: $secondary;
-                    border: 2px solid $secondary;
-                    color: $white;
-                    border-radius: 0;
-                    text-transform: capitalize;
-                    font-size: 18px;
-                    font-weight: bold;
-                }
+        }
+        // container for content, title, btns
+        &__info {
+            padding: 24px 32px;
+            @include media("laptop") {
+                padding: 52px 32px;
+            }
+            @include media("desktop") {
+                padding: 82px 32px;
+            }
+        }
+        &__title {
+            font-size: 32px;
+            font-weight: bold;
+            color: $black !important;
+            margin-top: 0;
+            @include media("tablet") {
+                font-size: 46px;
+            }
+            @include media("laptop") {
+                font-size: 55px;
+            }
+        }
+        &__content {
+            font-size: 18px;
+        }
+        &__app {
+            margin-top: 48px;
+            @include media("tablet") {
+                margin-top: 96px;
             }
         }
     }
