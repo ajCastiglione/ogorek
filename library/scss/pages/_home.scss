@@ -560,6 +560,7 @@ Home Page Section
                 font-size: 20px;
                 transition: all 0.3s ease;
                 width: 100%;
+                text-align: center;
                 &:hover {
                     background-color: darken($secondary, 10%);
                     border-color: darken($secondary, 10%);
@@ -596,9 +597,13 @@ Home Page Section
                 padding: 0;
 
                 .featured-image {
+                    width: 100%;
                     max-width: 100%;
                     border-top-left-radius: 5px;
                     border-top-right-radius: 5px;
+                    @include media("tablet") {
+                        width: auto;
+                    }
                 }
             }
             .article-content {
