@@ -231,14 +231,15 @@ Home Page Section
                 display: block;
                 border: 2px dotted $primary;
                 background-color: $white;
-                max-width: 334px;
                 margin: auto;
                 padding: 24px;
                 height: 100%;
                 transition: all 0.3s ease;
                 border-radius: 5px;
+                width: 100%;
                 @include media("tablet") {
                     padding: 42px;
+                    max-width: 334px;
                 }
                 &:hover {
                     border-style: solid;
