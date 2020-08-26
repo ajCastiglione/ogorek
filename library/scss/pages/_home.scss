@@ -520,6 +520,7 @@ Home Page Section
             font-size: 38px;
             color: $white !important;
             font-weight: bold;
+            margin-top: 0;
             @include media("tablet") {
                 font-size: 46px;
             }
