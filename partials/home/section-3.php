@@ -19,8 +19,8 @@ $content = get_field('s3_content');
 
           <div class="service">
             <a href="<?= $button_link ?>">
-              <h3 class="service-title"><?= $title ?></h3>
-              <div class="service-content"><?= $content ?></div>
+              <h3 class="service-title"><?= $s_title ?></h3>
+              <div class="service-content"><?= $s_content ?></div>
               <span class="service-cta"><?= $button_text ?></span>
             </a>
           </div>
