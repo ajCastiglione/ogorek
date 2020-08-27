@@ -7,7 +7,12 @@ Home Page Section
         overflow-x: hidden;
         width: 100vw;
         left: calc(50% - 50vw);
-
+        @include media("tablet") {
+            min-height: 450px;
+        }
+        @media screen and (min-height: 800px) {
+            min-height: 948px;
+        }
         &:before {
             display: none;
             position: absolute;
@@ -72,11 +77,16 @@ Home Page Section
                 margin-top: 100px;
             }
             @include media("laptop") {
-                margin-top: 177px;
                 max-width: 55%;
             }
             @include media("desktop") {
                 padding: 24px 120px;
+            }
+            @media screen and (max-height: 800px) and (min-width: 768px) {
+                margin-top: 15px;
+            }
+            @media screen and (min-height: 800px) and (min-width: 768px) {
+                margin-top: 177px;
             }
         }
         &__title {
@@ -107,12 +117,7 @@ Home Page Section
                 font-size: 55px;
             }
         }
-        @include media("tablet") {
-            min-height: 450px;
-        }
-        @include media("laptop") {
-            min-height: 948px;
-        }
+
         &__ctas {
             margin-top: 24px;
             display: flex;
