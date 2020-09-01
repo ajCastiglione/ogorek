@@ -15,12 +15,15 @@ $content = get_field('s2_content');
     ?>
 
         <div class="value">
-          <a href="<?= $value_link ?>">
-            <?= $icon ?>
-            <h3 class="value-title"><?= $value_title ?></h3>
-            <div class="value-content"><?= $value_content ?></div>
-            <span class="value-cta">learn more</span>
-          </a>
+          <?php // <a href="<?= $value_link ?/>"> 
+          ?>
+          <?= $icon ?>
+          <h3 class="value-title"><?= $value_title ?></h3>
+          <div class="value-content"><?= $value_content ?></div>
+          <?php // <span class="value-cta">learn more</span> 
+          ?>
+          <?php //</a> 
+          ?>
         </div>
 
     <?php endwhile;
