@@ -1,186 +1,187 @@
 .footer {
-  background-color: lighten($primary, 5%);
-  padding: 15px 1rem;
-  text-align: center;
-  border-top: 30px solid $secondary;
-  .title {
-    margin: 0;
-  }
-  .content {
-    color: $white;
-
-    .address {
-      font-size: 20px;
-      margin-bottom: 0;
-      a {
-        color: $white;
-      }
-    }
-    .phone {
-      color: $secondary;
-      font-size: 22px;
-      font-weight: bold;
-    }
-    .flex {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      margin: 8px 0;
-    }
-    .socials {
-      margin: 1rem 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .social-icon {
-        color: $white;
-        padding: 0 1rem;
-        font-size: 1.5rem;
-        transition: all 0.3s ease-in-out;
-        display: flex;
-        align-items: center;
-        figure {
-          width: 1.5rem;
-          height: 1.5rem;
-          display: inline-block;
-          max-height: 100%;
-          max-width: 100%;
-        }
-        svg {
-          width: 100%;
-          height: 100%;
-          fill: $white;
-        }
-        &:hover {
-          color: $secondary;
-          transform: scale(0.95);
-          svg {
-            fill: $secondary;
-            transition: all 0.4s ease;
-          }
-        }
-      }
-    }
-
-    .disclosures {
-      margin-top: 2rem;
-      p {
+    background: transparent linear-gradient(294deg, #123759 0%, #246db1 100%) 0%
+        0% no-repeat padding-box;
+    padding: 15px 1rem;
+    text-align: center;
+    border-top: 30px solid $secondary;
+    .title {
         margin: 0;
-      }
-      a {
+    }
+    .content {
         color: $white;
-        font-size: 16px;
-      }
-    }
-    .copyright {
-      font-size: 18px;
-      margin: 0;
-    }
-  }
-  .logos {
-    width: 100%;
-    max-width: 500px;
-  }
-  // Newsletter in the footer
-  .newsletter-section {
-    .title {
-      margin: 1rem 0;
-      color: $white;
-    }
-    #gform_wrapper_4 {
-      // form fields
-      .gform_body {
-        margin-top: 0;
-        #gform_fields_4 {
-          li {
-            width: 100%;
-            padding: 0;
-            margin-top: 0;
-          }
-          input {
-            width: 100%;
-            margin: 0;
-          }
-          li.hide-field {
-            display: none;
-          }
+
+        .address {
+            font-size: 20px;
+            margin-bottom: 0;
+            a {
+                color: $white;
+            }
         }
-      }
-      // submit button
-      .gform_footer {
-        text-align: center;
-        margin-top: 10px;
-        padding: 0;
-        .gform_button {
-          width: 100%;
-          padding: 0.5rem 0;
-          height: 95%;
-          font-size: 16px;
-          &:hover {
-            color: $white;
-          }
+        .phone {
+            color: $secondary;
+            font-size: 22px;
+            font-weight: bold;
         }
-      }
-    }
-  }
-  @include media("tablet") {
-    .title {
-      font-size: 30px;
-    }
-    // Newsletter in the footer
-    .newsletter-section {
-      overflow: hidden;
-      .title {
-        font-size: 35px;
-      }
-      #gform_wrapper_4 {
-        // form fields
-        .gform_body {
-          #gform_fields_4 {
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin: 8px 0;
+        }
+        .socials {
+            margin: 1rem 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            li {
-              padding-right: 10px;
-              &:last-child {
-                padding-right: 0;
-              }
+            .social-icon {
+                color: $white;
+                padding: 0 1rem;
+                font-size: 1.5rem;
+                transition: all 0.3s ease-in-out;
+                display: flex;
+                align-items: center;
+                figure {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    display: inline-block;
+                    max-height: 100%;
+                    max-width: 100%;
+                }
+                svg {
+                    width: 100%;
+                    height: 100%;
+                    fill: $white;
+                }
+                &:hover {
+                    color: $secondary;
+                    transform: scale(0.95);
+                    svg {
+                        fill: $secondary;
+                        transition: all 0.4s ease;
+                    }
+                }
             }
-          }
         }
-        // submit button
-        .gform_footer {
-          .gform_button {
-            max-width: 250px;
-          }
+
+        .disclosures {
+            margin-top: 2rem;
+            p {
+                margin: 0;
+            }
+            a {
+                color: $white;
+                font-size: 16px;
+            }
         }
-      }
+        .copyright {
+            font-size: 18px;
+            margin: 0;
+        }
     }
-  }
-  @include media("laptop") {
-    // inner footer content
-    .content {
-      .title {
-        font-size: 35px;
-      }
+    .logos {
+        width: 100%;
+        max-width: 500px;
     }
     // Newsletter in the footer
     .newsletter-section {
-      #gform_wrapper_4 {
-        // actual form element
-        #gform_4 {
-          display: flex;
-          align-items: flex-end;
-          justify-content: center;
+        .title {
+            margin: 1rem 0;
+            color: $white;
         }
-        // submit button
-        .gform_footer {
-          max-width: 250px;
-          text-align: center;
-          padding: 0;
+        #gform_wrapper_4 {
+            // form fields
+            .gform_body {
+                margin-top: 0;
+                #gform_fields_4 {
+                    li {
+                        width: 100%;
+                        padding: 0;
+                        margin-top: 0;
+                    }
+                    input {
+                        width: 100%;
+                        margin: 0;
+                    }
+                    li.hide-field {
+                        display: none;
+                    }
+                }
+            }
+            // submit button
+            .gform_footer {
+                text-align: center;
+                margin-top: 10px;
+                padding: 0;
+                .gform_button {
+                    width: 100%;
+                    padding: 0.5rem 0;
+                    height: 95%;
+                    font-size: 16px;
+                    &:hover {
+                        color: $white;
+                    }
+                }
+            }
         }
-      }
     }
-  }
+    @include media("tablet") {
+        .title {
+            font-size: 30px;
+        }
+        // Newsletter in the footer
+        .newsletter-section {
+            overflow: hidden;
+            .title {
+                font-size: 35px;
+            }
+            #gform_wrapper_4 {
+                // form fields
+                .gform_body {
+                    #gform_fields_4 {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        li {
+                            padding-right: 10px;
+                            &:last-child {
+                                padding-right: 0;
+                            }
+                        }
+                    }
+                }
+                // submit button
+                .gform_footer {
+                    .gform_button {
+                        max-width: 250px;
+                    }
+                }
+            }
+        }
+    }
+    @include media("laptop") {
+        // inner footer content
+        .content {
+            .title {
+                font-size: 35px;
+            }
+        }
+        // Newsletter in the footer
+        .newsletter-section {
+            #gform_wrapper_4 {
+                // actual form element
+                #gform_4 {
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: center;
+                }
+                // submit button
+                .gform_footer {
+                    max-width: 250px;
+                    text-align: center;
+                    padding: 0;
+                }
+            }
+        }
+    }
 }
