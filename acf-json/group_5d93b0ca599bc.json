@@ -141,7 +141,7 @@
                     "key": "field_5d93b197c8b9c",
                     "label": "Button Link",
                     "name": "button_link",
-                    "type": "page_link",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -150,14 +150,11 @@
                         "class": "",
                         "id": ""
                     },
-                    "post_type": [
-                        "page",
-                        "post"
-                    ],
-                    "taxonomy": "",
-                    "allow_null": 0,
-                    "allow_archives": 0,
-                    "multiple": 0
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
                 }
             ]
         },
@@ -892,5 +889,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1598404340
+    "modified": 1599069985
 }
