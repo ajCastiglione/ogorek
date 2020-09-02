@@ -10,7 +10,7 @@ $content = get_field('s6_content');
     <div class="home-connected__content"><?= $content ?></div>
     <div class="home-connected__app">
       <?php if (have_rows('s6_buttons')) : while (have_rows('s6_buttons')) : the_row(); ?>
-          <a href="<?= get_sub_field('app_link') ?>" target="_blank">
+          <a href="<?= get_sub_field('app_link') ?>" target="_blank" rel="noopener">
             <img src="<?= get_sub_field('image') ?>" alt="Download Icon" class="app">
           </a>
       <?php endwhile;
