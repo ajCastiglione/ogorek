@@ -35,7 +35,7 @@ if (!empty($atts)) :
         <h2 class="admin-name">Hello, <?= $current_user->user_login; ?></h2>
         <section class="attorney">
             <form action="" method="get">
-                <label for="attorney">Attorney</label>
+                <label for="attorney">Client</label>
                 <select class="attorney-select" onchange="this.form.submit();" name="attorney">
                     <?php if (!empty($chosen_attorney)) { ?>
                         <option value="<?= $chosen_attorney ?>"><?= get_the_title($chosen_attorney) ?></option>
@@ -55,7 +55,7 @@ if (!empty($atts)) :
             </form>
         </section>
 
-        <?php if (get_field('trusts', $chosen_attorney)) :  $trusts = get_field('trusts', $chosen_attorney); ?>
+        <?php if (!empty($chosen_attorney) && get_field('trusts', $chosen_attorney)) :  $trusts = get_field('trusts', $chosen_attorney); ?>
             <section class="trusts-selector">
                 <form action="" method="get">
                     <label for="trusts">Trusts</label>
@@ -136,14 +136,6 @@ function addNewRow($chosen_attorney)
                 'field_5e3b6e64bf55e' => "Trust Information",
                 'field_5e3b6e6abf55f' => 'https://ogorekwealthmanagement.formstack.com/forms/?3671291-amPPowv0Wc',
             ),
-            array(
-                'field_5e3b6e64bf55e' => "Account Distributions",
-                'field_5e3b6e6abf55f' => 'https://ogorekwealthmanagement.formstack.com/forms/account_distributions_form',
-            ),
-            array(
-                'field_5e3b6e64bf55e' => "File Uploads",
-                'field_5e3b6e6abf55f' => 'https://ogorekwealthmanagement.formstack.com/forms/file_upload_form',
-            )
         )
     );
 
