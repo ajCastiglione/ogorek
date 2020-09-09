@@ -22,11 +22,11 @@ $team = new WP_Query($args);
         $img = get_field('team_member_photo');
         $name = get_the_title();
         $pos = get_field('position_title');
-        $link = get_permalink();
+        $person_link = get_permalink();
     ?>
 
         <div class="team-member ">
-          <a href="<?= $link ?>" class="team-member_link">
+          <a href="<?= $person_link ?>" class="team-member_link">
             <img src="<?= $img['url'] ?>" alt="<?= $name ?>" class="team-member_img">
             <div class="info">
               <h3 class="team-member_name"><?= $name ?></h3>
