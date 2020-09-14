@@ -4,8 +4,10 @@
     <?php if (have_rows('top_section')) : while (have_rows('top_section')) : the_row(); ?>
         <div class="hotlink">
           <a href="<?= get_sub_field('link') ?>" class="link">
-            <span><?= get_sub_field('title') ?></span>
-            <img src="<?= get_sub_field('image')['url'] ?>" alt="Icon" class="icon">
+            <?php if (get_sub_field('title')) : ?>
+              <span><?= get_sub_field('title') ?></span>
+            <?php endif; ?>
+            <img src="<?= get_sub_field('image')['url'] ?>" alt="Icon" class="icon<?= get_sub_field('title') ? null : ' no-title' ?>">
           </a>
         </div>
     <?php endwhile;

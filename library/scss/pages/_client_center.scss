@@ -1,115 +1,121 @@
 // Client center page
 .page-template-page-client-center {
-  .hotlinks {
-    display: grid;
-    grid-gap: 20px 10px;
-    .hotlink {
-      border: 2px solid $primary;
-      a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: $secondary;
-        font-size: 18px;
-        text-align: center;
-        span {
-          width: 100%;
-          display: block;
-          background-color: $primary;
-          color: $white;
-          padding: 0.5rem;
-        }
-        img {
-          margin: 0;
-          padding: 20px 0;
-        }
-      }
-    }
-  }
-
-  .client-information {
-    border: 2px solid $secondary;
-    padding: 0 0 1rem;
-    margin: 25px 0;
-    .section-title {
-      text-align: center;
-      font-size: 28px;
-      margin: 0 0 15px;
-      color: $white !important;
-      background-color: $secondary;
-      padding: 0.5rem;
-    }
-    .grid {
-      display: grid;
-      grid-gap: 20px 10px;
-    }
-    .info {
-      a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: $black;
-        font-size: 16px;
-      }
-    }
-  }
-
-  .entry-content {
-    max-width: 1080px;
-    margin: auto;
-    p {
-      font-size: 18px;
-    }
-  }
-  .app-locations {
-    border-top: 3px solid #f5f5f5;
-    text-align: center;
-    padding: 0 1rem 2rem;
-
-    .sub-title {
-      font-size: 35px;
-      text-align: center;
-      margin: 2rem 0 4rem;
-    }
-    .app-dl {
-      display: inline-block;
-      margin: 1rem 0;
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-  }
-
-  @include media("phablet") {
-    .app-locations {
-      .app-dl {
-        margin: 0 3rem 0 0;
-      }
-    }
-  }
-
-  @include media("tablet") {
     .hotlinks {
-      grid-template-columns: 1fr 1fr;
-      .hotlink {
-        a {
-          font-size: 24px;
+        display: grid;
+        grid-gap: 20px 10px;
+        .hotlink {
+            border: 2px solid $primary;
+            a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                color: $secondary;
+                font-size: 18px;
+                text-align: center;
+                span {
+                    width: 100%;
+                    display: block;
+                    background-color: $primary;
+                    color: $white;
+                    padding: 0.5rem;
+                }
+                img {
+                    margin: 0;
+                    padding: 20px 0;
+                }
+                .icon {
+                    &.no-title {
+                        padding-left: 12px;
+                        padding-right: 12px;
+                    }
+                }
+            }
         }
-      }
     }
 
     .client-information {
-      margin-top: 50px;
-      .grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-      .info {
-        a {
-          font-size: 18px;
+        border: 2px solid $secondary;
+        padding: 0 0 1rem;
+        margin: 25px 0;
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin: 0 0 15px;
+            color: $white !important;
+            background-color: $secondary;
+            padding: 0.5rem;
         }
-      }
+        .grid {
+            display: grid;
+            grid-gap: 20px 10px;
+        }
+        .info {
+            a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                color: $black;
+                font-size: 16px;
+            }
+        }
     }
-  }
+
+    .entry-content {
+        max-width: 1080px;
+        margin: auto;
+        p {
+            font-size: 18px;
+        }
+    }
+    .app-locations {
+        border-top: 3px solid #f5f5f5;
+        text-align: center;
+        padding: 0 1rem 2rem;
+
+        .sub-title {
+            font-size: 35px;
+            text-align: center;
+            margin: 2rem 0 4rem;
+        }
+        .app-dl {
+            display: inline-block;
+            margin: 1rem 0;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    @include media("phablet") {
+        .app-locations {
+            .app-dl {
+                margin: 0 3rem 0 0;
+            }
+        }
+    }
+
+    @include media("tablet") {
+        .hotlinks {
+            grid-template-columns: 1fr 1fr;
+            .hotlink {
+                a {
+                    font-size: 24px;
+                }
+            }
+        }
+
+        .client-information {
+            margin-top: 50px;
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .info {
+                a {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
 }
