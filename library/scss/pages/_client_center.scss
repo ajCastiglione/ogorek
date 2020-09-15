@@ -5,6 +5,9 @@
         grid-gap: 20px 10px;
         .hotlink {
             border: 2px solid $primary;
+            .link {
+                font-weight: bold;
+            }
             a {
                 display: flex;
                 flex-direction: column;
@@ -44,6 +47,7 @@
             color: $white !important;
             background-color: $secondary;
             padding: 0.5rem;
+            font-weight: bold;
         }
         .grid {
             display: grid;
