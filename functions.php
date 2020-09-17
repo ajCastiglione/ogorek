@@ -13,9 +13,6 @@ function bones_ahoy()
   //Allow editor style.
   add_editor_style(get_stylesheet_directory_uri() . '/library/css/editor-style.css');
 
-  // USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
-  require_once('library/custom-post-type.php');
-
   // launching operation cleanup
   add_action('init', 'bones_head_cleanup');
   // A better title
@@ -197,7 +194,7 @@ require 'theme/add-roles.php';
 require 'theme/law-firm-login-redirect.php';
 
 /************* ADDING DEFAULT ROWS FOR TRUSTS *********************/
-require 'theme/acf-default-rows.php';
+// require 'theme/acf-default-rows.php';
 
 /************* Utils *********************/
 require 'theme/utils/byline.php';

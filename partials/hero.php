@@ -21,7 +21,7 @@ if (is_page(460)) {
 
 ?>
 
-<?php if (get_page_template_slug($post->ID) == 'page-secured.php') : ?>
+<?php if (get_post_type($post->ID) == 'firms') : ?>
   <div class="hero <?php echo $hero ? '' : 'no-image law-firm-hero' ?>" style="background-image:url(<?= $hero['url'] ?>)">
     <?php $ogorek_logo = get_field('ogorek_company_logo', 'options'); ?>
     <div class="split-logo">

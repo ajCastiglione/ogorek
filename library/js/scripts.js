@@ -64,7 +64,7 @@ jQuery(document).ready(function ($) {
     initSlider($);
   }
 
-  if ($("body").hasClass("firms-template-page-secured")) {
+  if ($("body").hasClass("single-firms")) {
     trustChosen($);
     removeTitleQs($);
     createTrust($);
