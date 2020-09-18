@@ -14,6 +14,9 @@
             @include media("laptop") {
                 grid-template-columns: 1.5fr 1fr;
                 gap: 50px 75px;
+                .video {
+                    text-align: left;
+                }
             }
             @include media("desktop") {
                 grid-template-columns: 2fr 1fr;
@@ -23,9 +26,6 @@
         .video {
             text-align: center;
             margin-top: 32px;
-            @include media("laptop") {
-                text-align: left;
-            }
             iframe {
                 max-width: 100%;
             }
