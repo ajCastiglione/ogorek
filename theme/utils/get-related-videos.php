@@ -30,7 +30,7 @@ function get_related_videos($post)
                                     <?php printf(
                                         __('', 'bonestheme') . ' %1$s',
                                         /* the time the post was published */
-                                        '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d', $related_post) . '" itemprop="datePublished">' . get_the_time(get_option('date_format'), $related_post) . '</time>',
+                                        '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d', $related_post) . '" itemprop="datePublished">' . get_the_time(get_option('date_format'), $related_post) . '</time>'
                                     ); ?>
                                 </p>
 
