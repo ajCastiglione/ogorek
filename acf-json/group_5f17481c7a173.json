@@ -83,11 +83,13 @@
                 "id": ""
             },
             "post_type": [
-                "video_commentaries"
+                "video_commentaries",
+                "post"
             ],
             "taxonomy": "",
             "filters": [
-                "search"
+                "search",
+                "post_type"
             ],
             "elements": "",
             "min": "",
@@ -112,5 +114,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1600438927
+    "modified": 1600881092
 }
