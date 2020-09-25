@@ -6,9 +6,38 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            .logo {
+            flex-direction: column;
+            @include media("tablet") {
+                flex-direction: row;
+            }
+            .logo,
+            .firm-logo {
                 max-width: 320px;
                 width: 100%;
+            }
+            .logo {
+                margin-bottom: 24px;
+                @include media("tablet") {
+                    margin-bottom: 0;
+                    margin-right: 24px;
+                }
+            }
+            .firm-logo {
+                margin-top: 24px;
+                @include media("tablet") {
+                    margin-top: 0;
+                    margin-left: 24px;
+                }
+            }
+            .divider {
+                height: 100%;
+                min-height: 3px;
+                width: 100%;
+                background-color: lighten($black, 50%);
+                @include media("tablet") {
+                    min-height: 70px;
+                    width: 3px;
+                }
             }
             .title {
                 width: 100%;
