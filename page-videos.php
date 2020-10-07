@@ -53,7 +53,7 @@ $query = new WP_Query($args);
 
         <?php endwhile;
         endif;
-        wp_reset_query(); ?>
+        wp_reset_postdata(); ?>
 
         <?php bones_page_navi($query); ?>
 
