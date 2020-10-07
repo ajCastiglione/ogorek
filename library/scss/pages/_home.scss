@@ -11,7 +11,7 @@ Home Page Section
             min-height: 450px;
         }
         @media screen and (min-height: 800px) {
-            min-height: 948px;
+            // min-height: 948px;
         }
         &:before {
             display: none;
@@ -74,7 +74,8 @@ Home Page Section
                 background: none;
                 padding: 24px 48px;
                 max-width: 60%;
-                margin-top: 100px;
+                margin-top: 50px;
+                padding-bottom: 50px;
             }
             @include media("laptop") {
                 max-width: 55%;
@@ -86,7 +87,12 @@ Home Page Section
                 margin-top: 15px;
             }
             @media screen and (min-height: 800px) and (min-width: 768px) {
-                margin-top: 177px;
+                margin-top: 50px;
+                padding-bottom: 50px;
+            }
+            @include media("2k") {
+                margin-top: 80px;
+                padding-bottom: 80px;
             }
         }
         &__title {
@@ -279,7 +285,7 @@ Home Page Section
             }
         }
     }
-
+    // Section 3
     .home-services {
         display: grid;
         color: $white;
