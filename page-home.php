@@ -21,9 +21,9 @@
 						<?php # get_template_part('partials/home/popup'); 
 						?>
 
-						<?= get_template_part('partials/home/section-3'); ?>
-
 						<?= get_template_part('partials/home/section-2'); ?>
+
+						<?= get_template_part('partials/home/section-3'); ?>
 
 						<?= get_template_part('partials/home/section-4'); ?>
 
