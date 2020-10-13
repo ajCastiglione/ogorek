@@ -2,17 +2,24 @@
 Home Page Section
 ****************************/
 .home {
+    #content {
+        margin-top: 0;
+    }
     .banner {
         position: relative;
         overflow-x: hidden;
         width: 100vw;
         left: calc(50% - 50vw);
         @include media("tablet") {
+            min-height: 400px;
+        }
+        @include media("2k") {
             min-height: 450px;
         }
         @media screen and (min-height: 800px) {
             // min-height: 948px;
         }
+
         &:before {
             display: none;
             position: absolute;
@@ -47,7 +54,7 @@ Home Page Section
                 left: unset;
                 max-width: auto;
             }
-            @include media('2k') {
+            @include media("2k") {
                 object-position: top center;
             }
         }
@@ -92,10 +99,19 @@ Home Page Section
             @media screen and (min-height: 800px) and (min-width: 768px) {
                 margin-top: 50px;
                 padding-bottom: 50px;
+                .banner__title {
+                    font-size: 50px;
+                }
+                .banner__sub-title {
+                    font-size: 38px;
+                }
             }
             @include media("2k") {
                 margin-top: 80px;
                 padding-bottom: 80px;
+                .banner__title {
+                    font-size: 60px;
+                }
             }
         }
         &__title {
@@ -110,10 +126,12 @@ Home Page Section
             }
             @include media("desktop") {
                 font-size: 70px;
-                line-height: 95px;
             }
-            @include media('2k') {
+            @include media("2k") {
                 font-size: 95px;
+            }
+            @media (min-width: 1800px) {
+                line-height: 95px;
             }
         }
         &__sub-title {
