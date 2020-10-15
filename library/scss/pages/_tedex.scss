@@ -1,0 +1,90 @@
+.page-template-page-tedex {
+    .entry-content {
+        max-width: 1240px;
+        margin: auto;
+        font-size: 18px;
+    }
+
+    .tedex-comparison {
+        display: grid;
+        margin: 32px 0;
+        @include media("tablet") {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        &__single {
+            padding: 12px 24px;
+            &:first-child {
+                border-bottom: 8px solid $secondary;
+                @include media("tablet") {
+                    border-right: 8px solid $secondary;
+                    border-bottom: none;
+                }
+            }
+        }
+
+        &__item {
+            display: grid;
+            gap: 15px;
+            @include media("laptop") {
+                grid-template-columns: 1fr 2fr;
+            }
+            ol {
+                margin-top: 0;
+                @include media("tablet") {
+                    min-height: 200px;
+                }
+                @include media("laptop") {
+                    min-height: 400px;
+                }
+            }
+
+            img {
+                max-width: 300px;
+                margin: auto;
+                display: none;
+                @include media("tablet") {
+                    max-width: 100%;
+                    margin: unset;
+                    display: block;
+                }
+            }
+        }
+        &__title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 24px;
+            color: $primary;
+        }
+
+        &__results {
+            align-items: center;
+        }
+    }
+    .tedex-benefits {
+        margin-top: 64px;
+        padding-bottom: 32px;
+        &__content {
+            display: grid;
+            gap: 25px;
+            @include media("tablet") {
+                grid-template-columns: 1fr 2fr;
+                gap: 50px;
+                align-items: center;
+            }
+            ul {
+                li {
+                    > ul {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+        &__title {
+            margin-top: 0;
+            font-weight: bold;
+            color: $primary;
+        }
+    }
+}
