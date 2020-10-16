@@ -25,8 +25,7 @@
 							<div class="tedex-comparison">
 								<?php if (have_rows('content_comparison')) : while (have_rows('content_comparison')) : the_row();
 										$title = get_sub_field('title');
-										$examples_image = get_sub_field('examples_image');
-										$examples = get_sub_field('examples');
+										$examples = get_sub_field('examples_fields');
 										$results_image = get_sub_field('results_image');
 										$results = get_sub_field('results');
 								?>
@@ -34,8 +33,16 @@
 										<div class="tedex-comparison__single">
 											<h3 class="tedex-comparison__title"><?= $title ?></h3>
 											<div class="tedex-comparison__examples tedex-comparison__item">
-												<img src="<?= $examples_image['url'] ?>" alt="<?= $examples_image['alt'] ?>">
-												<div class="item-content"><?= $examples ?></div>
+												<div class="item-content">
+													<ol class="examples-list">
+														<?php foreach ($examples as $example) : ?>
+															<div class="inner-list">
+																<?= $example['icon'] ?>
+																<li><?= $example['text']; ?></li>
+															</div>
+														<?php endforeach; ?>
+													</ol>
+												</div>
 											</div>
 											<div class="tedex-comparison__results tedex-comparison__item">
 												<img src="<?= $results_image['url'] ?>" alt="<?= $results_image['alt'] ?>">
