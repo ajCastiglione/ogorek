@@ -8,6 +8,7 @@
     .tedex-comparison {
         display: grid;
         margin: 32px 0;
+        border: 8px solid $secondary;
         @include media("tablet") {
             grid-template-columns: repeat(2, 1fr);
             gap: 25px;
@@ -65,6 +66,12 @@
     .tedex-benefits {
         margin-top: 64px;
         padding-bottom: 32px;
+        &__single {
+            &:first-child {
+                border-bottom: 2px solid $primary;
+                margin-bottom: 12px;
+            }
+        }
         &__content {
             display: grid;
             gap: 25px;
