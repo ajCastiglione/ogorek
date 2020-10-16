@@ -45,8 +45,8 @@
         },
         {
             "key": "field_5f87667cd34e9",
-            "label": "Hero Title Image",
-            "name": "hero_title_image",
+            "label": "Logo",
+            "name": "logo",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -367,5 +367,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1602788578
+    "modified": 1602856482
 }
