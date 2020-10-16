@@ -25,11 +25,6 @@
         }
 
         &__item {
-            display: grid;
-            gap: 15px;
-            @include media("laptop") {
-                grid-template-columns: 1fr 2fr;
-            }
             ol {
                 margin-top: 0;
                 @include media("tablet") {
@@ -58,9 +53,29 @@
             margin-bottom: 24px;
             color: $primary;
         }
-
+        &__examples {
+            .inner-list {
+                display: flex;
+                align-items: flex-start;
+                i {
+                    margin-top: 15px;
+                    margin-right: 5px;
+                    color: $primary;
+                    font-size: 22px;
+                }
+                li {
+                    margin-top: 8px;
+                    margin-bottom: 8px;
+                }
+            }
+        }
         &__results {
+            display: grid;
             align-items: center;
+            gap: 15px;
+            @include media("laptop") {
+                grid-template-columns: 1fr 2fr;
+            }
         }
     }
     .tedex-benefits {
