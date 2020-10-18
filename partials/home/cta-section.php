@@ -12,7 +12,7 @@ $cta_button = get_field('cta_button');
             <h2 class="cta-section__title"><?= $cta_title ?></h2>
             <div class="cta-section__text"><?= $cta_text ?></div>
         </div>
-        <div>
+        <div class="cta-section__btn-container">
             <a href="<?= $cta_button['link'] ?>" class="cta-section__btn"><?= $cta_button['title'] ?></a>
         </div>
     </div>

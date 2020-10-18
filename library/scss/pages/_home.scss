@@ -231,7 +231,7 @@ Home Page Section
         }
         .grid {
             display: grid;
-            gap: 25px;
+            gap: 45px;
             align-items: center;
             @include media("tablet") {
                 grid-template-columns: 2fr 1fr;
@@ -246,11 +246,23 @@ Home Page Section
             font-size: 32px;
             font-weight: bold;
             @include media("tablet") {
+                font-size: 38px;
+            }
+            @include media("laptop") {
                 font-size: 48px;
             }
         }
         &__text {
-            font-size: 18px;
+            font-size: 16px;
+            @include media("laptop") {
+                font-size: 18px;
+            }
+        }
+        &__btn-container {
+            text-align: center;
+            @include media("tablet") {
+                text-align: left;
+            }
         }
         &__btn {
             color: $white;
@@ -262,7 +274,13 @@ Home Page Section
             padding: 8px 12px;
             border-radius: 5px;
             transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
             @include media("tablet") {
+                padding: 12px 24px;
+            }
+            @include media("laptop") {
+                width: auto;
                 padding: 12px 49px;
             }
             &:hover {
