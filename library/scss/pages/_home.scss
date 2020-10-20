@@ -221,11 +221,9 @@ Home Page Section
     }
     // CTA Section
     .cta-section {
-        background: transparent
-            linear-gradient(277deg, #0b500f 0%, #36813b 100%) 0% 0% no-repeat
-            padding-box;
+       background-color: #f9fafc;
         padding: 24px;
-        color: $white;
+        color: $secondary;
         @include media("tablet") {
             padding: 32px 24px;
         }
@@ -242,7 +240,7 @@ Home Page Section
         }
         &__title {
             margin-top: 0;
-            color: $white !important;
+            color: inherit !important;
             font-size: 32px;
             font-weight: bold;
             @include media("tablet") {
@@ -265,11 +263,11 @@ Home Page Section
             }
         }
         &__btn {
-            color: $white;
+            color: inherit;
             font-weight: bold;
             text-transform: capitalize;
             display: inline-block;
-            border: 2px solid $white;
+            border: 2px solid $secondary;
             font-size: 20px;
             padding: 8px 12px;
             border-radius: 5px;
@@ -284,8 +282,8 @@ Home Page Section
                 padding: 12px 49px;
             }
             &:hover {
-                background-color: $white;
-                color: $secondary;
+                background-color: $secondary;
+                color: $white;
             }
         }
     }
@@ -298,7 +296,7 @@ Home Page Section
         left: calc(50% - 50vw);
         padding: 24px;
         @include media("tablet") {
-            padding: 24px 48px 85px;
+            padding: 24px 48px 55px;
         }
         &__title {
             font-size: 32px;
@@ -622,10 +620,10 @@ Home Page Section
         }
         @include media("laptop") {
             align-items: center;
-            padding: 130px 60px;
+            padding: 75px 60px;
         }
         @include media("desktop") {
-            padding: 130px 120px;
+            padding: 90px 120px;
         }
         &__title {
             font-size: 38px;
