@@ -28,6 +28,7 @@
 										$examples = get_sub_field('examples_fields');
 										$results_image = get_sub_field('results_image');
 										$results = get_sub_field('results');
+										$results_title = get_sub_field('results_title');
 								?>
 
 										<div class="tedex-comparison__single">
@@ -45,8 +46,11 @@
 												</div>
 											</div>
 											<div class="tedex-comparison__results tedex-comparison__item">
-												<img src="<?= $results_image['url'] ?>" alt="<?= $results_image['alt'] ?>">
-												<div class="item-content"><?= $results ?></div>
+												<h3><?= $results_title ?></h3>
+												<div class="grid">
+													<img src="<?= $results_image['url'] ?>" alt="<?= $results_image['alt'] ?>">
+													<div class="item-content"><?= $results ?></div>
+												</div>
 											</div>
 										</div>
 
