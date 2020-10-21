@@ -56,7 +56,6 @@
 
 	<?php // drop Google Analytics Here
 	// Prevent analytics from loading on local and dev sites 
-	if (strpos($_SERVER['SERVER_NAME'], 'ogorek.com')) :
 	?>
 		<!-- Google Tag Manager -->
 		<script>
@@ -77,7 +76,6 @@
 		</script>
 		<!-- End Google Tag Manager -->
 	<?php // end analytics 
-	endif;
 	?>
 
 </head>

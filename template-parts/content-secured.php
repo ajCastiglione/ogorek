@@ -32,7 +32,7 @@ if (!empty($atts)) :
     <article class="authenticated-view large-wrapper">
         <?php global $current_user;
         wp_get_current_user(); ?>
-        <h2 class="admin-name">Hello, <?= $current_user->user_login; ?></h2>
+        <h2 class="admin-name">Hello, <?= $current_user->nickname; ?></h2>
         <section class="attorney">
             <form action="" method="get">
                 <label for="attorney">Client</label>
