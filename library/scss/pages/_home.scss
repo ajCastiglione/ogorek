@@ -2,17 +2,24 @@
 Home Page Section
 ****************************/
 .home {
+    #content {
+        margin-top: 0;
+    }
     .banner {
         position: relative;
         overflow-x: hidden;
         width: 100vw;
         left: calc(50% - 50vw);
         @include media("tablet") {
+            min-height: 400px;
+        }
+        @include media("2k") {
             min-height: 450px;
         }
         @media screen and (min-height: 800px) {
-            min-height: 948px;
+            // min-height: 948px;
         }
+
         &:before {
             display: none;
             position: absolute;
@@ -47,6 +54,9 @@ Home Page Section
                 left: unset;
                 max-width: auto;
             }
+            @include media("2k") {
+                object-position: top center;
+            }
         }
         &__content {
             position: relative;
@@ -74,7 +84,8 @@ Home Page Section
                 background: none;
                 padding: 24px 48px;
                 max-width: 60%;
-                margin-top: 100px;
+                margin-top: 50px;
+                padding-bottom: 50px;
             }
             @include media("laptop") {
                 max-width: 55%;
@@ -86,7 +97,21 @@ Home Page Section
                 margin-top: 15px;
             }
             @media screen and (min-height: 800px) and (min-width: 768px) {
-                margin-top: 177px;
+                margin-top: 50px;
+                padding-bottom: 50px;
+                .banner__title {
+                    font-size: 50px;
+                }
+                .banner__sub-title {
+                    font-size: 38px;
+                }
+            }
+            @include media("2k") {
+                margin-top: 80px;
+                padding-bottom: 80px;
+                .banner__title {
+                    font-size: 60px;
+                }
             }
         }
         &__title {
@@ -97,10 +122,15 @@ Home Page Section
                 font-size: 60px;
             }
             @include media("laptop") {
-                font-size: 75px;
+                font-size: 65px;
             }
             @include media("desktop") {
+                font-size: 70px;
+            }
+            @include media("2k") {
                 font-size: 95px;
+            }
+            @media (min-width: 1800px) {
                 line-height: 95px;
             }
         }
@@ -112,9 +142,6 @@ Home Page Section
             }
             @include media("laptop") {
                 font-size: 45px;
-            }
-            @include media("desktop") {
-                font-size: 55px;
             }
         }
 
@@ -279,7 +306,7 @@ Home Page Section
             }
         }
     }
-
+    // Section 3
     .home-services {
         display: grid;
         color: $white;
