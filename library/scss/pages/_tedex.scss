@@ -3,11 +3,20 @@
         max-width: 1240px;
         margin: auto;
         font-size: 18px;
+        h1 {
+            color: $primary;
+            font-size: 32px;
+        }
         h3:not(.tedex-comparison__title):not(.tedex-benefits__title) {
             font-size: 28px;
         }
         h2 {
             color: $secondary !important;
+        }
+        h5 {
+            color: $black;
+            font-size: 22px;
+            text-transform: none;
         }
     }
 
