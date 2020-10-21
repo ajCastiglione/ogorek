@@ -55,7 +55,6 @@
             img {
                 max-width: 300px;
                 margin: auto;
-                display: none;
                 @include media("tablet") {
                     max-width: 100%;
                     margin: unset;
@@ -91,14 +90,14 @@
                 text-transform: uppercase;
                 font-weight: bold;
             }
-            .grid {
-                display: grid;
-                align-items: center;
-                gap: 15px;
-                @include media("laptop") {
-                    grid-template-columns: 1fr 2fr;
-                }
-            }
+            // .grid {
+            //     display: grid;
+            //     align-items: center;
+            //     gap: 15px;
+            //     @include media("laptop") {
+            //         grid-template-columns: 1fr 2fr;
+            //     }
+            // }
         }
     }
     .tedex-benefits {
