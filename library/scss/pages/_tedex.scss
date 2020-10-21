@@ -5,7 +5,7 @@
         font-size: 18px;
         h1 {
             color: $primary;
-            font-size: 32px;
+            font-size: 38px;
         }
         h3:not(.tedex-comparison__title):not(.tedex-benefits__title) {
             font-size: 28px;
@@ -15,8 +15,9 @@
         }
         h5 {
             color: $black;
-            font-size: 22px;
+            font-size: 23px;
             text-transform: none;
+            line-height: unset;
         }
     }
 
