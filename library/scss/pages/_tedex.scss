@@ -65,7 +65,7 @@
         &__title {
             text-align: center;
             font-weight: bold;
-            font-size: 24px;
+            font-size: 28px;
             margin-bottom: 24px;
             color: $primary;
         }
@@ -78,6 +78,7 @@
                     margin-right: 5px;
                     color: $primary;
                     font-size: 22px;
+                    min-width: 28px;
                 }
                 li {
                     margin-top: 8px;
@@ -90,14 +91,6 @@
                 text-transform: uppercase;
                 font-weight: bold;
             }
-            // .grid {
-            //     display: grid;
-            //     align-items: center;
-            //     gap: 15px;
-            //     @include media("laptop") {
-            //         grid-template-columns: 1fr 2fr;
-            //     }
-            // }
         }
     }
     .tedex-benefits {
