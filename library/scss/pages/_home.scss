@@ -221,9 +221,9 @@ Home Page Section
     }
     // CTA Section
     .cta-section {
-       background-color: #f9fafc;
+        background-color: #f9fafc;
         padding: 24px;
-        color: $secondary;
+        color: $black;
         @include media("tablet") {
             padding: 32px 24px;
         }
@@ -267,7 +267,7 @@ Home Page Section
             font-weight: bold;
             text-transform: capitalize;
             display: inline-block;
-            border: 2px solid $secondary;
+            border: 2px solid $black;
             font-size: 20px;
             padding: 8px 12px;
             border-radius: 5px;
@@ -282,7 +282,7 @@ Home Page Section
                 padding: 12px 49px;
             }
             &:hover {
-                background-color: $secondary;
+                background-color: $primary;
                 color: $white;
             }
         }
