@@ -1,14 +1,40 @@
 <section class="entry-content col-1 cf" itemprop="articleBody">
 
   <div class="hotlinks hotlinks-trust-solution">
-    <?php if (have_rows('top_section')) : while (have_rows('top_section')) : the_row(); ?>
+    <?php if (have_rows('top_section')) : while (have_rows('top_section')) : the_row();
+        $link = get_sub_field('link');
+        $img = get_sub_field('image');
+        $second_img = get_sub_field('secondary_image');
+        $second_link = get_sub_field('secondary_link')
+    ?>
         <div class="hotlink">
-          <a href="<?= get_sub_field('link') ?>" class="link">
-            <?php if (get_sub_field('title')) : ?>
-              <span><?= get_sub_field('title') ?></span>
+
+          <?php if ($second_img) : ?>
+
+            <span href="<?= $link ?>" class="link">
+              <?php if (get_sub_field('title')) : ?>
+                <span><?= get_sub_field('title') ?></span>
+              <?php endif; ?>
+              <div class='img-wrap'>
+                <a href="<?= $link ?>">
+                  <img src="<?= $img['url'] ?>" alt="Icon" class="icon<?= get_sub_field('title') ? null : ' no-title' ?>">
+                </a>
+                <a href="<?= $second_link ?>">
+                  <img src="<?= $second_img['url'] ?>" alt="Icon" class="icon<?= get_sub_field('title') ? null : ' no-title' ?>">
+                </a>
+              </div>
+
+            <?php else : ?>
+
+              <a href="<?= $link ?>" class="link">
+                <?php if (get_sub_field('title')) : ?>
+                  <span><?= get_sub_field('title') ?></span>
+                <?php endif; ?>
+                <img src="<?= $img['url'] ?>" alt="Icon" class="icon<?= get_sub_field('title') ? null : ' no-title' ?>">
+              </a>
+
             <?php endif; ?>
-            <img src="<?= get_sub_field('image')['url'] ?>" alt="Icon" class="icon<?= get_sub_field('title') ? null : ' no-title' ?>">
-          </a>
+
         </div>
     <?php endwhile;
     endif; ?>

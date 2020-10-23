@@ -207,6 +207,30 @@
                     "mime_types": ""
                 },
                 {
+                    "key": "field_5f933492dd539",
+                    "label": "Secondary Image",
+                    "name": "secondary_image",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
                     "key": "field_5eb1c8cc000e4",
                     "label": "Title",
                     "name": "title",
@@ -233,6 +257,32 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5f93377b9a6da",
+                    "label": "Secondary Link",
+                    "name": "secondary_link",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5f933492dd539",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -463,7 +513,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1588710873
+    "modified": 1603483529
 }
