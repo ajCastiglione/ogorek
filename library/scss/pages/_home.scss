@@ -395,9 +395,14 @@ Home Page Section
 
         &__info {
             padding: 34px;
-            background: transparent
-                linear-gradient(237deg, #123759 0%, #246db1 100%) 0% 0%
-                no-repeat padding-box;
+            background: linear-gradient(
+                90deg,
+                rgba(45, 102, 48, 1) 0%,
+                rgba(71, 168, 77, 1) 100%
+            );
+            // background: transparent
+            //     linear-gradient(237deg, #123759 0%, #246db1 100%) 0% 0%
+            //     no-repeat padding-box;
         }
         &__title {
             color: $white !important;
@@ -423,7 +428,8 @@ Home Page Section
             }
             .service {
                 a {
-                    border: 2px dotted $secondary;
+                    // border: 2px dotted $secondary;
+                    border: 2px dotted $black;
                     display: inline-block;
                     padding: 8px 18px;
                     color: inherit;
