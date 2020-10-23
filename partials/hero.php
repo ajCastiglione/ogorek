@@ -23,13 +23,18 @@ if (get_field('secondary_logo')) {
   $hero_title = '<img src="' . get_field('secondary_logo')['url'] . '" alt="' . get_field('secondary_logo')['alt'] . '">';
 }
 
+global $current_user;
+
 ?>
 
 <?php if (get_post_type($post->ID) == 'firms') : ?>
   <div class="hero <?php echo $hero ? '' : 'no-image law-firm-hero' ?>" style="background-image:url(<?= $hero['url'] ?>)">
     <?php $ogorek_logo = get_field('ogorek_company_logo', 'options'); ?>
     <div class="split-logo">
-      <img src="<?= $ogorek_logo['url'] ?>" alt="Ogorek Wealth Management" class="logo">
+      <?php if ($current_user) : echo '<h2 class="law-firm-user">' . $current_user->nickname . '</h2>';
+      else : ?>
+        <img src="<?= $ogorek_logo['url'] ?>" alt="Ogorek Wealth Management" class="logo">
+      <?php endif; ?>
       <?= !empty(get_field('law_firm_logo')) ? "<span class=\"divider\"></span><img class=\"firm-logo\" src=" . get_field('law_firm_logo')['url'] . ">" : "<h1 class=\"title\">" . get_the_title() . "</h1>" ?>
     </div>
   </div>
