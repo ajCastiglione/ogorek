@@ -378,6 +378,7 @@ Home Page Section
     .home-services {
         display: grid;
         color: $white;
+        border-top: 30px solid $white;
         @include media("tablet") {
             grid-template-columns: repeat(2, 1fr);
         }
