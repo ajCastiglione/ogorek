@@ -28,7 +28,8 @@ global $current_user;
 ?>
 
 <?php if (get_post_type($post->ID) == 'firms') : ?>
-  <div class="hero <?php echo $hero ? '' : 'no-image law-firm-hero' ?>" style="background-image:url(<?= $hero['url'] ?>)">
+  <div class="hero <?php echo $hero ? '' : 'no-image law-firm-hero';
+                    echo is_user_logged_in() ? ' reverse-order' : null; ?>" style="background-image:url(<?= $hero['url'] ?>)">
     <?php $ogorek_logo = get_field('ogorek_company_logo', 'options'); ?>
     <div class="split-logo">
       <?php if (is_user_logged_in()) : echo '<h2 class="law-firm-user">' . $current_user->nickname . '</h2>';
