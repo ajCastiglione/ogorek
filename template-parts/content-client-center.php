@@ -5,7 +5,8 @@
         $link = get_sub_field('link');
         $img = get_sub_field('image');
         $second_img = get_sub_field('secondary_image');
-        $second_link = get_sub_field('secondary_link')
+        $second_link = get_sub_field('secondary_link');
+        $subTitles = get_sub_field('sub_title');
     ?>
         <div class="hotlink">
 
@@ -16,11 +17,13 @@
                 <span><?= get_sub_field('title') ?></span>
               <?php endif; ?>
               <div class='img-wrap'>
-                <a href="<?= $link ?>">
+                <a class='img-inner-link' href="<?= $link ?>">
                   <img src="<?= $img['url'] ?>" alt="Icon" class="icon<?= get_sub_field('title') ? null : ' no-title' ?>">
+                  <p><?= $subTitles[0]['caption'] ?></p>
                 </a>
-                <a href="<?= $second_link ?>">
+                <a class='img-inner-link' href="<?= $second_link ?>">
                   <img src="<?= $second_img['url'] ?>" alt="Icon" class="icon<?= get_sub_field('title') ? null : ' no-title' ?>">
+                  <p><?= $subTitles[1]['caption'] ?></p>
                 </a>
               </div>
 
