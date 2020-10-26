@@ -45,10 +45,10 @@
             ol {
                 margin-top: 0;
                 @include media("tablet") {
-                    min-height: 200px;
+                    min-height: 250px;
                 }
                 @include media("laptop") {
-                    min-height: 400px;
+                    min-height: 420px;
                 }
             }
 
