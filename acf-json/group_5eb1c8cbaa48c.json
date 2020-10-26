@@ -176,10 +176,10 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
+            "collapsed": "field_5eb1c8cc000e4",
             "min": 0,
             "max": 0,
-            "layout": "table",
+            "layout": "block",
             "button_label": "",
             "sub_fields": [
                 {
@@ -293,6 +293,53 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
+                },
+                {
+                    "key": "field_5f97335dfb092",
+                    "label": "Sub Titles",
+                    "name": "sub_title",
+                    "type": "repeater",
+                    "instructions": "This will show in the order it is listed. So caption 1 will need to be the first row.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5f933492dd539",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 2,
+                    "layout": "table",
+                    "button_label": "",
+                    "sub_fields": [
+                        {
+                            "key": "field_5f9733c49a413",
+                            "label": "Caption",
+                            "name": "caption",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -515,5 +562,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603483529
+    "modified": 1603744716
 }
