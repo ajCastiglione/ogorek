@@ -1,5 +1,6 @@
 <?php
 
+global $wp;
 $atts = get_field('attorneys', 'user_' . get_current_user_id());
 
 if (isset($_GET['attorney'])) {
@@ -26,12 +27,12 @@ if (isset($_GET['create'])) {
 }
 
 if (!empty($atts)) :
-
 ?>
 
     <article class="authenticated-view large-wrapper">
         <?php global $current_user;
         wp_get_current_user(); ?>
+        <a class="logout-btn" href="<?= wp_logout_url(home_url($wp->request)) ?>">Logout</a>
         <h2 class="admin-name">Hello, <?= $current_user->nickname; ?></h2>
         <section class="attorney">
             <form action="" method="get">
@@ -106,6 +107,7 @@ if (!empty($atts)) :
             <?php endif; ?>
         <?php endif; ?>
 
+
     </article>
 
 <?php endif; ?>
@@ -134,7 +136,7 @@ function addNewRow($chosen_attorney)
         'forms' => array(
             array(
                 'field_5e3b6e64bf55e' => "Trust Information",
-                'field_5e3b6e6abf55f' => 'https://ogorekwealthmanagement.formstack.com/forms/?3671291-amPPowv0Wc',
+                'field_5e3b6e6abf55f' => '',
             ),
         )
     );
