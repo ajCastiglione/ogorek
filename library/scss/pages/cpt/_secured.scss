@@ -39,6 +39,7 @@
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: column;
+    position: relative;
     .attorney,
     .trusts-selector,
     .trusts {
@@ -60,7 +61,7 @@
             align-items: center;
             flex-wrap: wrap;
             input[type="submit"] {
-                margin: 0 0.5rem;
+                margin: 8px 0.5rem;
                 background-color: $secondary;
                 color: $white;
                 border: 2px solid $secondary;
@@ -118,6 +119,26 @@
             .btn-group {
                 flex-wrap: nowrap;
             }
+        }
+    }
+    .logout-btn {
+        top: 15px;
+        right: 15px;
+        background-color: $secondary;
+        color: $white;
+        border: 2px solid $secondary;
+        padding: 10px 24px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        margin-bottom: 16px;
+        @include media("tablet") {
+            position: absolute;
+        }
+        &:hover {
+            background-color: transparent;
+            color: $secondary;
         }
     }
 }
