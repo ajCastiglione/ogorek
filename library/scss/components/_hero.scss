@@ -9,6 +9,7 @@
     justify-content: center;
     flex-direction: column;
     border-bottom: 20px solid $secondary;
+    overflow: hidden;
     .title {
         text-align: center;
         color: $white;
@@ -47,7 +48,7 @@
         .title {
             position: relative;
             right: 0;
-            left: 40px;
+            left: 10px;
             top: 10px;
             font-size: 28px;
             max-width: 500px;
@@ -55,6 +56,9 @@
             color: $primary;
             mix-blend-mode: multiply;
             font-weight: bold !important;
+            @include media("tablet") {
+                left: 40px;
+            }
         }
         // logo
         .logo {
