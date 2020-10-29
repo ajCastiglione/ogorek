@@ -2,6 +2,7 @@
 
 global $wp;
 $atts = get_field('attorneys', 'user_' . get_current_user_id());
+$label = get_field('attorney_label', 'options') ?: 'Trustees';
 
 if (isset($_GET['attorney'])) {
     $chosen_attorney = $_GET['attorney'];
@@ -36,7 +37,7 @@ if (!empty($atts)) :
         <h2 class="admin-name">Hello, <?= $current_user->nickname; ?></h2>
         <section class="attorney">
             <form action="" method="get">
-                <label for="attorney">Client</label>
+                <label for="attorney"><?= $label ?></label>
                 <select class="attorney-select" onchange="this.form.submit();" name="attorney">
                     <?php if (!empty($chosen_attorney)) { ?>
                         <option value="<?= $chosen_attorney ?>"><?= get_the_title($chosen_attorney) ?></option>

@@ -576,7 +576,7 @@
         },
         {
             "key": "field_5f5a372f947f2",
-            "label": "Law Firm Main Logo",
+            "label": "Law Firm Settings",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -613,6 +613,25 @@
             "max_height": 0,
             "max_size": 0,
             "mime_types": ""
+        },
+        {
+            "key": "field_5f9b13d59ff30",
+            "label": "Attorney Label",
+            "name": "attorney_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -632,5 +651,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1599747915
+    "modified": 1603998697
 }
