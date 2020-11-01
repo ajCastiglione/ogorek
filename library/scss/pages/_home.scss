@@ -44,15 +44,17 @@ Home Page Section
             position: relative;
             max-width: 125%;
             left: -75px;
+            min-height: 400px;
+            object-fit: cover;
             @include media("tablet") {
                 position: absolute;
                 width: 60%;
                 height: 100%;
-                object-fit: cover;
                 top: 0;
                 right: 0;
                 left: unset;
                 max-width: auto;
+                min-height: auto;
             }
             @include media("2k") {
                 object-position: top center;
