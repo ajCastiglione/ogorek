@@ -24,6 +24,18 @@ if (get_field('secondary_logo')) {
 }
 
 global $current_user;
+if (is_user_logged_in()) {
+  if ($_GET['attorney']) {
+    $atts = get_field('attorneys', 'user_' . get_current_user_id());
+    foreach ($atts as $att) {
+      if ($att->ID == $_GET['attorney']) {
+        $lawFirmName = $att->post_title;
+      }
+    }
+  } else {
+    $lawFirmName = $current_user->nickname;
+  }
+}
 
 ?>
 
@@ -32,7 +44,7 @@ global $current_user;
                     echo is_user_logged_in() ? ' reverse-order' : null; ?>" style="background-image:url(<?= $hero['url'] ?>)">
     <?php $ogorek_logo = get_field('ogorek_company_logo', 'options'); ?>
     <div class="split-logo">
-      <?php if (is_user_logged_in()) : echo '<h2 class="law-firm-user">' . $current_user->nickname . '</h2>';
+      <?php if (is_user_logged_in()) : echo '<h2 class="law-firm-user">' . $lawFirmName . '</h2>';
       else : ?>
         <img src="<?= $ogorek_logo['url'] ?>" alt="Ogorek Wealth Management" class="logo">
       <?php endif; ?>
