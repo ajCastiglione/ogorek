@@ -23,9 +23,11 @@ if (get_field('secondary_logo')) {
   $hero_title = '<img src="' . get_field('secondary_logo')['url'] . '" alt="' . get_field('secondary_logo')['alt'] . '">';
 }
 
+$lawFirmLogo = !empty(get_field('law_firm_logo')) ? "<img class=\"firm-logo\" src=" . get_field('law_firm_logo')['url'] . ">" : "<h1 class=\"title\">" . get_the_title() . "</h1>";
+
 global $current_user;
 if (is_user_logged_in()) {
-  if ($_GET['attorney']) {
+  if (isset($_GET['attorney'])) {
     $atts = get_field('attorneys', 'user_' . get_current_user_id());
     foreach ($atts as $att) {
       if ($att->ID == $_GET['attorney']) {
@@ -35,20 +37,21 @@ if (is_user_logged_in()) {
   } else {
     $lawFirmName = $current_user->nickname;
   }
+  $lawFirmLogo =  "<img class=\"firm-logo\" src=" . get_field('law_firm_logo', 'user_' . get_current_user_id()) . ">";
 }
 
 ?>
 
 <?php if (get_post_type($post->ID) == 'firms') : ?>
-  <div class="hero <?php echo $hero ? '' : 'no-image law-firm-hero';
-                    echo is_user_logged_in() ? ' reverse-order' : null; ?>" style="background-image:url(<?= $hero['url'] ?>)">
+  <div class="hero <?php echo $hero ? '' : 'no-image law-firm-hero reverse-order'; ?>" style="background-image:url(<?= $hero['url'] ?>)">
     <?php $ogorek_logo = get_field('ogorek_company_logo', 'options'); ?>
     <div class="split-logo">
       <?php if (is_user_logged_in()) : echo '<h2 class="law-firm-user">' . $lawFirmName . '</h2>';
       else : ?>
         <img src="<?= $ogorek_logo['url'] ?>" alt="Ogorek Wealth Management" class="logo">
       <?php endif; ?>
-      <?= !empty(get_field('law_firm_logo')) ? "<span class=\"divider\"></span><img class=\"firm-logo\" src=" . get_field('law_firm_logo')['url'] . ">" : "<h1 class=\"title\">" . get_the_title() . "</h1>" ?>
+      <span class="divider"></span>
+      <?= $lawFirmLogo ?>
     </div>
   </div>
 
