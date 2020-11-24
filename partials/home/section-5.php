@@ -2,11 +2,17 @@
 $title = get_field('s5_title');
 $content = get_field('s5_content');
 $per_page = get_field('s5_posts_to_show');
+$cat =  get_field('s5_post_category');
 
 $args = array(
   'post_type' => 'post',
   'posts_per_page' => $per_page,
 );
+
+if (!empty($cat)) {
+  $cat = implode(',', $cat);
+  $args['cat'] = $cat;
+}
 
 $articles = new WP_Query($args);
 
