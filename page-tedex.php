@@ -60,11 +60,9 @@
 
 							<div class="tedex-benefits">
 								<?php if (have_rows('content_benefits')) : while (have_rows('content_benefits')) : the_row();
-										$title = get_sub_field('title');
 										$image_or_video = get_sub_field('image_or_video');
 										$image = get_sub_field('image');
 										$video = get_sub_field('video');
-										$content = get_sub_field('content');
 								?>
 
 										<div class="tedex-benefits__single">
@@ -74,10 +72,6 @@
 												<?php else : ?>
 													<?= $video ?>
 												<?php endif; ?>
-												<div class="tedex-benefits__points">
-													<h3 class="tedex-benefits__title"><?= $title ?></h3>
-													<?= $content ?>
-												</div>
 											</div>
 										</div>
 

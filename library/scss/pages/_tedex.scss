@@ -99,32 +99,20 @@
     .tedex-benefits {
         margin-top: 64px;
         padding-bottom: 32px;
-        &__single {
-            &:first-child {
-                border-bottom: 2px solid $primary;
-                margin-bottom: 12px;
-            }
+        display: grid;
+        gap: 25px;
+        text-align: center;
+        @include media("laptop") {
+            text-align: left;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            align-items: center;
         }
+
         &__content {
-            display: grid;
-            gap: 25px;
-            @include media("tablet") {
-                grid-template-columns: 1fr 2fr;
-                gap: 50px;
-                align-items: center;
+            iframe {
+                max-width: 100%;
             }
-            ul {
-                li {
-                    > ul {
-                        margin-top: 0;
-                    }
-                }
-            }
-        }
-        &__title {
-            margin-top: 0;
-            font-weight: bold;
-            color: $primary;
         }
     }
 }
