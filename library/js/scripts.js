@@ -39,7 +39,7 @@ jQuery(document).ready(function ($) {
   scrollTop($);
   newsletterRedirect();
 
-  if ($("body").hasClass("home")) {
+  if ($("body").hasClass("page-template-page-home")) {
     initHomeSlider($);
   }
 
