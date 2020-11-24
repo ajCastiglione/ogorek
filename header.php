@@ -57,25 +57,30 @@
 	<?php // drop Google Analytics Here
 	// Prevent analytics from loading on local and dev sites 
 	?>
-		<!-- Google Tag Manager -->
-		<script>
-			(function(w, d, s, l, i) {
-				w[l] = w[l] || [];
-				w[l].push({
-					'gtm.start': new Date().getTime(),
-					event: 'gtm.js'
-				});
-				var f = d.getElementsByTagName(s)[0],
-					j = d.createElement(s),
-					dl = l != 'dataLayer' ? '&l=' + l : '';
-				j.async = true;
-				j.src =
-					'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-				f.parentNode.insertBefore(j, f);
-			})(window, document, 'script', 'dataLayer', 'GTM-TRVGDQV');
-		</script>
-		<!-- End Google Tag Manager -->
+	<!-- Google Tag Manager -->
+	<script>
+		(function(w, d, s, l, i) {
+			w[l] = w[l] || [];
+			w[l].push({
+				'gtm.start': new Date().getTime(),
+				event: 'gtm.js'
+			});
+			var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s),
+				dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src =
+				'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+			f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-TRVGDQV');
+	</script>
+	<!-- End Google Tag Manager -->
 	<?php // end analytics 
+	?>
+
+	<?php
+	// ACF fields
+	$replacement_logo = get_field('replacement_logo');
 	?>
 
 </head>
@@ -105,12 +110,12 @@
 							if (get_field('hide_logo') === true || (is_home() && get_field('hide_logo', get_option('page_for_posts')) === true)) : null;
 							else : ?>
 								<a href="<?= home_url(); ?>">
-									<img src="<?= get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
+									<img src="<?= !empty($replacement_logo) ? $replacement_logo : get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
 								</a>
 							<?php endif;
 						else : ?>
 							<a href="<?= home_url(); ?>">
-								<img src="<?= get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
+								<img src="<?= !empty($replacement_logo) ? $replacement_logo : get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
 							</a>
 						<?php endif; ?>
 					</div>
