@@ -2,6 +2,8 @@
 /*
  Template Name: TEdec Express
 */
+
+$cta = get_field('content_cta');
 ?>
 
 <?php get_header(); ?>
@@ -77,6 +79,10 @@
 
 								<?php endwhile;
 								endif; ?>
+							</div>
+
+							<div class="tedex-cta">
+								<a href="<?= $cta['link'] ?>" class="tedex-cta__btn"><?= $cta['text'] ?></a>
 							</div>
 
 						</section>
