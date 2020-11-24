@@ -115,4 +115,20 @@
             }
         }
     }
+    .tedex-cta {
+        text-align: center;
+        margin-bottom: 24px;
+        &__btn {
+            display: inline-block;
+            transition: all 0.3s ease;
+            background-color: $secondary;
+            color: $white;
+            padding: 8px 24px;
+            font-weight: bold;
+            font-size: 22px;
+            &:hover {
+                background-color: $primary;
+            }
+        }
+    }
 }
