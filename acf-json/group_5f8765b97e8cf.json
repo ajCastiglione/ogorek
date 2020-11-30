@@ -44,13 +44,40 @@
             "placeholder": ""
         },
         {
+            "key": "field_5fc51b5f2446f",
+            "label": "Hide Primary Logo",
+            "name": "hide_primary_logo",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5f87667cd34e9",
             "label": "Logo",
             "name": "logo",
             "type": "image",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fc51b5f2446f",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -297,6 +324,25 @@
             "button_label": "",
             "sub_fields": [
                 {
+                    "key": "field_5f876d2c33f2d",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_5f876d4d33f2f",
                     "label": "Image Or Video?",
                     "name": "image_or_video",
@@ -376,48 +422,12 @@
                     },
                     "width": "",
                     "height": ""
-                }
-            ]
-        },
-        {
-            "key": "field_5fbd190790349",
-            "label": "Call To Action",
-            "name": "content_cta",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_5fbd19159034a",
-                    "label": "Text",
-                    "name": "text",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
                 },
                 {
-                    "key": "field_5fbd191a9034b",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "text",
+                    "key": "field_5f876d4333f2e",
+                    "label": "Content",
+                    "name": "content",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -427,10 +437,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 0,
+                    "delay": 0
                 }
             ]
         }
@@ -452,5 +462,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1606228258
+    "modified": 1606753154
 }
