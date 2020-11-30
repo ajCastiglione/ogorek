@@ -37,7 +37,7 @@ if (get_field('secondary_logo')) {
 <?php elseif (get_field('hero_selector') == 'unique' || (is_home() && $hero_selection == 'unique')) : $logo = get_field('logo')['url'] ?: 'https://ogorek.com/wp-content/uploads/2020/04/OGOREK-Logo-White-01.png'; ?>
   <div class="hero three-part" style="background-image:url(<?= $hero['url'] ?: 'https://ogorek.com/wp-content/uploads/2020/04/new-bg-higher-point.png' ?>)">
     <h1 class="title"><?php echo $hero_title ?: get_the_title(); ?></h1>
-    <?php if (!empty($logo)) : ?>
+    <?php if (!empty($logo) && get_field('hide_primary_logo') !== true) : ?>
       <div class="logo">
         <a href="<?= site_url('/') ?>">
           <img src="<?= $logo; ?>" alt="Ogorek wealth management">
