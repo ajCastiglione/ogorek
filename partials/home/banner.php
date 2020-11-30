@@ -8,7 +8,9 @@ $subtitle = get_field('s1_sub_title');
   <img src="<?= $bg['url'] ?>" alt="<?= $bg['alt'] ?>" class="banner__img">
   <div class="banner__content">
     <h1 class="banner__title"><?= $title ?></h1>
-    <h2 class="banner__sub-title"><?= $subtitle ?></h2>
+    <?php if (!empty($subtitle)) : ?>
+      <h2 class="banner__sub-title"><?= $subtitle ?></h2>
+    <?php endif; ?>
     <div class="banner__ctas">
       <?php if (have_rows('s1_call_to_actions')) : while (have_rows('s1_call_to_actions')) : the_row();
           $arrow = get_sub_field('has_arrow') ? '<i class="fas fa-arrow-right"></i>' : null;
