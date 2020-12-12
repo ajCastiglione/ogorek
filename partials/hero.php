@@ -55,6 +55,7 @@ if (is_user_logged_in()) {
     </div>
   </div>
 
+
 <?php elseif (get_field('hero_selector') == 'unique' || (is_home() && $hero_selection == 'unique')) : $logo = get_field('logo')['url'] ?: 'https://ogorek.com/wp-content/uploads/2020/04/OGOREK-Logo-White-01.png'; ?>
   <div class="hero three-part" style="background-image:url(<?= $hero['url'] ?: 'https://ogorek.com/wp-content/uploads/2020/04/new-bg-higher-point.png' ?>)">
     <h1 class="title"><?php echo $hero_title ?: get_the_title(); ?></h1>
