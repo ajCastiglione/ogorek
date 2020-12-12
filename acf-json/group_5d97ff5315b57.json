@@ -35,15 +35,7 @@
                 "normal": "Standard Hero",
                 "unique": "Image with text"
             },
-<<<<<<< HEAD
-            "default_value": ["normal"],
-||||||| 3941aca
-            "default_value": [
-                "normal"
-            ],
-=======
             "default_value": "normal",
->>>>>>> hero-updates
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -95,6 +87,33 @@
             "maxlength": ""
         },
         {
+            "key": "field_5fca489e95747",
+            "label": "Hide Primary Logo",
+            "name": "hide_primary_logo",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e5a887cfa8fe",
+                        "operator": "==",
+                        "value": "unique"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5e8b42ecebde8",
             "label": "Logo",
             "name": "logo",
@@ -127,7 +146,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_5fbd580d9b98d",
+            "key": "field_5fce5b386a826",
             "label": "Secondary Logo",
             "name": "secondary_logo",
             "type": "image",
@@ -391,9 +410,9 @@
         ],
         [
             {
-                "param": "page_template",
+                "param": "post_type",
                 "operator": "==",
-                "value": "page-videos.php"
+                "value": "video_commentaries"
             }
         ]
     ],
@@ -405,5 +424,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1595271231
+    "modified": 1607359301
 }
