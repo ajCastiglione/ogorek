@@ -4,15 +4,19 @@ $title = get_field('popup_title', 'options');
 $content = get_field('popup_content', 'options');
 
 // Check for referrer
+$refferer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null;
 $allowed_hosts = ['localhost', 'ogorek.com'];
-$host = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST);
+$host = parse_url($refferer, PHP_URL_HOST);
 $from_internal_site = in_array($host, $allowed_hosts);
 
 // Show popup based on referrer
-$classnames = "popup exit";
+$classnames = "popup";
+
+$from_internal_site !== true ? $classnames .= " exit" : null;
+
 ?>
 
-<?php if ($from_internal_site) : ?>
+<?php if ($from_internal_site !== true) : ?>
     <section class="<?= $classnames ?>">
         <div class="inner-popup large-wrapper">
             <div class="close">X</div>

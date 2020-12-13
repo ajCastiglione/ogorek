@@ -7,6 +7,7 @@ function popup($) {
   let date = new Date(Date.now() + 86400e3).toUTCString();
   let cookieString = "popShown=true; expires=" + date;
   // if popup was closed this session, don't show it again
+  console.log(document.cookie.match("popShown"));
   if (document.cookie.match("popShown")) {
     modal.remove();
     return;
@@ -21,7 +22,11 @@ function popup($) {
 
   // Show exit intent popup
   $(document).on("mouseleave", (e) => {
-    if (e.clientY < 0) {
+    if (
+      e.clientY < 0 &&
+      exitModal.length > 0 &&
+      !document.cookie.match("popShown")
+    ) {
       exitModal.addClass("active");
       body.addClass("popup-active");
     }
