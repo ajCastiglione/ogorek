@@ -7,7 +7,6 @@ function popup($) {
   let date = new Date(Date.now() + 86400e3).toUTCString();
   let cookieString = "popShown=true; expires=" + date;
   // if popup was closed this session, don't show it again
-  console.log(document.cookie.match("popShown"));
   if (document.cookie.match("popShown")) {
     modal.remove();
     return;
