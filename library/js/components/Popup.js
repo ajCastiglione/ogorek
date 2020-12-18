@@ -2,21 +2,35 @@
 function popup($) {
   let body = $("body");
   let modal = $(".popup");
+  let exitModal = $(".popup.exit");
   let close = $(".popup .close");
   let date = new Date(Date.now() + 86400e3).toUTCString();
   let cookieString = "popShown=true; expires=" + date;
   // if popup was closed this session, don't show it again
+  console.log(document.cookie.match("popShown"));
   if (document.cookie.match("popShown")) {
     modal.remove();
     return;
   }
   // show popup
-  if (modal.length > 0) {
+  if (modal.length > 0 && modal.hasClass("exit") === false) {
     setTimeout(function () {
       modal.addClass("active");
       body.addClass("popup-active");
-    }, 5000);
+    }, 7000);
   }
+
+  // Show exit intent popup
+  $(document).on("mouseleave", (e) => {
+    if (
+      e.clientY < 0 &&
+      exitModal.length > 0 &&
+      !document.cookie.match("popShown")
+    ) {
+      exitModal.addClass("active");
+      body.addClass("popup-active");
+    }
+  });
 
   close.on("click", function (e) {
     e.preventDefault();
@@ -24,9 +38,9 @@ function popup($) {
     body.removeClass("popup-active");
     document.cookie = cookieString;
     document.cookie = cookieString;
-    setTimeout(function () {
-      modal.remove();
-    }, 1200);
+    // setTimeout(function () {
+    //   modal.remove();
+    // }, 1200);
   });
 
   body.on("click", function (e) {
@@ -35,9 +49,9 @@ function popup($) {
       body.removeClass("popup-active");
       document.cookie = cookieString;
       document.cookie = cookieString;
-      setTimeout(function () {
-        modal.remove();
-      }, 1200);
+      // setTimeout(function () {
+      //   modal.remove();
+      // }, 1200);
     }
   });
 }
