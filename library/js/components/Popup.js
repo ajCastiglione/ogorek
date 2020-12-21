@@ -20,7 +20,7 @@ function popup($) {
   }
 
   // Show exit intent popup
-  $(document).mouseleave((e) => {
+  $(document, window).mouseleave((e) => {
     if (
       e.clientY < 0 &&
       exitModal.length > 0 &&
