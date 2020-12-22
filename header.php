@@ -43,6 +43,7 @@
 	<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type='text/css' media='all'>
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="preload" as="style">
 	<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- Img Zoom -->
 	<script defer async src="https://cdn.jsdelivr.net/npm/js-image-zoom/js-image-zoom.min.js"></script>
 	<!-- Owl slider bc slick broke randomly... again-->
