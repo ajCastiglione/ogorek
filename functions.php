@@ -236,6 +236,12 @@ function add_input_debug_preview()
 }
 
 /**
+ * Load Times Updates
+ */
+
+require get_template_directory() . '/theme/utils/defer-files.php';
+
+/**
  * Testing jquery fix
  */
 
