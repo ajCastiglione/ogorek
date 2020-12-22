@@ -6,12 +6,16 @@ function popup($) {
   let close = $(".popup .close");
   let date = new Date(Date.now() + 86400e3).toUTCString();
   let cookieString = "popShown=true; expires=" + date;
+  let allCookies = document.cookie.split(";");
+
+  console.log(allCookies);
+
   // if popup was closed this session, don't show it again
-  console.log(document.cookie.match("popShown"));
-  if (document.cookie.match("popShown")) {
-    modal.remove();
-    return;
+  if (allCookies.find((row) => row.startsWith("popShown"))) {
+    console.log("cookie found");
+    return modal.remove();
   }
+
   // show popup
   if (modal.length > 0 && modal.hasClass("exit") === false) {
     setTimeout(function () {
@@ -21,11 +25,11 @@ function popup($) {
   }
 
   // Show exit intent popup
-  $(document).on("mouseleave", (e) => {
+  $(document, window).mouseleave((e) => {
     if (
       e.clientY < 0 &&
       exitModal.length > 0 &&
-      !document.cookie.match("popShown")
+      !allCookies.find((row) => row.startsWith("popShown"))
     ) {
       exitModal.addClass("active");
       body.addClass("popup-active");
@@ -47,8 +51,8 @@ function popup($) {
     if (!$(e.target).closest(".inner-popup").length) {
       modal.removeClass("active");
       body.removeClass("popup-active");
-      document.cookie = cookieString;
-      document.cookie = cookieString;
+      // document.cookie = cookieString;
+      // document.cookie = cookieString;
       // setTimeout(function () {
       //   modal.remove();
       // }, 1200);
