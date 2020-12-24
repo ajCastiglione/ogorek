@@ -1,9 +1,24 @@
 <?php
 
+function check_agent()
+{
+    if (isset($_SERVER['HTTP_USER_AGENT'])) {
+        $agent = $_SERVER['HTTP_USER_AGENT'];
+    }
+
+    if (strlen(strstr($agent, 'Firefox')) > 0) {
+        $browser = 'firefox';
+        return $browser;
+    }
+    return null;
+}
+
 function add_rel_preload($html, $handle, $href, $media)
 {
 
-    if (is_admin())
+    $browser = check_agent();
+
+    if (is_admin() || $browser == 'firefox')
         return $html;
 
     $html = <<<EOT
