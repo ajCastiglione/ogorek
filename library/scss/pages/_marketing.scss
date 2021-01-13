@@ -6,6 +6,9 @@
     #shiftnav-toggle-main {
         display: none !important;
     }
+    &.shiftnav-disable-shift-body {
+        padding-top: 0 !important;
+    }
     #content {
         margin-top: 0;
     }
