@@ -651,3 +651,45 @@ Popup Section
         }
     }
 }
+
+/*******************
+Contact CTA
+*********************/
+.contact-cta {
+    background-color: $primary;
+    color: $white;
+    padding: 8px 24px;
+    margin: 32px 0;
+    @include media("tablet") {
+        display: flex;
+        align-items: center;
+    }
+    .cta-text {
+        margin-right: 16px;
+        .text {
+            padding: 0;
+            margin: 18px 0;
+        }
+    }
+    .cta-link {
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: $secondary;
+            color: $white;
+            font-weight: bold;
+            text-transform: capitalize;
+            padding: 8px 20px;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+            border: 2px solid $secondary;
+            i {
+                padding-left: 16px;
+            }
+            &:hover {
+                background-color: $primary;
+            }
+        }
+    }
+}
