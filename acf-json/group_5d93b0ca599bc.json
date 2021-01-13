@@ -259,9 +259,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "post_type": [
-                        "page"
-                    ],
+                    "post_type": ["page"],
                     "taxonomy": "",
                     "allow_null": 0,
                     "allow_archives": 0,
@@ -355,11 +353,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "icon_sets": [
-                        "fas",
-                        "far",
-                        "fab"
-                    ],
+                    "icon_sets": ["fas", "far", "fab"],
                     "custom_icon_set": "",
                     "default_label": "",
                     "default_value": "",
@@ -421,10 +415,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "post_type": [
-                        "page",
-                        "post"
-                    ],
+                    "post_type": ["page", "post"],
                     "taxonomy": "",
                     "allow_null": 0,
                     "allow_archives": 0,
@@ -599,9 +590,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "post_type": [
-                        "page"
-                    ],
+                    "post_type": ["page"],
                     "taxonomy": "",
                     "allow_null": 0,
                     "allow_archives": 0,
@@ -695,9 +684,7 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "page"
-            ],
+            "post_type": ["page"],
             "taxonomy": "",
             "allow_null": 0,
             "allow_archives": 0,
@@ -808,10 +795,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "post_type": [
-                        "post",
-                        "page"
-                    ],
+                    "post_type": ["post", "page"],
                     "taxonomy": "",
                     "allow_null": 0,
                     "allow_archives": 0,
@@ -1022,5 +1006,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1606153485
+
+    "modified": 1602980092
 }

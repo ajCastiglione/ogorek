@@ -313,9 +313,14 @@ Home Page Section
         &__content {
             font-size: 16px;
             @include media("tablet") {
-                font-size: 18px;
-                max-width: 753px;
+                font-size: 25px;
+                max-width: 1050px;
                 margin: auto;
+                .home & {
+                    font-size: 18px;
+                    max-width: 753px;
+                    margin: auto;
+                }
             }
         }
         &__rows {

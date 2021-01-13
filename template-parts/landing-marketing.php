@@ -74,7 +74,7 @@ $s4subtitle = get_field('s4_subtitle');
             endif; ?>
         </div>
         <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2918.9652342576837!2d-78.70215978399156!3d42.979005979150166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d375b44120e0e1%3A0x13b07ae27ba6afa6!2sSheridan%20Meadows%20Corporate%20Park!5e0!3m2!1sen!2sus!4v1570073388918!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2918.9555450795087!2d-78.70237438452394!3d42.97921007915019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d375b4f6a29245%3A0x765bb48d3983de2a!2sOgorek%20Wealth%20Management%20LLC!5e0!3m2!1sen!2sus!4v1610494198033!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </div>
     </div>
 </section>
