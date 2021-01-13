@@ -1,7 +1,9 @@
 <?php
 
 function get_related_videos($post)
-{
+{ ?>
+    <h2>Similar Videos</h2>
+    <?php
     $related_posts = get_field('related_video_commentaries', $post->ID);
     if (!empty($related_posts)) { ?>
         <div class="related-videos__container">
