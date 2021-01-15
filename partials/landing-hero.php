@@ -9,9 +9,12 @@ $title = get_field('above_form_title');
 $subtitle = get_field('above_form_subtitle');
 $formTitle = get_field('form_title');
 $formSubtitle = get_field('form_subtitle');
+
+$sectClassNames = 'hero-landing-page ';
+$sectClassNames .= $img_or_vid == 'image' ? 'has-img' : 'has-video';
 ?>
 
-<section class="hero-landing-page">
+<section class="<?= $sectClassNames ?>">
     <div class="grid-50">
         <div class="left">
             <img src="<?= $logo ?>" alt="Ogorek Wealth Management" class="logo">

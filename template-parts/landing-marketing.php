@@ -10,8 +10,8 @@ $s3img = get_field('s3_image');
 $s4title = get_field('s4_title');
 $s4subtitle = get_field('s4_subtitle');
 ?>
-
-<!-- <section id="section-1" class="landing-page-section-content s1">
+<?php /*
+<section id="section-1" class="landing-page-section-content s1">
     <div class="large-wrapper">
         <div class="grid-50">
             <div class="half">
@@ -25,8 +25,8 @@ $s4subtitle = get_field('s4_subtitle');
             </div>
         </div>
     </div>
-</section> -->
-
+</section>
+*/ ?>
 <section id="section-2" class="landing-page-section-content s2">
     <div class="large-wrapper">
         <h2 class="title"><?= $s2title ?></h2>
