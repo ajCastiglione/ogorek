@@ -663,6 +663,7 @@ Contact CTA
     @include media("tablet") {
         display: flex;
         align-items: center;
+        max-width: 715px;
     }
     .cta-text {
         margin-right: 16px;

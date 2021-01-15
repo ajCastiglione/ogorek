@@ -15,7 +15,13 @@ $cta_text_blurb = get_field('blog_cta_text_blurb', 'options');
     <section class="large-wrapper<?= !empty($related) ? ' grid' : null ?>">
         <?= !empty($related) ? '<div class="content-wrap">' : null ?>
         <div class="video"><?= $vid ?></div>
-        <div class="content"><?= $content ?></div>
+        <div class="content">
+            <?= $content ?>
+            <div class="contact-cta">
+                <div class="cta-text"><?= $cta_text_blurb ?></div>
+                <div class="cta-link"><a href="<?= $cta_link ?>"><?= $cta_text ?> <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+        </div>
         <?= !empty($related) ? '</div>' : null ?>
         <?php if (!empty($related)) : ?>
             <div>
@@ -23,9 +29,6 @@ $cta_text_blurb = get_field('blog_cta_text_blurb', 'options');
             </div>
         <?php endif; ?>
 
-        <div class="contact-cta">
-            <div class="cta-text"><?= $cta_text_blurb ?></div>
-            <div class="cta-link"><a href="<?= $cta_link ?>"><?= $cta_text ?> <i class="fas fa-arrow-right"></i></a></div>
-        </div>
+
     </section>
 </article>
