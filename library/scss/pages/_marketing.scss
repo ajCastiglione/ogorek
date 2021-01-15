@@ -34,7 +34,8 @@
                     @include media("tablet") {
                         position: absolute;
                         bottom: 0;
-                        left: 5px;
+                        left: 0;
+                        padding: 0 8px;
                     }
                 }
             }
@@ -250,7 +251,33 @@
                 }
                 &:last-child {
                     text-align: center;
+                    @include media("tablet") {
+                        padding: 1rem 0 1rem 1rem;
+                    }
                 }
+            }
+            .content {
+                h2,
+                h3 {
+                    font-size: 38px;
+                    font-weight: bold;
+                    @include media("tablet") {
+                        font-size: 45px;
+                    }
+                    @include media("laptop") {
+                        font-size: 55px;
+                    }
+                }
+                p {
+                    font-size: 18px;
+                    @include media("tablet") {
+                        font-size: 24px;
+                    }
+                }
+            }
+            .video {
+                max-width: 100%;
+                position: static;
             }
         }
         &.s2 {
