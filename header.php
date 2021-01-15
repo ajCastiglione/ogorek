@@ -80,7 +80,7 @@
 				dl = l != 'dataLayer' ? '&l=' + l : '';
 			j.async = true;
 			j.src =
-				'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				'https://www.googletagmanager.com/gtm.js?id=GTM-TRVGDQV';
 			f.parentNode.insertBefore(j, f);
 		})(window, document, 'script', 'dataLayer', 'GTM-TRVGDQV');
 	</script>
