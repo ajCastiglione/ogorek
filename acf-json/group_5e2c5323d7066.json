@@ -133,7 +133,15 @@
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e62d3bb341fa",
+                        "operator": "==",
+                        "value": "video"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -683,5 +691,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1610745664
+    "modified": 1610806407
 }

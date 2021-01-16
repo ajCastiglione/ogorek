@@ -25,9 +25,11 @@ $sectClassNames .= $img_or_vid == 'image' ? 'has-img' : 'has-video';
                     <source src="<?= $hero ?>">
                 </video>
             <?php endif; ?>
-            <div class="content">
-                <?= $hero_content ?>
-            </div>
+            <?php if ($img_or_vid !== 'image') : ?>
+                <div class="content">
+                    <?= $hero_content ?>
+                </div>
+            <?php endif; ?>
         </div>
         <div class="right">
             <h1 class="title"><?= $title ?></h1>
