@@ -40,8 +40,13 @@ $sectClassNames .= $img_or_vid == 'image' ? 'has-img' : 'has-video';
                     <h3 class="form-subtitle"><?= $formSubtitle ?></h3>
                     <?= $form ?>
                 </div>
+                <div class="cta-buttons">
+                    <a href="tel:716-626-5000" class="cta"><i class="fas fa-phone-alt" aria-hidden="true"></i> 716-626-5000</a>
+                    <span class="or">or</span>
+                    <a href="mailto:prosper@ogorek.test" class="cta"><i class="fas fa-paper-plane" aria-hidden="true"></i> Contact Us</a>
+                </div>
             </div>
-            <a href="#section-2" class="learn-more">learn more <svg class="down-arrow" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+            <a href="<?= $img_or_vid === 'image' ? '#section-1' : '#section-2'; ?>" class="learn-more">learn more <svg class="down-arrow" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
                     <path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z" />
                 </svg></a>
         </div>
