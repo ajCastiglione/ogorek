@@ -133,7 +133,15 @@
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e62d3bb341fa",
+                        "operator": "==",
+                        "value": "video"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -241,6 +249,68 @@
             "min": "",
             "max": "",
             "step": ""
+        },
+        {
+            "key": "field_600206fe73e0e",
+            "label": "Section 1",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e62d3bb341fa",
+                        "operator": "==",
+                        "value": "image"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6002072773e10",
+            "label": "Content",
+            "name": "s1_content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_6002070b73e0f",
+            "label": "Body Video",
+            "name": "s1_body_video",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_5e2c54bfacc1c",
@@ -619,7 +689,7 @@
         "the_content",
         "featured_image"
     ],
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1583540596
+    "modified": 1610806407
 }

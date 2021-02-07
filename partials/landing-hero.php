@@ -9,9 +9,12 @@ $title = get_field('above_form_title');
 $subtitle = get_field('above_form_subtitle');
 $formTitle = get_field('form_title');
 $formSubtitle = get_field('form_subtitle');
+
+$sectClassNames = 'hero-landing-page ';
+$sectClassNames .= $img_or_vid == 'image' ? 'has-img' : 'has-video';
 ?>
 
-<section class="hero-landing-page">
+<section class="<?= $sectClassNames ?>">
     <div class="grid-50">
         <div class="left">
             <img src="<?= $logo ?>" alt="Ogorek Wealth Management" class="logo">
@@ -22,9 +25,11 @@ $formSubtitle = get_field('form_subtitle');
                     <source src="<?= $hero ?>">
                 </video>
             <?php endif; ?>
-            <div class="content">
-                <?= $hero_content ?>
-            </div>
+            <?php if ($img_or_vid !== 'image') : ?>
+                <div class="content">
+                    <?= $hero_content ?>
+                </div>
+            <?php endif; ?>
         </div>
         <div class="right">
             <h1 class="title"><?= $title ?></h1>
@@ -35,8 +40,13 @@ $formSubtitle = get_field('form_subtitle');
                     <h3 class="form-subtitle"><?= $formSubtitle ?></h3>
                     <?= $form ?>
                 </div>
+                <div class="cta-buttons">
+                    <a href="tel:716-626-5000" class="cta"><i class="fas fa-phone-alt" aria-hidden="true"></i> 716-626-5000</a>
+                    <span class="or">or</span>
+                    <a href="mailto:prosper@ogorek.test" class="cta"><i class="fas fa-paper-plane" aria-hidden="true"></i> Contact Us</a>
+                </div>
             </div>
-            <a href="#section-2" class="learn-more">learn more <svg class="down-arrow" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+            <a href="<?= $img_or_vid === 'image' ? '#section-1' : '#section-2'; ?>" class="learn-more">learn more <svg class="down-arrow" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
                     <path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z" />
                 </svg></a>
         </div>

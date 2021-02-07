@@ -1,7 +1,8 @@
 <?php
-$s1title = get_field('s1_title');
+$has_img = get_field('image_or_video') == 'image' ? True : False;
+
 $s1content = get_field('s1_content');
-$s1img = get_field('s1_image');
+$s1vid = get_field('s1_body_video');
 $s2title = get_field('s2_title');
 $s2subtitle = get_field('s2_subtitle');
 $s3title = get_field('s3_title');
@@ -10,23 +11,24 @@ $s3img = get_field('s3_image');
 $s4title = get_field('s4_title');
 $s4subtitle = get_field('s4_subtitle');
 ?>
-
-<!-- <section id="section-1" class="landing-page-section-content s1">
-    <div class="large-wrapper">
-        <div class="grid-50">
-            <div class="half">
-                <h2 class="title"><?= $s1title ?></h2>
-                <div class="content">
-                    <?= $s1content ?>
+<?php if ($has_img) : ?>
+    <section id="section-1" class="landing-page-section-content s1">
+        <div class="large-wrapper">
+            <div class="grid-50">
+                <div class="half">
+                    <div class="content">
+                        <?= $s1content ?>
+                    </div>
+                </div>
+                <div class="half">
+                    <video controls playsinline preload="metadata" class="video">
+                        <source src="<?= $s1vid ?>#t=0.1">
+                    </video>
                 </div>
             </div>
-            <div class="half">
-                <img src="<?= $s1img['url'] ?>" alt="<?= $s1img['alt'] ?>" class="img">
-            </div>
         </div>
-    </div>
-</section> -->
-
+    </section>
+<?php endif; ?>
 <section id="section-2" class="landing-page-section-content s2">
     <div class="large-wrapper">
         <h2 class="title"><?= $s2title ?></h2>
