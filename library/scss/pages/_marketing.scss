@@ -442,6 +442,18 @@
                     }
                 }
             }
+            .serving {
+                max-width: 900px;
+                margin: 24px auto;
+                h3 {
+                    font-size: 1.55em;
+                    font-weight: bold;
+                    margin-bottom: 18px;
+                }
+                p {
+                    font-size: 1.15em;
+                }
+            }
             .map {
                 position: relative;
                 min-height: 350px;
