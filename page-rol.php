@@ -16,7 +16,7 @@
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-						<?= get_template_part('template-parts/content', 'service'); ?>
+						<?= get_template_part('template-parts/content', 'rol'); ?>
 
 					</article>
 
