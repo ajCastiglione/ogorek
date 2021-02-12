@@ -9,7 +9,7 @@ function smoothScroll($) {
       let target = $(this.hash);
       let nav = $(".shiftnav-shiftnav-main");
 
-      if (target.selector.includes("newsletter")) {
+      if (target.selector && target.selector.includes("newsletter")) {
         location.href = "https://ogorek.com/contact/";
       }
 
