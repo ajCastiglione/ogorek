@@ -24,6 +24,7 @@ import showForm from "./components/LandingPage";
 import toggleFAQ from "./components/FAQ";
 import inputMask from "./components/Masking";
 import initHomeSlider from "./components/Home";
+import ROL from "./components/ROL";
 
 /*
  * Put all your regular jQuery in here.
@@ -83,6 +84,10 @@ jQuery(document).ready(function ($) {
 
   if ($("body").hasClass("page-template-page-faq")) {
     toggleFAQ($);
+  }
+
+  if ($("body").hasClass("page-template-page-rol")) {
+    ROL($);
   }
 }); /* end of as page load scripts */
 

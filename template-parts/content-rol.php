@@ -35,7 +35,7 @@ $form = do_shortcode("[gravityform id=\"{$form_id}\" title=\"false\" description
 
   <div class="relevant-articles">
     <div class="col-1">
-      <?= get_related_posts($post) ?>
+      <?= get_related_posts_popup($post) ?>
     </div>
   </div>
 
@@ -48,6 +48,13 @@ $form = do_shortcode("[gravityform id=\"{$form_id}\" title=\"false\" description
       <div class="form">
         <?= $form ?>
       </div>
+    </div>
+  </div>
+
+  <div class="article-popup-container hidden">
+    <div class="close-popup"><i class="fas fa-times-circle"></i></div>
+    <div class="wrap">
+      <!-- Content will be added here once activated -->
     </div>
   </div>
 </article>
