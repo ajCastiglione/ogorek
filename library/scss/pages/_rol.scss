@@ -196,38 +196,57 @@
         width: 100%;
         height: 100%;
         z-index: 99;
-        background-color: $white;
-        padding: 64px 20px 20px;
+        background-color: rgba(0, 0, 0, 0.5);
         overflow-y: auto;
         overflow-x: hidden;
-        @media (min-width: 1180px) {
-            padding-top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .article-popup-inner {
+            position: relative;
+            background-color: $white;
+            max-width: 90%;
+            max-height: 80%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 0 24px 18px;
+            border-radius: 5px;
+            @include media("tablet") {
+                max-width: 70%;
+                max-height: 60%;
+            }
+            @include media("desktop") {
+                max-width: 80%;
+                height: 75%;
+            }
         }
+
         // Close popup
         .close-popup {
             position: absolute;
-            top: 60px;
+            top: 20px;
             right: 10px;
             z-index: 100;
             font-size: 30px;
             color: $primary;
             cursor: pointer;
             @media (min-width: 1180px) {
-                top: 20px;
+                top: 10px;
             }
         }
         // Article content styles
         .article-header {
             background-color: #f4f4f4;
             position: relative;
-            width: 100vw;
-            left: calc(-50vw + 50%);
+            width: calc(100% + 62px);
+            left: -32px;
             padding: 24px;
             margin-bottom: 32px;
             @include media("tablet") {
                 padding: 48px 24px;
             }
-            .wrap {
+            .content-wrap {
                 @include media("laptop") {
                     display: flex;
                     align-items: center;
@@ -239,10 +258,14 @@
                 margin-bottom: 24px;
                 @include media("laptop") {
                     margin-bottom: 0;
+                    padding-left: 16px;
                 }
                 .featured-image {
                     width: 100%;
-                    @include media("laptop") {
+                    @include media("tablet") {
+                        max-width: 400px;
+                    }
+                    @include media("desktop") {
                         max-width: 450px;
                     }
                 }

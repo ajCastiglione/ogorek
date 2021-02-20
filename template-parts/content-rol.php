@@ -52,9 +52,11 @@ $form = do_shortcode("[gravityform id=\"{$form_id}\" title=\"false\" description
   </div>
 
   <div class="article-popup-container hidden">
-    <div class="close-popup"><i class="fas fa-times-circle"></i></div>
-    <div class="wrap">
-      <!-- Content will be added here once activated -->
+    <div class="article-popup-inner">
+      <div class="close-popup"><i class="fas fa-times-circle"></i></div>
+      <div class="content-wrap">
+        <!-- Content will be added here once activated -->
+      </div>
     </div>
   </div>
 </article>

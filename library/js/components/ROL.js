@@ -1,7 +1,7 @@
 export default function ROL($) {
   const doc = $("html, body");
   const container = $(".article-popup-container");
-  const containerInner = $(".article-popup-container .wrap");
+  const containerInner = $(".article-popup-container .content-wrap");
   const posts = $(".related-posts__container .related-posts__single");
   const close = $(".article-popup-container .close-popup");
 
@@ -13,7 +13,7 @@ export default function ROL($) {
       .clone()
       .appendTo(containerInner)
       .find(".article-header")
-      .wrapInner('<div class="wrap"></div>');
+      .wrapInner('<div class="content-wrap"></div>');
     container.removeClass("hidden");
     doc.css("overflow-y", "hidden");
   };
