@@ -1,5 +1,4 @@
 .page-template-page-prospect {
-    min-height: 100vh;
     background-color: #47a84d;
     // background-image: linear-gradient(315deg, #47a84d 0%, #246db1 95%);
     background-image: url("https://ogorek.com/wp-content/uploads/2021/02/prospect_bg.png");
@@ -15,6 +14,9 @@
     .footer,
     #shiftnav-toggle-main {
         display: none;
+    }
+    @include media("phablet") {
+        min-height: 100vh;
     }
 
     .prospect {
@@ -118,7 +120,11 @@
                     .gform_footer {
                         text-align: center;
                         .button {
-                            font-size: 1.25em;
+                            white-space: break-spaces;
+                            @include media("tablet") {
+                                white-space: revert;
+                                font-size: 1.25em;
+                            }
                         }
                     }
                 }
