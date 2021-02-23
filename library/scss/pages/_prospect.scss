@@ -122,6 +122,7 @@
                         .button {
                             white-space: break-spaces;
                             @include media("tablet") {
+                                white-space: revert;
                                 font-size: 1.25em;
                             }
                         }
