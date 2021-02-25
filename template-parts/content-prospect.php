@@ -13,7 +13,9 @@ $form = do_shortcode("[gravityform id=\"{$form_id}\" title=\"false\" description
                 <img src="https://ogorek.com/wp-content/uploads/2020/04/OGOREK-Logo-White-01.png" alt="Ogorek Wealth Managent" class="prospect__logo">
             </div>
             <h1 class="prospect__title"><span class="inner"><?= $title ?></span></h1>
-            <div class="prospect__content"><?= $content ?></div>
+            <?php if (!empty($content)) : ?>
+                <div class="prospect__content"><?= $content ?></div>
+            <?php endif; ?>
         </div>
         <div class="prospect__form">
             <?php if (!empty($form_title)) echo "<h2 class='form-title'>{$form_title}</h2>";

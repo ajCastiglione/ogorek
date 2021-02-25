@@ -30,12 +30,17 @@
             }
         }
         &__content-wrap {
-            max-width: 600px;
+            margin: auto;
+            @include media("tablet") {
+                max-width: 600px;
+                margin: 0;
+            }
         }
         &__logo-container {
             text-align: center;
             @include media("tablet") {
                 text-align: left;
+                margin-top: 2rem;
             }
         }
         &__logo {
@@ -45,16 +50,24 @@
             @include media("tablet") {
                 width: 350px;
             }
+            @include media("laptop") {
+                width: 450px;
+            }
+            @include media("desktop") {
+                width: 550px;
+            }
         }
         &__title {
             font-size: 28px;
             text-align: center;
             @include media("tablet") {
-                font-size: 34px;
-                text-align: left;
+                font-size: 30px;
             }
             @include media("laptop") {
                 font-size: 40px;
+            }
+            @include media("desktop") {
+                font-size: 45px;
             }
             .inner {
                 background-color: $secondary;
@@ -85,11 +98,12 @@
             color: $black;
             border-radius: 5px;
             @include media("tablet") {
-                margin-left: 32px;
+                margin-left: 56px;
                 margin-top: 0;
             }
-            @include media("desktop") {
+            @include media("laptop") {
                 min-width: 500px;
+                margin-left: 64px;
             }
             .form-title {
                 text-transform: capitalize;
