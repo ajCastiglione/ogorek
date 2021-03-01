@@ -213,7 +213,7 @@ require 'theme/utils/detect-IE.php';
 function exclude_category_jobs($query)
 {
   if ($query->is_home) {
-    $query->set('cat', '-23, -18, -17, -16');
+    $query->set('cat', '-27, -23, -18, -17, -16');
   }
   return $query;
 }
