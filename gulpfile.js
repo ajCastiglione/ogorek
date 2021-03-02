@@ -5,10 +5,14 @@ const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const image = require("gulp-image");
 const bs = require("browser-sync");
-const browserify = require("browserify");
 const rename = require("gulp-rename");
 const uglify = require("gulp-uglify");
-const babel = require("gulp-babel");
+const webpack = require("webpack-stream");
+const sourcemaps = require("gulp-sourcemaps");
+const gulpif = require("gulp-if");
+
+const env = process.env.NODE_ENV || "development";
+const isDevelopment = env === "development";
 
 const scss = ["library/scss/*/*.scss"];
 const editorStyle = ["library/scss/editor-style.scss"];
@@ -21,17 +25,27 @@ gulp.task("js", function () {
   return gulp
     .src(js)
     .pipe(
-      babel({
-        presets: ["@babel/preset-env"],
+      webpack({
+        mode: "production",
+        output: {
+          filename: "scripts.js",
+        },
+        module: {
+          rules: [
+            {
+              test: /\.(js|jsx)$/,
+              use: ["babel-loader"],
+              exclude: /node_modules/,
+            },
+          ],
+        },
       })
     )
-    .pipe(
-      rename({
-        extname: ".min.js",
-      })
-    )
-    .pipe(uglify())
-    .pipe(gulp.dest("library/js"));
+    .pipe(gulpif(isDevelopment, sourcemaps.init()))
+    .pipe(gulpif(!isDevelopment, uglify()))
+    .pipe(rename({ extname: ".min.js" }))
+    .pipe(gulpif(isDevelopment, sourcemaps.write(".")))
+    .pipe(gulp.dest("./library/js/dist"));
 });
 
 //Compile scss
@@ -110,12 +124,12 @@ gulp.task("init", () => {
     files: all,
   });
   gulp.watch(scss, gulp.series("compile", "compile-login"));
+  gulp.watch(js, gulp.series("js"));
   gulp.watch(editorStyle, gulp.series("compile-admin"));
-  // gulp.watch(js, gulp.series("js"));
 });
 
 // Start the process
 gulp.task("default", gulp.series("init"));
 
 // Build command
-gulp.task("build", gulp.series("compile", "compile-login"));
+gulp.task("build", gulp.series("compile", "compile-login", "js"));
