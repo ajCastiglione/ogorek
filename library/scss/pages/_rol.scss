@@ -18,6 +18,9 @@
             }
         }
     }
+    .articles-title {
+        margin-bottom: 24px;
+    }
     .relevant-articles {
         margin: 32px 0;
         @include media("tablet") {
@@ -133,29 +136,49 @@
             font-size: 1.25em;
         }
 
-        .form {
-            margin-top: 16px;
+        // .form {
+        //     margin-top: 16px;
+        //     @include media("tablet") {
+        //         margin-top: 32px;
+        //     }
+        //     .gform_wrapper {
+        //         margin: 0 auto;
+        //         max-width: 600px;
+        //         .gform_body,
+        //         .gform_footer {
+        //             width: 100%;
+        //             padding: 0;
+        //             input {
+        //                 border-radius: 0;
+        //                 margin: 0;
+        //                 &[type="submit"] {
+        //                     padding: 10px 24px;
+        //                     &:hover {
+        //                         color: $white;
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+        .btn {
+            display: block;
+            color: inherit;
+            border: 2px solid $white;
+            border-radius: 5px;
+            padding: 4px 12px;
+            font-size: 18px;
+            transition: all 0.4s ease;
+            background-color: $secondary;
+            margin: 18px auto 0;
+            max-width: 200px;
             @include media("tablet") {
-                margin-top: 32px;
+                display: inline-block;
+                margin: 0 0 0 24px;
             }
-            .gform_wrapper {
-                margin: 0 auto;
-                max-width: 600px;
-                .gform_body,
-                .gform_footer {
-                    width: 100%;
-                    padding: 0;
-                    input {
-                        border-radius: 0;
-                        margin: 0;
-                        &[type="submit"] {
-                            padding: 10px 24px;
-                            &:hover {
-                                color: $white;
-                            }
-                        }
-                    }
-                }
+            &:hover {
+                color: $white;
+                background-color: darken($secondary, 15%);
             }
         }
     }
