@@ -33,7 +33,7 @@ $form = do_shortcode("[gravityform id=\"{$form_id}\" title=\"false\" description
 
 
   <div class="relevant-articles">
-    <h2 class="articles-title center">Click through the 10 Return on Life facets below to learn more.</h2>
+    <h2 class="articles-title center">Click through the 10 Return on Life facets below to learn more:</h2>
     <div class="col-1">
       <?= get_related_posts_popup($post) ?>
     </div>
