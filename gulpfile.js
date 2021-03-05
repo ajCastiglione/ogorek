@@ -18,6 +18,7 @@ const scss = ["library/scss/*/*.scss"];
 const editorStyle = ["library/scss/editor-style.scss"];
 const imgs = ["library/images/*"];
 const js = "library/js/scripts.js";
+const allJs = ["library/js/**/*.js", "!library/js/dist/*.js"];
 const all = ["library/*.php", "*.php", "*/*.php", "library/js/*.js"];
 
 // Compile and minify JS + babel
@@ -45,7 +46,8 @@ gulp.task("js", function () {
     .pipe(gulpif(!isDevelopment, uglify()))
     .pipe(rename({ extname: ".min.js" }))
     .pipe(gulpif(isDevelopment, sourcemaps.write(".")))
-    .pipe(gulp.dest("./library/js/dist"));
+    .pipe(gulp.dest("./library/js/dist"))
+    .pipe(bs.stream());
 });
 
 //Compile scss
@@ -124,7 +126,7 @@ gulp.task("init", () => {
     files: all,
   });
   gulp.watch(scss, gulp.series("compile", "compile-login"));
-  gulp.watch(js, gulp.series("js"));
+  gulp.watch(allJs, gulp.series("js"));
   gulp.watch(editorStyle, gulp.series("compile-admin"));
 });
 
