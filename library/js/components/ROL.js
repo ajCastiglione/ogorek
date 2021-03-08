@@ -32,7 +32,19 @@ export default function ROL($) {
     }
   };
 
+  const handleShadow = () => {
+    if (
+      containerInner[0].scrollHeight - containerInner.scrollTop() ==
+      Math.floor(containerInner.outerHeight())
+    ) {
+      containerInner.removeClass("shadow");
+    } else {
+      containerInner.addClass("shadow");
+    }
+  };
+
   posts.on("click", handlePopup);
   close.on("click", handleClose);
   doc.on("keyup", (e) => handleClose(e, "keypress"));
+  containerInner.on("scroll", handleShadow);
 }

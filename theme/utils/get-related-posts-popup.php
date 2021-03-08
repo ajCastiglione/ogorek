@@ -26,15 +26,17 @@ function get_related_posts_popup($post)
                                         <?= get_the_title($related_post); ?>
                                     </a>
                                 </h2>
+                                <?php /*
                                 <p class="byline entry-meta">
                                     <?php printf(
                                         __('', 'bonestheme') . ' %1$s %2$s',
-                                        /* the time the post was published */
+                                        // the time the post was published
                                         '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d', $related_post) . '" itemprop="datePublished">' . get_the_time(get_option('date_format'), $related_post) . '</time>',
-                                        /* the categories of the post */
+                                        // the categories of the post
                                         '<span class="by">' . __('|', 'bonestheme') . '</span> <span class="post-categories" itemprop="categories">' .  get_the_category_list(', ', '', $related_post) . '</span>'
                                     ); ?>
                                 </p>
+                                */ ?>
                             </div>
 
                         </header>

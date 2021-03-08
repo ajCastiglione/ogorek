@@ -1,5 +1,5 @@
 // Popup functionality
-function popup($) {
+export function popup($) {
   let body = $("body");
   let modal = $(".popup");
   let exitModal = $(".popup.exit");
@@ -59,7 +59,7 @@ function popup($) {
 }
 
 // Successful newsletter signup
-function newsletterSignup($) {
+export function newsletterSignup($) {
   jQuery(document).on("gform_confirmation_loaded", function (event, formId) {
     // code to be trigger when confirmation page is loaded
     setTimeout(function () {
@@ -74,8 +74,3 @@ function newsletterSignup($) {
     }, 3500);
   });
 }
-
-module.exports = {
-  newsletterSignup,
-  popup,
-};
