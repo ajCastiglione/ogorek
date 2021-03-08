@@ -254,17 +254,21 @@
             }
             .featured-image-container {
                 margin-bottom: 24px;
+                text-align: center;
                 @include media("laptop") {
                     margin-bottom: 0;
                     padding-left: 16px;
                 }
+                @include media("laptop") {
+                    text-align: right;
+                }
                 .featured-image {
                     width: 100%;
                     @include media("tablet") {
-                        max-width: 400px;
+                        max-width: 350px;
                     }
                     @include media("desktop") {
-                        max-width: 450px;
+                        // max-width: 450px;
                         max-height: 250px;
                         object-fit: cover;
                     }
@@ -276,8 +280,7 @@
             .entry-title {
                 margin-bottom: 18px;
                 @include media("tablet") {
-                    font-size: 2.5em;
-                    margin-left: -10px;
+                    font-size: 2.25em;
                 }
             }
         }
