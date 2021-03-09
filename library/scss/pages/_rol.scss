@@ -266,10 +266,10 @@
                     width: 100%;
                     @include media("tablet") {
                         max-width: 350px;
+                        max-height: 200px;
                     }
                     @include media("desktop") {
                         // max-width: 450px;
-                        max-height: 250px;
                         object-fit: cover;
                     }
                 }
