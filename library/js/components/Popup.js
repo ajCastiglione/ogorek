@@ -7,7 +7,7 @@ export function popup($) {
   let date = new Date(Date.now() + 86400e3).toUTCString();
   let cookieString = "popShown=true; expires=" + date;
   let allCookies = document.cookie.split(";");
-  localStorage.popHidden = false;
+  sessionStorage.popHidden = false;
 
   // if popup was closed this session, don't show it again
   if (allCookies.find((row) => row.startsWith("popShown"))) {
@@ -28,7 +28,7 @@ export function popup($) {
     if (
       e.clientY < 0 &&
       exitModal.length > 0 &&
-      localStorage.popHidden !== "true"
+      sessionStorage.popHidden !== "true"
     ) {
       exitModal.addClass("active");
       body.addClass("popup-active");
@@ -41,7 +41,7 @@ export function popup($) {
     body.removeClass("popup-active");
     document.cookie = cookieString;
     document.cookie = cookieString;
-    localStorage.popHidden = true;
+    sessionStorage.popHidden = true;
   });
 
   body.on("click", function (e) {
