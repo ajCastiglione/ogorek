@@ -18,6 +18,16 @@ export default function ROL($) {
     container.removeClass("hidden");
     containerInner.scrollTop(0);
     doc.css("overflow-y", "hidden");
+
+    // Handle box shadow if content overflows
+    if (
+      containerInner[0].scrollHeight - containerInner.scrollTop() ==
+      Math.floor(containerInner.outerHeight())
+    ) {
+      containerInner.removeClass("shadow");
+    } else {
+      containerInner.addClass("shadow");
+    }
   };
 
   const handleClose = (e, string) => {

@@ -235,20 +235,24 @@
         }
         // Article content styles
         .article-header {
-            background-color: #f4f4f4;
             position: relative;
-            width: calc(100% + 62px);
+            width: auto;
             left: -32px;
             padding: 24px;
-            margin-bottom: 32px;
             @include media("tablet") {
                 padding: 24px;
+            }
+            @include media("laptop") {
+                margin-bottom: 32px;
+                float: left;
+                max-width: 450px;
+                text-align: center;
             }
             .content-wrap {
                 @include media("laptop") {
                     display: flex;
                     align-items: center;
-                    flex-direction: row-reverse;
+                    flex-direction: column-reverse;
                     justify-content: space-between;
                 }
             }
@@ -288,6 +292,9 @@
             display: block !important;
             @include media("tablet") {
                 font-size: 16px;
+            }
+            @include media("laptop") {
+                padding: 24px 24px 0 0;
             }
             h3,
             h4 {
