@@ -5,7 +5,7 @@ $content = get_field('popup_content', 'options');
 
 // Check for referrer
 $refferer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null;
-$allowed_hosts = ['localhost', 'ogorek.com'];
+$allowed_hosts = ['localhost', 'ogorek.com', 'ogorek.test', 'ogorek.minervawddev.com'];
 $host = parse_url($refferer, PHP_URL_HOST);
 $from_internal_site = in_array($host, $allowed_hosts);
 

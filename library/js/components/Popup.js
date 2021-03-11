@@ -11,7 +11,6 @@ export function popup($) {
 
   // if popup was closed this session, don't show it again
   if (allCookies.find((row) => row.startsWith("popShown"))) {
-    console.log("cookie found");
     return modal.remove();
   }
 
