@@ -68,9 +68,12 @@ $hide_contact_cta = get_field('hide_contact_cta');
               $comments = get_comments();
               foreach ($comments as $comment) :
                 $author = $comment->comment_author;
-                $content = $comment->comment_content; ?>
+                $content = $comment->comment_content;
+                $time =  strtotime($comment->comment_date);
+                $date = date('F d Y', $time);
+              ?>
                 <div class="comment">
-                  <h3 class="comment-author"><?= $author ?></h3>
+                  <h3 class="comment-author"><?= $author ?> <span class="posted"><i class="far fa-clock"></i> <?= $date ?></span></h3>
                   <div class="comment-content"><?= $content ?></div>
                 </div>
               <?php
