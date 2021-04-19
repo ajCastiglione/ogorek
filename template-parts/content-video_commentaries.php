@@ -21,6 +21,9 @@ $cta_text_blurb = get_field('blog_cta_text_blurb', 'options');
                 <div class="cta-text"><?= $cta_text_blurb ?></div>
                 <div class="cta-link"><a href="<?= $cta_link ?>"><?= $cta_text ?> <i class="fas fa-arrow-right"></i></a></div>
             </div>
+            <?php if (comments_open()) :
+                get_template_part('template-parts/comments');
+            endif; ?>
         </div>
         <?= !empty($related) ? '</div>' : null ?>
         <?php if (!empty($related)) : ?>
