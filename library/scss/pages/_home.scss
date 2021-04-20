@@ -727,9 +727,7 @@ Home Page Section
             .article-content {
                 padding: 12px 12px 45px;
                 text-align: center;
-                @include media("desktop") {
-                    min-height: 170px;
-                }
+                
                 .entry-title {
                     a {
                         font-size: 22px;
