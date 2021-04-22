@@ -41,3 +41,10 @@
   </div>
    -->
 </div>
+
+<?php
+if (get_field('show_banner', 'options')) : ?>
+  <div class="header-banner">
+    <div class="banner-content"><?= get_field('banner_content', 'options') ?></div>
+  </div>
+<?php endif; ?>
