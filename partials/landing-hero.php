@@ -31,7 +31,7 @@ $sectClassNames .= $img_or_vid == 'image' ? 'has-img' : 'has-video';
                     <?= $hero_vid_content ?>
                 </div>
             <?php endif; ?>
-            <?php if ($img_or_vid !== 'vid') : ?>
+            <?php if ($img_or_vid !== 'vid' && !empty($hero_img_content)) : ?>
                 <div class="content img-content">
                     <?= $hero_img_content ?>
                 </div>
