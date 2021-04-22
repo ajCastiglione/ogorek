@@ -1,5 +1,6 @@
 import hasSubMenu from "./components/Menu";
 import smoothScroll from "./components/SmoothScroll";
+import Header from "./components/header/Header";
 import {
   showVideo,
   loadIframe,
@@ -32,6 +33,7 @@ import ROL from "./components/ROL";
 jQuery(document).ready(function ($) {
   hasSubMenu($);
   smoothScroll($);
+  Header($);
   showVideo($);
   newsletterSignup($);
   addPlaceholderInternalPages($);
