@@ -23,10 +23,7 @@
 
     <div class="comments__approved">
         <?php
-        $comment_args = [
-            'post_id' => $post->ID
-        ];
-        $comments = get_comments($comment_args);
+        $comments = get_approved_comments($post->ID);
         if (!empty($comments)) : ?>
             <h3 class="approved-title">Comments:</h3>
             <?php
