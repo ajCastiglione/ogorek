@@ -123,7 +123,7 @@
 					<?= get_template_part('template-parts/content', 'topheader') ?>
 				</div>
 
-				<div class="header-bottom grid-3070 <?= get_field('show_alert', 'options') ? 'mb-lg' : null; ?>">
+				<div class="header-bottom grid-3070">
 					<div class="header-left">
 						<?php
 						if (get_field('hide_logo') === true || (is_home() && get_field('hide_logo', get_option('page_for_posts')) === true)) :
