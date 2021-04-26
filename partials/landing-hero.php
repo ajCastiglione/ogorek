@@ -2,7 +2,8 @@
 $logo = get_field('logo')['url'];
 $img_or_vid = get_field('image_or_video');
 $hero = $img_or_vid == 'image' ? get_field('hero_image')['url'] : get_field('hero_video');
-$hero_content = get_field('hero_left_content');
+$hero_vid_content = get_field('hero_left_content');
+$hero_img_content = get_field('hero_content');
 $formID = get_field('contact_form');
 $form = do_shortcode("[gravityform id='{$formID}' title='false' description='false']");
 $title = get_field('above_form_title');
@@ -27,7 +28,12 @@ $sectClassNames .= $img_or_vid == 'image' ? 'has-img' : 'has-video';
             <?php endif; ?>
             <?php if ($img_or_vid !== 'image') : ?>
                 <div class="content">
-                    <?= $hero_content ?>
+                    <?= $hero_vid_content ?>
+                </div>
+            <?php endif; ?>
+            <?php if ($img_or_vid !== 'vid' && !empty($hero_img_content)) : ?>
+                <div class="content img-content">
+                    <?= $hero_img_content ?>
                 </div>
             <?php endif; ?>
         </div>

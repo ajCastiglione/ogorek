@@ -154,6 +154,33 @@
             "delay": 0
         },
         {
+            "key": "field_6081e90415547",
+            "label": "Hero Content",
+            "name": "hero_content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e62d3bb341fa",
+                        "operator": "==",
+                        "value": "image"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
             "key": "field_5e2c53a8acc14",
             "label": "Above Form Title",
             "name": "above_form_title",
@@ -691,5 +718,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1610806407
+    "modified": 1619126597
 }
