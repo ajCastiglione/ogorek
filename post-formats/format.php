@@ -16,8 +16,6 @@ $newsletter = do_shortcode('[gravityform id="4" title="false" description="false
           <?= get_byline($post); ?>
         </div>
 
-        <a href="#" id="save-for-later" class="save-later"><i class="fas fa-bookmark"></i> Save for later</a>
-
         <?= get_author($post) ?>
 
       </div>
@@ -55,7 +53,5 @@ $newsletter = do_shortcode('[gravityform id="4" title="false" description="false
       </aside>
     </article>
   </section>
-
-  <?= get_template_part('template-parts/content', 'save-later'); ?>
 
 </article>
