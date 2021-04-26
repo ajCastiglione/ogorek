@@ -11,7 +11,7 @@ import mobileMenuSubMenu from "./components/MobileMenu";
 import scrollTop from "./components/ScrollTop";
 import newsletterRedirect from "./components/Redirects";
 import contactNewsletter from "./components/ContactPage";
-import { addLightbox, addImageZoom } from "./components/Blog";
+import { addLightbox, addImageZoom, newsletter } from "./components/Blog";
 import initSlider from "./components/Slider";
 import {
   addCheck,
@@ -61,6 +61,7 @@ jQuery(document).ready(function ($) {
   if ($("body").hasClass("single-post")) {
     addLightbox($);
     addImageZoom($);
+    newsletter($);
   }
 
   if ($("body").hasClass("home")) {
