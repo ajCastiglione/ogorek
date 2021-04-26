@@ -11,13 +11,7 @@ import mobileMenuSubMenu from "./components/MobileMenu";
 import scrollTop from "./components/ScrollTop";
 import newsletterRedirect from "./components/Redirects";
 import contactNewsletter from "./components/ContactPage";
-<<<<<<< HEAD
-import { addLightbox, addImageZoom, saveForLater } from "./components/Blog";
-||||||| e9cc41e
-import { addLightbox, addImageZoom } from "./components/Blog";
-=======
 import { addLightbox, addImageZoom, newsletter } from "./components/Blog";
->>>>>>> blog-cta
 import initSlider from "./components/Slider";
 import {
   addCheck,
