@@ -21,33 +21,23 @@ function addLightbox($) {
   });
 }
 
-// Toggle Save for later feature on single posts
-function saveForLater($) {
-  let saveBtn = $("#save-for-later");
-  let close = $("#close-sfl");
-  let form = $("#save-form");
-  const urlParams = new URLSearchParams(window.location.search);
-  const success = urlParams.get("success");
+// Newsletter slide out
+function newsletter($) {
+  let btn = $("a[href*=letter]");
+  let form = $("#gform_wrapper_4");
 
-  if (success) {
-    saveBtn
-      .html("Successfully sent you the post!")
-      .addClass("success")
-      .removeAttr("href");
-    return;
+  if (form.hasClass("gform_validation_error")) {
+    form.show(300);
   }
 
-  saveBtn.on("click", (e) => {
+  btn.on("click", (e) => {
     e.preventDefault();
-    form.addClass("active");
-  });
-  close.on("click", () => {
-    form.removeClass("active");
+    form.show(500);
   });
 }
 
 module.exports = {
   addLightbox,
   addImageZoom,
-  saveForLater,
+  newsletter,
 };

@@ -433,4 +433,89 @@ Blog Section
             }
         }
     }
+
+    // Newsletter section
+    #gform_wrapper_4 {
+        display: none;
+        @media (min-width: 1500px) {
+            // actual form element
+            &.gform_validation_error {
+                #gform_4 {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    align-items: center;
+                    grid-gap: 10px;
+                    .validation_error {
+                        grid-column: 1/4;
+                    }
+                    .gform_body {
+                        grid-column: 1/3;
+                    }
+                }
+            }
+            #gform_4 {
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+            }
+        }
+        // form fields
+        .gform_body {
+            margin-top: 0;
+            #gform_fields_4 {
+                @include media("laptop") {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                li {
+                    width: 100%;
+                    padding: 0;
+                    margin-top: 0;
+                    @include media("laptop") {
+                        padding-right: 10px;
+                        &:last-child {
+                            padding-right: 0;
+                        }
+                    }
+                }
+                input {
+                    width: 100%;
+                    margin: 0;
+                    border: 2px solid $secondary;
+                }
+                li.hide-field {
+                    display: none;
+                }
+            }
+        }
+        // submit button
+        .gform_footer {
+            text-align: center;
+            margin-top: 10px;
+            padding: 0;
+            @media (min-width: 1500px) {
+                max-width: 250px;
+                text-align: center;
+                padding: 0;
+            }
+            .gform_button {
+                width: 100%;
+                padding: 0.5rem 0;
+                height: 95%;
+                font-size: 16px;
+                @include media("laptop") {
+                    width: 100%;
+                }
+                &:hover {
+                    color: $secondary;
+                }
+            }
+        }
+    }
+    .gform_confirmation_wrapper {
+        h2 {
+            color: $primary !important;
+        }
+    }
 }
