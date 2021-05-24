@@ -17,6 +17,16 @@
                 }
             }
         }
+
+        .video-container {
+            text-align: center;
+            padding: 24px 0;
+        }
+        &__video {
+            position: static;
+            max-width: 700px;
+            margin: auto;
+        }
     }
     .articles-title {
         margin-bottom: 24px;
