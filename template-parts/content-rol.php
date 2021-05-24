@@ -1,4 +1,5 @@
 <?php
+$video = get_field('video_file');
 $s1_title = get_field('s1_title');
 $s1_content = get_field('s1_content');
 $s1_aside_title = get_field('s1_aside_title');
@@ -12,6 +13,15 @@ $form = do_shortcode("[gravityform id=\"{$form_id}\" title=\"false\" description
 
 <article class="service">
   <?= get_template_part('partials/hero'); ?>
+
+  <?php if (!empty($video)) : ?>
+    <div class="video-container">
+      <video controls playsinline preload="metadata" class="service__video">
+        <source src="<?= $video ?>">
+      </video>
+    </div>
+  <?php endif; ?>
+
   <?php if (!empty($s1_title) || !empty($s1_content)) : ?>
     <section class="section-1">
       <div class="col-1 grid-7030">
