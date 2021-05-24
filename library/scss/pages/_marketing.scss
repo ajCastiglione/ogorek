@@ -18,6 +18,7 @@
             .left {
                 background-color: transparent;
                 color: $white;
+                padding: 2rem 1rem 0;
                 &:before {
                     position: absolute;
                     content: "";
@@ -28,14 +29,13 @@
                     z-index: 2;
                     background-color: rgba(0, 0, 0, 0.4);
                 }
-                .content {
+                .content.img-content {
                     position: relative;
                     z-index: 3;
                     background-color: rgba($black, 0.8);
                     color: $white;
                     width: 100vw;
                     left: calc(-50vw + 50%);
-                    bottom: -2rem;
                     padding: 6px 12px;
                     @include media("tablet") {
                         position: absolute;
@@ -43,6 +43,9 @@
                         left: 0;
                         width: auto;
                         padding: 0 16px;
+                    }
+                    @include media(laptop) {
+                        min-height: 450px;
                     }
                     h2 {
                         color: inherit;

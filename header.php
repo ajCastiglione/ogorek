@@ -38,6 +38,11 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="theme-color" content="#ffffff">
 
+	<!-- Preload images -->
+	<?php if (is_front_page()) : ?>
+		<link rel="preload" as="image" href="<?= get_field('s1_background_image')['url'] ?>">
+	<?php endif; ?>
+
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 	<!--external stylesheets / fonts / etc...-->
 	<?php if (check_agent() !== 'firefox') : ?>
