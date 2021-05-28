@@ -2,6 +2,19 @@
     .service {
         .content,
         .aside-text {
+            h2 {
+                @include media(tablet) {
+                    font-size: 35px;
+                }
+                @include media(laptop) {
+                    font-size: 45px;
+                }
+            }
+            p {
+                @include media(laptop) {
+                    font-size: 22px;
+                }
+            }
             a {
                 display: inline-block;
                 background-color: $secondary;
@@ -140,9 +153,15 @@
         .content {
             max-width: 990px;
             margin: 24px auto;
-        }
-        h2 {
-            color: $primary;
+            .title {
+                color: $primary;
+                @include media(laptop) {
+                    font-size: 45px;
+                }
+                @include media(desktop) {
+                    font-size: 55px;
+                }
+            }
         }
     }
     .section-3 {
