@@ -2,6 +2,7 @@
     .service {
         .content,
         .aside-text {
+            text-align: center;
             h2 {
                 @include media(tablet) {
                     font-size: 35px;
@@ -174,7 +175,7 @@
             font-size: 2.5em;
         }
         .text {
-            font-size: 1.25em;
+            font-size: 1.5em;
         }
 
         // .form {
