@@ -18,7 +18,7 @@ $form = do_shortcode("[gravityform id=\"{$form_id}\" title=\"false\" description
 
   <?php if (!empty($s1_title) || !empty($s1_content)) : ?>
     <section class="section-1">
-      <div class="col-1 grid-7030">
+      <div class="col-1 grid-50">
         <div class="content">
           <h2 class="title"><?= $s1_title ?></h2>
           <div class="text">
