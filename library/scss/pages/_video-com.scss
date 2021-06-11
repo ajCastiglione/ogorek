@@ -12,14 +12,14 @@
             display: grid;
             gap: 25px;
             @include media("laptop") {
-                grid-template-columns: 1.5fr 1fr;
+                grid-template-columns: 2fr 1fr;
                 gap: 50px 75px;
                 .video {
                     text-align: left;
                 }
             }
             @include media("desktop") {
-                grid-template-columns: 2fr 1fr;
+                grid-template-columns: 3fr 1fr;
                 gap: 50px;
             }
         }
@@ -34,6 +34,9 @@
             margin: 16px 0;
             font-size: 16px;
             color: $black;
+            h3 {
+                font-family: $poppins;
+            }
         }
         .related-videos {
             &__single {
