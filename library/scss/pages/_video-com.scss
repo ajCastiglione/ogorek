@@ -30,12 +30,17 @@
                 max-width: 100%;
             }
         }
+        .date {
+            color: $black;
+            text-transform: capitalize;
+        }
         .content {
             margin: 16px 0;
             font-size: 16px;
             color: $black;
             h4 {
                 font-family: $poppins;
+                color: $black;
             }
         }
         .related-videos {

@@ -17,7 +17,7 @@ $date = get_the_date('m/d/Y');
     <section class="large-wrapper<?= !empty($related) ? ' grid' : null ?>">
         <?= !empty($related) ? '<div class="content-wrap">' : null ?>
         <div class="video"><?= $vid ?></div>
-        <h2 class="date">Posted on: <?= $date ?></h2>
+        <h4 class="date">Posted on: <?= $date ?></h4>
         <div class="content">
             <?= $content ?>
             <div class="contact-cta">
