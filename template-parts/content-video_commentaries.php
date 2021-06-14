@@ -7,6 +7,8 @@ $related = get_field('related_video_commentaries');
 $cta_text = get_field('blog_cta_text', 'options');
 $cta_link = get_field('blog_cta_link', 'options');
 $cta_text_blurb = get_field('blog_cta_text_blurb', 'options');
+
+$date = get_the_date('m/d/Y');
 ?>
 
 <?= get_template_part('partials/hero'); ?>
@@ -15,6 +17,7 @@ $cta_text_blurb = get_field('blog_cta_text_blurb', 'options');
     <section class="large-wrapper<?= !empty($related) ? ' grid' : null ?>">
         <?= !empty($related) ? '<div class="content-wrap">' : null ?>
         <div class="video"><?= $vid ?></div>
+        <h2 class="date">Posted on: <?= $date ?></h2>
         <div class="content">
             <?= $content ?>
             <div class="contact-cta">
