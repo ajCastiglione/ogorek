@@ -79,6 +79,7 @@ jQuery(document).ready(function ($) {
   setTimeout(() => {
     if (
       $("iframe").length > 0 &&
+      $("iframe").attr("src") &&
       $("iframe").attr("src").includes("calendly")
     ) {
       prePopulateScheduler($);
