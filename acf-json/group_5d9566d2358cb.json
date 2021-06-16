@@ -361,9 +361,9 @@
         },
         {
             "key": "field_5d9567b7a4b6e",
-            "label": "Map Embed",
-            "name": "map_embed",
-            "type": "textarea",
+            "label": "Locations",
+            "name": "locations",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -372,11 +372,31 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
+            "collapsed": "field_60ca7ab0d9961",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_60ca7ab0d9961",
+                    "label": "Address",
+                    "name": "address",
+                    "type": "google_map",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "center_lat": "",
+                    "center_lng": "",
+                    "zoom": "",
+                    "height": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -394,7 +414,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1587395867
+    "modified": 1623882454
 }

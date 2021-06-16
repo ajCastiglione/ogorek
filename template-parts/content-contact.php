@@ -31,6 +31,8 @@ $map = get_field('map_embed');
             <?= $aside_content ?>
           </div>
         </div>
+
+        <?= get_template_part('template-parts/content', 'map') ?>
       </div>
     </div>
   </section>
