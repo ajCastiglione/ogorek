@@ -12,14 +12,14 @@
             display: grid;
             gap: 25px;
             @include media("laptop") {
-                grid-template-columns: 1.5fr 1fr;
+                grid-template-columns: 2fr 1fr;
                 gap: 50px 75px;
                 .video {
                     text-align: left;
                 }
             }
             @include media("desktop") {
-                grid-template-columns: 2fr 1fr;
+                grid-template-columns: 3fr 1fr;
                 gap: 50px;
             }
         }
@@ -30,10 +30,37 @@
                 max-width: 100%;
             }
         }
+        .date {
+            color: $black;
+            text-transform: capitalize;
+            font-size: 16px;
+            margin-top: -80px;
+            margin-bottom: 40px;
+            @include bp(phablet) {
+                margin-top: -20px;
+            }
+            @include bp(tablet) {
+                margin-top: -10px;
+            }
+            @include bp(laptop) {
+                margin-top: -40px;
+                margin-bottom: 60px;
+            }
+            @include bp(desktop) {
+                margin-top: -20px;
+            }
+        }
         .content {
             margin: 16px 0;
             font-size: 16px;
             color: $black;
+            h4 {
+                font-family: $poppins;
+                color: $black;
+                @include bp(laptop) {
+                    font-size: 26px;
+                }
+            }
         }
         .related-videos {
             &__single {

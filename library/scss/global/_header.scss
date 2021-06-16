@@ -4,7 +4,7 @@ Header Section
 .top-header {
     background-color: $primary;
     text-align: center;
-    padding: 8px 1rem;
+    padding: 8px 0;
     position: sticky;
     top: 0;
     left: 0;
@@ -59,8 +59,8 @@ Header Section
     .header-banner {
         position: relative;
         background-color: $secondary;
-        width: calc(100% + 2.4em);
-        left: -1.2em;
+        width: 100%;
+        // left: -1rem;
         text-align: center;
         padding: 8px 12px;
         margin-bottom: -8px;
