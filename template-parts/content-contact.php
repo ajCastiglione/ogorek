@@ -21,7 +21,7 @@ $map_embed     = get_field( 'map_embed' );
 	  <div class="content">
 		<h2 class="title"><?php echo wp_kses_post( $content_title ); ?></h2>
 		<div class="text">
-	  <?php echo wp_kses_post( $content ); ?>
+			<?php echo $content; ?>
 		</div>
 	  </div>
 	  <div class="aside">
