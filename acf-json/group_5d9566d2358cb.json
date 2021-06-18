@@ -395,6 +395,25 @@
                     "center_lng": "",
                     "zoom": "",
                     "height": ""
+                },
+                {
+                    "key": "field_60cd0dacf8a7f",
+                    "label": "Infobox Content",
+                    "name": "infobox_content",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 0,
+                    "delay": 0
                 }
             ]
         }
@@ -416,5 +435,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623882454
+    "modified": 1624051128
 }
