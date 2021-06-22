@@ -20,10 +20,11 @@
 							<h3 class="search-title title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 
 							<p class="byline entry-meta vcard">
+								<?php $author = !empty((get_field('post_author')[0]->ID)) ? get_the_title(get_field('post_author')[0]->ID) : get_the_author_link(get_the_author_meta('ID')) ?>
 								<?php printf(
 									__('%1$s | %2$s | %3$s', 'bonestheme'),
 									/* the author of the post */
-									'<span class="by">by</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link(get_the_author_meta('ID')) . '</span>',
+									'<span class="by">by</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . $author . '</span>',
 									/* the time the post was published */
 									'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
 									get_the_category_list(', ') != '' ? get_the_category_list(', ') : ''

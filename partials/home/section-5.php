@@ -2,11 +2,17 @@
 $title = get_field('s5_title');
 $content = get_field('s5_content');
 $per_page = get_field('s5_posts_to_show');
+$cat =  get_field('s5_post_category');
 
 $args = array(
   'post_type' => 'post',
   'posts_per_page' => $per_page,
 );
+
+if (!empty($cat)) {
+  $cat = implode(',', $cat);
+  $args['cat'] = $cat;
+}
 
 $articles = new WP_Query($args);
 
@@ -43,18 +49,7 @@ $articles = new WP_Query($args);
           </header>
 
           <section class="article-content">
-
             <h2 class="h2 entry-title"><a href="<?= $link ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-            <p class="byline entry-meta">
-              <?php printf(
-                __('', 'bonestheme') . ' %1$s %2$s',
-                /* the time the post was published */
-                '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
-                /* the categories of the post */
-                '<span class="by">' . __('|', 'bonestheme') . '</span> <span class="post-categories" itemprop="categories">' .  get_the_category_list(', ') . '</span>'
-              ); ?>
-            </p>
-
           </section>
 
         </article>

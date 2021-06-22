@@ -2,187 +2,189 @@
 NAVIGATION STYLES
 *********************/
 .nav {
-  border-bottom: 0;
-  margin: 0;
-  li {
-    text-align: left;
-    a {
-      display: block;
-      color: $primary;
-      text-decoration: none;
-      padding: 0.5rem 0.75em;
-      font-size: 18px;
-      transition: color 0.3s ease-in-out;
-      &:hover,
-      &:focus {
-        background: none;
-        color: lighten($primary, 15%);
-      }
-    }
-    &.menu-cta {
-      > a {
-        background-color: $secondary;
-        color: $white;
-        transition: all 0.3s ease-in-out;
-        &:hover {
-          background-color: lighten($secondary, 10%);
-        }
-      }
-    }
-    &.menu-cta.current-menu-item {
-      > a {
-        background-color: $primary;
-      }
-    }
-    &.menu-item-has-children {
-      > a {
-        transition: none;
-      }
-      > a > i {
-        padding-left: 8px;
-      }
-    }
-    &.trust-solution {
-      > a {
-        background-color: $primary;
-        color: $white;
-        transition: all 0.3s ease-in-out;
-        &:hover {
-          background-color: lighten($primary, 10%);
-        }
-      }
-    }
-    &.trust-solution.current-menu-item {
-      > a {
-        background-color: lighten($primary, 10%);
-      }
-    }
-    ul.sub-menu,
-    ul.children {
-      li {
-        position: relative;
-        a {
-          padding-left: 30px;
-          &:hover,
-          &:focus {
-            background-color: rgba(87, 87, 87, 0.1);
-          }
-        }
-      }
-    }
-  }
-  /* end .menu li */
-  /* highlight current page */
-  li.current-menu-item,
-  li.current_page_item,
-  li.current_page_ancestor {
-    a {
-      background-color: #f5f5f5;
-    }
-  }
-  @include media("tablet") {
-    border: 0;
-    ul {
-      background: none;
-      margin-top: 0;
-    }
+    border-bottom: 0;
+    margin: 0;
     li {
-      position: relative;
-      display: inline-block;
-      z-index: 2;
-      ul.sub-menu,
-      ul.children {
-        margin-top: 0;
-        border-top: 3px solid $secondary;
-        position: absolute;
-        visibility: hidden;
-        z-index: 8999;
-        background-color: $white;
-        li {
-          a {
-            padding-left: 10px;
-            border-right: 0;
-            width: 220px;
-          }
-          &:last-child {
-            a {
-              border-bottom: 0;
+        text-align: left;
+        a {
+            display: block;
+            color: $primary;
+            text-decoration: none;
+            padding: 0.5rem 0.75em;
+            font-size: 18px;
+            transition: color 0.3s ease-in-out;
+            &:hover,
+            &:focus {
+                background: none;
+                color: lighten($primary, 15%);
             }
-          }
-          ul {
-            top: 0;
-            left: 100%;
-          }
         }
-      }
-      /* showing sub-menus */
-      &:hover > ul {
-        top: auto;
-        visibility: visible;
-      }
+        &.menu-cta {
+            > a {
+                background-color: $secondary;
+                color: $white;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    background-color: lighten($secondary, 10%);
+                }
+            }
+        }
+        &.menu-cta.current-menu-item {
+            > a {
+                background-color: $primary;
+            }
+        }
+        &.menu-item-has-children {
+            > a {
+                transition: none;
+            }
+            > a > i {
+                padding-left: 8px;
+            }
+        }
+        &.trust-solution {
+            > a {
+                background-color: $primary;
+                color: $white;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    background-color: lighten($primary, 10%);
+                }
+            }
+        }
+        &.trust-solution.current-menu-item {
+            > a {
+                background-color: lighten($primary, 10%);
+            }
+        }
+        ul.sub-menu,
+        ul.children {
+            li {
+                position: relative;
+                a {
+                    padding-left: 30px;
+                    &:hover,
+                    &:focus {
+                        background-color: rgba(87, 87, 87, 0.1);
+                    }
+                }
+            }
+        }
     }
-  }
-  @include media("laptop") {
-    padding-left: 0.5rem;
-  }
-  /* end current highlighters */
+    /* end .menu li */
+    /* highlight current page */
+    li.current-menu-item,
+    li.current_page_item,
+    li.current_page_ancestor {
+        a {
+            background-color: #f5f5f5;
+        }
+    }
+    @include media("tablet") {
+        border: 0;
+        ul {
+            background: none;
+            margin-top: 0;
+        }
+        li {
+            position: relative;
+            display: inline-block;
+            z-index: 2;
+            ul.sub-menu,
+            ul.children {
+                margin-top: 0;
+                border-top: 3px solid $secondary;
+                position: absolute;
+                visibility: hidden;
+                z-index: 8999;
+                background-color: $white;
+                li {
+                    a {
+                        padding-left: 10px;
+                        border-right: 0;
+                        width: 220px;
+                    }
+                    &:last-child {
+                        a {
+                            border-bottom: 0;
+                        }
+                    }
+                    ul {
+                        top: 0;
+                        left: 100%;
+                    }
+                }
+            }
+            /* showing sub-menus */
+            &:hover > ul {
+                top: auto;
+                visibility: visible;
+            }
+        }
+    }
+    @include media("laptop") {
+        padding-left: 0.5rem;
+    }
+    /* end current highlighters */
 }
 
 // Mobile nav section
 #shiftnav-toggle-main {
-  box-shadow: 0px 4px 12px 3px rgba(0, 0, 0, 0.64);
-  #shiftnav-toggle-main-button {
-    i {
-      font-size: 20px;
+    box-shadow: 0px 4px 12px 3px rgba(0, 0, 0, 0.64);
+    background-color: $white;
+    color: $secondary;
+    #shiftnav-toggle-main-button {
+        i {
+            font-size: 20px;
+        }
     }
-  }
-  .shiftnav-main-toggle-content {
-    a {
-      border-bottom: 2px solid $secondary;
+    .shiftnav-main-toggle-content {
+        a {
+            border-bottom: 2px solid $secondary;
+        }
     }
-  }
-  .shiftnav-search-icon {
-    float: right;
-    padding: 1rem 20px;
-    z-index: 20;
-    line-height: 1em;
-    position: relative;
-  }
+    .shiftnav-search-icon {
+        float: right;
+        padding: 1rem 20px;
+        z-index: 20;
+        line-height: 1em;
+        position: relative;
+    }
 }
 
 // Shiftnav nav items
 #shiftnav-main {
-  .shiftnav-inner {
-    background-color: $primary;
-  }
-  .shiftnav-nav {
-    .current-menu-item > a {
-      background-color: $secondary;
+    .shiftnav-inner {
+        background-color: $primary;
     }
-    .shiftnav-target {
-      position: relative;
-      background-color: $primary;
-      color: $white;
-      border-bottom-color: darken($primary, 15%);
+    .shiftnav-nav {
+        .current-menu-item > a {
+            background-color: $secondary;
+        }
+        .shiftnav-target {
+            position: relative;
+            background-color: $primary;
+            color: $white;
+            border-bottom-color: darken($primary, 15%);
 
-      .fas {
-        position: absolute;
-        right: 10%;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        padding: 10px;
-        z-index: 99;
-      }
+            .fas {
+                position: absolute;
+                right: 10%;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                z-index: 99;
+            }
+        }
+        .sub-menu {
+            display: none;
+            .shiftnav-target {
+                background-color: lighten($primary, 10%);
+            }
+        }
     }
-    .sub-menu {
-      display: none;
-      .shiftnav-target {
-        background-color: lighten($primary, 10%);
-      }
-    }
-  }
 }
 /* end .nav */

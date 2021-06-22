@@ -1,6 +1,6 @@
 <?php
 /*
- Template Name: Home Page Template
+ Template Name: Return On Life
 */
 ?>
 
@@ -16,20 +16,7 @@
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-						<?= get_template_part('partials/home/banner'); ?>
-
-						<? # get_template_part('partials/home/cta-section'); ?>
-
-						<?= get_template_part('partials/home/section-2'); ?>
-
-						<?= get_template_part('partials/home/section-3'); ?>
-
-						<?= get_template_part('partials/home/section-4'); ?>
-
-						<?= get_template_part('partials/home/section-5'); ?>
-
-						<?php get_template_part('partials/home/section-6');
-						?>
+						<?= get_template_part('template-parts/content', 'rol'); ?>
 
 					</article>
 

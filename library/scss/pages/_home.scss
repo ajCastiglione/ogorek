@@ -1,18 +1,25 @@
 /****************************
 Home Page Section
 ****************************/
-.home {
+.page-template-page-home {
+    #content {
+        margin-top: 0;
+    }
     .banner {
         position: relative;
         overflow-x: hidden;
         width: 100vw;
         left: calc(50% - 50vw);
         @include media("tablet") {
+            min-height: 400px;
+        }
+        @include media("2k") {
             min-height: 450px;
         }
         @media screen and (min-height: 800px) {
-            min-height: 948px;
+            // min-height: 948px;
         }
+
         &:before {
             display: none;
             position: absolute;
@@ -37,15 +44,20 @@ Home Page Section
             position: relative;
             max-width: 125%;
             left: -75px;
+            min-height: 400px;
+            object-fit: cover;
             @include media("tablet") {
                 position: absolute;
                 width: 60%;
                 height: 100%;
-                object-fit: cover;
                 top: 0;
                 right: 0;
                 left: unset;
                 max-width: auto;
+                min-height: auto;
+            }
+            @include media("2k") {
+                object-position: top center;
             }
         }
         &__content {
@@ -74,7 +86,8 @@ Home Page Section
                 background: none;
                 padding: 24px 48px;
                 max-width: 60%;
-                margin-top: 100px;
+                margin-top: 50px;
+                padding-bottom: 50px;
             }
             @include media("laptop") {
                 max-width: 55%;
@@ -86,7 +99,21 @@ Home Page Section
                 margin-top: 15px;
             }
             @media screen and (min-height: 800px) and (min-width: 768px) {
-                margin-top: 177px;
+                margin-top: 50px;
+                padding-bottom: 50px;
+                .banner__title {
+                    font-size: 50px;
+                }
+                .banner__sub-title {
+                    font-size: 38px;
+                }
+            }
+            @include media("2k") {
+                margin-top: 80px;
+                padding-bottom: 80px;
+                .banner__title {
+                    font-size: 60px;
+                }
             }
         }
         &__title {
@@ -97,10 +124,15 @@ Home Page Section
                 font-size: 60px;
             }
             @include media("laptop") {
-                font-size: 75px;
+                font-size: 65px;
             }
             @include media("desktop") {
+                font-size: 70px;
+            }
+            @include media("2k") {
                 font-size: 95px;
+            }
+            @media (min-width: 1800px) {
                 line-height: 95px;
             }
         }
@@ -112,9 +144,6 @@ Home Page Section
             }
             @include media("laptop") {
                 font-size: 45px;
-            }
-            @include media("desktop") {
-                font-size: 55px;
             }
         }
 
@@ -192,6 +221,74 @@ Home Page Section
             }
         }
     }
+    // CTA Section
+    .cta-section {
+        background-color: #f9fafc;
+        padding: 24px;
+        color: $black;
+        @include media("tablet") {
+            padding: 32px 24px;
+        }
+        .grid {
+            display: grid;
+            gap: 45px;
+            align-items: center;
+            @include media("tablet") {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+        &__content {
+            text-align: center;
+        }
+        &__title {
+            margin-top: 0;
+            color: inherit !important;
+            font-size: 32px;
+            font-weight: bold;
+            @include media("tablet") {
+                font-size: 38px;
+            }
+            @include media("laptop") {
+                font-size: 48px;
+            }
+        }
+        &__text {
+            font-size: 16px;
+            @include media("laptop") {
+                font-size: 18px;
+            }
+        }
+        &__btn-container {
+            text-align: center;
+            @include media("tablet") {
+                text-align: left;
+            }
+        }
+        &__btn {
+            color: inherit;
+            font-weight: bold;
+            text-transform: capitalize;
+            display: inline-block;
+            border: 2px solid $black;
+            font-size: 20px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+            @include media("tablet") {
+                padding: 12px 24px;
+            }
+            @include media("laptop") {
+                width: auto;
+                padding: 12px 49px;
+            }
+            &:hover {
+                background-color: $primary;
+                color: $white;
+            }
+        }
+    }
     // Section 2
     .home-values {
         text-align: center;
@@ -201,7 +298,7 @@ Home Page Section
         left: calc(50% - 50vw);
         padding: 24px;
         @include media("tablet") {
-            padding: 24px 48px 85px;
+            padding: 24px 48px 32px;
         }
         &__title {
             font-size: 32px;
@@ -210,14 +307,20 @@ Home Page Section
             @include media("tablet") {
                 font-size: 48px;
                 margin: 24px 0;
+                margin-top: 0;
             }
         }
         &__content {
             font-size: 16px;
             @include media("tablet") {
-                font-size: 18px;
-                max-width: 753px;
+                font-size: 25px;
+                max-width: 1050px;
                 margin: auto;
+                .home & {
+                    font-size: 18px;
+                    max-width: 753px;
+                    margin: auto;
+                }
             }
         }
         &__rows {
@@ -254,7 +357,7 @@ Home Page Section
                     }
                 }
                 i {
-                    font-size: 80px;
+                    font-size: 50px;
                     color: $primary;
                 }
                 &-title {
@@ -279,10 +382,11 @@ Home Page Section
             }
         }
     }
-
+    // Section 3
     .home-services {
         display: grid;
         color: $white;
+        // border-top: 30px solid $white;
         @include media("tablet") {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -300,6 +404,11 @@ Home Page Section
 
         &__info {
             padding: 34px;
+            // background: linear-gradient(
+            //     90deg,
+            //     rgba(45, 102, 48, 1) 0%,
+            //     rgba(71, 168, 77, 1) 100%
+            // );
             background: transparent
                 linear-gradient(237deg, #123759 0%, #246db1 100%) 0% 0%
                 no-repeat padding-box;
@@ -329,6 +438,7 @@ Home Page Section
             .service {
                 a {
                     border: 2px dotted $secondary;
+                    // border: 2px dotted $black;
                     display: inline-block;
                     padding: 8px 18px;
                     color: inherit;
@@ -525,10 +635,10 @@ Home Page Section
         }
         @include media("laptop") {
             align-items: center;
-            padding: 130px 60px;
+            padding: 75px 60px;
         }
         @include media("desktop") {
-            padding: 130px 120px;
+            padding: 90px 120px;
         }
         &__title {
             font-size: 38px;
@@ -617,9 +727,7 @@ Home Page Section
             .article-content {
                 padding: 12px 12px 45px;
                 text-align: center;
-                @include media("desktop") {
-                    min-height: 170px;
-                }
+                
                 .entry-title {
                     a {
                         font-size: 22px;

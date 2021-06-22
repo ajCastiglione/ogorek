@@ -1,5 +1,6 @@
 import hasSubMenu from "./components/Menu";
 import smoothScroll from "./components/SmoothScroll";
+import Header from "./components/header/Header";
 import {
   showVideo,
   loadIframe,
@@ -10,7 +11,7 @@ import mobileMenuSubMenu from "./components/MobileMenu";
 import scrollTop from "./components/ScrollTop";
 import newsletterRedirect from "./components/Redirects";
 import contactNewsletter from "./components/ContactPage";
-import { addLightbox, addImageZoom } from "./components/Blog";
+import { addLightbox, addImageZoom, newsletter } from "./components/Blog";
 import initSlider from "./components/Slider";
 import {
   addCheck,
@@ -24,6 +25,7 @@ import showForm from "./components/LandingPage";
 import toggleFAQ from "./components/FAQ";
 import inputMask from "./components/Masking";
 import initHomeSlider from "./components/Home";
+import ROL from "./components/ROL";
 
 /*
  * Put all your regular jQuery in here.
@@ -31,6 +33,7 @@ import initHomeSlider from "./components/Home";
 jQuery(document).ready(function ($) {
   hasSubMenu($);
   smoothScroll($);
+  Header($);
   showVideo($);
   newsletterSignup($);
   addPlaceholderInternalPages($);
@@ -39,7 +42,7 @@ jQuery(document).ready(function ($) {
   scrollTop($);
   newsletterRedirect();
 
-  if ($("body").hasClass("home")) {
+  if ($("body").hasClass("page-template-page-home")) {
     initHomeSlider($);
   }
 
@@ -58,6 +61,7 @@ jQuery(document).ready(function ($) {
   if ($("body").hasClass("single-post")) {
     addLightbox($);
     addImageZoom($);
+    newsletter($);
   }
 
   if ($("body").hasClass("home")) {
@@ -83,6 +87,10 @@ jQuery(document).ready(function ($) {
 
   if ($("body").hasClass("page-template-page-faq")) {
     toggleFAQ($);
+  }
+
+  if ($("body").hasClass("page-template-page-rol")) {
+    ROL($);
   }
 }); /* end of as page load scripts */
 

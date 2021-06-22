@@ -13,7 +13,7 @@
 
 <div class="top-header-grid">
   <div class="info">
-    <a href="tel:+<?= trim(get_field('phone_number', 'options')); ?>">
+    <a href="tel:<?= trim(get_field('phone_number', 'options')); ?>">
       <i class="fas fa-phone"></i> <span><?= trim(get_field('phone_number', 'options')); ?></span>
     </a>
     <a href="mailto:<?= is_page(3595) ? 'trust@ogorek.com' : trim(get_field('email_address', 'options')); ?>">
@@ -41,3 +41,10 @@
   </div>
    -->
 </div>
+
+<?php
+if (get_field('show_banner', 'options')) : ?>
+  <div class="header-banner">
+    <div class="banner-content"><?= get_field('banner_content', 'options') ?></div>
+  </div>
+<?php endif; ?>
