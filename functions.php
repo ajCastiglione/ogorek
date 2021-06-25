@@ -189,6 +189,7 @@ function remove_protected_text()
 
 /************* ACF SAVES *********************/
 require 'theme/acf-json.php';
+require 'theme/acf-api.php';
 
 /************* ADD ROLES *********************/
 require 'theme/add-roles.php';
