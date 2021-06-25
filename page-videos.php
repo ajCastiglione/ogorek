@@ -45,7 +45,7 @@ $query = new WP_Query( $args );
 	?>
 			<div class="categories col-1">
 				<div class="category">
-					<a href="<?php echo site_url(); ?>/vid-commentaries" class="<?php echo $link_class; ?>">
+					<a href="<?php echo esc_url( site_url() ); ?>/vid-commentaries" class="<?php echo wp_kses_data( $link_class ); ?>">
 					<i class="far cat-icon-i fa-circle"></i>
 						<h3 class="cat-title">All</h3>
 					</a>
