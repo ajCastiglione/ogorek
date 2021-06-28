@@ -136,6 +136,12 @@
         }
     }
 
+    .gmap {
+        .acf-map {
+            min-height: 400px;
+        }
+    }
+
     .schedule-icon {
         background-color: $secondary;
         color: $white;

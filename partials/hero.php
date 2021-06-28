@@ -19,6 +19,10 @@ if (is_page(460)) {
   $content = get_field('content');
 }
 
+if (get_field('secondary_logo')) {
+  $hero_title = '<img src="' . get_field('secondary_logo')['url'] . '" alt="' . get_field('secondary_logo')['alt'] . '">';
+}
+
 ?>
 
 <?php if (get_page_template_slug($post->ID) == 'page-secured.php') : ?>
@@ -30,10 +34,11 @@ if (is_page(460)) {
     </div>
   </div>
 
+
 <?php elseif (get_field('hero_selector') == 'unique' || (is_home() && $hero_selection == 'unique')) : $logo = get_field('logo')['url'] ?: 'https://ogorek.com/wp-content/uploads/2020/04/OGOREK-Logo-White-01.png'; ?>
   <div class="hero three-part" style="background-image:url(<?= $hero['url'] ?: 'https://ogorek.com/wp-content/uploads/2020/04/new-bg-higher-point.png' ?>)">
-    <h1 class="title"><?php echo $hero_title ? $hero_title : get_the_title(); ?></h1>
-    <?php if (!empty($logo)) : ?>
+    <h1 class="title"><?php echo $hero_title ?: get_the_title(); ?></h1>
+    <?php if (!empty($logo) && get_field('hide_primary_logo') !== true) : ?>
       <div class="logo">
         <a href="<?= site_url('/') ?>">
           <img src="<?= $logo; ?>" alt="Ogorek wealth management">

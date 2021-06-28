@@ -35,9 +35,7 @@
                 "normal": "Standard Hero",
                 "unique": "Image with text"
             },
-            "default_value": [
-                "normal"
-            ],
+            "default_value": "normal",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -89,6 +87,33 @@
             "maxlength": ""
         },
         {
+            "key": "field_5fca489e95747",
+            "label": "Hide Primary Logo",
+            "name": "hide_primary_logo",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e5a887cfa8fe",
+                        "operator": "==",
+                        "value": "unique"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5e8b42ecebde8",
             "label": "Logo",
             "name": "logo",
@@ -104,6 +129,30 @@
                     }
                 ]
             ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5fce5b386a826",
+            "label": "Secondary Logo",
+            "name": "secondary_logo",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -361,13 +410,6 @@
         ],
         [
             {
-                "param": "page_template",
-                "operator": "==",
-                "value": "page-videos.php"
-            }
-        ],
-        [
-            {
                 "param": "post_type",
                 "operator": "==",
                 "value": "video_commentaries"
@@ -380,7 +422,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1595446576
+    "modified": 1607359301
 }

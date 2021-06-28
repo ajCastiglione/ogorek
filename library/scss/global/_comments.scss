@@ -1,0 +1,76 @@
+.comments {
+    border-top: 2px solid $secondary;
+    .comment-notes {
+        display: none;
+    }
+
+    .comment {
+        &-form {
+            label {
+                font-size: 15px;
+                color: $primary;
+            }
+            textarea,
+            input {
+                border: 2px solid $primary;
+                outline: none;
+                transition: all 300ms ease;
+                &:focus,
+                &:active {
+                    background-color: rgba($black, 0.1);
+                }
+            }
+            &-author,
+            &-email {
+                display: inline-block;
+                flex: 1;
+                min-width: 49.5%;
+            }
+            .form-submit {
+                // text-align: center;
+                .submit {
+                    background-color: $secondary;
+                    border-color: $secondary;
+                    min-width: 240px;
+                    &:hover {
+                        background-color: transparent;
+                        color: $secondary;
+                    }
+                }
+            }
+        }
+    }
+
+    &__approved {
+        margin-bottom: 24px;
+        .approved-title {
+            text-transform: uppercase;
+            font-size: 15px;
+            font-weight: bold;
+            border-bottom: 2px solid $gray;
+            color: $gray;
+            padding-bottom: 6px;
+        }
+        // comment body
+        .comment {
+            background-color: $white;
+            box-shadow: 3px 2px 5px 2px rgba($black, 0.2);
+            padding: 12px;
+            margin: 12px 0;
+            &-author {
+                margin: 0 0 24px;
+                display: flex;
+                align-items: center;
+                text-transform: capitalize;
+                .posted {
+                    display: inline-block;
+                    font-size: 13px;
+                    margin-left: 18px;
+                }
+            }
+            &-content {
+                padding: 6px;
+            }
+        }
+    }
+}

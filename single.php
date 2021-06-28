@@ -12,6 +12,7 @@
 					if (get_post_type() !== 'post') {
 						get_template_part('template-parts/content', get_post_type());
 					} else {
+						// get_template_part('template-parts/popup', 'blog');
 						get_template_part('post-formats/format', get_post_format());
 					}
 					?>

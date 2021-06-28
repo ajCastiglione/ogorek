@@ -1,0 +1,148 @@
+.page-template-page-prospect {
+    background-color: #47a84d;
+    // background-image: linear-gradient(315deg, #47a84d 0%, #246db1 95%);
+    background-image: url("https://ogorek.com/wp-content/uploads/2021/02/prospect_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0 !important;
+    .header,
+    .footer,
+    #shiftnav-toggle-main {
+        display: none;
+    }
+    @include media("phablet") {
+        min-height: 100vh;
+    }
+
+    .prospect {
+        &__grid {
+            max-width: 90%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            @include media("tablet") {
+                flex-wrap: nowrap;
+            }
+        }
+        &__content-wrap {
+            margin: auto;
+            @include media("tablet") {
+                max-width: 600px;
+                margin: 0;
+            }
+        }
+        &__logo-container {
+            text-align: center;
+            @include media("tablet") {
+                text-align: left;
+                margin-top: 2rem;
+            }
+        }
+        &__logo {
+            width: 250px;
+            max-width: 100%;
+            margin: 0 auto 24px;
+            @include media("tablet") {
+                width: 350px;
+            }
+            @include media("laptop") {
+                width: 450px;
+            }
+            @include media("desktop") {
+                width: 550px;
+            }
+        }
+        &__title {
+            font-size: 28px;
+            text-align: center;
+            @include media("tablet") {
+                font-size: 30px;
+            }
+            @include media("laptop") {
+                font-size: 40px;
+            }
+            @include media("desktop") {
+                font-size: 45px;
+            }
+            .inner {
+                background-color: $secondary;
+                display: inline-block;
+                padding: 12px;
+                border-radius: 15px;
+                text-transform: capitalize;
+                font-weight: bold;
+                box-shadow: -8px 12px 1px 2px lighten($secondary, 25%);
+            }
+        }
+        &__content {
+            font-size: 1.25em;
+            margin-top: 32px;
+            text-align: center;
+            @include media("tablet") {
+                font-size: 1.75em;
+                text-align: left;
+                margin-top: 48px;
+            }
+        }
+        &__form {
+            margin-top: 32px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: $white;
+            padding: 12px 18px;
+            color: $black;
+            border-radius: 5px;
+            @include media("tablet") {
+                margin-left: 56px;
+                margin-top: 0;
+            }
+            @include media("laptop") {
+                min-width: 500px;
+                margin-left: 64px;
+            }
+            .form-title {
+                text-transform: capitalize;
+                font-weight: bold;
+                text-align: center;
+            }
+            .form-wrapper {
+                .gform_wrapper {
+                    .ginput_container {
+                        input {
+                            max-width: 100%;
+                            width: 100%;
+                        }
+                        .gfield_checkbox {
+                            li {
+                                display: flex;
+                                align-items: center;
+                                label {
+                                    font-weight: 400;
+                                }
+                                input {
+                                    margin-top: 0;
+                                    margin-right: 10px;
+                                }
+                            }
+                        }
+                    }
+                    .gform_footer {
+                        text-align: center;
+                        .button {
+                            white-space: break-spaces;
+                            @include media("tablet") {
+                                white-space: revert;
+                                font-size: 1.25em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

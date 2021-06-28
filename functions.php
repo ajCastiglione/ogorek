@@ -189,6 +189,7 @@ function remove_protected_text()
 
 /************* ACF SAVES *********************/
 require 'theme/acf-json.php';
+require 'theme/acf-api.php';
 
 /************* ADD ROLES *********************/
 require 'theme/add-roles.php';
@@ -203,6 +204,7 @@ require 'theme/acf-default-rows.php';
 require 'theme/utils/byline.php';
 require 'theme/utils/get-author.php';
 require 'theme/utils/get-related-posts.php';
+require 'theme/utils/get-related-posts-popup.php';
 require 'theme/utils/get-related-videos.php';
 require 'theme/utils/detect-IE.php';
 
@@ -212,7 +214,7 @@ require 'theme/utils/detect-IE.php';
 function exclude_category_jobs($query)
 {
   if ($query->is_home) {
-    $query->set('cat', '-23, -18, -17, -16');
+    $query->set('cat', '-27, -23, -18, -17, -16');
   }
   return $query;
 }
@@ -234,6 +236,12 @@ function add_input_debug_preview()
 {
   echo '<input type="hidden" name="debug_preview" value="debug_preview">';
 }
+
+/**
+ * Load Times Updates
+ */
+
+require get_template_directory() . '/theme/utils/defer-files.php';
 
 /**
  * Testing jquery fix

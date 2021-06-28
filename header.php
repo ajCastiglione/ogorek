@@ -38,55 +38,87 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="theme-color" content="#ffffff">
 
+	<!-- Preload images -->
+	<?php if (is_front_page()) : ?>
+		<link rel="preload" as="image" href="<?= get_field('s1_background_image')['url'] ?>">
+	<?php endif; ?>
+
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 	<!--external stylesheets / fonts / etc...-->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<?php if (check_agent() !== 'firefox') : ?>
+		<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type='text/css' media='all'>
+		<link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="preload" as="style">
+		<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+		<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<?php else : ?>
+		<link rel='stylesheet' href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type='text/css' media='all'>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="preload" as="style">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link rel='stylesheet' href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+		<link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<?php endif; ?>
 	<!-- Img Zoom -->
-	<script src="https://cdn.jsdelivr.net/npm/js-image-zoom/js-image-zoom.min.js"></script>
+	<script defer async src="https://cdn.jsdelivr.net/npm/js-image-zoom/js-image-zoom.min.js"></script>
 	<!-- Owl slider bc slick broke randomly... again-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+	<?php if (check_agent() !== 'firefox') : ?>
+		<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+		<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+	<?php else : ?>
+		<link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+		<link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+	<?php endif; ?>
 	<?php // wordpress head functions 
 	?>
 	<?php wp_head(); ?>
 	<?php // end of wordpress head 
 	?>
 
-	<?php // drop Google Analytics Here
-	// Prevent analytics from loading on local and dev sites 
-	?>
-		<!-- Google Tag Manager -->
-		<script>
-			(function(w, d, s, l, i) {
-				w[l] = w[l] || [];
-				w[l].push({
-					'gtm.start': new Date().getTime(),
-					event: 'gtm.js'
-				});
-				var f = d.getElementsByTagName(s)[0],
-					j = d.createElement(s),
-					dl = l != 'dataLayer' ? '&l=' + l : '';
-				j.async = true;
-				j.src =
-					'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-				f.parentNode.insertBefore(j, f);
-			})(window, document, 'script', 'dataLayer', 'GTM-TRVGDQV');
-		</script>
-		<!-- End Google Tag Manager -->
+	<!-- Google Tag Manager -->
+	<script>
+		(function(w, d, s, l, i) {
+			w[l] = w[l] || [];
+			w[l].push({
+				'gtm.start': new Date().getTime(),
+				event: 'gtm.js'
+			});
+			var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s),
+				dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src =
+				'https://www.googletagmanager.com/gtm.js?id=GTM-TRVGDQV';
+			f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-TRVGDQV');
+	</script>
+	<!-- End Google Tag Manager -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-45852794-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-45852794-1');
+	</script>
+
 	<?php // end analytics 
+	?>
+
+	<?php
+	// ACF fields
+	$replacement_logo = get_field('replacement_logo');
 	?>
 
 </head>
 
 <body <?php body_class(detect_ie() ? 'ie' : ''); ?> itemscope itemtype="http://schema.org/WebPage">
-
-	<?php if (strpos($_SERVER['SERVER_NAME'], 'ogorek.com')) : ?>
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TRVGDQV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
-	<?php endif; ?>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TRVGDQV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
 
 	<div id="container">
 
@@ -98,19 +130,19 @@
 					<?= get_template_part('template-parts/content', 'topheader') ?>
 				</div>
 
-				<div class="header-bottom grid-3070 <?= get_field('show_alert', 'options') ? 'mb-lg' : null; ?>">
+				<div class="header-bottom grid-3070">
 					<div class="header-left">
 						<?php
 						if (get_field('hide_logo') === true || (is_home() && get_field('hide_logo', get_option('page_for_posts')) === true)) :
 							if (get_field('hide_logo') === true || (is_home() && get_field('hide_logo', get_option('page_for_posts')) === true)) : null;
 							else : ?>
 								<a href="<?= home_url(); ?>">
-									<img src="<?= get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
+									<img src="<?= !empty($replacement_logo) ? $replacement_logo : get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
 								</a>
 							<?php endif;
 						else : ?>
 							<a href="<?= home_url(); ?>">
-								<img src="<?= get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
+								<img src="<?= !empty($replacement_logo) ? $replacement_logo : get_field('logo', 'options')['url']; ?>" id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
 							</a>
 						<?php endif; ?>
 					</div>

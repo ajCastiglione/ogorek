@@ -5,14 +5,20 @@ const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const image = require("gulp-image");
 const bs = require("browser-sync");
-const browserify = require("browserify");
 const rename = require("gulp-rename");
 const uglify = require("gulp-uglify");
-const babel = require("gulp-babel");
+const webpack = require("webpack-stream");
+const sourcemaps = require("gulp-sourcemaps");
+const gulpif = require("gulp-if");
+
+const env = process.env.NODE_ENV || "development";
+const isDevelopment = env === "development";
 
 const scss = ["library/scss/*/*.scss"];
+const editorStyle = ["library/scss/editor-style.scss"];
 const imgs = ["library/images/*"];
 const js = "library/js/scripts.js";
+const allJs = ["library/js/**/*.js", "!library/js/dist/*.js"];
 const all = ["library/*.php", "*.php", "*/*.php", "library/js/*.js"];
 
 // Compile and minify JS + babel
@@ -20,17 +26,28 @@ gulp.task("js", function () {
   return gulp
     .src(js)
     .pipe(
-      babel({
-        presets: ["@babel/preset-env"],
+      webpack({
+        mode: "production",
+        output: {
+          filename: "scripts.js",
+        },
+        module: {
+          rules: [
+            {
+              test: /\.(js|jsx)$/,
+              use: ["babel-loader"],
+              exclude: /node_modules/,
+            },
+          ],
+        },
       })
     )
-    .pipe(
-      rename({
-        extname: ".min.js",
-      })
-    )
-    .pipe(uglify())
-    .pipe(gulp.dest("library/js"));
+    .pipe(gulpif(isDevelopment, sourcemaps.init()))
+    .pipe(gulpif(!isDevelopment, uglify()))
+    .pipe(rename({ extname: ".min.js" }))
+    .pipe(gulpif(isDevelopment, sourcemaps.write(".")))
+    .pipe(gulp.dest("./library/js/dist"))
+    .pipe(bs.stream());
 });
 
 //Compile scss
@@ -76,6 +93,26 @@ gulp.task("compile-login", () => {
     .pipe(gulp.dest("./library/css"));
 });
 
+gulp.task("compile-admin", () => {
+  return gulp
+    .src("./library/scss/editor-style.scss")
+    .pipe(plumber())
+    .pipe(
+      sass({
+        outputStyle: "compressed",
+      }).on("error", sass.logError)
+    )
+    .pipe(
+      postcss([
+        autoprefixer({
+          browsers: ["last 2 versions"],
+          cascade: false,
+        }),
+      ])
+    )
+    .pipe(gulp.dest("./library/css"));
+});
+
 // Compress images and return them to folder
 gulp.task("min-images", () => {
   gulp.src(imgs).pipe(image()).pipe(gulp.dest("./library/images"));
@@ -89,11 +126,12 @@ gulp.task("init", () => {
     files: all,
   });
   gulp.watch(scss, gulp.series("compile", "compile-login"));
-  // gulp.watch(js, gulp.series("js"));
+  gulp.watch(allJs, gulp.series("js"));
+  gulp.watch(editorStyle, gulp.series("compile-admin"));
 });
 
 // Start the process
 gulp.task("default", gulp.series("init"));
 
 // Build command
-gulp.task("build", gulp.series("compile", "compile-login"));
+gulp.task("build", gulp.series("compile", "compile-login", "js"));

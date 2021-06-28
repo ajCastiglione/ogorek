@@ -3,6 +3,7 @@ $cta_text = get_field('blog_cta_text', 'options');
 $cta_link = get_field('blog_cta_link', 'options');
 $cta_text_blurb = get_field('blog_cta_text_blurb', 'options');
 $hide_contact_cta = get_field('hide_contact_cta');
+$newsletter = do_shortcode('[gravityform id="4" title="false" description="false"]');
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('cf col-1'); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 
@@ -35,9 +36,15 @@ $hide_contact_cta = get_field('hide_contact_cta');
         <?php if (!$hide_contact_cta) : ?>
           <div class="contact-cta">
             <div class="cta-text"><?= $cta_text_blurb ?></div>
-            <div class="cta-link"><a href="<?= $cta_link ?>"><?= $cta_text ?> <i class="fas fa-arrow-right"></i></a></div>
+            <div class="cta-link"><a href="#letter"><?= $cta_text ?> <i class="fas fa-arrow-right"></i></a></div>
+          </div>
+          <div class="newsletter-form">
+            <?= $newsletter ?>
           </div>
         <?php endif; ?>
+        <?php if (comments_open()) :
+          get_template_part('template-parts/comments');
+        endif; ?>
       </div>
       <aside class="related-posts">
         <h2 class="related-posts__title"><?= get_field('related_posts_title') ?></h2>

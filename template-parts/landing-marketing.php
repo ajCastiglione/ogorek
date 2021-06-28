@@ -1,7 +1,8 @@
 <?php
-$s1title = get_field('s1_title');
+$has_img = get_field('image_or_video') == 'image' ? True : False;
+
 $s1content = get_field('s1_content');
-$s1img = get_field('s1_image');
+$s1vid = get_field('s1_body_video');
 $s2title = get_field('s2_title');
 $s2subtitle = get_field('s2_subtitle');
 $s3title = get_field('s3_title');
@@ -10,23 +11,24 @@ $s3img = get_field('s3_image');
 $s4title = get_field('s4_title');
 $s4subtitle = get_field('s4_subtitle');
 ?>
-
-<!-- <section id="section-1" class="landing-page-section-content s1">
-    <div class="large-wrapper">
-        <div class="grid-50">
-            <div class="half">
-                <h2 class="title"><?= $s1title ?></h2>
-                <div class="content">
-                    <?= $s1content ?>
+<?php if ($has_img) : ?>
+    <section id="section-1" class="landing-page-section-content s1">
+        <div class="large-wrapper">
+            <div class="grid-50">
+                <div class="half">
+                    <div class="content">
+                        <?= $s1content ?>
+                    </div>
+                </div>
+                <div class="half">
+                    <video controls playsinline preload="metadata" class="video">
+                        <source src="<?= $s1vid ?>#t=0.1">
+                    </video>
                 </div>
             </div>
-            <div class="half">
-                <img src="<?= $s1img['url'] ?>" alt="<?= $s1img['alt'] ?>" class="img">
-            </div>
         </div>
-    </div>
-</section> -->
-
+    </section>
+<?php endif; ?>
 <section id="section-2" class="landing-page-section-content s2">
     <div class="large-wrapper">
         <h2 class="title"><?= $s2title ?></h2>
@@ -73,8 +75,12 @@ $s4subtitle = get_field('s4_subtitle');
             <?php endwhile;
             endif; ?>
         </div>
+        <div class="serving">
+            <h3>Serving Clients In And Around Buffalo, New York And Remotely In:</h3>
+            <p>U.S. – Arizona, California, Washington DC, Delaware, Florida, Hawaii, Illinois, Massachusetts, Maryland, Maine, Minnesota, North Carolina, New York, Ohio, Oklahoma, Pennsylvania, South Carolina, and Washington. <br /> Canada – Ontario</p>
+        </div>
         <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2918.9652342576837!2d-78.70215978399156!3d42.979005979150166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d375b44120e0e1%3A0x13b07ae27ba6afa6!2sSheridan%20Meadows%20Corporate%20Park!5e0!3m2!1sen!2sus!4v1570073388918!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2918.9555450795087!2d-78.70237438452394!3d42.97921007915019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d375b4f6a29245%3A0x765bb48d3983de2a!2sOgorek%20Wealth%20Management%20LLC!5e0!3m2!1sen!2sus!4v1610494198033!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </div>
     </div>
 </section>

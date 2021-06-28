@@ -89,6 +89,33 @@
             "maxlength": ""
         },
         {
+            "key": "field_5fc68761684b5",
+            "label": "Hide Primary Logo",
+            "name": "hide_primary_logo",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e95b221cb54a",
+                        "operator": "==",
+                        "value": "unique"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5e95b240cb54b",
             "label": "Logo",
             "name": "logo",
@@ -442,7 +469,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1586868827
+    "modified": 1606846400
 }
