@@ -78,6 +78,22 @@
                 color: $black;
                 font-size: 16px;
             }
+            .app-dl {
+                display: flex;
+                align-items: center;
+                margin-top: 12px;
+                justify-content: center;
+                @include bp(tablet) {
+                    justify-content: space-between;
+                }
+                img {
+                    max-width: 100px;
+                    margin-bottom: 0;
+                }
+                a {
+                    display: inline-block;
+                }
+            }
         }
     }
 

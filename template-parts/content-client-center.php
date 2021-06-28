@@ -1,77 +1,89 @@
+<?php
+
+/**
+ * Content partial for content center
+ *
+ * @package minervawebdevelopment
+ */
+
+?>
+
 <section class="entry-content col-1 cf" itemprop="articleBody">
 
-  <div class="hotlinks hotlinks-trust-solution">
-    <?php if (have_rows('top_section')) : while (have_rows('top_section')) : the_row();
-        $link = get_sub_field('link');
-        $img = get_sub_field('image');
-        $second_img = get_sub_field('secondary_image');
-        $second_link = get_sub_field('secondary_link');
-        $subTitles = get_sub_field('sub_title');
-    ?>
-        <div class="hotlink">
+	<div class="hotlinks hotlinks-trust-solution">
+		<?php
+		if ( have_rows( 'top_section' ) ) :
+			while ( have_rows( 'top_section' ) ) :
+				the_row();
+				?>
+				<div class="hotlink">
+					<a href="<?php echo esc_url( get_sub_field( 'link' ) ); ?>" class="link">
+						<?php if ( get_sub_field( 'title' ) ) : ?>
+							<span><?php echo esc_html( get_sub_field( 'title' ) ); ?></span>
+						<?php endif; ?>
+						<img src="<?php echo esc_url( get_sub_field( 'image' )['url'] ); ?>" alt="Icon" class="icon<?php echo get_sub_field( 'title' ) ? null : ' no-title'; ?>">
+					</a>
+				</div>
+				<?php
+			endwhile;
+		endif;
+		?>
+	</div>
 
-          <?php if ($second_img) : ?>
+	<div class="client-information">
+		<h2 class="section-title"><?php echo esc_html( get_field( 'section_title' ) ); ?></h2>
 
-            <span href="<?= $link ?>" class="link">
-              <?php if (get_sub_field('title')) : ?>
-                <span><?= get_sub_field('title') ?></span>
-              <?php endif; ?>
-              <div class='img-wrap'>
-                <a class='img-inner-link' href="<?= $link ?>">
-                  <img src="<?= $img['url'] ?>" alt="Icon" class="icon<?= get_sub_field('title') ? null : ' no-title' ?>">
-                  <p><?= $subTitles[0]['caption'] ?></p>
-                </a>
-                <a class='img-inner-link' href="<?= $second_link ?>">
-                  <img src="<?= $second_img['url'] ?>" alt="Icon" class="icon<?= get_sub_field('title') ? null : ' no-title' ?>">
-                  <p><?= $subTitles[1]['caption'] ?></p>
-                </a>
-              </div>
+		<div class="grid">
+			<?php
+			if ( have_rows( 'client_section' ) ) :
+				while ( have_rows( 'client_section' ) ) :
+					the_row();
+					?>
+					<div class="info">
+						<a href="<?php echo esc_url( get_sub_field( 'link' ) ); ?>" class="link">
+							<img src="<?php echo esc_url( get_sub_field( 'image' )['url'] ); ?>" alt="Icon" class="icon">
+							<span><?php echo wp_kses_post( get_sub_field( 'title' ) ); ?></span>
+							<?php
+							if ( ! empty( get_sub_field( 'app_links' ) ) ) :
+								$links = get_sub_field( 'app_links' );
+								echo '<h4>Get our app!</h4>';
+									echo '<div class="app-dl">';
+								foreach ( $links as $download ) :
+									?>
+										<a href="<?php echo esc_url( $download['app_link'] ); ?>" target="_blank" rel="noopener noreferrer"><img src="<?php echo esc_url( $download['app_image'] ); ?>" alt="App Location"></a>
+									<?php
+								endforeach;
+								echo '</div>';
+							endif;
+							?>
+						</a>
+					</div>
+					<?php
+				endwhile;
+			endif;
+			?>
+		</div>
 
-            <?php else : ?>
+	</div>
 
-              <a href="<?= $link ?>" class="link">
-                <?php if (get_sub_field('title')) : ?>
-                  <span><?= get_sub_field('title') ?></span>
-                <?php endif; ?>
-                <img src="<?= $img['url'] ?>" alt="Icon" class="icon<?= get_sub_field('title') ? null : ' no-title' ?>">
-              </a>
-
-            <?php endif; ?>
-
-        </div>
-    <?php endwhile;
-    endif; ?>
-  </div>
-
-  <div class="client-information">
-    <h2 class="section-title"><?= get_field('section_title') ?></h2>
-
-    <div class="grid">
-      <?php if (have_rows('client_section')) : while (have_rows('client_section')) : the_row(); ?>
-          <div class="info">
-            <a href="<?= get_sub_field('link') ?>" class="link">
-              <img src="<?= get_sub_field('image')['url'] ?>" alt="Icon" class="icon">
-              <span><?= get_sub_field('title') ?></span>
-            </a>
-          </div>
-      <?php endwhile;
-      endif; ?>
-    </div>
-
-  </div>
-
-  <?php the_content(); ?>
+	<?php the_content(); ?>
 
 </section>
 
 <div class="app-locations">
 
-  <h2 class="sub-title"><?= get_field('app_title') ?></h2>
-  <?php if (have_rows('store_locations')) : while (have_rows('store_locations')) : the_row(); ?>
-      <div class="app-dl">
-        <a href="<?= get_sub_field('link') ?>" target="_blank" rel="noopener noreferrer"><img src="<?= get_sub_field('image')['url']; ?>" alt="App Location"></a>
-      </div>
-  <?php endwhile;
+	<h2 class="sub-title"><?php echo esc_html( get_field( 'app_title' ) ); ?></h2>
+	<?php
+	if ( have_rows( 'store_locations' ) ) :
+		while ( have_rows( 'store_locations' ) ) :
+			the_row();
+			?>
+			<div class="app-dl">
+				<a href="<?php echo esc_url( get_sub_field( 'link' ) ); ?>" target="_blank" rel="noopener noreferrer"><img src="<?php echo esc_url( get_sub_field( 'image' )['url'] ); ?>" alt="App Location"></a>
+			</div>
+			<?php
+		endwhile;
 
-  endif; ?>
+	endif;
+	?>
 </div>
