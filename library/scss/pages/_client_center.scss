@@ -81,17 +81,21 @@
             .app-dl {
                 display: flex;
                 align-items: center;
+                flex-direction: column;
                 margin-top: 12px;
                 justify-content: center;
                 @include bp(tablet) {
                     justify-content: space-between;
                 }
                 img {
-                    max-width: 100px;
-                    margin-bottom: 0;
+                    max-width: 125px;
+                    margin: 4px 0;
                 }
                 a {
                     display: inline-block;
+                    &:first-child {
+                        border-bottom: 2px solid $secondary;
+                    }
                 }
             }
         }
