@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Content partial for content center
  *
@@ -43,20 +42,20 @@
 						<a href="<?php echo esc_url( get_sub_field( 'link' ) ); ?>" class="link">
 							<img src="<?php echo esc_url( get_sub_field( 'image' )['url'] ); ?>" alt="Icon" class="icon">
 							<span><?php echo wp_kses_post( get_sub_field( 'title' ) ); ?></span>
-							<?php
-							if ( ! empty( get_sub_field( 'app_links' ) ) ) :
-								$links = get_sub_field( 'app_links' );
-								echo '<h4>Get our app!</h4>';
-									echo '<div class="app-dl">';
-								foreach ( $links as $download ) :
-									?>
-										<a href="<?php echo esc_url( $download['app_link'] ); ?>" target="_blank" rel="noopener noreferrer"><img src="<?php echo esc_url( $download['app_image'] ); ?>" alt="App Location"></a>
-									<?php
-								endforeach;
-								echo '</div>';
-							endif;
-							?>
 						</a>
+
+						<?php
+						if ( ! empty( get_sub_field( 'app_links' ) ) ) :
+							$links = get_sub_field( 'app_links' );
+							echo '<div class="app-dl">';
+							foreach ( $links as $download ) :
+								?>
+									<a href="<?php echo esc_url( $download['app_link'] ); ?>" target="_blank" rel="noopener noreferrer"><img src="<?php echo esc_url( $download['app_image'] ); ?>" alt="App Location"></a>
+								<?php
+							endforeach;
+							echo '</div>';
+						endif;
+						?>
 					</div>
 					<?php
 				endwhile;
