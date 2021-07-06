@@ -94,7 +94,7 @@
             },
             "collapsed": "field_5f441419f6cf9",
             "min": 0,
-            "max": 2,
+            "max": 3,
             "layout": "table",
             "button_label": "",
             "sub_fields": [
@@ -259,60 +259,6 @@
                     "maxlength": ""
                 }
             ]
-        },
-        {
-            "key": "field_6081dea12930c",
-            "label": "Banner (Under Blue Bar)",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_6081dee6a8a79",
-            "label": "Show Banner?",
-            "name": "show_banner",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 1,
-            "ui": 1,
-            "ui_on_text": "Show Banner",
-            "ui_off_text": "Hide Banner"
-        },
-        {
-            "key": "field_6081deb22930d",
-            "label": "Banner Content",
-            "name": "banner_content",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
         },
         {
             "key": "field_5e702906b4da4",
@@ -650,5 +596,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1619125292
+    "modified": 1625609356
 }

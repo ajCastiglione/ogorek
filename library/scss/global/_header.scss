@@ -86,8 +86,8 @@ Header Section
     .header-message {
         color: $white;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
-        justify-content: flex-end;
         margin-top: 5px;
         margin-left: 5px;
         order: 1;
@@ -113,10 +113,20 @@ Header Section
         }
         .text {
             font-weight: bold;
-            white-space: nowrap;
+            // white-space: nowrap;
             margin-bottom: 10px;
             @include media("phablet") {
                 white-space: normal;
+            }
+            @include bp(tablet) {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            @include bp(laptop) {
+                display: block;
+                width: 100%;
             }
             p {
                 margin: 0;
@@ -124,14 +134,13 @@ Header Section
             a {
                 display: inline-block;
                 color: inherit;
-                margin-right: 12px;
+                margin: 6px;
                 border: 2px solid $white;
                 border-radius: 5px;
                 padding: 4px 12px;
                 font-size: 18px;
                 transition: all 0.4s ease;
                 @include media("tablet") {
-                    margin-right: 24px;
                 }
                 &:hover {
                     background-color: $white;
