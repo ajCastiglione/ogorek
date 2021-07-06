@@ -3,6 +3,41 @@
     iframe {
         max-width: 100%;
     }
+
+    .categories {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 24px auto;
+        text-align: center;
+        .link {
+            display: block;
+            padding: 12px 24px;
+            &.active {
+                .cat-title {
+                    color: $primary;
+                }
+            }
+            .cat-icon {
+                max-width: 45px;
+                height: auto;
+            }
+            .cat-icon-i {
+                font-size: 45px;
+                color: #949494;
+            }
+            .cat-title {
+                font-weight: bold;
+                color: $secondary;
+                transition: all 0.3s ease;
+            }
+            &:hover {
+                .cat-title {
+                    color: $primary;
+                }
+            }
+        }
+    }
 }
 
 .single-video_commentaries {
