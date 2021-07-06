@@ -93,9 +93,6 @@
                 }
                 a {
                     display: inline-block;
-                    &:first-child {
-                        border-bottom: 2px solid $secondary;
-                    }
                 }
             }
         }
@@ -103,6 +100,7 @@
 
     .entry-content {
         max-width: 1080px;
+        padding: 1.5em;
         margin: auto;
         p {
             font-size: 18px;

@@ -68,7 +68,7 @@
 	<?php the_content(); ?>
 
 </section>
-
+<?php /*
 <div class="app-locations">
 
 	<h2 class="sub-title"><?php echo esc_html( get_field( 'app_title' ) ); ?></h2>
@@ -86,3 +86,4 @@
 	endif;
 	?>
 </div>
+*/ ?>
