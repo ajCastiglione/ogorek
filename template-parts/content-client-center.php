@@ -29,6 +29,9 @@
 		?>
 	</div>
 
+	<div class="center lone-cta">
+		<a href="<?php echo esc_url( get_site_url() ); ?>/schedule-an-appointment/" class="btn">Schedule an appointment</a>
+	</div>
 	<div class="client-information">
 		<h2 class="section-title"><?php echo esc_html( get_field( 'section_title' ) ); ?></h2>
 
