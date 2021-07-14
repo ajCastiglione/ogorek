@@ -61,6 +61,7 @@
             font-size: 22px;
             border: 2px solid $primary;
             transition: all 0.3s ease;
+            white-space: normal;
             @include bp(tablet) {
                 font-size: 26px;
             }
