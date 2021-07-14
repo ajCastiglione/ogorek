@@ -58,12 +58,15 @@
             color: $white;
             font-weight: bold;
             text-transform: capitalize;
-            font-size: 18px;
-            border: 2px solid $blue;
+            font-size: 22px;
+            border: 2px solid $primary;
             transition: all 0.3s ease;
+            @include bp(tablet) {
+                font-size: 26px;
+            }
             &:hover {
                 background-color: $white;
-                color: $blue;
+                color: $primary;
             }
         }
     }
