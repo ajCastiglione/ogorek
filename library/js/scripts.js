@@ -26,6 +26,7 @@ import toggleFAQ from "./components/FAQ";
 import inputMask from "./components/Masking";
 import initHomeSlider from "./components/Home";
 import ROL from "./components/ROL";
+import ServiceTypeTwo from "./components/ServiceTypeTwo";
 
 /*
  * Put all your regular jQuery in here.
@@ -92,6 +93,10 @@ jQuery(document).ready(function ($) {
 
   if ($("body").hasClass("page-template-page-rol")) {
     ROL($);
+  }
+
+  if ($("body").hasClass("page-template-page-service-2")) {
+    ServiceTypeTwo($);
   }
 }); /* end of as page load scripts */
 
