@@ -48,16 +48,17 @@ if ( ! empty( $s1_aside_content ) ) {
 			if ( have_rows( 's2_values' ) ) :
 				while ( have_rows( 's2_values' ) ) :
 					the_row();
-					$icon          = get_sub_field( 'icon' );
+					$image         = get_sub_field( 'image' );
 					$value_title   = get_sub_field( 'title' );
 					$value_content = get_sub_field( 'content' );
 					$value_link    = get_sub_field( 'link' );
 					?>
 
 					<div class="value">
-						<?php echo $icon; ?>
+						<img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" class="value-img">
 						<h3 class="value-title"><?php echo $value_title; ?></h3>
 						<div class="value-content"><?php echo $value_content; ?></div>
+						<a href="#" class="btn read-more">Read more</a>
 					</div>
 
 					<?php
@@ -89,4 +90,13 @@ if ( ! empty( $s1_aside_content ) ) {
 			</div>
 		</div>
 	</section>
+
+	<div class="service-popup-container hidden">
+		<div class="service-popup-inner shadow">
+			<div class="close-popup"><i class="fas fa-times-circle"></i></div>
+			<div class="content-wrap">
+				<!-- Content will be added here once activated -->
+			</div>
+		</div>
+	</div>
 </article>
