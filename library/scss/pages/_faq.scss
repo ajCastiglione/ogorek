@@ -1,58 +1,66 @@
 .page-template-page-faq {
-  .faqs {
-    &__section-title {
-      margin: 25px 0;
-      font-size: 28px;
-    }
-    &__content {
-      font-size: 18px;
-      margin: 25px 0;
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-    &__question {
-      font-size: 20px;
-      color: $secondary;
-      font-weight: bold;
-      cursor: pointer;
-      i {
-        transition: all 0.4s ease;
-      }
-      &.active {
-        i {
-          transform: rotate(135deg);
+    .faqs {
+        &__section-title {
+            margin: 25px 0;
+            font-size: 28px;
         }
-      }
-    }
-    &__answer {
-      display: none;
-      &.active {
-        display: block;
-      }
-    }
-    @include media("tablet") {
-      &__section-title {
-        font-size: 36px;
-      }
-      &__content {
-        font-size: 20px;
-        margin: 30px 0;
-      }
-      &__question {
-        font-size: 25px;
-        span {
-          display: inline-block;
-          &:last-child {
-            margin-left: 20px;
-          }
+        &__content {
+            font-size: 18px;
+            margin: 25px 0;
+            &:first-child {
+                margin-top: 0;
+            }
         }
-      }
+        &__question {
+            font-size: 20px;
+            color: $secondary;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            padding-right: 50px;
+            max-width: 650px;
+            i {
+                transition: all 0.4s ease;
+            }
+            .icon {
+                position: absolute;
+                top: 0px;
+                right: 15px;
+            }
+            &.active {
+                i {
+                    transform: rotate(135deg);
+                }
+            }
+        }
+        &__answer {
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+        @include media("tablet") {
+            &__section-title {
+                font-size: 36px;
+            }
+            &__content {
+                font-size: 20px;
+                margin: 30px 0;
+            }
+            &__question {
+                font-size: 25px;
+                span {
+                    display: inline-block;
+                    &:last-child {
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+        @include media("laptop") {
+            &__content {
+                margin: 50px 0;
+            }
+        }
     }
-    @include media("laptop") {
-      &__content {
-        margin: 50px 0;
-      }
-    }
-  }
 }
