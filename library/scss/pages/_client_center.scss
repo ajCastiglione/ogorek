@@ -111,11 +111,14 @@
                 color: $black;
                 font-size: 16px;
             }
+            .icon {
+                margin-bottom: 8px;
+            }
             .app-dl {
                 display: flex;
                 align-items: center;
                 flex-direction: column;
-                margin-top: 12px;
+                margin-top: 18px;
                 justify-content: center;
                 @include bp(tablet) {
                     justify-content: space-between;
